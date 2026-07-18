@@ -1,1 +1,80 @@
-ewogICJuYW1lIjogImJhc2NrLWNsb3VkcyIsCiAgInByb2R1Y3ROYW1lIjogIkJhc2NrIENsb3VkcyIsCiAgInZlcnNpb24iOiAiMS4wLjAiLAogICJkZXNjcmlwdGlvbiI6ICJCYXNjayBDbG91ZHMg4oCUIHVuaWZpY2EgbcO6bHRpcGxhcyBjb250YXMgZGUgYXJtYXplbmFtZW50byBlbSBudXZlbSBlbSB1bSDDum5pY28gZHJpdmUgdmlydHVhbCBjcmlwdG9ncmFmYWRvIGRlIHBvbnRhIGEgcG9udGEuIiwKICAibWFpbiI6ICJkaXN0L21haW4vbWFpbi5qcyIsCiAgImF1dGhvciI6IHsKICAgICJuYW1lIjogInpCYXNjayIsCiAgICAidXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS96QmFzY2svYmFzY2stY2xvdWRzIgogIH0sCiAgImxpY2Vuc2UiOiAiTUlUIiwKICAiaG9tZXBhZ2UiOiAiaHR0cHM6Ly9naXRodWIuY29tL3pCYXNjay9iYXNjay1jbG91ZHMjcmVhZG1lIiwKICAicHJpdmF0ZSI6IGZhbHNlLAogICJzY3JpcHRzIjogewogICAgImRldiI6ICJjb25jdXJyZW50bHkgLWsgXCJucG06ZGV2Om1haW5cIiBcIm5wbTpkZXY6cmVuZGVyZXJcIiIsCiAgICAiZGV2Om1haW4iOiAidHNjIC1wIHRzY29uZmlnLm1haW4uanNvbiAmJiBjcm9zcy1lbnYgTk9ERV9FTlY9ZGV2ZWxvcG1lbnQgZWxlY3Ryb24gLiIsCiAgICAiZGV2OnJlbmRlcmVyIjogInZpdGUiLAogICAgImJ1aWxkOnJlbmRlcmVyIjogInZpdGUgYnVpbGQiLAogICAgImJ1aWxkOm1haW4iOiAidHNjIC1wIHRzY29uZmlnLm1haW4uanNvbiIsCiAgICAiYnVpbGQiOiAibnBtIHJ1biBidWlsZDpyZW5kZXJlciAmJiBucG0gcnVuIGJ1aWxkOm1haW4iLAogICAgInBhY2thZ2UiOiAibnBtIHJ1biBidWlsZCAmJiBlbGVjdHJvbi1idWlsZGVyIC0td2luIC0teDY0IiwKICAgICJsaW50IjogImVzbGludCAuIC0tZXh0IC50cywudHN4IiwKICAgICJmb3JtYXQiOiAicHJldHRpZXIgLS13cml0ZSBcInNyYy8qKi8qLnt0cyx0c3gsY3NzLGpzb259XCIiLAogICAgInRlc3QiOiAidml0ZXN0IHJ1biIKICB9LAogICJkZXBlbmRlbmNpZXMiOiB7CiAgICAiYmV0dGVyLXNxbGl0ZTMiOiAiXjExLjMuMCIsCiAgICAiY2hva2lkYXIiOiAiXjQuMC4xIiwKICAgICJub2RlLWNyb24iOiAiXjMuMC4zIiwKICAgICJub2RlLWZldGNoIjogIl4yLjcuMCIsCiAgICAidGFyIjogIl43LjQuMyIKICB9LAogICJkZXZEZXBlbmRlbmNpZXMiOiB7CiAgICAiQHR5cGVzL2JldHRlci1zcWxpdGUzIjogIl43LjYuMTEiLAogICAgIkB0eXBlcy9ub2RlIjogIl4yMi41LjAiLAogICAgIkB0eXBlcy9ub2RlLWNyb24iOiAiXjMuMC4xMSIsCiAgICAiQHR5cGVzL3JlYWN0IjogIl4xOC4zLjMiLAogICAgIkB0eXBlcy9yZWFjdC1kb20iOiAiXjE4LjMuMCIsCiAgICAiQHZpdGVqcy9wbHVnaW4tcmVhY3QiOiAiXjQuMy4xIiwKICAgICJjb25jdXJyZW50bHkiOiAiXjkuMC4xIiwKICAgICJjcm9zcy1lbnYiOiAiXjcuMC4zIiwKICAgICJlbGVjdHJvbiI6ICJeMzIuMC4xIiwKICAgICJlbGVjdHJvbi1idWlsZGVyIjogIl4yNS4wLjUiLAogICAgInByZXR0aWVyIjogIl4zLjMuMyIsCiAgICAicmVhY3QiOiAiXjE4LjMuMSIsCiAgICAicmVhY3QtZG9tIjogIl4xOC4zLjEiLAogICAgInR5cGVzY3JpcHQiOiAiXjUuNS40IiwKICAgICJ2aXRlIjogIl41LjQuMiIsCiAgICAidml0ZXN0IjogIl4yLjAuNSIKICB9LAogICJidWlsZCI6IHsKICAgICJhcHBJZCI6ICJjb20uemJhc2NrLmJhc2NrY2xvdWRzIiwKICAgICJwcm9kdWN0TmFtZSI6ICJCYXNjayBDbG91ZHMiLAogICAgImNvcHlyaWdodCI6ICJDb3B5cmlnaHQgwqkgMjAyNiB6QmFzY2siLAogICAgImZpbGVzIjogWwogICAgICAiZGlzdC8qKi8qIiwKICAgICAgImJ1aWxkLyoqLyoiLAogICAgICAicGFja2FnZS5qc29uIgogICAgXSwKICAgICJkaXJlY3RvcmllcyI6IHsKICAgICAgImJ1aWxkUmVzb3VyY2VzIjogImJ1aWxkIiwKICAgICAgIm91dHB1dCI6ICJyZWxlYXNlIgogICAgfSwKICAgICJ3aW4iOiB7CiAgICAgICJ0YXJnZXQiOiBbCiAgICAgICAgeyAidGFyZ2V0IjogIm5zaXMiLCAiYXJjaCI6IFsieDY0Il0gfSwKICAgICAgICB7ICJ0YXJnZXQiOiAicG9ydGFibGUiLCAiYXJjaCI6IFsieDY0Il0gfQogICAgICBdLAogICAgICAiYXJ0aWZhY3ROYW1lIjogIiR7cHJvZHVjdE5hbWV9LVNldHVwLSR7dmVyc2lvbn0uJHtleHR9IgogICAgfSwKICAgICJuc2lzIjogewogICAgICAib25lQ2xpY2siOiBmYWxzZSwKICAgICAgInBlck1hY2hpbmUiOiBmYWxzZSwKICAgICAgImFsbG93VG9DaGFuZ2VJbnN0YWxsYXRpb25EaXJlY3RvcnkiOiB0cnVlLAogICAgICAiY3JlYXRlRGVza3RvcFNob3J0Y3V0IjogdHJ1ZSwKICAgICAgImNyZWF0ZVN0YXJ0TWVudVNob3J0Y3V0IjogdHJ1ZSwKICAgICAgInNob3J0Y3V0TmFtZSI6ICJCYXNjayBDbG91ZHMiCiAgICB9CiAgfQp9Cg==
+{
+  "name": "basck-clouds",
+  "productName": "Basck Clouds",
+  "version": "1.0.0",
+  "description": "Basck Clouds — unifica múltiplas contas de armazenamento em nuvem em um único drive virtual criptografado de ponta a ponta.",
+  "main": "dist/main/main.js",
+  "author": {
+    "name": "zBasck",
+    "url": "https://github.com/zBasck/basck-clouds"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/zBasck/basck-clouds#readme",
+  "private": false,
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:main\" \"npm:dev:renderer\"",
+    "dev:main": "tsc -p tsconfig.main.json && cross-env NODE_ENV=development electron .",
+    "dev:renderer": "vite",
+    "build:renderer": "vite build",
+    "build:main": "tsc -p tsconfig.main.json",
+    "build": "npm run build:renderer && npm run build:main",
+    "package": "npm run build && electron-builder --win --x64",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "chokidar": "^4.0.1",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.7.0",
+    "tar": "^7.4.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.5.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^32.0.1",
+    "electron-builder": "^25.0.5",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vitest": "^2.0.5"
+  },
+  "build": {
+    "appId": "com.zbasck.basckclouds",
+    "productName": "Basck Clouds",
+    "copyright": "Copyright © 2026 zBasck",
+    "files": [
+      "dist/**/*",
+      "build/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Basck Clouds"
+    }
+  }
+}
