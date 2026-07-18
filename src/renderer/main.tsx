@@ -1,1 +1,11 @@
-aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnOwppbXBvcnQgeyBBcHAgfSBmcm9tICcuL0FwcCc7Cgpjb25zdCBjb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpOwppZiAoIWNvbnRhaW5lcikgdGhyb3cgbmV3IEVycm9yKCdSb290IGNvbnRhaW5lciBub3QgZm91bmQnKTsKY3JlYXRlUm9vdChjb250YWluZXIpLnJlbmRlcigKICA8UmVhY3QuU3RyaWN0TW9kZT4KICAgIDxBcHAgLz4KICA8L1JlYWN0LlN0cmljdE1vZGU+LAopOwo=
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { App } from './App';
+
+const container = document.getElementById('root');
+if (!container) throw new Error('Root container not found');
+createRoot(container).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
