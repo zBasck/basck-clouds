@@ -2,18 +2,23 @@
  * Banco local SQLite — espinha dorsal do cluster virtual.
  * Persiste: contas, itens do cluster, placements de chunks,
  * jobs de backup, pares de sync, índice de busca, configurações.
+ *
+ * Usa o módulo nativo `node:sqlite` (estável a partir do Node 22.5+),
+ * embutido no Electron 33+. Dispensa compilação nativa e roda em qualquer
+ * máquina com Node moderno.
  */
-import Database from 'better-sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
 import fs from 'node:fs';
 
-export type DB = Database.Database;
+export type DB = DatabaseSync;
 
 export function openDatabase(dataDir: string): DB {
   fs.mkdirSync(dataDir, { recursive: true });
-  const db = new Database(path.join(dataDir, 'basck.db'));
-  db.pragma('journal_mode = WAL');
-  db.pragma('foreign_keys = ON');
+  const db = new DatabaseSync(path.join(dataDir, 'basck.db'));
+  // `node:sqlite` aceita SQL puro via `exec`; PRAGMA é executado direto.
+  db.exec(`PRAGMA journal_mode = WAL`);
+  db.exec(`PRAGMA foreign_keys = ON`);
   migrate(db);
   return db;
 }
