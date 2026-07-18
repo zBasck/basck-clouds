@@ -1,1 +1,24 @@
-ewogICJjb21waWxlck9wdGlvbnMiOiB7CiAgICAidGFyZ2V0IjogIkVTMjAyMiIsCiAgICAibW9kdWxlIjogIkNvbW1vbkpTIiwKICAgICJtb2R1bGVSZXNvbHV0aW9uIjogIk5vZGUiLAogICAgImxpYiI6IFsiRVMyMDIyIl0sCiAgICAib3V0RGlyIjogImRpc3QiLAogICAgInJvb3REaXIiOiAic3JjIiwKICAgICJzdHJpY3QiOiB0cnVlLAogICAgImVzTW9kdWxlSW50ZXJvcCI6IHRydWUsCiAgICAic2tpcExpYkNoZWNrIjogdHJ1ZSwKICAgICJmb3JjZUNvbnNpc3RlbnRDYXNpbmdJbkZpbGVOYW1lcyI6IHRydWUsCiAgICAicmVzb2x2ZUpzb25Nb2R1bGUiOiB0cnVlLAogICAgInNvdXJjZU1hcCI6IHRydWUsCiAgICAiZGVjbGFyYXRpb24iOiBmYWxzZSwKICAgICJiYXNlVXJsIjogIi4iLAogICAgInBhdGhzIjogewogICAgICAiQG1haW4vKiI6IFsic3JjL21haW4vKiJdLAogICAgICAiQHNoYXJlZC8qIjogWyJzcmMvc2hhcmVkLyoiXQogICAgfQogIH0sCiAgImluY2x1ZGUiOiBbInNyYy9tYWluIiwgInNyYy9wcmVsb2FkIiwgInNyYy9zaGFyZWQiXSwKICAiZXhjbHVkZSI6IFsic3JjL3JlbmRlcmVyIiwgIm5vZGVfbW9kdWxlcyIsICJkaXN0IiwgInJlbGVhc2UiXQp9Cg==
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["ES2022"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": false,
+    "baseUrl": ".",
+    "paths": {
+      "@main/*": ["src/main/*"],
+      "@shared/*": ["src/shared/*"]
+    }
+  },
+  "include": ["src/main", "src/preload", "src/shared"],
+  "exclude": ["src/renderer", "node_modules", "dist", "release"]
+}
