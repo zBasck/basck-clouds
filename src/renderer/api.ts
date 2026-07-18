@@ -1,1 +1,31 @@
-LyoqCiAqIFdyYXBwZXIgdGlwYWRvIHBhcmEgYSBBUEkgZXhwb3N0YSBwZWxvIHByZWxvYWQuCiAqIFNlIGEgYXBsaWNhw6fDo28gZm9yIGFiZXJ0YSBlbSBkZXYgbm8gbmF2ZWdhZG9yIHNlbSBlbGVjdHJvbiwgbyBvYmpldG8KICogd2luZG93LmJhc2NrIHBvZGUgZXN0YXIgYXVzZW50ZSDigJQgZm9ybmVjZW1vcyB1bSBzaGltIHF1ZSBsYW7Dp2EgZXJyb3MKICogYW1pZ8OhdmVpcyBlbSB2ZXogZGUgcXVlYnJhciBhIHDDoWdpbmEuCiAqLwppbXBvcnQgdHlwZSB7IEJhc2NrQVBJIH0gZnJvbSAnLi4vLi4vcHJlbG9hZC9wcmVsb2FkJzsKCmRlY2xhcmUgZ2xvYmFsIHsKICBpbnRlcmZhY2UgV2luZG93IHsKICAgIGJhc2NrOiBCYXNja0FQSTsKICB9Cn0KCmNvbnN0IGlzRWxlY3Ryb24gPSB0eXBlb2Ygd2luZG93ICE9PSAndW5kZWZpbmVkJyAmJiAod2luZG93IGFzIGFueSkuYmFzY2s7Cgpjb25zdCBub29wID0gYXN5bmMgKCkgPT4geyB0aHJvdyBuZXcgRXJyb3IoJ0VzdGEgZnVuY2lvbmFsaWRhZGUgc8OzIGVzdMOhIGRpc3BvbsOtdmVsIG5vIGFwcCBkZXNrdG9wLicpOyB9OwoKZXhwb3J0IGNvbnN0IGFwaTogQmFzY2tBUEkgPSBpc0VsZWN0cm9uCiAgPyAod2luZG93IGFzIGFueSkuYmFzY2sKICA6ICh7CiAgICAgIHZhdWx0OiB7IHN0YXR1czogbm9vcCwgY3JlYXRlOiBub29wLCB1bmxvY2s6IG5vb3AsIGxvY2s6IG5vb3AgfSwKICAgICAgc3lzdGVtOiB7IHByb3ZpZGVyczogYXN5bmMgKCkgPT4gW10sIGFjdGl2aXR5OiBhc3luYyAoKSA9PiBbXSwgb3BlblBhdGg6IG5vb3AsIGRpYWxvZzogbm9vcCB9LAogICAgICBhY2NvdW50czogeyBsaXN0OiBhc3luYyAoKSA9PiBbXSwgYWRkOiBub29wLCByZW1vdmU6IG5vb3AsIHJlbmFtZTogbm9vcCwgdGVzdDogbm9vcCwgcmVmcmVzaFF1b3RhOiBub29wLCB1cGRhdGVQcmVmZXJlbmNlczogbm9vcCB9LAogICAgICBjbHVzdGVyOiB7IGxpc3Q6IGFzeW5jICgpID0+IFtdLCByZWFkOiBub29wLCB1cGxvYWQ6IG5vb3AsIGRvd25sb2FkOiBub29wLCBta2Rpcjogbm9vcCwgcmVuYW1lOiBub29wLCBkZWxldGU6IG5vb3AsIG1vdmU6IG5vb3AsIHN0YXRzOiBub29wIH0sCiAgICAgIHNlYXJjaDogeyBxdWVyeTogbm9vcCwgcmVidWlsZDogbm9vcCB9LAogICAgICBzeW5jOiB7IGxpc3Q6IGFzeW5jICgpID0+IFtdLCBhZGQ6IG5vb3AsIHJlbW92ZTogbm9vcCwgcnVuOiBub29wLCB0b2dnbGU6IG5vb3AgfSwKICAgICAgYmFja3VwczogeyBsaXN0OiBhc3luYyAoKSA9PiBbXSwgYWRkOiBub29wLCByZW1vdmU6IG5vb3AsIHJ1bjogbm9vcCwgdG9nZ2xlOiBub29wIH0sCiAgICAgIHNldHRpbmdzOiB7IGdldDogbm9vcCwgdXBkYXRlOiBub29wIH0sCiAgICAgIG9uOiAoKSA9PiAoKSA9PiB1bmRlZmluZWQsCiAgICB9IGFzIHVua25vd24gYXMgQmFzY2tBUEkpOwo=
+/**
+ * Wrapper tipado para a API exposta pelo preload.
+ * Se a aplicação for aberta em dev no navegador sem electron, o objeto
+ * window.basck pode estar ausente — fornecemos um shim que lança erros
+ * amigáveis em vez de quebrar a página.
+ */
+import type { BasckAPI } from '../../preload/preload';
+
+declare global {
+  interface Window {
+    basck: BasckAPI;
+  }
+}
+
+const isElectron = typeof window !== 'undefined' && (window as any).basck;
+
+const noop = async () => { throw new Error('Esta funcionalidade só está disponível no app desktop.'); };
+
+export const api: BasckAPI = isElectron
+  ? (window as any).basck
+  : ({
+      vault: { status: noop, create: noop, unlock: noop, lock: noop },
+      system: { providers: async () => [], activity: async () => [], openPath: noop, dialog: noop },
+      accounts: { list: async () => [], add: noop, remove: noop, rename: noop, test: noop, refreshQuota: noop, updatePreferences: noop },
+      cluster: { list: async () => [], read: noop, upload: noop, download: noop, mkdir: noop, rename: noop, delete: noop, move: noop, stats: noop },
+      search: { query: noop, rebuild: noop },
+      sync: { list: async () => [], add: noop, remove: noop, run: noop, toggle: noop },
+      backups: { list: async () => [], add: noop, remove: noop, run: noop, toggle: noop },
+      settings: { get: noop, update: noop },
+      on: () => () => undefined,
+    } as unknown as BasckAPI);
