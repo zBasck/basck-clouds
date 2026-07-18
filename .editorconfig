@@ -1,1 +1,9 @@
-cm9vdCA9IHRydWUKClsqXQplbmRfb2ZfbGluZSA9IGxmCmluc2VydF9maW5hbF9uZXdsaW5lID0gdHJ1ZQpjaGFyc2V0ID0gdXRmLTgKaW5kZW50X3N0eWxlID0gc3BhY2UKaW5kZW50X3NpemUgPSAyCnRyaW1fdHJhaWxpbmdfd2hpdGVzcGFjZSA9IHRydWUK
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
