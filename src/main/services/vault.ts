@@ -1,1 +1,88 @@
-LyoqCiAqIENvZnJlIGxvY2FsOiBnZXJlbmNpYSBhIHNlbmhhIG1lc3RyYSwgbyBzYWx0IGUgYSBpbmljaWFsaXphw6fDo28KICogZG8gQ3J5cHRvU2VydmljZS4gUGVyc2lzdGlkbyBlbSB1c2VyRGF0YS92YXVsdC5tZXRhLgogKi8KaW1wb3J0IHsgcHJvbWlzZXMgYXMgZnMsIGV4aXN0c1N5bmMsIHJlYWRGaWxlU3luYyB9IGZyb20gJ25vZGU6ZnMnOwppbXBvcnQgcGF0aCBmcm9tICdub2RlOnBhdGgnOwppbXBvcnQgeyBDcnlwdG9TZXJ2aWNlIH0gZnJvbSAnLi9jcnlwdG8nOwoKZXhwb3J0IGludGVyZmFjZSBWYXVsdE1ldGEgewogIHZlcnNpb246IDE7CiAgc2FsdDogc3RyaW5nOyAvLyBiYXNlNjQKICBoaW50Pzogc3RyaW5nOwogIGNyZWF0ZWRBdDogbnVtYmVyOwogIGxhc3RVbmxvY2tlZEF0PzogbnVtYmVyOwogIGtkZkl0ZXJhdGlvbnM6IG51bWJlcjsKfQoKZXhwb3J0IGNsYXNzIFZhdWx0U2VydmljZSB7CiAgcHJpdmF0ZSBtZXRhOiBWYXVsdE1ldGEgfCBudWxsID0gbnVsbDsKICBwcml2YXRlIGNyeXB0byA9IG5ldyBDcnlwdG9TZXJ2aWNlKCk7CiAgcHJpdmF0ZSBtZXRhUGF0aDogc3RyaW5nOwoKICBjb25zdHJ1Y3RvcihkYXRhRGlyOiBzdHJpbmcpIHsKICAgIHRoaXMubWV0YVBhdGggPSBwYXRoLmpvaW4oZGF0YURpciwgJ3ZhdWx0Lm1ldGEnKTsKICB9CgogIGFzeW5jIGluaXQoKTogUHJvbWlzZTx2b2lkPiB7CiAgICBpZiAoZXhpc3RzU3luYyh0aGlzLm1ldGFQYXRoKSkgewogICAgICBjb25zdCByYXcgPSByZWFkRmlsZVN5bmModGhpcy5tZXRhUGF0aCwgJ3V0ZjgnKTsKICAgICAgdGhpcy5tZXRhID0gSlNPTi5wYXJzZShyYXcpIGFzIFZhdWx0TWV0YTsKICAgIH0KICB9CgogIGV4aXN0cygpOiBib29sZWFuIHsKICAgIHJldHVybiB0aGlzLm1ldGEgIT09IG51bGw7CiAgfQoKICBjcnlwdG9fKCk6IENyeXB0b1NlcnZpY2UgewogICAgcmV0dXJuIHRoaXMuY3J5cHRvOwogIH0KCiAgYXN5bmMgY3JlYXRlKHBhc3N3b3JkOiBzdHJpbmcsIGhpbnQ/OiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGlmICh0aGlzLm1ldGEpIHRocm93IG5ldyBFcnJvcignVmF1bHQgYWxyZWFkeSBleGlzdHMnKTsKICAgIGNvbnN0IHZhbGlkYXRpb24gPSBDcnlwdG9TZXJ2aWNlLnZhbGlkYXRlUGFzc3dvcmQocGFzc3dvcmQpOwogICAgaWYgKCF2YWxpZGF0aW9uLm9rKSB0aHJvdyBuZXcgRXJyb3IodmFsaWRhdGlvbi5yZWFzb24pOwoKICAgIGNvbnN0IHNhbHQgPSBDcnlwdG9TZXJ2aWNlLm5ld1NhbHQoKTsKICAgIHRoaXMubWV0YSA9IHsKICAgICAgdmVyc2lvbjogMSwKICAgICAgc2FsdDogc2FsdC50b1N0cmluZygnYmFzZTY0JyksCiAgICAgIGhpbnQsCiAgICAgIGNyZWF0ZWRBdDogRGF0ZS5ub3coKSwKICAgICAga2RmSXRlcmF0aW9uczogMjUwXzAwMCwKICAgIH07CiAgICBhd2FpdCBmcy53cml0ZUZpbGUodGhpcy5tZXRhUGF0aCwgSlNPTi5zdHJpbmdpZnkodGhpcy5tZXRhLCBudWxsLCAyKSwgewogICAgICBtb2RlOiAwbzYwMCwKICAgIH0pOwogICAgdGhpcy51bmxvY2socGFzc3dvcmQpOwogIH0KCiAgdW5sb2NrKHBhc3N3b3JkOiBzdHJpbmcpOiB2b2lkIHsKICAgIGlmICghdGhpcy5tZXRhKSB0aHJvdyBuZXcgRXJyb3IoJ1ZhdWx0IGlzIG5vdCBpbml0aWFsaXplZCcpOwogICAgY29uc3Qgc2FsdCA9IEJ1ZmZlci5mcm9tKHRoaXMubWV0YS5zYWx0LCAnYmFzZTY0Jyk7CiAgICB0aGlzLmNyeXB0by51bmxvY2socGFzc3dvcmQsIHNhbHQpOwogICAgdGhpcy5tZXRhLmxhc3RVbmxvY2tlZEF0ID0gRGF0ZS5ub3coKTsKICB9CgogIGxvY2soKTogdm9pZCB7CiAgICB0aGlzLmNyeXB0by5sb2NrKCk7CiAgfQoKICBpc1VubG9ja2VkKCk6IGJvb2xlYW4gewogICAgcmV0dXJuIHRoaXMuY3J5cHRvLmlzVW5sb2NrZWQoKTsKICB9CgogIGFzeW5jIGNoYW5nZVBhc3N3b3JkKG9sZFBhc3N3b3JkOiBzdHJpbmcsIG5ld1Bhc3N3b3JkOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGlmICghdGhpcy5tZXRhKSB0aHJvdyBuZXcgRXJyb3IoJ1ZhdWx0IG5vdCBpbml0aWFsaXplZCcpOwogICAgLy8gUmUtZGVyaXZhIGEgY2hhdmUgY29tIGEgc2VuaGEgYW50aWdhLCBnZXJhIHNhbHQgbm92byBlIHJlZ3JhdmEuCiAgICB0aGlzLnVubG9jayhvbGRQYXNzd29yZCk7CiAgICBjb25zdCBuZXdTYWx0ID0gQ3J5cHRvU2VydmljZS5uZXdTYWx0KCk7CiAgICB0aGlzLm1ldGEuc2FsdCA9IG5ld1NhbHQudG9TdHJpbmcoJ2Jhc2U2NCcpOwogICAgdGhpcy5tZXRhLmtkZkl0ZXJhdGlvbnMgPSAyNTBfMDAwOwogICAgYXdhaXQgZnMud3JpdGVGaWxlKHRoaXMubWV0YVBhdGgsIEpTT04uc3RyaW5naWZ5KHRoaXMubWV0YSwgbnVsbCwgMiksIHsKICAgICAgbW9kZTogMG82MDAsCiAgICB9KTsKICAgIHRoaXMudW5sb2NrKG5ld1Bhc3N3b3JkKTsKICB9Cn0K
+/**
+ * Cofre local: gerencia a senha mestra, o salt e a inicialização
+ * do CryptoService. Persistido em userData/vault.meta.
+ */
+import { promises as fs, existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
+import { CryptoService } from './crypto';
+
+export interface VaultMeta {
+  version: 1;
+  salt: string; // base64
+  hint?: string;
+  createdAt: number;
+  lastUnlockedAt?: number;
+  kdfIterations: number;
+}
+
+export class VaultService {
+  private meta: VaultMeta | null = null;
+  private crypto = new CryptoService();
+  private metaPath: string;
+
+  constructor(dataDir: string) {
+    this.metaPath = path.join(dataDir, 'vault.meta');
+  }
+
+  async init(): Promise<void> {
+    if (existsSync(this.metaPath)) {
+      const raw = readFileSync(this.metaPath, 'utf8');
+      this.meta = JSON.parse(raw) as VaultMeta;
+    }
+  }
+
+  exists(): boolean {
+    return this.meta !== null;
+  }
+
+  crypto_(): CryptoService {
+    return this.crypto;
+  }
+
+  async create(password: string, hint?: string): Promise<void> {
+    if (this.meta) throw new Error('Vault already exists');
+    const validation = CryptoService.validatePassword(password);
+    if (!validation.ok) throw new Error(validation.reason);
+
+    const salt = CryptoService.newSalt();
+    this.meta = {
+      version: 1,
+      salt: salt.toString('base64'),
+      hint,
+      createdAt: Date.now(),
+      kdfIterations: 250_000,
+    };
+    await fs.writeFile(this.metaPath, JSON.stringify(this.meta, null, 2), {
+      mode: 0o600,
+    });
+    this.unlock(password);
+  }
+
+  unlock(password: string): void {
+    if (!this.meta) throw new Error('Vault is not initialized');
+    const salt = Buffer.from(this.meta.salt, 'base64');
+    this.crypto.unlock(password, salt);
+    this.meta.lastUnlockedAt = Date.now();
+  }
+
+  lock(): void {
+    this.crypto.lock();
+  }
+
+  isUnlocked(): boolean {
+    return this.crypto.isUnlocked();
+  }
+
+  async changePassword(oldPassword: string, newPassword: string): Promise<void> {
+    if (!this.meta) throw new Error('Vault not initialized');
+    // Re-deriva a chave com a senha antiga, gera salt novo e regrava.
+    this.unlock(oldPassword);
+    const newSalt = CryptoService.newSalt();
+    this.meta.salt = newSalt.toString('base64');
+    this.meta.kdfIterations = 250_000;
+    await fs.writeFile(this.metaPath, JSON.stringify(this.meta, null, 2), {
+      mode: 0o600,
+    });
+    this.unlock(newPassword);
+  }
+}
