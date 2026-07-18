@@ -1,1 +1,90 @@
-LyoqCiAqIEFnZW5kYWRvciBkZSBiYWNrdXBzIGVtIG5vZGUtY3Jvbi4KICogLSBMw6ogb3Mgam9icyBkYSB0YWJlbGEgYmFja3VwcwogKiAtIFJvZGEgY2FkYSB1bSBuYSBleHByZXNzw6NvIGNyb24gY29uZmlndXJhZGEKICogLSBBdHVhbGl6YSBsYXN0UnVuQXQgLyBuZXh0UnVuQXQKICovCmltcG9ydCBjcm9uLCB7IHR5cGUgU2NoZWR1bGVkVGFzayB9IGZyb20gJ25vZGUtY3Jvbic7CmltcG9ydCB0eXBlIHsgQmFja3VwUmVwb3NpdG9yeSB9IGZyb20gJ0BtYWluL2RiL3JlcG9zaXRvcmllcyc7CmltcG9ydCB0eXBlIHsgQmFja3VwSm9iIH0gZnJvbSAnQHNoYXJlZC90eXBlcyc7CmltcG9ydCB0eXBlIHsgQ2x1c3RlckVuZ2luZSB9IGZyb20gJ0BtYWluL2NsdXN0ZXIvY2x1c3Rlci1lbmdpbmUnOwppbXBvcnQgdHlwZSB7IEFjdGl2aXR5UmVwb3NpdG9yeSB9IGZyb20gJ0BtYWluL2RiL3JlcG9zaXRvcmllcyc7CgpleHBvcnQgY2xhc3MgQmFja3VwU2NoZWR1bGVyIHsKICBwcml2YXRlIHRhc2tzID0gbmV3IE1hcDxzdHJpbmcsIFNjaGVkdWxlZFRhc2s+KCk7CgogIGNvbnN0cnVjdG9yKAogICAgcHJpdmF0ZSBiYWNrdXBzOiBCYWNrdXBSZXBvc2l0b3J5LAogICAgcHJpdmF0ZSBjbHVzdGVyOiBDbHVzdGVyRW5naW5lLAogICAgcHJpdmF0ZSBhY3Rpdml0eTogQWN0aXZpdHlSZXBvc2l0b3J5LAogICkge30KCiAgcmVmcmVzaCgpOiB2b2lkIHsKICAgIGZvciAoY29uc3QgdGFzayBvZiB0aGlzLnRhc2tzLnZhbHVlcygpKSB0YXNrLnN0b3AoKTsKICAgIHRoaXMudGFza3MuY2xlYXIoKTsKICAgIGZvciAoY29uc3Qgam9iIG9mIHRoaXMuYmFja3Vwcy5saXN0KCkpIHsKICAgICAgaWYgKCFqb2IuZW5hYmxlZCkgY29udGludWU7CiAgICAgIGlmICghY3Jvbi52YWxpZGF0ZShqb2Iuc2NoZWR1bGUpKSBjb250aW51ZTsKICAgICAgY29uc3QgdGFzayA9IGNyb24uc2NoZWR1bGUoam9iLnNjaGVkdWxlLCBhc3luYyAoKSA9PiB7CiAgICAgICAgYXdhaXQgdGhpcy5ydW5Kb2Ioam9iKTsKICAgICAgfSk7CiAgICAgIHRoaXMudGFza3Muc2V0KGpvYi5pZCwgdGFzayk7CiAgICB9CiAgfQoKICBhc3luYyBydW5Kb2Ioam9iOiBCYWNrdXBKb2IpOiBQcm9taXNlPHZvaWQ+IHsKICAgIHRoaXMuYWN0aXZpdHkubG9nKHsgdHM6IERhdGUubm93KCksIGxldmVsOiAnaW5mbycsIGNhdGVnb3J5OiAnYmFja3VwJywgbWVzc2FnZTogYEJhY2t1cCBpbmljaWFkbzogJHtqb2IubmFtZX1gIH0pOwogICAgbGV0IHRvdGFsRmlsZXMgPSAwOwogICAgbGV0IGVycm9ycyA9IDA7CiAgICB0cnkgewogICAgICBmb3IgKGNvbnN0IHNyYyBvZiBqb2Iuc291cmNlUGF0aHMpIHsKICAgICAgICBjb25zdCBzdGF0ID0gYXdhaXQgaW1wb3J0KCdub2RlOmZzJykudGhlbigobSkgPT4gbS5wcm9taXNlcy5zdGF0KHNyYykuY2F0Y2goKCkgPT4gbnVsbCkpOwogICAgICAgIGlmICghc3RhdCkgY29udGludWU7CiAgICAgICAgaWYgKHN0YXQuaXNGaWxlKCkpIHsKICAgICAgICAgIGF3YWl0IHRoaXMuY2x1c3Rlci51cGxvYWRGaWxlKHNyYywgewogICAgICAgICAgICBsb2dpY2FsUGF0aDogam9iLnRhcmdldExvZ2ljYWxQYXRoLAogICAgICAgICAgICBlbmNyeXB0OiBqb2IuZW5jcnlwdCwKICAgICAgICAgICAgZGlzdHJpYnV0ZTogam9iLmRpc3RyaWJ1dGUsCiAgICAgICAgICB9KTsKICAgICAgICAgIHRvdGFsRmlsZXMrKzsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgY29uc3QgeyBkZWZhdWx0OiBmYXN0R2xvYiB9ID0gYXdhaXQgaW1wb3J0KCdmYXN0LWdsb2InKS5jYXRjaCgoKSA9PiAoeyBkZWZhdWx0OiBudWxsIGFzIGFueSB9KSk7CiAgICAgICAgICBjb25zdCBlbnRyaWVzOiBzdHJpbmdbXSA9IFtdOwogICAgICAgICAgaWYgKGZhc3RHbG9iKSB7CiAgICAgICAgICAgIGNvbnN0IGxpc3QgPSBhd2FpdCBmYXN0R2xvYignKiovKicsIHsgY3dkOiBzcmMsIGRvdDogZmFsc2UsIG9ubHlGaWxlczogdHJ1ZSB9KTsKICAgICAgICAgICAgZW50cmllcy5wdXNoKC4uLmxpc3QubWFwKChwKSA9PiBgJHtzcmN9LyR7cH1gKSk7CiAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAvLyBmYWxsYmFjayBtw61uaW1vOiB3YWxrCiAgICAgICAgICAgIGNvbnN0IHsgcmVhZGRpciB9ID0gYXdhaXQgaW1wb3J0KCdub2RlOmZzL3Byb21pc2VzJyk7CiAgICAgICAgICAgIGNvbnN0IHdhbGsgPSBhc3luYyAocDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiA9PiB7CiAgICAgICAgICAgICAgZm9yIChjb25zdCBlIG9mIGF3YWl0IHJlYWRkaXIocCwgeyB3aXRoRmlsZVR5cGVzOiB0cnVlIH0pKSB7CiAgICAgICAgICAgICAgICBjb25zdCBmdWxsID0gYCR7cH0vJHtlLm5hbWV9YDsKICAgICAgICAgICAgICAgIGlmIChlLmlzRGlyZWN0b3J5KCkpIGF3YWl0IHdhbGsoZnVsbCk7CiAgICAgICAgICAgICAgICBlbHNlIGVudHJpZXMucHVzaChmdWxsKTsKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH07CiAgICAgICAgICAgIGF3YWl0IHdhbGsoc3JjKTsKICAgICAgICAgIH0KICAgICAgICAgIGZvciAoY29uc3QgZmlsZSBvZiBlbnRyaWVzKSB7CiAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgYXdhaXQgdGhpcy5jbHVzdGVyLnVwbG9hZEZpbGUoZmlsZSwgewogICAgICAgICAgICAgICAgbG9naWNhbFBhdGg6IGpvYi50YXJnZXRMb2dpY2FsUGF0aCwKICAgICAgICAgICAgICAgIGVuY3J5cHQ6IGpvYi5lbmNyeXB0LAogICAgICAgICAgICAgICAgZGlzdHJpYnV0ZTogam9iLmRpc3RyaWJ1dGUsCiAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgdG90YWxGaWxlcysrOwogICAgICAgICAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgICAgICAgICBlcnJvcnMrKzsKICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfQogICAgICBjb25zdCBzdGF0dXM6ICdzdWNjZXNzJyB8ICdwYXJ0aWFsJyB8ICdmYWlsZWQnID0gZXJyb3JzID09PSAwID8gJ3N1Y2Nlc3MnIDogdG90YWxGaWxlcyA9PT0gMCA/ICdmYWlsZWQnIDogJ3BhcnRpYWwnOwogICAgICB0aGlzLmJhY2t1cHMudXBzZXJ0KHsgLi4uam9iLCBsYXN0UnVuQXQ6IERhdGUubm93KCksIGxhc3RSdW5TdGF0dXM6IHN0YXR1cyB9KTsKICAgICAgdGhpcy5hY3Rpdml0eS5sb2coeyB0czogRGF0ZS5ub3coKSwgbGV2ZWw6IHN0YXR1cyA9PT0gJ2ZhaWxlZCcgPyAnZXJyb3InIDogJ2luZm8nLCBjYXRlZ29yeTogJ2JhY2t1cCcsIG1lc3NhZ2U6IGBCYWNrdXAgJHtqb2IubmFtZX06ICR7c3RhdHVzfSAoJHt0b3RhbEZpbGVzfSBhcnF1aXZvcywgJHtlcnJvcnN9IGVycm9zKWAgfSk7CiAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgdGhpcy5iYWNrdXBzLnVwc2VydCh7IC4uLmpvYiwgbGFzdFJ1bkF0OiBEYXRlLm5vdygpLCBsYXN0UnVuU3RhdHVzOiAnZmFpbGVkJyB9KTsKICAgICAgdGhpcy5hY3Rpdml0eS5sb2coeyB0czogRGF0ZS5ub3coKSwgbGV2ZWw6ICdlcnJvcicsIGNhdGVnb3J5OiAnYmFja3VwJywgbWVzc2FnZTogYEJhY2t1cCBmYWxob3U6ICR7am9iLm5hbWV9YCwgZGV0YWlsOiB7IGVycm9yOiBTdHJpbmcoZXJyKSB9IH0pOwogICAgfQogIH0KfQo=
+/**
+ * Agendador de backups em node-cron.
+ * - Lê os jobs da tabela backups
+ * - Roda cada um na expressão cron configurada
+ * - Atualiza lastRunAt / nextRunAt
+ */
+import cron, { type ScheduledTask } from 'node-cron';
+import type { BackupRepository } from '@main/db/repositories';
+import type { BackupJob } from '@shared/types';
+import type { ClusterEngine } from '@main/cluster/cluster-engine';
+import type { ActivityRepository } from '@main/db/repositories';
+
+export class BackupScheduler {
+  private tasks = new Map<string, ScheduledTask>();
+
+  constructor(
+    private backups: BackupRepository,
+    private cluster: ClusterEngine,
+    private activity: ActivityRepository,
+  ) {}
+
+  refresh(): void {
+    for (const task of this.tasks.values()) task.stop();
+    this.tasks.clear();
+    for (const job of this.backups.list()) {
+      if (!job.enabled) continue;
+      if (!cron.validate(job.schedule)) continue;
+      const task = cron.schedule(job.schedule, async () => {
+        await this.runJob(job);
+      });
+      this.tasks.set(job.id, task);
+    }
+  }
+
+  async runJob(job: BackupJob): Promise<void> {
+    this.activity.log({ ts: Date.now(), level: 'info', category: 'backup', message: `Backup iniciado: ${job.name}` });
+    let totalFiles = 0;
+    let errors = 0;
+    try {
+      for (const src of job.sourcePaths) {
+        const stat = await import('node:fs').then((m) => m.promises.stat(src).catch(() => null));
+        if (!stat) continue;
+        if (stat.isFile()) {
+          await this.cluster.uploadFile(src, {
+            logicalPath: job.targetLogicalPath,
+            encrypt: job.encrypt,
+            distribute: job.distribute,
+          });
+          totalFiles++;
+        } else {
+          const { default: fastGlob } = await import('fast-glob').catch(() => ({ default: null as any }));
+          const entries: string[] = [];
+          if (fastGlob) {
+            const list = await fastGlob('**/*', { cwd: src, dot: false, onlyFiles: true });
+            entries.push(...list.map((p) => `${src}/${p}`));
+          } else {
+            // fallback mínimo: walk
+            const { readdir } = await import('node:fs/promises');
+            const walk = async (p: string): Promise<void> => {
+              for (const e of await readdir(p, { withFileTypes: true })) {
+                const full = `${p}/${e.name}`;
+                if (e.isDirectory()) await walk(full);
+                else entries.push(full);
+              }
+            };
+            await walk(src);
+          }
+          for (const file of entries) {
+            try {
+              await this.cluster.uploadFile(file, {
+                logicalPath: job.targetLogicalPath,
+                encrypt: job.encrypt,
+                distribute: job.distribute,
+              });
+              totalFiles++;
+            } catch (err) {
+              errors++;
+            }
+          }
+        }
+      }
+      const status: 'success' | 'partial' | 'failed' = errors === 0 ? 'success' : totalFiles === 0 ? 'failed' : 'partial';
+      this.backups.upsert({ ...job, lastRunAt: Date.now(), lastRunStatus: status });
+      this.activity.log({ ts: Date.now(), level: status === 'failed' ? 'error' : 'info', category: 'backup', message: `Backup ${job.name}: ${status} (${totalFiles} arquivos, ${errors} erros)` });
+    } catch (err) {
+      this.backups.upsert({ ...job, lastRunAt: Date.now(), lastRunStatus: 'failed' });
+      this.activity.log({ ts: Date.now(), level: 'error', category: 'backup', message: `Backup falhou: ${job.name}`, detail: { error: String(err) } });
+    }
+  }
+}
