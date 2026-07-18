@@ -1,1 +1,26 @@
-aW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCc7CmltcG9ydCB7IHVzZURlYm91bmNlZCB9IGZyb20gJy4uL3V0aWxzJzsKaW1wb3J0IHsgYXBpIH0gZnJvbSAnLi4vYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBUb3BiYXIoKSB7CiAgY29uc3QgW3EsIHNldFFdID0gdXNlU3RhdGUoJycpOwogIGNvbnN0IGRlYm91bmNlZCA9IHVzZURlYm91bmNlZChxLCAyMDApOwogIHJldHVybiAoCiAgICA8aGVhZGVyIGNsYXNzTmFtZT0idG9wYmFyIj4KICAgICAgPGgxPkJhc2NrIENsb3VkczwvaDE+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJncm93IiAvPgogICAgICA8aW5wdXQKICAgICAgICBjbGFzc05hbWU9InNlYXJjaCIKICAgICAgICBwbGFjZWhvbGRlcj0iQnVzY2FyIGVtIHRvZGFzIGFzIG51dmVuc+KApiIKICAgICAgICB2YWx1ZT17cX0KICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldFEoZS50YXJnZXQudmFsdWUpfQogICAgICAgIG9uS2V5RG93bj17YXN5bmMgKGUpID0+IHsKICAgICAgICAgIGlmIChlLmtleSA9PT0gJ0VudGVyJykgewogICAgICAgICAgICBjb25zdCByID0gYXdhaXQgYXBpLnNlYXJjaC5xdWVyeShkZWJvdW5jZWQpOwogICAgICAgICAgICBjb25zb2xlLmxvZyhyKTsKICAgICAgICAgIH0KICAgICAgICB9fQogICAgICAvPgogICAgPC9oZWFkZXI+CiAgKTsKfQo=
+import { useState } from 'react';
+import { useDebounced } from '../utils';
+import { api } from '../api';
+
+export function Topbar() {
+  const [q, setQ] = useState('');
+  const debounced = useDebounced(q, 200);
+  return (
+    <header className="topbar">
+      <h1>Basck Clouds</h1>
+      <div className="grow" />
+      <input
+        className="search"
+        placeholder="Buscar em todas as nuvens…"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        onKeyDown={async (e) => {
+          if (e.key === 'Enter') {
+            const r = await api.search.query(debounced);
+            console.log(r);
+          }
+        }}
+      />
+    </header>
+  );
+}
