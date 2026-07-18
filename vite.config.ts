@@ -1,1 +1,25 @@
-aW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSAndml0ZSc7CmltcG9ydCByZWFjdCBmcm9tICdAdml0ZWpzL3BsdWdpbi1yZWFjdCc7CmltcG9ydCBwYXRoIGZyb20gJ25vZGU6cGF0aCc7CgpleHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoewogIHJvb3Q6IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICdzcmMvcmVuZGVyZXInKSwKICBiYXNlOiAnLi8nLAogIGJ1aWxkOiB7CiAgICBvdXREaXI6IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICdkaXN0L3JlbmRlcmVyJyksCiAgICBlbXB0eU91dERpcjogdHJ1ZSwKICAgIHRhcmdldDogJ2VzbmV4dCcsCiAgICBzb3VyY2VtYXA6IHRydWUsCiAgfSwKICByZXNvbHZlOiB7CiAgICBhbGlhczogewogICAgICAnQHJlbmRlcmVyJzogcGF0aC5yZXNvbHZlKF9fZGlybmFtZSwgJ3NyYy9yZW5kZXJlcicpLAogICAgICAnQHNoYXJlZCc6IHBhdGgucmVzb2x2ZShfX2Rpcm5hbWUsICdzcmMvc2hhcmVkJyksCiAgICB9LAogIH0sCiAgc2VydmVyOiB7CiAgICBwb3J0OiA1MTczLAogICAgc3RyaWN0UG9ydDogdHJ1ZSwKICB9LAogIHBsdWdpbnM6IFtyZWFjdCgpXSwKfSk7Cg==
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'node:path';
+
+export default defineConfig({
+  root: path.resolve(__dirname, 'src/renderer'),
+  base: './',
+  build: {
+    outDir: path.resolve(__dirname, 'dist/renderer'),
+    emptyOutDir: true,
+    target: 'esnext',
+    sourcemap: true,
+  },
+  resolve: {
+    alias: {
+      '@renderer': path.resolve(__dirname, 'src/renderer'),
+      '@shared': path.resolve(__dirname, 'src/shared'),
+    },
+  },
+  server: {
+    port: 5173,
+    strictPort: true,
+  },
+  plugins: [react()],
+});
