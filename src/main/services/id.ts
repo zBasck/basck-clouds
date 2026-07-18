@@ -1,1 +1,29 @@
-LyoqCiAqIEhlbHBlcnMgZGUgaWRlbnRpZmljYcOnw6NvOiBnZXJhIElEcyBjdXJ0b3MsIHZhbGlkYSBwYXRocyBsw7NnaWNvcy4KICovCmltcG9ydCB7IHJhbmRvbUJ5dGVzLCBjcmVhdGVIYXNoIH0gZnJvbSAnbm9kZTpjcnlwdG8nOwoKZXhwb3J0IGZ1bmN0aW9uIHJhbmRvbUlkKGJ5dGVzID0gMTIpOiBzdHJpbmcgewogIHJldHVybiByYW5kb21CeXRlcyhieXRlcykudG9TdHJpbmcoJ2Jhc2U2NHVybCcpOwp9CgpleHBvcnQgZnVuY3Rpb24gc2hvcnRIYXNoKGlucHV0OiBzdHJpbmcgfCBCdWZmZXIpOiBzdHJpbmcgewogIHJldHVybiBjcmVhdGVIYXNoKCdzaGExJykudXBkYXRlKGlucHV0KS5kaWdlc3QoJ2hleCcpLnNsaWNlKDAsIDE2KTsKfQoKZXhwb3J0IGZ1bmN0aW9uIG5vcm1hbGl6ZUxvZ2ljYWxQYXRoKHBhdGg6IHN0cmluZyk6IHN0cmluZyB7CiAgaWYgKCFwYXRoIHx8IHBhdGggPT09ICcvJykgcmV0dXJuICcvJzsKICBjb25zdCBwYXJ0cyA9IHBhdGguc3BsaXQoJy8nKS5maWx0ZXIoQm9vbGVhbik7CiAgcmV0dXJuICcvJyArIHBhcnRzLmpvaW4oJy8nKTsKfQoKZXhwb3J0IGZ1bmN0aW9uIGpvaW5Mb2dpY2FsKGE6IHN0cmluZywgYjogc3RyaW5nKTogc3RyaW5nIHsKICBpZiAoYS5lbmRzV2l0aCgnLycpKSByZXR1cm4gbm9ybWFsaXplTG9naWNhbFBhdGgoYSArIGIpOwogIHJldHVybiBub3JtYWxpemVMb2dpY2FsUGF0aChhICsgJy8nICsgYik7Cn0KCmV4cG9ydCBmdW5jdGlvbiBwYXJlbnRPZihwYXRoOiBzdHJpbmcpOiBzdHJpbmcgewogIGlmIChwYXRoID09PSAnLycgfHwgIXBhdGguaW5jbHVkZXMoJy8nKSkgcmV0dXJuICcvJzsKICBjb25zdCBpZHggPSBwYXRoLmxhc3RJbmRleE9mKCcvJyk7CiAgcmV0dXJuIGlkeCA8PSAwID8gJy8nIDogcGF0aC5zbGljZSgwLCBpZHgpOwp9Cg==
+/**
+ * Helpers de identificação: gera IDs curtos, valida paths lógicos.
+ */
+import { randomBytes, createHash } from 'node:crypto';
+
+export function randomId(bytes = 12): string {
+  return randomBytes(bytes).toString('base64url');
+}
+
+export function shortHash(input: string | Buffer): string {
+  return createHash('sha1').update(input).digest('hex').slice(0, 16);
+}
+
+export function normalizeLogicalPath(path: string): string {
+  if (!path || path === '/') return '/';
+  const parts = path.split('/').filter(Boolean);
+  return '/' + parts.join('/');
+}
+
+export function joinLogical(a: string, b: string): string {
+  if (a.endsWith('/')) return normalizeLogicalPath(a + b);
+  return normalizeLogicalPath(a + '/' + b);
+}
+
+export function parentOf(path: string): string {
+  if (path === '/' || !path.includes('/')) return '/';
+  const idx = path.lastIndexOf('/');
+  return idx <= 0 ? '/' : path.slice(0, idx);
+}
