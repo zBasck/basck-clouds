@@ -1,1 +1,95 @@
-aW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCc7CmltcG9ydCB7IGFwaSB9IGZyb20gJy4uL2FwaSc7CgppbnRlcmZhY2UgUHJvcHMgewogIGV4aXN0czogYm9vbGVhbjsKICBvblVubG9ja2VkOiAoKSA9PiB2b2lkOwp9CgpleHBvcnQgZnVuY3Rpb24gQXV0aEdhdGUoeyBleGlzdHMsIG9uVW5sb2NrZWQgfTogUHJvcHMpIHsKICBjb25zdCBbcGFzc3dvcmQsIHNldFBhc3N3b3JkXSA9IHVzZVN0YXRlKCcnKTsKICBjb25zdCBbY29uZmlybSwgc2V0Q29uZmlybV0gPSB1c2VTdGF0ZSgnJyk7CiAgY29uc3QgW2hpbnQsIHNldEhpbnRdID0gdXNlU3RhdGUoJycpOwogIGNvbnN0IFtidXN5LCBzZXRCdXN5XSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbZXJyb3IsIHNldEVycm9yXSA9IHVzZVN0YXRlPHN0cmluZyB8IG51bGw+KG51bGwpOwoKICBhc3luYyBmdW5jdGlvbiBzdWJtaXQoKSB7CiAgICBzZXRCdXN5KHRydWUpOwogICAgc2V0RXJyb3IobnVsbCk7CiAgICB0cnkgewogICAgICBpZiAoIWV4aXN0cykgewogICAgICAgIGF3YWl0IGFwaS52YXVsdC5jcmVhdGUocGFzc3dvcmQsIGhpbnQgfHwgdW5kZWZpbmVkKTsKICAgICAgfSBlbHNlIHsKICAgICAgICBhd2FpdCBhcGkudmF1bHQudW5sb2NrKHBhc3N3b3JkKTsKICAgICAgfQogICAgICBvblVubG9ja2VkKCk7CiAgICB9IGNhdGNoIChlOiBhbnkpIHsKICAgICAgc2V0RXJyb3IoU3RyaW5nKGU/Lm1lc3NhZ2UgPz8gZSkpOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0QnVzeShmYWxzZSk7CiAgICB9CiAgfQoKICBjb25zdCBpc0NyZWF0ZSA9ICFleGlzdHM7CiAgY29uc3QgbWlzbWF0Y2ggPSBpc0NyZWF0ZSAmJiBwYXNzd29yZCAhPT0gY29uZmlybTsKCiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJhdXRoLWdhdGUiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0icGFuZWwiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJsb2dvIj5CQzwvZGl2PgogICAgICAgIDxoMT57aXNDcmVhdGUgPyAnQ3JpZSBzZXUgY29mcmUnIDogJ0JlbS12aW5kbyBkZSB2b2x0YSd9PC9oMT4KICAgICAgICA8cD4KICAgICAgICAgIHtpc0NyZWF0ZQogICAgICAgICAgICA/ICdEZWZpbmEgdW1hIHNlbmhhIG1lc3RyYS4gRWxhIGNpZnJhIHRvZGFzIGFzIHN1YXMgY3JlZGVuY2lhaXMgZSBhcnF1aXZvcyBubyBCYXNjayBDbG91ZHMuIFNlbSBlbGEsIG5pbmd1w6ltIOKAlCBuZW0gbsOzcyDigJQgcG9kZSBhY2Vzc2FyIHNldXMgZGFkb3MuJwogICAgICAgICAgICA6ICdEaWdpdGUgc3VhIHNlbmhhIG1lc3RyYSBwYXJhIGRlc2Jsb3F1ZWFyIG8gY29mcmUgbG9jYWwgZG8gQmFzY2sgQ2xvdWRzLid9CiAgICAgICAgPC9wPgogICAgICAgIDxmb3JtCiAgICAgICAgICBvblN1Ym1pdD17KGUpID0+IHsKICAgICAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgpOwogICAgICAgICAgICBpZiAoIW1pc21hdGNoKSBzdWJtaXQoKTsKICAgICAgICAgIH19CiAgICAgICAgPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZpZWxkIj4KICAgICAgICAgICAgPGxhYmVsPlNlbmhhIG1lc3RyYTwvbGFiZWw+CiAgICAgICAgICAgIDxpbnB1dAogICAgICAgICAgICAgIHR5cGU9InBhc3N3b3JkIgogICAgICAgICAgICAgIGF1dG9Gb2N1cwogICAgICAgICAgICAgIHZhbHVlPXtwYXNzd29yZH0KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldFBhc3N3b3JkKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iTcOtbmltbyAxMCBjYXJhY3RlcmVzLCBjb20gbGV0cmFzLCBuw7ptZXJvcyBlIHPDrW1ib2xvcyIKICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAge2lzQ3JlYXRlICYmICgKICAgICAgICAgICAgPD4KICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmllbGQiPgogICAgICAgICAgICAgICAgPGxhYmVsPkNvbmZpcm1lIGEgc2VuaGE8L2xhYmVsPgogICAgICAgICAgICAgICAgPGlucHV0CiAgICAgICAgICAgICAgICAgIHR5cGU9InBhc3N3b3JkIgogICAgICAgICAgICAgICAgICB2YWx1ZT17Y29uZmlybX0KICAgICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRDb25maXJtKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9IkRpZ2l0ZSBub3ZhbWVudGUiCiAgICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmaWVsZCI+CiAgICAgICAgICAgICAgICA8bGFiZWw+RGljYSAob3BjaW9uYWwpPC9sYWJlbD4KICAgICAgICAgICAgICAgIDxpbnB1dAogICAgICAgICAgICAgICAgICB2YWx1ZT17aGludH0KICAgICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRIaW50KGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9IkFwYXJlY2UgYXBlbmFzIG5hIHRlbGEgZGUgZGVzYmxvcXVlaW8iCiAgICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8Lz4KICAgICAgICAgICl9CiAgICAgICAgICB7bWlzbWF0Y2ggJiYgPHAgc3R5bGU9e3sgY29sb3I6ICd2YXIoLS1kYW5nZXIpJyB9fT5BcyBzZW5oYXMgbsOjbyBjb2luY2lkZW0uPC9wPn0KICAgICAgICAgIHtlcnJvciAmJiA8cCBzdHlsZT17eyBjb2xvcjogJ3ZhcigtLWRhbmdlciknIH19PntlcnJvcn08L3A+fQogICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9InByaW1hcnkiIHR5cGU9InN1Ym1pdCIgZGlzYWJsZWQ9e2J1c3kgfHwgbWlzbWF0Y2ggfHwgcGFzc3dvcmQubGVuZ3RoIDwgMTB9IHN0eWxlPXt7IHdpZHRoOiAnMTAwJScsIG1hcmdpblRvcDogMTIgfX0+CiAgICAgICAgICAgIHtidXN5ID8gJ1Byb2Nlc3NhbmRv4oCmJyA6IGlzQ3JlYXRlID8gJ0NyaWFyIGNvZnJlJyA6ICdEZXNibG9xdWVhcid9CiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICA8L2Zvcm0+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZvb3RlciI+CiAgICAgICAgICBTdWEgc2VuaGEgbnVuY2Egc2FpIGRlc3RlIGRpc3Bvc2l0aXZvLiBTZSB2b2PDqiBlc3F1ZWPDqi1sYSwgbyBjb2ZyZSBuw6NvIHBvZGUgc2VyIHJlY3VwZXJhZG8uIFVzZSB1bSBnZXJlbmNpYWRvciBkZSBzZW5oYXMuCiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQo=
+import { useState } from 'react';
+import { api } from '../api';
+
+interface Props {
+  exists: boolean;
+  onUnlocked: () => void;
+}
+
+export function AuthGate({ exists, onUnlocked }: Props) {
+  const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
+  const [hint, setHint] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function submit() {
+    setBusy(true);
+    setError(null);
+    try {
+      if (!exists) {
+        await api.vault.create(password, hint || undefined);
+      } else {
+        await api.vault.unlock(password);
+      }
+      onUnlocked();
+    } catch (e: any) {
+      setError(String(e?.message ?? e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const isCreate = !exists;
+  const mismatch = isCreate && password !== confirm;
+
+  return (
+    <div className="auth-gate">
+      <div className="panel">
+        <div className="logo">BC</div>
+        <h1>{isCreate ? 'Crie seu cofre' : 'Bem-vindo de volta'}</h1>
+        <p>
+          {isCreate
+            ? 'Defina uma senha mestra. Ela cifra todas as suas credenciais e arquivos no Basck Clouds. Sem ela, ninguém — nem nós — pode acessar seus dados.'
+            : 'Digite sua senha mestra para desbloquear o cofre local do Basck Clouds.'}
+        </p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (!mismatch) submit();
+          }}
+        >
+          <div className="field">
+            <label>Senha mestra</label>
+            <input
+              type="password"
+              autoFocus
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Mínimo 10 caracteres, com letras, números e símbolos"
+            />
+          </div>
+          {isCreate && (
+            <>
+              <div className="field">
+                <label>Confirme a senha</label>
+                <input
+                  type="password"
+                  value={confirm}
+                  onChange={(e) => setConfirm(e.target.value)}
+                  placeholder="Digite novamente"
+                />
+              </div>
+              <div className="field">
+                <label>Dica (opcional)</label>
+                <input
+                  value={hint}
+                  onChange={(e) => setHint(e.target.value)}
+                  placeholder="Aparece apenas na tela de desbloqueio"
+                />
+              </div>
+            </>
+          )}
+          {mismatch && <p style={{ color: 'var(--danger)' }}>As senhas não coincidem.</p>}
+          {error && <p style={{ color: 'var(--danger)' }}>{error}</p>}
+          <button className="primary" type="submit" disabled={busy || mismatch || password.length < 10} style={{ width: '100%', marginTop: 12 }}>
+            {busy ? 'Processando…' : isCreate ? 'Criar cofre' : 'Desbloquear'}
+          </button>
+        </form>
+        <div className="footer">
+          Sua senha nunca sai deste dispositivo. Se você esquecê-la, o cofre não pode ser recuperado. Use um gerenciador de senhas.
+        </div>
+      </div>
+    </div>
+  );
+}
