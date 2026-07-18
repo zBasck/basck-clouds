@@ -1,1 +1,250 @@
-LyoqCiAqIEFkYXB0YWRvciBnZW7DqXJpY28gY29tcGF0w612ZWwgY29tIGEgQVBJIFMzLgogKgogKiBTZXJ2ZSBBV1MgUzMsIENsb3VkZmxhcmUgUjIsIEJhY2tibGF6ZSBCMiAoUzMtY29tcGF0KSwKICogV2FzYWJpLCBEaWdpdGFsT2NlYW4gU3BhY2VzLCBHb29nbGUgQ2xvdWQgU3RvcmFnZSAoY29tIEhNQUMpLAogKiBBenVyZSBCbG9iICh2aWEgY3JlZGVuY2lhaXMgUzMtZW11bGF0aW5nKSwgZSBNaW5JTy4KICovCmltcG9ydCB7IGNyZWF0ZUhhc2gsIGNyZWF0ZUhtYWMgfSBmcm9tICdub2RlOmNyeXB0byc7CmltcG9ydCB7IGJhc2VuYW1lIH0gZnJvbSAnbm9kZTpwYXRoJzsKaW1wb3J0IHsgaHR0cFJlcXVlc3RBdXRvIH0gZnJvbSAnLi9odHRwLWNsaWVudCc7CmltcG9ydCB0eXBlIHsgQ2xvdWRQcm92aWRlciwgUHJvdmlkZXJMaXN0UmVzdWx0LCBQcm92aWRlckZpbGVFbnRyeSB9IGZyb20gJy4vdHlwZXMnOwppbXBvcnQgdHlwZSB7IENsb3VkQWNjb3VudCwgQ2xvdWRRdW90YSwgUHJvdmlkZXJJZCB9IGZyb20gJ0BzaGFyZWQvdHlwZXMnOwoKZXhwb3J0IGludGVyZmFjZSBTM0NvbmZpZyB7CiAgZW5kcG9pbnQ6IHN0cmluZzsgLy8gaHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tCiAgcmVnaW9uOiBzdHJpbmc7CiAgYnVja2V0OiBzdHJpbmc7CiAgYWNjZXNzS2V5SWQ6IHN0cmluZzsKICBzZWNyZXRBY2Nlc3NLZXk6IHN0cmluZzsKICBmb3JjZVBhdGhTdHlsZT86IGJvb2xlYW47Cn0KCmNvbnN0IFNFUlZJQ0VTOiB7IGlkOiBQcm92aWRlcklkOyBkZWZhdWx0RW5kcG9pbnQ6IHN0cmluZyB9W10gPSBbCiAgeyBpZDogJ3MzJywgZGVmYXVsdEVuZHBvaW50OiAnaHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tJyB9LAogIHsgaWQ6ICdjbG91ZGZsYXJlX3IyJywgZGVmYXVsdEVuZHBvaW50OiAnaHR0cHM6Ly97YWNjb3VudGlkfS5yMi5jbG91ZGZsYXJlc3RvcmFnZS5jb20nIH0sCiAgeyBpZDogJ2JhY2tibGF6ZWIyJywgZGVmYXVsdEVuZHBvaW50OiAnaHR0cHM6Ly9zMy57cmVnaW9ufS5iYWNrYmxhemViMi5jb20nIH0sCiAgeyBpZDogJ3dhc2FiaScsIGRlZmF1bHRFbmRwb2ludDogJ2h0dHBzOi8vczMue3JlZ2lvbn0ud2FzYWJpc3lzLmNvbScgfSwKICB7IGlkOiAnZGlnaXRhbG9jZWFuJywgZGVmYXVsdEVuZHBvaW50OiAnaHR0cHM6Ly97cmVnaW9ufS5kaWdpdGFsb2NlYW5zcGFjZXMuY29tJyB9LAogIHsgaWQ6ICdnY3MnLCBkZWZhdWx0RW5kcG9pbnQ6ICdodHRwczovL3N0b3JhZ2UuZ29vZ2xlYXBpcy5jb20nIH0sCiAgeyBpZDogJ2F6dXJlYmxvYicsIGRlZmF1bHRFbmRwb2ludDogJ2h0dHBzOi8ve2FjY291bnR9LmJsb2IuY29yZS53aW5kb3dzLm5ldCcgfSwKXTsKCmV4cG9ydCBmdW5jdGlvbiBkZWZhdWx0RW5kcG9pbnRGb3IoaWQ6IFByb3ZpZGVySWQpOiBzdHJpbmcgewogIGNvbnN0IHN2YyA9IFNFUlZJQ0VTLmZpbmQoKHMpID0+IHMuaWQgPT09IGlkKTsKICByZXR1cm4gc3ZjPy5kZWZhdWx0RW5kcG9pbnQgPz8gJ2h0dHBzOi8vczMuYW1hem9uYXdzLmNvbSc7Cn0KCmZ1bmN0aW9uIGhtYWMoa2V5OiBCdWZmZXIgfCBzdHJpbmcsIGRhdGE6IHN0cmluZyk6IEJ1ZmZlciB7CiAgcmV0dXJuIGNyZWF0ZUhtYWMoJ3NoYTI1NicsIGtleSkudXBkYXRlKGRhdGEpLmRpZ2VzdCgpOwp9CgpmdW5jdGlvbiBoYXNoKGRhdGE6IHN0cmluZyB8IEJ1ZmZlcik6IHN0cmluZyB7CiAgcmV0dXJuIGNyZWF0ZUhhc2goJ3NoYTI1NicpLnVwZGF0ZShkYXRhKS5kaWdlc3QoJ2hleCcpOwp9CgpmdW5jdGlvbiBoZXhIYXNoKGJ1ZjogQnVmZmVyKTogc3RyaW5nIHsKICByZXR1cm4gY3JlYXRlSGFzaCgnc2hhMjU2JykudXBkYXRlKGJ1ZikuZGlnZXN0KCdoZXgnKTsKfQoKZXhwb3J0IGNsYXNzIFMzQ29tcGF0aWJsZVByb3ZpZGVyIGltcGxlbWVudHMgQ2xvdWRQcm92aWRlciB7CiAgcmVhZG9ubHkgaWQ6IFByb3ZpZGVySWQ7CiAgY29uc3RydWN0b3IoaWQ6IFByb3ZpZGVySWQpIHsKICAgIHRoaXMuaWQgPSBpZDsKICB9CgogIHByaXZhdGUgY2ZnKGFjY291bnQ6IENsb3VkQWNjb3VudCk6IFMzQ29uZmlnIHsKICAgIHJldHVybiBKU09OLnBhcnNlKEJ1ZmZlci5mcm9tKGFjY291bnQuYXV0aC5jaXBoZXJ0ZXh0LCAnYmFzZTY0JykudG9TdHJpbmcoJ3V0ZjgnKSk7CiAgfQoKICBwcml2YXRlIGhvc3QoY2ZnOiBTM0NvbmZpZyk6IHN0cmluZyB7CiAgICBpZiAoY2ZnLmZvcmNlUGF0aFN0eWxlKSByZXR1cm4gY2ZnLmVuZHBvaW50LnJlcGxhY2UoL1wvJC8sICcnKSArICcvJyArIGNmZy5idWNrZXQ7CiAgICByZXR1cm4gY2ZnLmVuZHBvaW50LnJlcGxhY2UoL1wvJC8sICcnKSArICcvJyArIGNmZy5idWNrZXQ7CiAgfQoKICBwcml2YXRlIHNpZ24oY2ZnOiBTM0NvbmZpZywgbWV0aG9kOiBzdHJpbmcsIHBhdGg6IHN0cmluZywgcXVlcnk6IHN0cmluZywgaGVhZGVyczogUmVjb3JkPHN0cmluZywgc3RyaW5nPiwgYm9keUhhc2g6IHN0cmluZykgewogICAgY29uc3Qgbm93ID0gbmV3IERhdGUoKTsKICAgIGNvbnN0IGFtekRhdGUgPSBub3cudG9JU09TdHJpbmcoKS5yZXBsYWNlKC9bOi1dfFwuXGR7M30vZywgJycpOwogICAgY29uc3QgZGF0ZVN0YW1wID0gYW16RGF0ZS5zbGljZSgwLCA4KTsKICAgIGhlYWRlcnNbJ2hvc3QnXSA9IG5ldyBVUkwodGhpcy5ob3N0KGNmZykpLmhvc3Q7CiAgICBoZWFkZXJzWyd4LWFtei1kYXRlJ10gPSBhbXpEYXRlOwogICAgaGVhZGVyc1sneC1hbXotY29udGVudC1zaGEyNTYnXSA9IGJvZHlIYXNoOwoKICAgIGNvbnN0IHNvcnRlZEtleXMgPSBPYmplY3Qua2V5cyhoZWFkZXJzKS5zb3J0KCk7CiAgICBjb25zdCBjYW5vbmljYWxIZWFkZXJzID0gc29ydGVkS2V5cy5tYXAoKGspID0+IGAke2t9OiR7aGVhZGVyc1trXX1cbmApLmpvaW4oJycpOwogICAgY29uc3Qgc2lnbmVkSGVhZGVycyA9IHNvcnRlZEtleXMuam9pbignOycpOwoKICAgIGNvbnN0IGNhbm9uaWNhbFJlcXVlc3QgPSBbCiAgICAgIG1ldGhvZCwKICAgICAgcGF0aCwKICAgICAgcXVlcnksCiAgICAgIGNhbm9uaWNhbEhlYWRlcnMsCiAgICAgIHNpZ25lZEhlYWRlcnMsCiAgICAgIGJvZHlIYXNoLAogICAgXS5qb2luKCdcbicpOwoKICAgIGNvbnN0IHNjb3BlID0gYCR7ZGF0ZVN0YW1wfS8ke2NmZy5yZWdpb259L3MzL2F3czRfcmVxdWVzdGA7CiAgICBjb25zdCBzdHJpbmdUb1NpZ24gPSBbJ0FXUzQtSE1BQy1TSEEyNTYnLCBhbXpEYXRlLCBzY29wZSwgaGFzaChjYW5vbmljYWxSZXF1ZXN0KV0uam9pbignXG4nKTsKCiAgICBjb25zdCBrRGF0ZSA9IGhtYWMoJ0FXUzQnICsgY2ZnLnNlY3JldEFjY2Vzc0tleSwgZGF0ZVN0YW1wKTsKICAgIGNvbnN0IGtSZWdpb24gPSBobWFjKGtEYXRlLCBjZmcucmVnaW9uKTsKICAgIGNvbnN0IGtTZXJ2aWNlID0gaG1hYyhrUmVnaW9uLCAnczMnKTsKICAgIGNvbnN0IGtTaWduaW5nID0gaG1hYyhrU2VydmljZSwgJ2F3czRfcmVxdWVzdCcpOwogICAgY29uc3Qgc2lnbmF0dXJlID0gY3JlYXRlSG1hYygnc2hhMjU2Jywga1NpZ25pbmcpLnVwZGF0ZShzdHJpbmdUb1NpZ24pLmRpZ2VzdCgnaGV4Jyk7CgogICAgaGVhZGVyc1snQXV0aG9yaXphdGlvbiddID0gYEFXUzQtSE1BQy1TSEEyNTYgQ3JlZGVudGlhbD0ke2NmZy5hY2Nlc3NLZXlJZH0vJHtzY29wZX0sIFNpZ25lZEhlYWRlcnM9JHtzaWduZWRIZWFkZXJzfSwgU2lnbmF0dXJlPSR7c2lnbmF0dXJlfWA7CiAgICByZXR1cm4gaGVhZGVyczsKICB9CgogIGFzeW5jIGF1dGhlbnRpY2F0ZShwYXlsb2FkOiBSZWNvcmQ8c3RyaW5nLCB1bmtub3duPiwgYWNjb3VudDogQ2xvdWRBY2NvdW50KTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCBjZmc6IFMzQ29uZmlnID0gewogICAgICBlbmRwb2ludDogKHBheWxvYWQuZW5kcG9pbnQgYXMgc3RyaW5nKSB8fCBkZWZhdWx0RW5kcG9pbnRGb3IodGhpcy5pZCksCiAgICAgIHJlZ2lvbjogKHBheWxvYWQucmVnaW9uIGFzIHN0cmluZykgfHwgJ3VzLWVhc3QtMScsCiAgICAgIGJ1Y2tldDogcGF5bG9hZC5idWNrZXQgYXMgc3RyaW5nLAogICAgICBhY2Nlc3NLZXlJZDogcGF5bG9hZC5hY2Nlc3NLZXlJZCBhcyBzdHJpbmcsCiAgICAgIHNlY3JldEFjY2Vzc0tleTogcGF5bG9hZC5zZWNyZXRBY2Nlc3NLZXkgYXMgc3RyaW5nLAogICAgICBmb3JjZVBhdGhTdHlsZTogISFwYXlsb2FkLmZvcmNlUGF0aFN0eWxlLAogICAgfTsKICAgIGFjY291bnQuYXV0aC5jaXBoZXJ0ZXh0ID0gQnVmZmVyLmZyb20oSlNPTi5zdHJpbmdpZnkoY2ZnKSkudG9TdHJpbmcoJ2Jhc2U2NCcpOwogIH0KCiAgYXN5bmMgbGlzdChhY2NvdW50OiBDbG91ZEFjY291bnQsIHJlbW90ZVBhdGg6IHN0cmluZywgY3Vyc29yPzogc3RyaW5nKTogUHJvbWlzZTxQcm92aWRlckxpc3RSZXN1bHQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3QgcHJlZml4ID0gcmVtb3RlUGF0aCA9PT0gJy8nID8gJycgOiByZW1vdGVQYXRoLnJlcGxhY2UoL15cLy8sICcnKSArICcvJzsKICAgIGNvbnN0IHF1ZXJ5ID0gbmV3IFVSTFNlYXJjaFBhcmFtcyh7ICdsaXN0LXR5cGUnOiAnMicsIHByZWZpeCwgJ2RlbGltaXRlcic6ICcvJyB9KTsKICAgIGlmIChjdXJzb3IpIHF1ZXJ5LnNldCgnY29udGludWF0aW9uLXRva2VuJywgY3Vyc29yKTsKICAgIGNvbnN0IGhlYWRlcnM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7fTsKICAgIGNvbnN0IHBhdGggPSBjZmcuZm9yY2VQYXRoU3R5bGUgPyAnLycgOiAnLyc7CiAgICB0aGlzLnNpZ24oY2ZnLCAnR0VUJywgcGF0aCwgcXVlcnkudG9TdHJpbmcoKSwgaGVhZGVycywgJ1VOU0lHTkVELVBBWUxPQUQnKTsKICAgIGNvbnN0IHVybCA9IGAke3RoaXMuaG9zdChjZmcpfT8ke3F1ZXJ5fWA7CiAgICBjb25zdCByZXMgPSBhd2FpdCBodHRwUmVxdWVzdEF1dG8odXJsLCB7IG1ldGhvZDogJ0dFVCcsIGhlYWRlcnMgfSk7CiAgICBjb25zdCBib2R5ID0gcmVzLmJvZHkudG9TdHJpbmcoJ3V0ZjgnKTsKICAgIHJldHVybiB0aGlzLnBhcnNlTGlzdFJlc3BvbnNlKGJvZHksIHJlbW90ZVBhdGgpOwogIH0KCiAgcHJpdmF0ZSBwYXJzZUxpc3RSZXNwb25zZSh4bWw6IHN0cmluZywgcmVtb3RlUGF0aDogc3RyaW5nKTogUHJvdmlkZXJMaXN0UmVzdWx0IHsKICAgIGNvbnN0IGVudHJpZXM6IFByb3ZpZGVyRmlsZUVudHJ5W10gPSBbXTsKICAgIGNvbnN0IGZpbGVSZSA9IC88Q29udGVudHM+KFtcc1xTXSo/KTxcL0NvbnRlbnRzPi9nOwogICAgbGV0IG06IFJlZ0V4cEV4ZWNBcnJheSB8IG51bGw7CiAgICB3aGlsZSAoKG0gPSBmaWxlUmUuZXhlYyh4bWwpKSkgewogICAgICBjb25zdCBibG9jayA9IG1bMV07CiAgICAgIGNvbnN0IGtleSA9IGJsb2NrLm1hdGNoKC88S2V5PiguKj8pPFwvS2V5Pi8pPy5bMV0gPz8gJyc7CiAgICAgIGNvbnN0IHNpemUgPSBOdW1iZXIoYmxvY2subWF0Y2goLzxTaXplPiguKj8pPFwvU2l6ZT4vKT8uWzFdID8/IDApOwogICAgICBjb25zdCBsYXN0TW9kID0gYmxvY2subWF0Y2goLzxMYXN0TW9kaWZpZWQ+KC4qPyk8XC9MYXN0TW9kaWZpZWQ+Lyk/LlsxXSA/PyAnJzsKICAgICAgZW50cmllcy5wdXNoKHsKICAgICAgICBpZDoga2V5LAogICAgICAgIG5hbWU6IGtleS5zcGxpdCgnLycpLnBvcCgpID8/IGtleSwKICAgICAgICByZW1vdGVQYXRoOiAnLycgKyBrZXksCiAgICAgICAgc2l6ZSwKICAgICAgICBpc0RpcjogZmFsc2UsCiAgICAgICAgbWltZVR5cGU6ICdhcHBsaWNhdGlvbi9vY3RldC1zdHJlYW0nLAogICAgICAgIG1vZGlmaWVkQXQ6IERhdGUucGFyc2UobGFzdE1vZCksCiAgICAgIH0pOwogICAgfQogICAgY29uc3QgZGlyUmUgPSAvPENvbW1vblByZWZpeGVzPihbXHNcU10qPyk8XC9Db21tb25QcmVmaXhlcz4vZzsKICAgIHdoaWxlICgobSA9IGRpclJlLmV4ZWMoeG1sKSkpIHsKICAgICAgY29uc3QgcHJlZml4ID0gbVsxXS5tYXRjaCgvPFByZWZpeD4oLio/KTxcL1ByZWZpeD4vKT8uWzFdID8/ICcnOwogICAgICBlbnRyaWVzLnB1c2goewogICAgICAgIGlkOiBwcmVmaXgsCiAgICAgICAgbmFtZTogcHJlZml4LnNwbGl0KCcvJykuZmlsdGVyKEJvb2xlYW4pLnBvcCgpID8/IHByZWZpeCwKICAgICAgICByZW1vdGVQYXRoOiAnLycgKyBwcmVmaXgsCiAgICAgICAgc2l6ZTogMCwKICAgICAgICBpc0RpcjogdHJ1ZSwKICAgICAgICBtaW1lVHlwZTogJ2lub2RlL2RpcmVjdG9yeScsCiAgICAgICAgbW9kaWZpZWRBdDogMCwKICAgICAgfSk7CiAgICB9CiAgICBjb25zdCBjdXJzb3IgPSB4bWwubWF0Y2goLzxOZXh0Q29udGludWF0aW9uVG9rZW4+KC4qPyk8XC9OZXh0Q29udGludWF0aW9uVG9rZW4+Lyk/LlsxXTsKICAgIHJldHVybiB7IGVudHJpZXMsIGN1cnNvciB9OwogIH0KCiAgYXN5bmMgdXBsb2FkKAogICAgYWNjb3VudDogQ2xvdWRBY2NvdW50LAogICAgcmVtb3RlUGF0aDogc3RyaW5nLAogICAgZGF0YTogQnVmZmVyLAogICAgb3B0aW9ucz86IHsgbWltZVR5cGU/OiBzdHJpbmc7IHByb2dyZXNzPzogKHNlbnQ6IG51bWJlciwgdG90YWw6IG51bWJlcikgPT4gdm9pZCB9LAogICk6IFByb21pc2U8UHJvdmlkZXJGaWxlRW50cnk+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3Qga2V5ID0gcmVtb3RlUGF0aC5yZXBsYWNlKC9eXC8vLCAnJyk7CiAgICBjb25zdCBib2R5SGFzaCA9IGhleEhhc2goZGF0YSk7CiAgICBjb25zdCBoZWFkZXJzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0geyAnY29udGVudC10eXBlJzogb3B0aW9ucz8ubWltZVR5cGUgPz8gJ2FwcGxpY2F0aW9uL29jdGV0LXN0cmVhbScsICdjb250ZW50LWxlbmd0aCc6IFN0cmluZyhkYXRhLmxlbmd0aCkgfTsKICAgIGNvbnN0IHBhdGggPSBjZmcuZm9yY2VQYXRoU3R5bGUgPyBgLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGtleSl9YCA6IGAvJHtlbmNvZGVVUklDb21wb25lbnQoa2V5KX1gOwogICAgdGhpcy5zaWduKGNmZywgJ1BVVCcsIHBhdGgsICcnLCBoZWFkZXJzLCBib2R5SGFzaCk7CiAgICBjb25zdCB1cmwgPSBgJHt0aGlzLmhvc3QoY2ZnKX0vJHtlbmNvZGVVUklDb21wb25lbnQoa2V5KX1gOwogICAgYXdhaXQgaHR0cFJlcXVlc3RBdXRvKHVybCwgeyBtZXRob2Q6ICdQVVQnLCBoZWFkZXJzLCBib2R5OiBkYXRhLCBvblByb2dyZXNzOiBvcHRpb25zPy5wcm9ncmVzcyB9KTsKICAgIHJldHVybiB7CiAgICAgIGlkOiBrZXksCiAgICAgIG5hbWU6IGJhc2VuYW1lKHJlbW90ZVBhdGgpLAogICAgICByZW1vdGVQYXRoLAogICAgICBzaXplOiBkYXRhLmxlbmd0aCwKICAgICAgaXNEaXI6IGZhbHNlLAogICAgICBtaW1lVHlwZTogb3B0aW9ucz8ubWltZVR5cGUgPz8gJ2FwcGxpY2F0aW9uL29jdGV0LXN0cmVhbScsCiAgICAgIG1vZGlmaWVkQXQ6IERhdGUubm93KCksCiAgICB9OwogIH0KCiAgYXN5bmMgZG93bmxvYWQoYWNjb3VudDogQ2xvdWRBY2NvdW50LCByZW1vdGVQYXRoOiBzdHJpbmcsIGRlc3RQYXRoOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3Qga2V5ID0gcmVtb3RlUGF0aC5yZXBsYWNlKC9eXC8vLCAnJyk7CiAgICBjb25zdCBoZWFkZXJzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0ge307CiAgICBjb25zdCBwYXRoID0gY2ZnLmZvcmNlUGF0aFN0eWxlID8gYC8ke2VuY29kZVVSSUNvbXBvbmVudChrZXkpfWAgOiBgLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGtleSl9YDsKICAgIHRoaXMuc2lnbihjZmcsICdHRVQnLCBwYXRoLCAnJywgaGVhZGVycywgJ1VOU0lHTkVELVBBWUxPQUQnKTsKICAgIGNvbnN0IHVybCA9IGAke3RoaXMuaG9zdChjZmcpfS8ke2VuY29kZVVSSUNvbXBvbmVudChrZXkpfWA7CiAgICBjb25zdCByZXMgPSBhd2FpdCBodHRwUmVxdWVzdEF1dG8odXJsLCB7IG1ldGhvZDogJ0dFVCcsIGhlYWRlcnMgfSk7CiAgICBhd2FpdCBpbXBvcnQoJ25vZGU6ZnMvcHJvbWlzZXMnKS50aGVuKChmcykgPT4gZnMud3JpdGVGaWxlKGRlc3RQYXRoLCByZXMuYm9keSkpOwogIH0KCiAgYXN5bmMgcmVhZFJhbmdlKGFjY291bnQ6IENsb3VkQWNjb3VudCwgcmVtb3RlUGF0aDogc3RyaW5nLCBzdGFydDogbnVtYmVyLCBlbmQ6IG51bWJlcik6IFByb21pc2U8QnVmZmVyPiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGNvbnN0IGtleSA9IHJlbW90ZVBhdGgucmVwbGFjZSgvXlwvLywgJycpOwogICAgY29uc3QgaGVhZGVyczogUmVjb3JkPHN0cmluZywgc3RyaW5nPiA9IHsgUmFuZ2U6IGBieXRlcz0ke3N0YXJ0fS0ke2VuZH1gIH07CiAgICBjb25zdCBwYXRoID0gY2ZnLmZvcmNlUGF0aFN0eWxlID8gYC8ke2VuY29kZVVSSUNvbXBvbmVudChrZXkpfWAgOiBgLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGtleSl9YDsKICAgIHRoaXMuc2lnbihjZmcsICdHRVQnLCBwYXRoLCAnJywgaGVhZGVycywgJ1VOU0lHTkVELVBBWUxPQUQnKTsKICAgIGNvbnN0IHVybCA9IGAke3RoaXMuaG9zdChjZmcpfS8ke2VuY29kZVVSSUNvbXBvbmVudChrZXkpfWA7CiAgICBjb25zdCByZXMgPSBhd2FpdCBodHRwUmVxdWVzdEF1dG8odXJsLCB7IG1ldGhvZDogJ0dFVCcsIGhlYWRlcnMgfSk7CiAgICByZXR1cm4gcmVzLmJvZHk7CiAgfQoKICBhc3luYyBta2RpcihhY2NvdW50OiBDbG91ZEFjY291bnQsIHJlbW90ZVBhdGg6IHN0cmluZyk6IFByb21pc2U8dm9pZD4gewogICAgY29uc3QgY2ZnID0gdGhpcy5jZmcoYWNjb3VudCk7CiAgICBjb25zdCBrZXkgPSByZW1vdGVQYXRoLnJlcGxhY2UoL15cLy8sICcnKS5yZXBsYWNlKC9cLz8kLywgJy8nKTsKICAgIGNvbnN0IGhlYWRlcnM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7ICdjb250ZW50LXR5cGUnOiAnYXBwbGljYXRpb24veC1kaXJlY3RvcnknLCAnY29udGVudC1sZW5ndGgnOiAnMCcgfTsKICAgIGNvbnN0IHBhdGggPSBjZmcuZm9yY2VQYXRoU3R5bGUgPyBgLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGtleSl9YCA6IGAvJHtlbmNvZGVVUklDb21wb25lbnQoa2V5KX1gOwogICAgdGhpcy5zaWduKGNmZywgJ1BVVCcsIHBhdGgsICcnLCBoZWFkZXJzLCBoZXhIYXNoKEJ1ZmZlci5hbGxvYygwKSkpOwogICAgYXdhaXQgaHR0cFJlcXVlc3RBdXRvKGAke3RoaXMuaG9zdChjZmcpfS8ke2VuY29kZVVSSUNvbXBvbmVudChrZXkpfWAsIHsgbWV0aG9kOiAnUFVUJywgaGVhZGVycywgYm9keTogQnVmZmVyLmFsbG9jKDApIH0pOwogIH0KCiAgYXN5bmMgcmVuYW1lKGFjY291bnQ6IENsb3VkQWNjb3VudCwgZnJvbVBhdGg6IHN0cmluZywgdG9QYXRoOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3QgZnJvbUtleSA9IGZyb21QYXRoLnJlcGxhY2UoL15cLy8sICcnKTsKICAgIGNvbnN0IHRvS2V5ID0gdG9QYXRoLnJlcGxhY2UoL15cLy8sICcnKTsKICAgIGNvbnN0IGhlYWRlcnM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7fTsKICAgIGNvbnN0IHBhdGggPSBjZmcuZm9yY2VQYXRoU3R5bGUgPyBgLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGZyb21LZXkpfWAgOiBgLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGZyb21LZXkpfWA7CiAgICB0aGlzLnNpZ24oY2ZnLCAnREVMRVRFJywgcGF0aCwgJycsIGhlYWRlcnMsICdVTlNJR05FRC1QQVlMT0FEJyk7CiAgICAvLyBSZW5vbWVhciA9IGNvcHkgKyBkZWxldGUKICAgIGNvbnN0IGNvcHlIZWFkZXJzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0geyAneC1hbXotY29weS1zb3VyY2UnOiBgLyR7Y2ZnLmJ1Y2tldH0vJHtlbmNvZGVVUklDb21wb25lbnQoZnJvbUtleSl9YCB9OwogICAgdGhpcy5zaWduKGNmZywgJ1BVVCcsIGAvJHtlbmNvZGVVUklDb21wb25lbnQodG9LZXkpfWAsICcnLCBjb3B5SGVhZGVycywgJ1VOU0lHTkVELVBBWUxPQUQnKTsKICAgIGF3YWl0IGh0dHBSZXF1ZXN0QXV0byhgJHt0aGlzLmhvc3QoY2ZnKX0vJHtlbmNvZGVVUklDb21wb25lbnQodG9LZXkpfT9tZXRhZGF0YS1kaXJlY3RpdmU9Q09QWWAsIHsgbWV0aG9kOiAnUFVUJywgaGVhZGVyczogY29weUhlYWRlcnMgfSk7CiAgICAvLyBkZWxldGUKICAgIGNvbnN0IHVybCA9IGAke3RoaXMuaG9zdChjZmcpfS8ke2VuY29kZVVSSUNvbXBvbmVudChmcm9tS2V5KX1gOwogICAgYXdhaXQgaHR0cFJlcXVlc3RBdXRvKHVybCwgeyBtZXRob2Q6ICdERUxFVEUnLCBoZWFkZXJzOiB0aGlzLnNpZ24oY2ZnLCAnREVMRVRFJywgYC8ke2VuY29kZVVSSUNvbXBvbmVudChmcm9tS2V5KX1gLCAnJywge30sICdVTlNJR05FRC1QQVlMT0FEJykgfSk7CiAgfQoKICBhc3luYyBkZWxldGUoYWNjb3VudDogQ2xvdWRBY2NvdW50LCByZW1vdGVQYXRoOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3Qga2V5ID0gcmVtb3RlUGF0aC5yZXBsYWNlKC9eXC8vLCAnJyk7CiAgICBjb25zdCBoZWFkZXJzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0ge307CiAgICBjb25zdCBwYXRoID0gY2ZnLmZvcmNlUGF0aFN0eWxlID8gYC8ke2VuY29kZVVSSUNvbXBvbmVudChrZXkpfWAgOiBgLyR7ZW5jb2RlVVJJQ29tcG9uZW50KGtleSl9YDsKICAgIHRoaXMuc2lnbihjZmcsICdERUxFVEUnLCBwYXRoLCAnJywgaGVhZGVycywgJ1VOU0lHTkVELVBBWUxPQUQnKTsKICAgIGF3YWl0IGh0dHBSZXF1ZXN0QXV0byhgJHt0aGlzLmhvc3QoY2ZnKX0vJHtlbmNvZGVVUklDb21wb25lbnQoa2V5KX1gLCB7IG1ldGhvZDogJ0RFTEVURScsIGhlYWRlcnMgfSk7CiAgfQoKICBhc3luYyBwaW5nKGFjY291bnQ6IENsb3VkQWNjb3VudCk6IFByb21pc2U8Ym9vbGVhbj4gewogICAgdHJ5IHsKICAgICAgYXdhaXQgdGhpcy5saXN0KGFjY291bnQsICcvJyk7CiAgICAgIHJldHVybiB0cnVlOwogICAgfSBjYXRjaCB7CiAgICAgIHJldHVybiBmYWxzZTsKICAgIH0KICB9Cn0K
+/**
+ * Adaptador genérico compatível com a API S3.
+ *
+ * Serve AWS S3, Cloudflare R2, Backblaze B2 (S3-compat),
+ * Wasabi, DigitalOcean Spaces, Google Cloud Storage (com HMAC),
+ * Azure Blob (via credenciais S3-emulating), e MinIO.
+ */
+import { createHash, createHmac } from 'node:crypto';
+import { basename } from 'node:path';
+import { httpRequestAuto } from './http-client';
+import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
+import type { CloudAccount, CloudQuota, ProviderId } from '@shared/types';
+
+export interface S3Config {
+  endpoint: string; // https://s3.amazonaws.com
+  region: string;
+  bucket: string;
+  accessKeyId: string;
+  secretAccessKey: string;
+  forcePathStyle?: boolean;
+}
+
+const SERVICES: { id: ProviderId; defaultEndpoint: string }[] = [
+  { id: 's3', defaultEndpoint: 'https://s3.amazonaws.com' },
+  { id: 'cloudflare_r2', defaultEndpoint: 'https://{accountid}.r2.cloudflarestorage.com' },
+  { id: 'backblazeb2', defaultEndpoint: 'https://s3.{region}.backblazeb2.com' },
+  { id: 'wasabi', defaultEndpoint: 'https://s3.{region}.wasabisys.com' },
+  { id: 'digitalocean', defaultEndpoint: 'https://{region}.digitaloceanspaces.com' },
+  { id: 'gcs', defaultEndpoint: 'https://storage.googleapis.com' },
+  { id: 'azureblob', defaultEndpoint: 'https://{account}.blob.core.windows.net' },
+];
+
+export function defaultEndpointFor(id: ProviderId): string {
+  const svc = SERVICES.find((s) => s.id === id);
+  return svc?.defaultEndpoint ?? 'https://s3.amazonaws.com';
+}
+
+function hmac(key: Buffer | string, data: string): Buffer {
+  return createHmac('sha256', key).update(data).digest();
+}
+
+function hash(data: string | Buffer): string {
+  return createHash('sha256').update(data).digest('hex');
+}
+
+function hexHash(buf: Buffer): string {
+  return createHash('sha256').update(buf).digest('hex');
+}
+
+export class S3CompatibleProvider implements CloudProvider {
+  readonly id: ProviderId;
+  constructor(id: ProviderId) {
+    this.id = id;
+  }
+
+  private cfg(account: CloudAccount): S3Config {
+    return JSON.parse(Buffer.from(account.auth.ciphertext, 'base64').toString('utf8'));
+  }
+
+  private host(cfg: S3Config): string {
+    if (cfg.forcePathStyle) return cfg.endpoint.replace(/\/$/, '') + '/' + cfg.bucket;
+    return cfg.endpoint.replace(/\/$/, '') + '/' + cfg.bucket;
+  }
+
+  private sign(cfg: S3Config, method: string, path: string, query: string, headers: Record<string, string>, bodyHash: string) {
+    const now = new Date();
+    const amzDate = now.toISOString().replace(/[:-]|\.\d{3}/g, '');
+    const dateStamp = amzDate.slice(0, 8);
+    headers['host'] = new URL(this.host(cfg)).host;
+    headers['x-amz-date'] = amzDate;
+    headers['x-amz-content-sha256'] = bodyHash;
+
+    const sortedKeys = Object.keys(headers).sort();
+    const canonicalHeaders = sortedKeys.map((k) => `${k}:${headers[k]}\n`).join('');
+    const signedHeaders = sortedKeys.join(';');
+
+    const canonicalRequest = [
+      method,
+      path,
+      query,
+      canonicalHeaders,
+      signedHeaders,
+      bodyHash,
+    ].join('\n');
+
+    const scope = `${dateStamp}/${cfg.region}/s3/aws4_request`;
+    const stringToSign = ['AWS4-HMAC-SHA256', amzDate, scope, hash(canonicalRequest)].join('\n');
+
+    const kDate = hmac('AWS4' + cfg.secretAccessKey, dateStamp);
+    const kRegion = hmac(kDate, cfg.region);
+    const kService = hmac(kRegion, 's3');
+    const kSigning = hmac(kService, 'aws4_request');
+    const signature = createHmac('sha256', kSigning).update(stringToSign).digest('hex');
+
+    headers['Authorization'] = `AWS4-HMAC-SHA256 Credential=${cfg.accessKeyId}/${scope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
+    return headers;
+  }
+
+  async authenticate(payload: Record<string, unknown>, account: CloudAccount): Promise<void> {
+    const cfg: S3Config = {
+      endpoint: (payload.endpoint as string) || defaultEndpointFor(this.id),
+      region: (payload.region as string) || 'us-east-1',
+      bucket: payload.bucket as string,
+      accessKeyId: payload.accessKeyId as string,
+      secretAccessKey: payload.secretAccessKey as string,
+      forcePathStyle: !!payload.forcePathStyle,
+    };
+    account.auth.ciphertext = Buffer.from(JSON.stringify(cfg)).toString('base64');
+  }
+
+  async list(account: CloudAccount, remotePath: string, cursor?: string): Promise<ProviderListResult> {
+    const cfg = this.cfg(account);
+    const prefix = remotePath === '/' ? '' : remotePath.replace(/^\//, '') + '/';
+    const query = new URLSearchParams({ 'list-type': '2', prefix, 'delimiter': '/' });
+    if (cursor) query.set('continuation-token', cursor);
+    const headers: Record<string, string> = {};
+    const path = cfg.forcePathStyle ? '/' : '/';
+    this.sign(cfg, 'GET', path, query.toString(), headers, 'UNSIGNED-PAYLOAD');
+    const url = `${this.host(cfg)}?${query}`;
+    const res = await httpRequestAuto(url, { method: 'GET', headers });
+    const body = res.body.toString('utf8');
+    return this.parseListResponse(body, remotePath);
+  }
+
+  private parseListResponse(xml: string, remotePath: string): ProviderListResult {
+    const entries: ProviderFileEntry[] = [];
+    const fileRe = /<Contents>([\s\S]*?)<\/Contents>/g;
+    let m: RegExpExecArray | null;
+    while ((m = fileRe.exec(xml))) {
+      const block = m[1];
+      const key = block.match(/<Key>(.*?)<\/Key>/)?.[1] ?? '';
+      const size = Number(block.match(/<Size>(.*?)<\/Size>/)?.[1] ?? 0);
+      const lastMod = block.match(/<LastModified>(.*?)<\/LastModified>/)?.[1] ?? '';
+      entries.push({
+        id: key,
+        name: key.split('/').pop() ?? key,
+        remotePath: '/' + key,
+        size,
+        isDir: false,
+        mimeType: 'application/octet-stream',
+        modifiedAt: Date.parse(lastMod),
+      });
+    }
+    const dirRe = /<CommonPrefixes>([\s\S]*?)<\/CommonPrefixes>/g;
+    while ((m = dirRe.exec(xml))) {
+      const prefix = m[1].match(/<Prefix>(.*?)<\/Prefix>/)?.[1] ?? '';
+      entries.push({
+        id: prefix,
+        name: prefix.split('/').filter(Boolean).pop() ?? prefix,
+        remotePath: '/' + prefix,
+        size: 0,
+        isDir: true,
+        mimeType: 'inode/directory',
+        modifiedAt: 0,
+      });
+    }
+    const cursor = xml.match(/<NextContinuationToken>(.*?)<\/NextContinuationToken>/)?.[1];
+    return { entries, cursor };
+  }
+
+  async upload(
+    account: CloudAccount,
+    remotePath: string,
+    data: Buffer,
+    options?: { mimeType?: string; progress?: (sent: number, total: number) => void },
+  ): Promise<ProviderFileEntry> {
+    const cfg = this.cfg(account);
+    const key = remotePath.replace(/^\//, '');
+    const bodyHash = hexHash(data);
+    const headers: Record<string, string> = { 'content-type': options?.mimeType ?? 'application/octet-stream', 'content-length': String(data.length) };
+    const path = cfg.forcePathStyle ? `/${encodeURIComponent(key)}` : `/${encodeURIComponent(key)}`;
+    this.sign(cfg, 'PUT', path, '', headers, bodyHash);
+    const url = `${this.host(cfg)}/${encodeURIComponent(key)}`;
+    await httpRequestAuto(url, { method: 'PUT', headers, body: data, onProgress: options?.progress });
+    return {
+      id: key,
+      name: basename(remotePath),
+      remotePath,
+      size: data.length,
+      isDir: false,
+      mimeType: options?.mimeType ?? 'application/octet-stream',
+      modifiedAt: Date.now(),
+    };
+  }
+
+  async download(account: CloudAccount, remotePath: string, destPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    const key = remotePath.replace(/^\//, '');
+    const headers: Record<string, string> = {};
+    const path = cfg.forcePathStyle ? `/${encodeURIComponent(key)}` : `/${encodeURIComponent(key)}`;
+    this.sign(cfg, 'GET', path, '', headers, 'UNSIGNED-PAYLOAD');
+    const url = `${this.host(cfg)}/${encodeURIComponent(key)}`;
+    const res = await httpRequestAuto(url, { method: 'GET', headers });
+    await import('node:fs/promises').then((fs) => fs.writeFile(destPath, res.body));
+  }
+
+  async readRange(account: CloudAccount, remotePath: string, start: number, end: number): Promise<Buffer> {
+    const cfg = this.cfg(account);
+    const key = remotePath.replace(/^\//, '');
+    const headers: Record<string, string> = { Range: `bytes=${start}-${end}` };
+    const path = cfg.forcePathStyle ? `/${encodeURIComponent(key)}` : `/${encodeURIComponent(key)}`;
+    this.sign(cfg, 'GET', path, '', headers, 'UNSIGNED-PAYLOAD');
+    const url = `${this.host(cfg)}/${encodeURIComponent(key)}`;
+    const res = await httpRequestAuto(url, { method: 'GET', headers });
+    return res.body;
+  }
+
+  async mkdir(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    const key = remotePath.replace(/^\//, '').replace(/\/?$/, '/');
+    const headers: Record<string, string> = { 'content-type': 'application/x-directory', 'content-length': '0' };
+    const path = cfg.forcePathStyle ? `/${encodeURIComponent(key)}` : `/${encodeURIComponent(key)}`;
+    this.sign(cfg, 'PUT', path, '', headers, hexHash(Buffer.alloc(0)));
+    await httpRequestAuto(`${this.host(cfg)}/${encodeURIComponent(key)}`, { method: 'PUT', headers, body: Buffer.alloc(0) });
+  }
+
+  async rename(account: CloudAccount, fromPath: string, toPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    const fromKey = fromPath.replace(/^\//, '');
+    const toKey = toPath.replace(/^\//, '');
+    const headers: Record<string, string> = {};
+    const path = cfg.forcePathStyle ? `/${encodeURIComponent(fromKey)}` : `/${encodeURIComponent(fromKey)}`;
+    this.sign(cfg, 'DELETE', path, '', headers, 'UNSIGNED-PAYLOAD');
+    // Renomear = copy + delete
+    const copyHeaders: Record<string, string> = { 'x-amz-copy-source': `/${cfg.bucket}/${encodeURIComponent(fromKey)}` };
+    this.sign(cfg, 'PUT', `/${encodeURIComponent(toKey)}`, '', copyHeaders, 'UNSIGNED-PAYLOAD');
+    await httpRequestAuto(`${this.host(cfg)}/${encodeURIComponent(toKey)}?metadata-directive=COPY`, { method: 'PUT', headers: copyHeaders });
+    // delete
+    const url = `${this.host(cfg)}/${encodeURIComponent(fromKey)}`;
+    await httpRequestAuto(url, { method: 'DELETE', headers: this.sign(cfg, 'DELETE', `/${encodeURIComponent(fromKey)}`, '', {}, 'UNSIGNED-PAYLOAD') });
+  }
+
+  async delete(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    const key = remotePath.replace(/^\//, '');
+    const headers: Record<string, string> = {};
+    const path = cfg.forcePathStyle ? `/${encodeURIComponent(key)}` : `/${encodeURIComponent(key)}`;
+    this.sign(cfg, 'DELETE', path, '', headers, 'UNSIGNED-PAYLOAD');
+    await httpRequestAuto(`${this.host(cfg)}/${encodeURIComponent(key)}`, { method: 'DELETE', headers });
+  }
+
+  async ping(account: CloudAccount): Promise<boolean> {
+    try {
+      await this.list(account, '/');
+      return true;
+    } catch {
+      return false;
+    }
+  }
+}
