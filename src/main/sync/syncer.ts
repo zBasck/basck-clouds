@@ -1,1 +1,99 @@
-LyoqCiAqIFNpbmNyb25pemHDp8OjbyBkZSBwYXN0YXMgbG9jYWlzIGNvbSBvIGNsdXN0ZXIuCiAqIFVzYSBjaG9raWRhciBwYXJhIG9ic2VydmFyIG8gc2lzdGVtYSBkZSBhcnF1aXZvcyBlCiAqIGFwbGljYSBhIGRpcmXDp8OjbyBjb25maWd1cmFkYSAodXBsb2FkLCBkb3dubG9hZCBvdSB0d28td2F5KS4KICovCmltcG9ydCBjaG9raWRhciwgeyB0eXBlIEZTV2F0Y2hlciB9IGZyb20gJ2Nob2tpZGFyJzsKaW1wb3J0IHsgcHJvbWlzZXMgYXMgZnMgfSBmcm9tICdub2RlOmZzJzsKaW1wb3J0IHsgYmFzZW5hbWUsIGpvaW4sIHJlbGF0aXZlIH0gZnJvbSAnbm9kZTpwYXRoJzsKaW1wb3J0IHR5cGUgeyBTeW5jUmVwb3NpdG9yeSwgQ2x1c3RlclJlcG9zaXRvcnksIEFjY291bnRSZXBvc2l0b3J5LCBBY3Rpdml0eVJlcG9zaXRvcnkgfSBmcm9tICdAbWFpbi9kYi9yZXBvc2l0b3JpZXMnOwppbXBvcnQgdHlwZSB7IENsdXN0ZXJFbmdpbmUgfSBmcm9tICdAbWFpbi9jbHVzdGVyL2NsdXN0ZXItZW5naW5lJzsKaW1wb3J0IHR5cGUgeyBTeW5jUGFpciB9IGZyb20gJ0BzaGFyZWQvdHlwZXMnOwppbXBvcnQgeyBqb2luTG9naWNhbCwgbm9ybWFsaXplTG9naWNhbFBhdGggfSBmcm9tICdAbWFpbi9zZXJ2aWNlcy9pZCc7CgpleHBvcnQgY2xhc3MgRm9sZGVyU3luY2VyIHsKICBwcml2YXRlIHdhdGNoZXJzID0gbmV3IE1hcDxzdHJpbmcsIEZTV2F0Y2hlcj4oKTsKCiAgY29uc3RydWN0b3IoCiAgICBwcml2YXRlIHN5bmM6IFN5bmNSZXBvc2l0b3J5LAogICAgcHJpdmF0ZSBjbHVzdGVyOiBDbHVzdGVyRW5naW5lLAogICAgcHJpdmF0ZSBjbHVzdGVyUmVwbzogQ2x1c3RlclJlcG9zaXRvcnksCiAgICBwcml2YXRlIGFjY291bnRzOiBBY2NvdW50UmVwb3NpdG9yeSwKICAgIHByaXZhdGUgYWN0aXZpdHk6IEFjdGl2aXR5UmVwb3NpdG9yeSwKICApIHt9CgogIHJlZnJlc2goKTogdm9pZCB7CiAgICBmb3IgKGNvbnN0IHcgb2YgdGhpcy53YXRjaGVycy52YWx1ZXMoKSkgdy5jbG9zZSgpOwogICAgdGhpcy53YXRjaGVycy5jbGVhcigpOwogICAgZm9yIChjb25zdCBwYWlyIG9mIHRoaXMuc3luYy5saXN0KCkpIHsKICAgICAgaWYgKCFwYWlyLmVuYWJsZWQpIGNvbnRpbnVlOwogICAgICBpZiAocGFpci5tb2RlICE9PSAnYXV0bycpIGNvbnRpbnVlOwogICAgICB0aGlzLnN0YXJ0UGFpcihwYWlyKTsKICAgIH0KICB9CgogIHN0YXJ0UGFpcihwYWlyOiBTeW5jUGFpcik6IHZvaWQgewogICAgY29uc3Qgd2F0Y2hlciA9IGNob2tpZGFyLndhdGNoKHBhaXIubG9jYWxQYXRoLCB7IGlnbm9yZUluaXRpYWw6IGZhbHNlLCBpZ25vcmVkOiBwYWlyLmlnbm9yZVBhdHRlcm5zLCBwZXJzaXN0ZW50OiB0cnVlIH0pOwogICAgd2F0Y2hlci5vbignYWRkJywgKHApID0+IHRoaXMuaGFuZGxlTG9jYWxBZGQocGFpciwgcCkuY2F0Y2goKCkgPT4gdW5kZWZpbmVkKSk7CiAgICB3YXRjaGVyLm9uKCdjaGFuZ2UnLCAocCkgPT4gdGhpcy5oYW5kbGVMb2NhbEFkZChwYWlyLCBwKS5jYXRjaCgoKSA9PiB1bmRlZmluZWQpKTsKICAgIHdhdGNoZXIub24oJ3VubGluaycsIChwKSA9PiB0aGlzLmhhbmRsZUxvY2FsRGVsZXRlKHBhaXIsIHApLmNhdGNoKCgpID0+IHVuZGVmaW5lZCkpOwogICAgdGhpcy53YXRjaGVycy5zZXQocGFpci5pZCwgd2F0Y2hlcik7CiAgfQoKICBhc3luYyBydW5PbmNlKHBhaXI6IFN5bmNQYWlyKTogUHJvbWlzZTx7IHVwbG9hZGVkOiBudW1iZXI7IGRvd25sb2FkZWQ6IG51bWJlcjsgZXJyb3JzOiBudW1iZXIgfT4gewogICAgbGV0IHVwbG9hZGVkID0gMCwgZG93bmxvYWRlZCA9IDAsIGVycm9ycyA9IDA7CiAgICBpZiAocGFpci5kaXJlY3Rpb24gPT09ICd1cGxvYWQnIHx8IHBhaXIuZGlyZWN0aW9uID09PSAndHdvLXdheScpIHsKICAgICAgY29uc3QgZmlsZXMgPSBhd2FpdCB0aGlzLndhbGsocGFpci5sb2NhbFBhdGgsIHBhaXIuaWdub3JlUGF0dGVybnMpOwogICAgICBmb3IgKGNvbnN0IGYgb2YgZmlsZXMpIHsKICAgICAgICB0cnkgewogICAgICAgICAgYXdhaXQgdGhpcy5jbHVzdGVyLnVwbG9hZEZpbGUoZiwgeyBsb2dpY2FsUGF0aDogcGFpci5sb2dpY2FsUGF0aCwgZW5jcnlwdDogcGFpci5lbmNyeXB0LCBkaXN0cmlidXRlOiB0cnVlIH0pOwogICAgICAgICAgdXBsb2FkZWQrKzsKICAgICAgICB9IGNhdGNoIHsgZXJyb3JzKys7IH0KICAgICAgfQogICAgfQogICAgaWYgKHBhaXIuZGlyZWN0aW9uID09PSAnZG93bmxvYWQnIHx8IHBhaXIuZGlyZWN0aW9uID09PSAndHdvLXdheScpIHsKICAgICAgY29uc3QgaXRlbXMgPSB0aGlzLmNsdXN0ZXJSZXBvLmxpc3QocGFpci5sb2dpY2FsUGF0aCk7CiAgICAgIGZvciAoY29uc3QgaXRlbSBvZiBpdGVtcykgewogICAgICAgIGlmIChpdGVtLmlzRGlyKSBjb250aW51ZTsKICAgICAgICB0cnkgewogICAgICAgICAgYXdhaXQgdGhpcy5jbHVzdGVyLmRvd25sb2FkSXRlbShpdGVtLmlkLCB7IGRlc3RpbmF0aW9uOiBwYWlyLmxvY2FsUGF0aCB9KTsKICAgICAgICAgIGRvd25sb2FkZWQrKzsKICAgICAgICB9IGNhdGNoIHsgZXJyb3JzKys7IH0KICAgICAgfQogICAgfQogICAgdGhpcy5zeW5jLnVwc2VydCh7IC4uLnBhaXIsIGxhc3RTeW5jQXQ6IERhdGUubm93KCkgfSk7CiAgICB0aGlzLmFjdGl2aXR5LmxvZyh7IHRzOiBEYXRlLm5vdygpLCBsZXZlbDogZXJyb3JzID8gJ3dhcm4nIDogJ2luZm8nLCBjYXRlZ29yeTogJ3N5bmMnLCBtZXNzYWdlOiBgU3luYyAiJHtwYWlyLm5hbWV9IiBjb25jbHXDrWRvICjihpEke3VwbG9hZGVkfSDihpMke2Rvd25sb2FkZWR9ICEke2Vycm9yc30pYCB9KTsKICAgIHJldHVybiB7IHVwbG9hZGVkLCBkb3dubG9hZGVkLCBlcnJvcnMgfTsKICB9CgogIHByaXZhdGUgYXN5bmMgaGFuZGxlTG9jYWxBZGQocGFpcjogU3luY1BhaXIsIGxvY2FsUGF0aDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCByZWwgPSByZWxhdGl2ZShwYWlyLmxvY2FsUGF0aCwgbG9jYWxQYXRoKS5yZXBsYWNlKC9cXC9nLCAnLycpOwogICAgY29uc3QgdGFyZ2V0ID0gam9pbkxvZ2ljYWwocGFpci5sb2dpY2FsUGF0aCwgcmVsKTsKICAgIGF3YWl0IHRoaXMuY2x1c3Rlci51cGxvYWRGaWxlKGxvY2FsUGF0aCwgeyBsb2dpY2FsUGF0aDogdGFyZ2V0LCBlbmNyeXB0OiBwYWlyLmVuY3J5cHQsIGRpc3RyaWJ1dGU6IHRydWUgfSk7CiAgICB0aGlzLnN5bmMudXBzZXJ0KHsgLi4ucGFpciwgbGFzdFN5bmNBdDogRGF0ZS5ub3coKSB9KTsKICAgIHRoaXMuYWN0aXZpdHkubG9nKHsgdHM6IERhdGUubm93KCksIGxldmVsOiAnaW5mbycsIGNhdGVnb3J5OiAnc3luYycsIG1lc3NhZ2U6IGBTeW5jIOKGkSAke3JlbH1gIH0pOwogIH0KCiAgcHJpdmF0ZSBhc3luYyBoYW5kbGVMb2NhbERlbGV0ZShwYWlyOiBTeW5jUGFpciwgbG9jYWxQYXRoOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IHJlbCA9IHJlbGF0aXZlKHBhaXIubG9jYWxQYXRoLCBsb2NhbFBhdGgpLnJlcGxhY2UoL1xcL2csICcvJyk7CiAgICBjb25zdCB0YXJnZXQgPSBqb2luTG9naWNhbChwYWlyLmxvZ2ljYWxQYXRoLCByZWwpOwogICAgY29uc3QgaXRlbSA9IHRoaXMuY2x1c3RlclJlcG8uZ2V0QnlQYXRoKHRhcmdldCk7CiAgICBpZiAoaXRlbSkgdGhpcy5jbHVzdGVyUmVwby5zb2Z0RGVsZXRlKHRhcmdldCk7CiAgICB0aGlzLmFjdGl2aXR5LmxvZyh7IHRzOiBEYXRlLm5vdygpLCBsZXZlbDogJ2luZm8nLCBjYXRlZ29yeTogJ3N5bmMnLCBtZXNzYWdlOiBgU3luYyDinJUgJHtyZWx9YCB9KTsKICB9CgogIHByaXZhdGUgYXN5bmMgd2FsayhkaXI6IHN0cmluZywgaWdub3JlOiBzdHJpbmdbXSk6IFByb21pc2U8c3RyaW5nW10+IHsKICAgIGNvbnN0IG91dDogc3RyaW5nW10gPSBbXTsKICAgIGNvbnN0IHdhbGsgPSBhc3luYyAocDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiA9PiB7CiAgICAgIGNvbnN0IGVudHJpZXMgPSBhd2FpdCBmcy5yZWFkZGlyKHAsIHsgd2l0aEZpbGVUeXBlczogdHJ1ZSB9KTsKICAgICAgZm9yIChjb25zdCBlIG9mIGVudHJpZXMpIHsKICAgICAgICBjb25zdCBmdWxsID0gam9pbihwLCBlLm5hbWUpOwogICAgICAgIGlmIChpZ25vcmUuc29tZSgoaWcpID0+IGUubmFtZSA9PT0gaWcgfHwgZnVsbC5pbmNsdWRlcyhpZykpKSBjb250aW51ZTsKICAgICAgICBpZiAoZS5pc0RpcmVjdG9yeSgpKSBhd2FpdCB3YWxrKGZ1bGwpOwogICAgICAgIGVsc2Ugb3V0LnB1c2goZnVsbCk7CiAgICAgIH0KICAgIH07CiAgICB0cnkgeyBhd2FpdCB3YWxrKGRpcik7IH0gY2F0Y2ggeyAvKiBkaXIgaW5leGlzdGVudGUgKi8gfQogICAgcmV0dXJuIG91dDsKICB9Cn0K
+/**
+ * Sincronização de pastas locais com o cluster.
+ * Usa chokidar para observar o sistema de arquivos e
+ * aplica a direção configurada (upload, download ou two-way).
+ */
+import chokidar, { type FSWatcher } from 'chokidar';
+import { promises as fs } from 'node:fs';
+import { basename, join, relative } from 'node:path';
+import type { SyncRepository, ClusterRepository, AccountRepository, ActivityRepository } from '@main/db/repositories';
+import type { ClusterEngine } from '@main/cluster/cluster-engine';
+import type { SyncPair } from '@shared/types';
+import { joinLogical, normalizeLogicalPath } from '@main/services/id';
+
+export class FolderSyncer {
+  private watchers = new Map<string, FSWatcher>();
+
+  constructor(
+    private sync: SyncRepository,
+    private cluster: ClusterEngine,
+    private clusterRepo: ClusterRepository,
+    private accounts: AccountRepository,
+    private activity: ActivityRepository,
+  ) {}
+
+  refresh(): void {
+    for (const w of this.watchers.values()) w.close();
+    this.watchers.clear();
+    for (const pair of this.sync.list()) {
+      if (!pair.enabled) continue;
+      if (pair.mode !== 'auto') continue;
+      this.startPair(pair);
+    }
+  }
+
+  startPair(pair: SyncPair): void {
+    const watcher = chokidar.watch(pair.localPath, { ignoreInitial: false, ignored: pair.ignorePatterns, persistent: true });
+    watcher.on('add', (p) => this.handleLocalAdd(pair, p).catch(() => undefined));
+    watcher.on('change', (p) => this.handleLocalAdd(pair, p).catch(() => undefined));
+    watcher.on('unlink', (p) => this.handleLocalDelete(pair, p).catch(() => undefined));
+    this.watchers.set(pair.id, watcher);
+  }
+
+  async runOnce(pair: SyncPair): Promise<{ uploaded: number; downloaded: number; errors: number }> {
+    let uploaded = 0, downloaded = 0, errors = 0;
+    if (pair.direction === 'upload' || pair.direction === 'two-way') {
+      const files = await this.walk(pair.localPath, pair.ignorePatterns);
+      for (const f of files) {
+        try {
+          await this.cluster.uploadFile(f, { logicalPath: pair.logicalPath, encrypt: pair.encrypt, distribute: true });
+          uploaded++;
+        } catch { errors++; }
+      }
+    }
+    if (pair.direction === 'download' || pair.direction === 'two-way') {
+      const items = this.clusterRepo.list(pair.logicalPath);
+      for (const item of items) {
+        if (item.isDir) continue;
+        try {
+          await this.cluster.downloadItem(item.id, { destination: pair.localPath });
+          downloaded++;
+        } catch { errors++; }
+      }
+    }
+    this.sync.upsert({ ...pair, lastSyncAt: Date.now() });
+    this.activity.log({ ts: Date.now(), level: errors ? 'warn' : 'info', category: 'sync', message: `Sync "${pair.name}" concluído (↑${uploaded} ↓${downloaded} !${errors})` });
+    return { uploaded, downloaded, errors };
+  }
+
+  private async handleLocalAdd(pair: SyncPair, localPath: string): Promise<void> {
+    const rel = relative(pair.localPath, localPath).replace(/\\/g, '/');
+    const target = joinLogical(pair.logicalPath, rel);
+    await this.cluster.uploadFile(localPath, { logicalPath: target, encrypt: pair.encrypt, distribute: true });
+    this.sync.upsert({ ...pair, lastSyncAt: Date.now() });
+    this.activity.log({ ts: Date.now(), level: 'info', category: 'sync', message: `Sync ↑ ${rel}` });
+  }
+
+  private async handleLocalDelete(pair: SyncPair, localPath: string): Promise<void> {
+    const rel = relative(pair.localPath, localPath).replace(/\\/g, '/');
+    const target = joinLogical(pair.logicalPath, rel);
+    const item = this.clusterRepo.getByPath(target);
+    if (item) this.clusterRepo.softDelete(target);
+    this.activity.log({ ts: Date.now(), level: 'info', category: 'sync', message: `Sync ✕ ${rel}` });
+  }
+
+  private async walk(dir: string, ignore: string[]): Promise<string[]> {
+    const out: string[] = [];
+    const walk = async (p: string): Promise<void> => {
+      const entries = await fs.readdir(p, { withFileTypes: true });
+      for (const e of entries) {
+        const full = join(p, e.name);
+        if (ignore.some((ig) => e.name === ig || full.includes(ig))) continue;
+        if (e.isDirectory()) await walk(full);
+        else out.push(full);
+      }
+    };
+    try { await walk(dir); } catch { /* dir inexistente */ }
+    return out;
+  }
+}
