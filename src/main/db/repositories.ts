@@ -1,7 +1,10 @@
 /**
  * Repositórios — encapsulam as queries de cada entidade.
+ * Adaptado para `node:sqlite`: usa placeholders posicionais `?` em vez
+ * de named params (`@x`), e `StatementSync` (preparado uma vez no
+ * construtor) para reduzir overhead de parsing em cada chamada).
  */
-import type { DB } from './index';
+import type { DB, StatementSync } from 'node:sqlite';
 import type {
   CloudAccount,
   ClusterItem,
@@ -14,12 +17,16 @@ import type {
 import { randomId } from '@main/services/id';
 
 export class AccountRepository {
-  constructor(private db: DB) {}
+  private upsertStmt: StatementSync;
+  private listStmt: StatementSync;
+  private getStmt: StatementSync;
+  private deleteStmt: StatementSync;
+  private updateStatusStmt: StatementSync;
 
-  upsert(account: CloudAccount): void {
-    const stmt = this.db.prepare(`
+  constructor(private db: DB) {
+    this.upsertStmt = db.prepare(`
       INSERT INTO accounts (id, provider_id, label, email, status, error, auth_blob, preferences, created_at, updated_at)
-      VALUES (@id, @provider_id, @label, @email, @status, @error, @auth_blob, @preferences, @created_at, @updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(id) DO UPDATE SET
         provider_id=excluded.provider_id,
         label=excluded.label,
@@ -30,127 +37,140 @@ export class AccountRepository {
         preferences=excluded.preferences,
         updated_at=excluded.updated_at
     `);
-    stmt.run({
-      id: account.id,
-      provider_id: account.providerId,
-      label: account.label,
-      email: account.email ?? null,
-      status: account.status,
-      error: account.error ?? null,
-      auth_blob: account.auth.ciphertext,
-      preferences: JSON.stringify(account.preferences),
-      created_at: account.createdAt,
-      updated_at: account.updatedAt,
-    });
+    this.listStmt = db.prepare(`SELECT * FROM accounts ORDER BY created_at ASC`);
+    this.getStmt = db.prepare(`SELECT * FROM accounts WHERE id = ?`);
+    this.deleteStmt = db.prepare(`DELETE FROM accounts WHERE id = ?`);
+    this.updateStatusStmt = db.prepare(`UPDATE accounts SET status = ?, error = ?, updated_at = ? WHERE id = ?`);
+  }
+
+  upsert(account: CloudAccount): void {
+    this.upsertStmt.run(
+      account.id,
+      account.providerId,
+      account.label,
+      account.email ?? null,
+      account.status,
+      account.error ?? null,
+      account.auth.ciphertext,
+      JSON.stringify(account.preferences),
+      account.createdAt,
+      account.updatedAt,
+    );
   }
 
   list(): CloudAccount[] {
-    const rows = this.db
-      .prepare(`SELECT * FROM accounts ORDER BY created_at ASC`)
-      .all() as any[];
-    return rows.map((r) => ({
-      id: r.id,
-      providerId: r.provider_id,
-      label: r.label,
-      email: r.email,
-      status: r.status,
-      error: r.error ?? undefined,
-      auth: { algorithm: 'aes-256-gcm', iv: '', tag: '', ciphertext: r.auth_blob, salt: '', iterations: 0 },
-      createdAt: r.created_at,
-      updatedAt: r.updated_at,
-      preferences: JSON.parse(r.preferences),
-    }));
+    const rows = this.listStmt.all() as any[];
+    return rows.map(this.rowToAccount);
   }
 
   get(id: string): CloudAccount | undefined {
-    const r = this.db.prepare(`SELECT * FROM accounts WHERE id = ?`).get(id) as any;
-    if (!r) return undefined;
-    return {
-      id: r.id,
-      providerId: r.provider_id,
-      label: r.label,
-      email: r.email,
-      status: r.status,
-      error: r.error ?? undefined,
-      auth: { algorithm: 'aes-256-gcm', iv: '', tag: '', ciphertext: r.auth_blob, salt: '', iterations: 0 },
-      createdAt: r.created_at,
-      updatedAt: r.updated_at,
-      preferences: JSON.parse(r.preferences),
-    };
+    const r = this.getStmt.get(id) as any;
+    return r ? this.rowToAccount(r) : undefined;
   }
 
   delete(id: string): void {
-    this.db.prepare(`DELETE FROM accounts WHERE id = ?`).run(id);
+    this.deleteStmt.run(id);
   }
 
   updateStatus(id: string, status: CloudAccount['status'], error?: string): void {
-    this.db
-      .prepare(`UPDATE accounts SET status = ?, error = ?, updated_at = ? WHERE id = ?`)
-      .run(status, error ?? null, Date.now(), id);
+    this.updateStatusStmt.run(status, error ?? null, Date.now(), id);
   }
+
+  private rowToAccount = (r: any): CloudAccount => ({
+    id: r.id,
+    providerId: r.provider_id,
+    label: r.label,
+    email: r.email,
+    status: r.status,
+    error: r.error ?? undefined,
+    auth: {
+      algorithm: 'aes-256-gcm',
+      iv: '',
+      tag: '',
+      ciphertext: r.auth_blob,
+      salt: '',
+      iterations: 0,
+    },
+    createdAt: r.created_at,
+    updatedAt: r.updated_at,
+    preferences: JSON.parse(r.preferences),
+  });
 }
 
 export class ClusterRepository {
-  constructor(private db: DB) {}
+  private upsertStmt: StatementSync;
+  private listStmt: StatementSync;
+  private getByPathStmt: StatementSync;
+  private getStmt: StatementSync;
+  private softDeleteStmt: StatementSync;
+
+  constructor(private db: DB) {
+    this.upsertStmt = db.prepare(
+      `INSERT INTO cluster_items (id, logical_path, parent_path, name, size, mime_type, is_dir, created_at, updated_at, content_hash, chunks, encryption, origin_account_id, deleted_at, version)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, 1)
+       ON CONFLICT(id) DO UPDATE SET
+         logical_path=excluded.logical_path,
+         parent_path=excluded.parent_path,
+         name=excluded.name,
+         size=excluded.size,
+         mime_type=excluded.mime_type,
+         updated_at=excluded.updated_at,
+         content_hash=excluded.content_hash,
+         chunks=excluded.chunks,
+         encryption=excluded.encryption,
+         origin_account_id=excluded.origin_account_id,
+         deleted_at=NULL,
+         version=version+1
+      `,
+    );
+    this.listStmt = db.prepare(
+      `SELECT * FROM cluster_items WHERE parent_path = ? AND deleted_at IS NULL ORDER BY is_dir DESC, name COLLATE NOCASE ASC`,
+    );
+    this.getByPathStmt = db.prepare(
+      `SELECT * FROM cluster_items WHERE logical_path = ? AND deleted_at IS NULL ORDER BY version DESC LIMIT 1`,
+    );
+    this.getStmt = db.prepare(`SELECT * FROM cluster_items WHERE id = ?`);
+    this.softDeleteStmt = db.prepare(`UPDATE cluster_items SET deleted_at = ? WHERE logical_path = ?`);
+  }
 
   upsert(item: ClusterItem): void {
-    this.db
-      .prepare(
-        `INSERT INTO cluster_items (id, logical_path, parent_path, name, size, mime_type, is_dir, created_at, updated_at, content_hash, chunks, encryption, origin_account_id, deleted_at, version)
-         VALUES (@id, @logical_path, @parent_path, @name, @size, @mime_type, @is_dir, @created_at, @updated_at, @content_hash, @chunks, @encryption, @origin_account_id, NULL, 1)
-         ON CONFLICT(id) DO UPDATE SET
-           logical_path=excluded.logical_path,
-           parent_path=excluded.parent_path,
-           name=excluded.name,
-           size=excluded.size,
-           mime_type=excluded.mime_type,
-           updated_at=excluded.updated_at,
-           content_hash=excluded.content_hash,
-           chunks=excluded.chunks,
-           encryption=excluded.encryption,
-           origin_account_id=excluded.origin_account_id,
-           deleted_at=NULL,
-           version=version+1
-        `,
-      )
-      .run({
-        id: item.id,
-        logical_path: item.logicalPath,
-        parent_path: item.logicalPath.includes('/') ? item.logicalPath.slice(0, item.logicalPath.lastIndexOf('/')) || '/' : '/',
-        name: item.name,
-        size: item.size,
-        mime_type: item.mimeType,
-        is_dir: item.isDir ? 1 : 0,
-        created_at: item.createdAt,
-        updated_at: item.updatedAt,
-        content_hash: item.contentHash,
-        chunks: JSON.stringify(item.chunks),
-        encryption: JSON.stringify(item.encryption),
-        origin_account_id: item.originAccountId ?? null,
-      });
+    const parentPath = item.logicalPath.includes('/')
+      ? item.logicalPath.slice(0, item.logicalPath.lastIndexOf('/')) || '/'
+      : '/';
+    this.upsertStmt.run(
+      item.id,
+      item.logicalPath,
+      parentPath,
+      item.name,
+      item.size,
+      item.mimeType,
+      item.isDir ? 1 : 0,
+      item.createdAt,
+      item.updatedAt,
+      item.contentHash,
+      JSON.stringify(item.chunks),
+      JSON.stringify(item.encryption),
+      item.originAccountId ?? null,
+    );
   }
 
   list(parentPath: string): ClusterItem[] {
-    const rows = this.db
-      .prepare(`SELECT * FROM cluster_items WHERE parent_path = ? AND deleted_at IS NULL ORDER BY is_dir DESC, name COLLATE NOCASE ASC`)
-      .all(parentPath) as any[];
+    const rows = this.listStmt.all(parentPath) as any[];
     return rows.map(this.rowToItem);
   }
 
   getByPath(logicalPath: string): ClusterItem | undefined {
-    const r = this.db
-      .prepare(`SELECT * FROM cluster_items WHERE logical_path = ? AND deleted_at IS NULL ORDER BY version DESC LIMIT 1`)
-      .get(logicalPath) as any;
+    const r = this.getByPathStmt.get(logicalPath) as any;
     return r ? this.rowToItem(r) : undefined;
   }
 
   get(id: string): ClusterItem | undefined {
-    const r = this.db.prepare(`SELECT * FROM cluster_items WHERE id = ?`).get(id) as any;
+    const r = this.getStmt.get(id) as any;
     return r ? this.rowToItem(r) : undefined;
   }
 
   softDelete(logicalPath: string): void {
-    this.db.prepare(`UPDATE cluster_items SET deleted_at = ? WHERE logical_path = ?`).run(Date.now(), logicalPath);
+    this.softDeleteStmt.run(Date.now(), logicalPath);
   }
 
   private rowToItem = (r: any): ClusterItem => ({
@@ -170,43 +190,52 @@ export class ClusterRepository {
 }
 
 export class BackupRepository {
-  constructor(private db: DB) {}
+  private listStmt: StatementSync;
+  private upsertStmt: StatementSync;
+  private deleteStmt: StatementSync;
+  private getStmt: StatementSync;
+
+  constructor(private db: DB) {
+    this.listStmt = db.prepare(`SELECT * FROM backups ORDER BY created_at DESC`);
+    this.upsertStmt = db.prepare(
+      `INSERT INTO backups (id, name, source_paths, target_path, schedule, enabled, encrypt, distribute, retention, last_run_at, last_run_status, next_run_at, created_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET
+         name=excluded.name, source_paths=excluded.source_paths, target_path=excluded.target_path,
+         schedule=excluded.schedule, enabled=excluded.enabled, encrypt=excluded.encrypt, distribute=excluded.distribute,
+         retention=excluded.retention, last_run_at=excluded.last_run_at, last_run_status=excluded.last_run_status,
+         next_run_at=excluded.next_run_at`,
+    );
+    this.deleteStmt = db.prepare(`DELETE FROM backups WHERE id = ?`);
+    this.getStmt = db.prepare(`SELECT * FROM backups WHERE id = ?`);
+  }
+
   list(): BackupJob[] {
-    const rows = this.db.prepare(`SELECT * FROM backups ORDER BY created_at DESC`).all() as any[];
+    const rows = this.listStmt.all() as any[];
     return rows.map(this.rowToJob);
   }
   upsert(job: BackupJob): void {
-    this.db
-      .prepare(
-        `INSERT INTO backups (id, name, source_paths, target_path, schedule, enabled, encrypt, distribute, retention, last_run_at, last_run_status, next_run_at, created_at)
-         VALUES (@id, @name, @source_paths, @target_path, @schedule, @enabled, @encrypt, @distribute, @retention, @last_run_at, @last_run_status, @next_run_at, @created_at)
-         ON CONFLICT(id) DO UPDATE SET
-           name=excluded.name, source_paths=excluded.source_paths, target_path=excluded.target_path,
-           schedule=excluded.schedule, enabled=excluded.enabled, encrypt=excluded.encrypt, distribute=excluded.distribute,
-           retention=excluded.retention, last_run_at=excluded.last_run_at, last_run_status=excluded.last_run_status,
-           next_run_at=excluded.next_run_at`,
-      )
-      .run({
-        id: job.id,
-        name: job.name,
-        source_paths: JSON.stringify(job.sourcePaths),
-        target_path: job.targetLogicalPath,
-        schedule: job.schedule,
-        enabled: job.enabled ? 1 : 0,
-        encrypt: job.encrypt ? 1 : 0,
-        distribute: job.distribute ? 1 : 0,
-        retention: job.retention.keepVersions,
-        last_run_at: job.lastRunAt ?? null,
-        last_run_status: job.lastRunStatus ?? null,
-        next_run_at: job.nextRunAt ?? null,
-        created_at: job.createdAt,
-      });
+    this.upsertStmt.run(
+      job.id,
+      job.name,
+      JSON.stringify(job.sourcePaths),
+      job.targetLogicalPath,
+      job.schedule,
+      job.enabled ? 1 : 0,
+      job.encrypt ? 1 : 0,
+      job.distribute ? 1 : 0,
+      job.retention.keepVersions,
+      job.lastRunAt ?? null,
+      job.lastRunStatus ?? null,
+      job.nextRunAt ?? null,
+      job.createdAt,
+    );
   }
   delete(id: string): void {
-    this.db.prepare(`DELETE FROM backups WHERE id = ?`).run(id);
+    this.deleteStmt.run(id);
   }
   get(id: string): BackupJob | undefined {
-    const r = this.db.prepare(`SELECT * FROM backups WHERE id = ?`).get(id) as any;
+    const r = this.getStmt.get(id) as any;
     return r ? this.rowToJob(r) : undefined;
   }
   private rowToJob = (r: any): BackupJob => ({
@@ -227,40 +256,49 @@ export class BackupRepository {
 }
 
 export class SyncRepository {
-  constructor(private db: DB) {}
+  private listStmt: StatementSync;
+  private upsertStmt: StatementSync;
+  private deleteStmt: StatementSync;
+  private getStmt: StatementSync;
+
+  constructor(private db: DB) {
+    this.listStmt = db.prepare(`SELECT * FROM sync_pairs ORDER BY created_at DESC`);
+    this.upsertStmt = db.prepare(
+      `INSERT INTO sync_pairs (id, name, local_path, logical_path, direction, mode, encrypt, enabled, last_sync_at, created_at, ignore_patterns)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET
+         name=excluded.name, local_path=excluded.local_path, logical_path=excluded.logical_path,
+         direction=excluded.direction, mode=excluded.mode, encrypt=excluded.encrypt, enabled=excluded.enabled,
+         last_sync_at=excluded.last_sync_at, ignore_patterns=excluded.ignore_patterns`,
+    );
+    this.deleteStmt = db.prepare(`DELETE FROM sync_pairs WHERE id = ?`);
+    this.getStmt = db.prepare(`SELECT * FROM sync_pairs WHERE id = ?`);
+  }
+
   list(): SyncPair[] {
-    const rows = this.db.prepare(`SELECT * FROM sync_pairs ORDER BY created_at DESC`).all() as any[];
+    const rows = this.listStmt.all() as any[];
     return rows.map(this.rowToSync);
   }
   upsert(pair: SyncPair): void {
-    this.db
-      .prepare(
-        `INSERT INTO sync_pairs (id, name, local_path, logical_path, direction, mode, encrypt, enabled, last_sync_at, created_at, ignore_patterns)
-         VALUES (@id, @name, @local_path, @logical_path, @direction, @mode, @encrypt, @enabled, @last_sync_at, @created_at, @ignore_patterns)
-         ON CONFLICT(id) DO UPDATE SET
-           name=excluded.name, local_path=excluded.local_path, logical_path=excluded.logical_path,
-           direction=excluded.direction, mode=excluded.mode, encrypt=excluded.encrypt, enabled=excluded.enabled,
-           last_sync_at=excluded.last_sync_at, ignore_patterns=excluded.ignore_patterns`,
-      )
-      .run({
-        id: pair.id,
-        name: pair.name,
-        local_path: pair.localPath,
-        logical_path: pair.logicalPath,
-        direction: pair.direction,
-        mode: pair.mode,
-        encrypt: pair.encrypt ? 1 : 0,
-        enabled: pair.enabled ? 1 : 0,
-        last_sync_at: pair.lastSyncAt ?? null,
-        created_at: pair.createdAt,
-        ignore_patterns: JSON.stringify(pair.ignorePatterns),
-      });
+    this.upsertStmt.run(
+      pair.id,
+      pair.name,
+      pair.localPath,
+      pair.logicalPath,
+      pair.direction,
+      pair.mode,
+      pair.encrypt ? 1 : 0,
+      pair.enabled ? 1 : 0,
+      pair.lastSyncAt ?? null,
+      pair.createdAt,
+      JSON.stringify(pair.ignorePatterns),
+    );
   }
   delete(id: string): void {
-    this.db.prepare(`DELETE FROM sync_pairs WHERE id = ?`).run(id);
+    this.deleteStmt.run(id);
   }
   get(id: string): SyncPair | undefined {
-    const r = this.db.prepare(`SELECT * FROM sync_pairs WHERE id = ?`).get(id) as any;
+    const r = this.getStmt.get(id) as any;
     return r ? this.rowToSync(r) : undefined;
   }
   private rowToSync = (r: any): SyncPair => ({
@@ -279,28 +317,49 @@ export class SyncRepository {
 }
 
 export class SettingsRepository {
-  constructor(private db: DB) {}
+  private getStmt: StatementSync;
+  private setStmt: StatementSync;
+
+  constructor(private db: DB) {
+    this.getStmt = db.prepare(`SELECT value FROM settings WHERE key='app'`);
+    this.setStmt = db.prepare(
+      `INSERT INTO settings (key, value) VALUES ('app', ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value`,
+    );
+  }
+
   get<T = AppSettings>(defaults: T): T {
-    const row = this.db.prepare(`SELECT value FROM settings WHERE key='app'`).get() as any;
+    const row = this.getStmt.get() as any;
     if (!row) return defaults;
     return { ...defaults, ...JSON.parse(row.value) };
   }
   set(settings: AppSettings): void {
-    this.db
-      .prepare(`INSERT INTO settings (key, value) VALUES ('app', ?) ON CONFLICT(key) DO UPDATE SET value=excluded.value`)
-      .run(JSON.stringify(settings));
+    this.setStmt.run(JSON.stringify(settings));
   }
 }
 
 export class ActivityRepository {
-  constructor(private db: DB) {}
+  private insertStmt: StatementSync;
+  private listStmt: StatementSync;
+
+  constructor(private db: DB) {
+    this.insertStmt = db.prepare(
+      `INSERT INTO activity (id, ts, level, category, message, detail) VALUES (?, ?, ?, ?, ?, ?)`,
+    );
+    this.listStmt = db.prepare(`SELECT * FROM activity ORDER BY ts DESC LIMIT ?`);
+  }
+
   log(entry: Omit<ActivityLogEntry, 'id'>): void {
-    this.db
-      .prepare(`INSERT INTO activity (id, ts, level, category, message, detail) VALUES (?, ?, ?, ?, ?, ?)`)
-      .run(randomId(), entry.ts, entry.level, entry.category, entry.message, entry.detail ? JSON.stringify(entry.detail) : null);
+    this.insertStmt.run(
+      randomId(),
+      entry.ts,
+      entry.level,
+      entry.category,
+      entry.message,
+      entry.detail ? JSON.stringify(entry.detail) : null,
+    );
   }
   list(limit = 200): ActivityLogEntry[] {
-    const rows = this.db.prepare(`SELECT * FROM activity ORDER BY ts DESC LIMIT ?`).all(limit) as any[];
+    const rows = this.listStmt.all(limit) as any[];
     return rows.map((r) => ({
       id: r.id,
       ts: r.ts,
@@ -313,17 +372,31 @@ export class ActivityRepository {
 }
 
 export class QuotaRepository {
-  constructor(private db: DB) {}
+  private setStmt: StatementSync;
+  private getStmt: StatementSync;
+  private allStmt: StatementSync;
+
+  constructor(private db: DB) {
+    this.setStmt = db.prepare(
+      `INSERT INTO quota_cache (account_id, total, used, free, trashed, fetched_at) VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT(account_id) DO UPDATE SET total=excluded.total, used=excluded.used, free=excluded.free, trashed=excluded.trashed, fetched_at=excluded.fetched_at`,
+    );
+    this.getStmt = db.prepare(`SELECT * FROM quota_cache WHERE account_id = ?`);
+    this.allStmt = db.prepare(`SELECT * FROM quota_cache`);
+  }
+
   set(quota: CloudQuota): void {
-    this.db
-      .prepare(
-        `INSERT INTO quota_cache (account_id, total, used, free, trashed, fetched_at) VALUES (?, ?, ?, ?, ?, ?)
-         ON CONFLICT(account_id) DO UPDATE SET total=excluded.total, used=excluded.used, free=excluded.free, trashed=excluded.trashed, fetched_at=excluded.fetched_at`,
-      )
-      .run(quota.accountId, quota.total, quota.used, quota.free, quota.trashed, quota.fetchedAt);
+    this.setStmt.run(
+      quota.accountId,
+      quota.total,
+      quota.used,
+      quota.free,
+      quota.trashed,
+      quota.fetchedAt,
+    );
   }
   get(accountId: string): CloudQuota | undefined {
-    const r = this.db.prepare(`SELECT * FROM quota_cache WHERE account_id = ?`).get(accountId) as any;
+    const r = this.getStmt.get(accountId) as any;
     if (!r) return undefined;
     return {
       accountId: r.account_id,
@@ -336,7 +409,7 @@ export class QuotaRepository {
     };
   }
   all(): CloudQuota[] {
-    return (this.db.prepare(`SELECT * FROM quota_cache`).all() as any[]).map((r) => ({
+    return (this.allStmt.all() as any[]).map((r) => ({
       accountId: r.account_id,
       total: r.total,
       used: r.used,
