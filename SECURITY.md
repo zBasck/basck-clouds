@@ -1,9 +1,1 @@
-# Política de Segurança
-
-Se você descobriu uma vulnerabilidade no Basck Clouds, por favor **não** abra uma issue pública. Envie um e-mail para security@zbasck.dev com:
-
-- Descrição do problema
-- Passos para reproduzir
-- Impacto potencial
-
-Responderemos em até 72 horas.
+IyBQb2zDrXRpY2EgZGUgU2VndXJhbsOnYQoKU2Ugdm9jw6ogZGVzY29icml1IHVtYSB2dWxuZXJhYmlsaWRhZGUgbm8gQmFzY2sgQ2xvdWRzLCBwb3IgZmF2b3IgKipuw6NvKiogYWJyYSB1bWEgaXNzdWUgcMO6YmxpY2EuIEVudmllIHVtIGUtbWFpbCBwYXJhIHNlY3VyaXR5QHpiYXNjay5kZXYgY29tOgoKLSBEZXNjcmnDp8OjbyBkbyBwcm9ibGVtYQotIFBhc3NvcyBwYXJhIHJlcHJvZHV6aXIKLSBJbXBhY3RvIHBvdGVuY2lhbAoKUmVzcG9uZGVyZW1vcyBlbSBhdMOpIDcyIGhvcmFzLgo=
