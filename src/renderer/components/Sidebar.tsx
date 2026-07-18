@@ -1,1 +1,73 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHR5cGUgeyBQYWdlIH0gZnJvbSAnLi4vQXBwJzsKaW1wb3J0IHsgYXBpIH0gZnJvbSAnLi4vYXBpJzsKaW1wb3J0IHsgZm9ybWF0Qnl0ZXMgfSBmcm9tICcuLi91dGlscyc7CgppbnRlcmZhY2UgUHJvcHMgewogIHBhZ2U6IFBhZ2U7CiAgb25DaGFuZ2U6IChwOiBQYWdlKSA9PiB2b2lkOwogIG9uTG9jazogKCkgPT4gdm9pZDsKfQoKaW50ZXJmYWNlIE5hdkl0ZW0geyBpZDogUGFnZTsgbGFiZWw6IHN0cmluZzsgaWNvbjogc3RyaW5nOyB9Cgpjb25zdCBOQVY6IE5hdkl0ZW1bXSA9IFsKICB7IGlkOiAnZGFzaGJvYXJkJywgbGFiZWw6ICdQYWluZWwnLCBpY29uOiAn8J+TiicgfSwKICB7IGlkOiAnYWNjb3VudHMnLCBsYWJlbDogJ0NvbnRhcycsIGljb246ICfimIHvuI8nIH0sCiAgeyBpZDogJ2ZpbGVzJywgbGFiZWw6ICdBcnF1aXZvcycsIGljb246ICfwn5eC77iPJyB9LAogIHsgaWQ6ICdzZWFyY2gnLCBsYWJlbDogJ0J1c2NhJywgaWNvbjogJ/CflI0nIH0sCiAgeyBpZDogJ2JhY2t1cHMnLCBsYWJlbDogJ0JhY2t1cHMnLCBpY29uOiAn8J+boe+4jycgfSwKICB7IGlkOiAnc3luYycsIGxhYmVsOiAnU2luY3Jvbml6YcOnw6NvJywgaWNvbjogJ/CflIQnIH0sCiAgeyBpZDogJ2FjdGl2aXR5JywgbGFiZWw6ICdBdGl2aWRhZGUnLCBpY29uOiAn8J+TnCcgfSwKICB7IGlkOiAnc2V0dGluZ3MnLCBsYWJlbDogJ0FqdXN0ZXMnLCBpY29uOiAn4pqZ77iPJyB9LApdOwoKZXhwb3J0IGZ1bmN0aW9uIFNpZGViYXIoeyBwYWdlLCBvbkNoYW5nZSwgb25Mb2NrIH06IFByb3BzKSB7CiAgY29uc3QgW3N0YXRzLCBzZXRTdGF0c10gPSB1c2VTdGF0ZTxhbnk+KG51bGwpOwogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBhcGkuY2x1c3Rlci5zdGF0cygpLnRoZW4oc2V0U3RhdHMpLmNhdGNoKCgpID0+IHVuZGVmaW5lZCk7CiAgICBjb25zdCB0ID0gc2V0SW50ZXJ2YWwoKCkgPT4gYXBpLmNsdXN0ZXIuc3RhdHMoKS50aGVuKHNldFN0YXRzKS5jYXRjaCgoKSA9PiB1bmRlZmluZWQpLCAxNV8wMDApOwogICAgcmV0dXJuICgpID0+IGNsZWFySW50ZXJ2YWwodCk7CiAgfSwgW10pOwoKICBjb25zdCBwY3QgPSBzdGF0cyAmJiBzdGF0cy50b3RhbEJ5dGVzID4gMCA/IChzdGF0cy51c2VkQnl0ZXMgLyBzdGF0cy50b3RhbEJ5dGVzKSAqIDEwMCA6IDA7CiAgcmV0dXJuICgKICAgIDxhc2lkZSBjbGFzc05hbWU9InNpZGViYXIiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iYnJhbmQiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJsb2dvIj5CQzwvZGl2PgogICAgICAgIDxkaXY+CiAgICAgICAgICA8ZGl2PkJhc2NrIENsb3VkczwvZGl2PgogICAgICAgICAgPGRpdiBzdHlsZT17eyBmb250U2l6ZTogMTEsIGNvbG9yOiAndmFyKC0tdGV4dC1tdXRlZCknIH19PmRyaXZlIHZpcnR1YWwgY3JpcHRvZ3JhZmFkbzwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICAgPG5hdj4KICAgICAgICB7TkFWLm1hcCgoaXRlbSkgPT4gKAogICAgICAgICAgPGJ1dHRvbgogICAgICAgICAgICBrZXk9e2l0ZW0uaWR9CiAgICAgICAgICAgIGNsYXNzTmFtZT17cGFnZSA9PT0gaXRlbS5pZCA/ICdhY3RpdmUnIDogJyd9CiAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IG9uQ2hhbmdlKGl0ZW0uaWQpfQogICAgICAgICAgPgogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9Imljb24iPntpdGVtLmljb259PC9zcGFuPgogICAgICAgICAgICB7aXRlbS5sYWJlbH0KICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICkpfQogICAgICA8L25hdj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImNsdXN0ZXItc3VtbWFyeSI+CiAgICAgICAgPGg0PkNsdXN0ZXIgdG90YWw8L2g0PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0b3RhbCI+e3N0YXRzID8gZm9ybWF0Qnl0ZXMoc3RhdHMudG90YWxCeXRlcykgOiAn4oCUJ308L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYmFyIj48ZGl2IHN0eWxlPXt7IHdpZHRoOiBgJHtwY3R9JWAgfX0gLz48L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3RhdHMiPgogICAgICAgICAgPHNwYW4+e3N0YXRzID8gYCR7c3RhdHMuYWNjb3VudENvdW50fSBjb250YXNgIDogJzAgY29udGFzJ308L3NwYW4+CiAgICAgICAgICA8c3Bhbj57c3RhdHMgPyBgJHtzdGF0cy5wcm92aWRlckNvdW50fSBwcm92ZWRvcmVzYCA6ICcwIHByb3ZlZG9yZXMnfTwvc3Bhbj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3RhdHMiIHN0eWxlPXt7IG1hcmdpblRvcDogNiB9fT4KICAgICAgICAgIDxzcGFuPnVzYWRvOiB7c3RhdHMgPyBmb3JtYXRCeXRlcyhzdGF0cy51c2VkQnl0ZXMpIDogJ+KAlCd9PC9zcGFuPgogICAgICAgICAgPHNwYW4+bGl2cmU6IHtzdGF0cyA/IGZvcm1hdEJ5dGVzKHN0YXRzLmZyZWVCeXRlcykgOiAn4oCUJ308L3NwYW4+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5Ub3A6IDEwIH19PgogICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9Imdob3N0IiBzdHlsZT17eyB3aWR0aDogJzEwMCUnLCBmb250U2l6ZTogMTIgfX0gb25DbGljaz17b25Mb2NrfT7wn5SSIEJsb3F1ZWFyIGNvZnJlPC9idXR0b24+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9hc2lkZT4KICApOwp9Cg==
+import { useEffect, useState } from 'react';
+import type { Page } from '../App';
+import { api } from '../api';
+import { formatBytes } from '../utils';
+
+interface Props {
+  page: Page;
+  onChange: (p: Page) => void;
+  onLock: () => void;
+}
+
+interface NavItem { id: Page; label: string; icon: string; }
+
+const NAV: NavItem[] = [
+  { id: 'dashboard', label: 'Painel', icon: '📊' },
+  { id: 'accounts', label: 'Contas', icon: '☁️' },
+  { id: 'files', label: 'Arquivos', icon: '🗂️' },
+  { id: 'search', label: 'Busca', icon: '🔍' },
+  { id: 'backups', label: 'Backups', icon: '🛡️' },
+  { id: 'sync', label: 'Sincronização', icon: '🔄' },
+  { id: 'activity', label: 'Atividade', icon: '📜' },
+  { id: 'settings', label: 'Ajustes', icon: '⚙️' },
+];
+
+export function Sidebar({ page, onChange, onLock }: Props) {
+  const [stats, setStats] = useState<any>(null);
+  useEffect(() => {
+    api.cluster.stats().then(setStats).catch(() => undefined);
+    const t = setInterval(() => api.cluster.stats().then(setStats).catch(() => undefined), 15_000);
+    return () => clearInterval(t);
+  }, []);
+
+  const pct = stats && stats.totalBytes > 0 ? (stats.usedBytes / stats.totalBytes) * 100 : 0;
+  return (
+    <aside className="sidebar">
+      <div className="brand">
+        <div className="logo">BC</div>
+        <div>
+          <div>Basck Clouds</div>
+          <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>drive virtual criptografado</div>
+        </div>
+      </div>
+      <nav>
+        {NAV.map((item) => (
+          <button
+            key={item.id}
+            className={page === item.id ? 'active' : ''}
+            onClick={() => onChange(item.id)}
+          >
+            <span className="icon">{item.icon}</span>
+            {item.label}
+          </button>
+        ))}
+      </nav>
+      <div className="cluster-summary">
+        <h4>Cluster total</h4>
+        <div className="total">{stats ? formatBytes(stats.totalBytes) : '—'}</div>
+        <div className="bar"><div style={{ width: `${pct}%` }} /></div>
+        <div className="stats">
+          <span>{stats ? `${stats.accountCount} contas` : '0 contas'}</span>
+          <span>{stats ? `${stats.providerCount} provedores` : '0 provedores'}</span>
+        </div>
+        <div className="stats" style={{ marginTop: 6 }}>
+          <span>usado: {stats ? formatBytes(stats.usedBytes) : '—'}</span>
+          <span>livre: {stats ? formatBytes(stats.freeBytes) : '—'}</span>
+        </div>
+        <div style={{ marginTop: 10 }}>
+          <button className="ghost" style={{ width: '100%', fontSize: 12 }} onClick={onLock}>🔒 Bloquear cofre</button>
+        </div>
+      </div>
+    </aside>
+  );
+}
