@@ -1,1 +1,8 @@
-ewogICJzZW1pIjogdHJ1ZSwKICAic2luZ2xlUXVvdGUiOiB0cnVlLAogICJ0cmFpbGluZ0NvbW1hIjogImFsbCIsCiAgInByaW50V2lkdGgiOiAxMDAsCiAgInRhYldpZHRoIjogMiwKICAiYXJyb3dQYXJlbnMiOiAiYWx3YXlzIgp9Cg==
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "arrowParens": "always"
+}
