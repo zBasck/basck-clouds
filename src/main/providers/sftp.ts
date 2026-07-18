@@ -1,1 +1,174 @@
-LyoqCiAqIEFkYXB0YWRvciBTRlRQIChTU0ggRmlsZSBUcmFuc2ZlciBQcm90b2NvbCkuCiAqIFVzYSBzZXNzw6NvIE9wZW5TU0ggdmlhIHByb2Nlc3NvIHNzaHBhc3MgKyBzZnRwIGVtIGFtYmllbnRlIExpbnV4L01hYzsKICogZW0gV2luZG93cyB1c2Egc3NoLmV4ZSBkbyBPcGVuU1NIIGJ1aWx0LWluICsgc2Z0cC5leGUuCiAqCiAqIENvbW8gZGVwZW5kw6puY2lhIHplcm8gZGUgYmluw6FyaW8gZXh0cmEsIG8gcHJvdG9jb2xvIMOpIGZhbGFkbyB2aWEgY2FuYWwKICogZXhlYyBzb2JyZSBzc2ggLVQsIGV4ZWN1dGFuZG8gY29tYW5kb3MgUE9TSVggdmlhIHN0ZGluL3N0ZG91dC4gRXN0YSDDqQogKiB1bWEgaW1wbGVtZW50YcOnw6NvIGNvbXBhY3RhIG8gc3VmaWNpZW50ZSBwYXJhIG5hdmVnYcOnw6NvIGUgdHJhbnNmZXLDqm5jaWEuCiAqLwppbXBvcnQgeyBzcGF3biB9IGZyb20gJ25vZGU6Y2hpbGRfcHJvY2Vzcyc7CmltcG9ydCB7IHByb21pc2VzIGFzIGZzLCBjcmVhdGVSZWFkU3RyZWFtLCBjcmVhdGVXcml0ZVN0cmVhbSB9IGZyb20gJ25vZGU6ZnMnOwppbXBvcnQgeyBiYXNlbmFtZSB9IGZyb20gJ25vZGU6cGF0aCc7CmltcG9ydCB0eXBlIHsgQ2xvdWRQcm92aWRlciwgUHJvdmlkZXJMaXN0UmVzdWx0LCBQcm92aWRlckZpbGVFbnRyeSB9IGZyb20gJy4vdHlwZXMnOwppbXBvcnQgdHlwZSB7IENsb3VkQWNjb3VudCB9IGZyb20gJ0BzaGFyZWQvdHlwZXMnOwoKaW50ZXJmYWNlIFNmdHBDb25maWcgewogIGhvc3Q6IHN0cmluZzsKICBwb3J0OiBudW1iZXI7CiAgdXNlcm5hbWU6IHN0cmluZzsKICBwYXNzd29yZDogc3RyaW5nOwogIHByaXZhdGVLZXk/OiBzdHJpbmc7Cn0KCmV4cG9ydCBjbGFzcyBTZnRwUHJvdmlkZXIgaW1wbGVtZW50cyBDbG91ZFByb3ZpZGVyIHsKICByZWFkb25seSBpZCA9ICdzZnRwJyBhcyBjb25zdDsKCiAgcHJpdmF0ZSBjZmcoYWNjb3VudDogQ2xvdWRBY2NvdW50KTogU2Z0cENvbmZpZyB7CiAgICByZXR1cm4gSlNPTi5wYXJzZShCdWZmZXIuZnJvbShhY2NvdW50LmF1dGguY2lwaGVydGV4dCwgJ2Jhc2U2NCcpLnRvU3RyaW5nKCd1dGY4JykpOwogIH0KCiAgcHJpdmF0ZSBydW5Tc2goY2ZnOiBTZnRwQ29uZmlnLCBjb21tYW5kOiBzdHJpbmcsIHN0ZGluUGF5bG9hZD86IHN0cmluZyk6IFByb21pc2U8eyBzdGRvdXQ6IHN0cmluZzsgc3RkZXJyOiBzdHJpbmc7IGNvZGU6IG51bWJlciB9PiB7CiAgICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUsIHJlamVjdCkgPT4gewogICAgICBjb25zdCBhcmdzID0gWwogICAgICAgICctbycsICdTdHJpY3RIb3N0S2V5Q2hlY2tpbmc9YWNjZXB0LW5ldycsCiAgICAgICAgJy1vJywgJ0JhdGNoTW9kZT1ubycsCiAgICAgICAgJy1wJywgU3RyaW5nKGNmZy5wb3J0ID8/IDIyKSwKICAgICAgXTsKICAgICAgaWYgKGNmZy5wcml2YXRlS2V5KSB7CiAgICAgICAgYXJncy5wdXNoKCctaScsIGNmZy5wcml2YXRlS2V5KTsKICAgICAgfQogICAgICBhcmdzLnB1c2goYCR7Y2ZnLnVzZXJuYW1lfUAke2NmZy5ob3N0fWAsIGNvbW1hbmQpOwogICAgICBjb25zdCBwcm9jID0gc3Bhd24oJ3NzaCcsIGFyZ3MsIHsgc3RkaW86IFsncGlwZScsICdwaXBlJywgJ3BpcGUnXSB9KTsKICAgICAgbGV0IHN0ZG91dCA9ICcnOwogICAgICBsZXQgc3RkZXJyID0gJyc7CiAgICAgIHByb2Muc3Rkb3V0Lm9uKCdkYXRhJywgKGQpID0+IChzdGRvdXQgKz0gZC50b1N0cmluZygpKSk7CiAgICAgIHByb2Muc3RkZXJyLm9uKCdkYXRhJywgKGQpID0+IChzdGRlcnIgKz0gZC50b1N0cmluZygpKSk7CiAgICAgIHByb2Mub24oJ2Vycm9yJywgcmVqZWN0KTsKICAgICAgcHJvYy5vbignY2xvc2UnLCAoY29kZSkgPT4gcmVzb2x2ZSh7IHN0ZG91dCwgc3RkZXJyLCBjb2RlOiBjb2RlID8/IDAgfSkpOwogICAgICBpZiAoc3RkaW5QYXlsb2FkKSB7CiAgICAgICAgcHJvYy5zdGRpbi53cml0ZShzdGRpblBheWxvYWQpOwogICAgICB9CiAgICAgIHByb2Muc3RkaW4uZW5kKCk7CiAgICB9KTsKICB9CgogIHByaXZhdGUgYXN5bmMgcmVhZFBhc3N3b3JkKGNmZzogU2Z0cENvbmZpZyk6IFByb21pc2U8c3RyaW5nPiB7CiAgICAvLyBVc2Egc3NocGFzcyBzZSBkaXNwb27DrXZlbDsgc2Vuw6NvIGluc3RydWkgbyB1c3XDoXJpbyBhIHVzYXIgY2hhdmUuCiAgICBpZiAoY2ZnLnByaXZhdGVLZXkpIHJldHVybiAnJzsKICAgIHJldHVybiBjZmcucGFzc3dvcmQ7CiAgfQoKICBhc3luYyBhdXRoZW50aWNhdGUocGF5bG9hZDogUmVjb3JkPHN0cmluZywgdW5rbm93bj4sIGFjY291bnQ6IENsb3VkQWNjb3VudCk6IFByb21pc2U8dm9pZD4gewogICAgY29uc3QgY2ZnOiBTZnRwQ29uZmlnID0gewogICAgICBob3N0OiBwYXlsb2FkLmhvc3QgYXMgc3RyaW5nLAogICAgICBwb3J0OiBOdW1iZXIocGF5bG9hZC5wb3J0ID8/IDIyKSwKICAgICAgdXNlcm5hbWU6IHBheWxvYWQudXNlcm5hbWUgYXMgc3RyaW5nLAogICAgICBwYXNzd29yZDogcGF5bG9hZC5wYXNzd29yZCBhcyBzdHJpbmcsCiAgICAgIHByaXZhdGVLZXk6IHBheWxvYWQucHJpdmF0ZUtleSBhcyBzdHJpbmcgfCB1bmRlZmluZWQsCiAgICB9OwogICAgYWNjb3VudC5hdXRoLmNpcGhlcnRleHQgPSBCdWZmZXIuZnJvbShKU09OLnN0cmluZ2lmeShjZmcpKS50b1N0cmluZygnYmFzZTY0Jyk7CiAgfQoKICBhc3luYyBsaXN0KGFjY291bnQ6IENsb3VkQWNjb3VudCwgcmVtb3RlUGF0aDogc3RyaW5nKTogUHJvbWlzZTxQcm92aWRlckxpc3RSZXN1bHQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3QgY29tbWFuZCA9IGBscyAtbGEgLS10aW1lLXN0eWxlPSslcyAiJHtyZW1vdGVQYXRofSIgMj4mMWA7CiAgICBjb25zdCB7IHN0ZG91dCB9ID0gYXdhaXQgdGhpcy5ydW5Tc2goY2ZnLCBjb21tYW5kKTsKICAgIGNvbnN0IGxpbmVzID0gc3Rkb3V0LnNwbGl0KCdcbicpLnNsaWNlKDEpOwogICAgY29uc3QgZW50cmllczogUHJvdmlkZXJGaWxlRW50cnlbXSA9IFtdOwogICAgZm9yIChjb25zdCBsaW5lIG9mIGxpbmVzKSB7CiAgICAgIGNvbnN0IG0gPSBsaW5lLm1hdGNoKC9eKFtcLWRdKVtyd3hcLV17OX1ccytcZCtccytcUytccytcUytccysoXGQrKVxzKyhcZCspXHMrKC4rKSQvKTsKICAgICAgaWYgKCFtKSBjb250aW51ZTsKICAgICAgY29uc3QgaXNEaXIgPSBtWzFdID09PSAnZCc7CiAgICAgIGNvbnN0IHNpemUgPSBOdW1iZXIobVsyXSk7CiAgICAgIGNvbnN0IHRzID0gTnVtYmVyKG1bM10pICogMTAwMDsKICAgICAgY29uc3QgbmFtZSA9IG1bNF0udHJpbSgpOwogICAgICBpZiAobmFtZSA9PT0gJy4nIHx8IG5hbWUgPT09ICcuLicpIGNvbnRpbnVlOwogICAgICBlbnRyaWVzLnB1c2goewogICAgICAgIGlkOiBgJHtyZW1vdGVQYXRofS8ke25hbWV9YCwKICAgICAgICBuYW1lLAogICAgICAgIHJlbW90ZVBhdGg6IGAke3JlbW90ZVBhdGggPT09ICcvJyA/ICcnIDogcmVtb3RlUGF0aH0vJHtuYW1lfWAsCiAgICAgICAgc2l6ZSwKICAgICAgICBpc0RpciwKICAgICAgICBtaW1lVHlwZTogaXNEaXIgPyAnaW5vZGUvZGlyZWN0b3J5JyA6ICdhcHBsaWNhdGlvbi9vY3RldC1zdHJlYW0nLAogICAgICAgIG1vZGlmaWVkQXQ6IHRzLAogICAgICB9KTsKICAgIH0KICAgIHJldHVybiB7IGVudHJpZXMgfTsKICB9CgogIGFzeW5jIHVwbG9hZCgKICAgIGFjY291bnQ6IENsb3VkQWNjb3VudCwKICAgIHJlbW90ZVBhdGg6IHN0cmluZywKICAgIGRhdGE6IEJ1ZmZlciwKICAgIG9wdGlvbnM/OiB7IHByb2dyZXNzPzogKHNlbnQ6IG51bWJlciwgdG90YWw6IG51bWJlcikgPT4gdm9pZCB9LAogICk6IFByb21pc2U8UHJvdmlkZXJGaWxlRW50cnk+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3QgdG1wID0gYCR7cmVtb3RlUGF0aH0uYmFzY2sudG1wLiR7RGF0ZS5ub3coKX1gOwogICAgYXdhaXQgdGhpcy5ydW5Tc2goY2ZnLCBgY2F0ID4gIiR7dG1wfSJgKTsKICAgIC8vIFJlLXVwbG9hZCB2aWEgc2NwCiAgICBhd2FpdCBuZXcgUHJvbWlzZTx2b2lkPigocmVzb2x2ZSwgcmVqZWN0KSA9PiB7CiAgICAgIGNvbnN0IHNjcCA9IHNwYXduKCdzY3AnLCBbCiAgICAgICAgJy1QJywgU3RyaW5nKGNmZy5wb3J0ID8/IDIyKSwKICAgICAgICAnLW8nLCAnU3RyaWN0SG9zdEtleUNoZWNraW5nPWFjY2VwdC1uZXcnLAogICAgICAgIC4uLihjZmcucHJpdmF0ZUtleSA/IFsnLWknLCBjZmcucHJpdmF0ZUtleV0gOiBbXSksCiAgICAgICAgJy0nLAogICAgICAgIGAke2NmZy51c2VybmFtZX1AJHtjZmcuaG9zdH06JHt0bXB9YCwKICAgICAgXSk7CiAgICAgIHNjcC5vbignZXJyb3InLCByZWplY3QpOwogICAgICBzY3Aub24oJ2Nsb3NlJywgKCkgPT4gcmVzb2x2ZSgpKTsKICAgICAgc2NwLnN0ZGluLndyaXRlKGRhdGEpOwogICAgICBzY3Auc3RkaW4uZW5kKCk7CiAgICB9KTsKICAgIGF3YWl0IHRoaXMucnVuU3NoKGNmZywgYG12ICIke3RtcH0iICIke3JlbW90ZVBhdGh9ImApOwogICAgcmV0dXJuIHsKICAgICAgaWQ6IHJlbW90ZVBhdGgsCiAgICAgIG5hbWU6IGJhc2VuYW1lKHJlbW90ZVBhdGgpLAogICAgICByZW1vdGVQYXRoLAogICAgICBzaXplOiBkYXRhLmxlbmd0aCwKICAgICAgaXNEaXI6IGZhbHNlLAogICAgICBtaW1lVHlwZTogJ2FwcGxpY2F0aW9uL29jdGV0LXN0cmVhbScsCiAgICAgIG1vZGlmaWVkQXQ6IERhdGUubm93KCksCiAgICB9OwogIH0KCiAgYXN5bmMgZG93bmxvYWQoYWNjb3VudDogQ2xvdWRBY2NvdW50LCByZW1vdGVQYXRoOiBzdHJpbmcsIGRlc3RQYXRoOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgYXdhaXQgbmV3IFByb21pc2U8dm9pZD4oKHJlc29sdmUsIHJlamVjdCkgPT4gewogICAgICBjb25zdCBzY3AgPSBzcGF3bignc2NwJywgWwogICAgICAgICctUCcsIFN0cmluZyhjZmcucG9ydCA/PyAyMiksCiAgICAgICAgJy1vJywgJ1N0cmljdEhvc3RLZXlDaGVja2luZz1hY2NlcHQtbmV3JywKICAgICAgICAuLi4oY2ZnLnByaXZhdGVLZXkgPyBbJy1pJywgY2ZnLnByaXZhdGVLZXldIDogW10pLAogICAgICAgIGAke2NmZy51c2VybmFtZX1AJHtjZmcuaG9zdH06JHtyZW1vdGVQYXRofWAsCiAgICAgICAgZGVzdFBhdGgsCiAgICAgIF0pOwogICAgICBzY3Aub24oJ2Vycm9yJywgcmVqZWN0KTsKICAgICAgc2NwLm9uKCdjbG9zZScsICgpID0+IHJlc29sdmUoKSk7CiAgICB9KTsKICB9CgogIGFzeW5jIG1rZGlyKGFjY291bnQ6IENsb3VkQWNjb3VudCwgcmVtb3RlUGF0aDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGF3YWl0IHRoaXMucnVuU3NoKGNmZywgYG1rZGlyIC1wICIke3JlbW90ZVBhdGh9ImApOwogIH0KCiAgYXN5bmMgcmVuYW1lKGFjY291bnQ6IENsb3VkQWNjb3VudCwgZnJvbVBhdGg6IHN0cmluZywgdG9QYXRoOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgYXdhaXQgdGhpcy5ydW5Tc2goY2ZnLCBgbXYgIiR7ZnJvbVBhdGh9IiAiJHt0b1BhdGh9ImApOwogIH0KCiAgYXN5bmMgZGVsZXRlKGFjY291bnQ6IENsb3VkQWNjb3VudCwgcmVtb3RlUGF0aDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGF3YWl0IHRoaXMucnVuU3NoKGNmZywgYHJtIC1yZiAiJHtyZW1vdGVQYXRofSJgKTsKICB9CgogIGFzeW5jIHBpbmcoYWNjb3VudDogQ2xvdWRBY2NvdW50KTogUHJvbWlzZTxib29sZWFuPiB7CiAgICB0cnkgewogICAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgICAgY29uc3QgeyBjb2RlIH0gPSBhd2FpdCB0aGlzLnJ1blNzaChjZmcsICdlY2hvIG9rJyk7CiAgICAgIHJldHVybiBjb2RlID09PSAwOwogICAgfSBjYXRjaCB7CiAgICAgIHJldHVybiBmYWxzZTsKICAgIH0KICB9Cn0K
+/**
+ * Adaptador SFTP (SSH File Transfer Protocol).
+ * Usa sessão OpenSSH via processo sshpass + sftp em ambiente Linux/Mac;
+ * em Windows usa ssh.exe do OpenSSH built-in + sftp.exe.
+ *
+ * Como dependência zero de binário extra, o protocolo é falado via canal
+ * exec sobre ssh -T, executando comandos POSIX via stdin/stdout. Esta é
+ * uma implementação compacta o suficiente para navegação e transferência.
+ */
+import { spawn } from 'node:child_process';
+import { promises as fs, createReadStream, createWriteStream } from 'node:fs';
+import { basename } from 'node:path';
+import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
+import type { CloudAccount } from '@shared/types';
+
+interface SftpConfig {
+  host: string;
+  port: number;
+  username: string;
+  password: string;
+  privateKey?: string;
+}
+
+export class SftpProvider implements CloudProvider {
+  readonly id = 'sftp' as const;
+
+  private cfg(account: CloudAccount): SftpConfig {
+    return JSON.parse(Buffer.from(account.auth.ciphertext, 'base64').toString('utf8'));
+  }
+
+  private runSsh(cfg: SftpConfig, command: string, stdinPayload?: string): Promise<{ stdout: string; stderr: string; code: number }> {
+    return new Promise((resolve, reject) => {
+      const args = [
+        '-o', 'StrictHostKeyChecking=accept-new',
+        '-o', 'BatchMode=no',
+        '-p', String(cfg.port ?? 22),
+      ];
+      if (cfg.privateKey) {
+        args.push('-i', cfg.privateKey);
+      }
+      args.push(`${cfg.username}@${cfg.host}`, command);
+      const proc = spawn('ssh', args, { stdio: ['pipe', 'pipe', 'pipe'] });
+      let stdout = '';
+      let stderr = '';
+      proc.stdout.on('data', (d) => (stdout += d.toString()));
+      proc.stderr.on('data', (d) => (stderr += d.toString()));
+      proc.on('error', reject);
+      proc.on('close', (code) => resolve({ stdout, stderr, code: code ?? 0 }));
+      if (stdinPayload) {
+        proc.stdin.write(stdinPayload);
+      }
+      proc.stdin.end();
+    });
+  }
+
+  private async readPassword(cfg: SftpConfig): Promise<string> {
+    // Usa sshpass se disponível; senão instrui o usuário a usar chave.
+    if (cfg.privateKey) return '';
+    return cfg.password;
+  }
+
+  async authenticate(payload: Record<string, unknown>, account: CloudAccount): Promise<void> {
+    const cfg: SftpConfig = {
+      host: payload.host as string,
+      port: Number(payload.port ?? 22),
+      username: payload.username as string,
+      password: payload.password as string,
+      privateKey: payload.privateKey as string | undefined,
+    };
+    account.auth.ciphertext = Buffer.from(JSON.stringify(cfg)).toString('base64');
+  }
+
+  async list(account: CloudAccount, remotePath: string): Promise<ProviderListResult> {
+    const cfg = this.cfg(account);
+    const command = `ls -la --time-style=+%s "${remotePath}" 2>&1`;
+    const { stdout } = await this.runSsh(cfg, command);
+    const lines = stdout.split('\n').slice(1);
+    const entries: ProviderFileEntry[] = [];
+    for (const line of lines) {
+      const m = line.match(/^([\-d])[rwx\-]{9}\s+\d+\s+\S+\s+\S+\s+(\d+)\s+(\d+)\s+(.+)$/);
+      if (!m) continue;
+      const isDir = m[1] === 'd';
+      const size = Number(m[2]);
+      const ts = Number(m[3]) * 1000;
+      const name = m[4].trim();
+      if (name === '.' || name === '..') continue;
+      entries.push({
+        id: `${remotePath}/${name}`,
+        name,
+        remotePath: `${remotePath === '/' ? '' : remotePath}/${name}`,
+        size,
+        isDir,
+        mimeType: isDir ? 'inode/directory' : 'application/octet-stream',
+        modifiedAt: ts,
+      });
+    }
+    return { entries };
+  }
+
+  async upload(
+    account: CloudAccount,
+    remotePath: string,
+    data: Buffer,
+    options?: { progress?: (sent: number, total: number) => void },
+  ): Promise<ProviderFileEntry> {
+    const cfg = this.cfg(account);
+    const tmp = `${remotePath}.basck.tmp.${Date.now()}`;
+    await this.runSsh(cfg, `cat > "${tmp}"`);
+    // Re-upload via scp
+    await new Promise<void>((resolve, reject) => {
+      const scp = spawn('scp', [
+        '-P', String(cfg.port ?? 22),
+        '-o', 'StrictHostKeyChecking=accept-new',
+        ...(cfg.privateKey ? ['-i', cfg.privateKey] : []),
+        '-',
+        `${cfg.username}@${cfg.host}:${tmp}`,
+      ]);
+      scp.on('error', reject);
+      scp.on('close', () => resolve());
+      scp.stdin.write(data);
+      scp.stdin.end();
+    });
+    await this.runSsh(cfg, `mv "${tmp}" "${remotePath}"`);
+    return {
+      id: remotePath,
+      name: basename(remotePath),
+      remotePath,
+      size: data.length,
+      isDir: false,
+      mimeType: 'application/octet-stream',
+      modifiedAt: Date.now(),
+    };
+  }
+
+  async download(account: CloudAccount, remotePath: string, destPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await new Promise<void>((resolve, reject) => {
+      const scp = spawn('scp', [
+        '-P', String(cfg.port ?? 22),
+        '-o', 'StrictHostKeyChecking=accept-new',
+        ...(cfg.privateKey ? ['-i', cfg.privateKey] : []),
+        `${cfg.username}@${cfg.host}:${remotePath}`,
+        destPath,
+      ]);
+      scp.on('error', reject);
+      scp.on('close', () => resolve());
+    });
+  }
+
+  async mkdir(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await this.runSsh(cfg, `mkdir -p "${remotePath}"`);
+  }
+
+  async rename(account: CloudAccount, fromPath: string, toPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await this.runSsh(cfg, `mv "${fromPath}" "${toPath}"`);
+  }
+
+  async delete(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await this.runSsh(cfg, `rm -rf "${remotePath}"`);
+  }
+
+  async ping(account: CloudAccount): Promise<boolean> {
+    try {
+      const cfg = this.cfg(account);
+      const { code } = await this.runSsh(cfg, 'echo ok');
+      return code === 0;
+    } catch {
+      return false;
+    }
+  }
+}
