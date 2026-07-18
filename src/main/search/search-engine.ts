@@ -1,1 +1,85 @@
-LyoqCiAqIE1vdG9yIGRlIGJ1c2NhIGluc3RhbnTDom5lYS4KICoKICogLSBJbmRleGEgbm9tZSArIGNhbWluaG8gbMOzZ2ljbyBlbSB1bWEgdGFiZWxhIHNlYXJjaF9pbmRleAogKiAtIFVzYSB0cmlncmFtYSBkZSBjYXJhY3RlcmVzIHBhcmEgZnV6enkgbWF0Y2hpbmcKICogLSBDb21iaW5hIGNvbSBMSUtFIHBhcmEgYnVzY2FzIGxpdGVyYWlzCiAqIC0gQXR1YWxpemEgaW5jcmVtZW50YWxtZW50ZSDDoCBtZWRpZGEgcXVlIG8gY2x1c3RlciBtdWRhCiAqLwppbXBvcnQgdHlwZSB7IERCIH0gZnJvbSAnQG1haW4vZGInOwppbXBvcnQgdHlwZSB7IENsdXN0ZXJSZXBvc2l0b3J5IH0gZnJvbSAnQG1haW4vZGIvcmVwb3NpdG9yaWVzJzsKaW1wb3J0IHR5cGUgeyBDbHVzdGVySXRlbSwgU2VhcmNoUmVzdWx0IH0gZnJvbSAnQHNoYXJlZC90eXBlcyc7Cgpjb25zdCBUUklHUkFNX1JFID0gLyg/PShbXHNcU117MSwzfSkpL2c7CgpleHBvcnQgY2xhc3MgU2VhcmNoRW5naW5lIHsKICBjb25zdHJ1Y3Rvcihwcml2YXRlIGRiOiBEQiwgcHJpdmF0ZSBjbHVzdGVyOiBDbHVzdGVyUmVwb3NpdG9yeSkge30KCiAgcmVidWlsZCgpOiB2b2lkIHsKICAgIHRoaXMuZGIuZXhlYyhgREVMRVRFIEZST00gc2VhcmNoX2luZGV4YCk7CiAgICBjb25zdCBhbGwgPSB0aGlzLmRiLnByZXBhcmUoYFNFTEVDVCBpZCwgbmFtZSwgbG9naWNhbF9wYXRoLCBzaXplLCB1cGRhdGVkX2F0IEZST00gY2x1c3Rlcl9pdGVtcyBXSEVSRSBkZWxldGVkX2F0IElTIE5VTExgKS5hbGwoKSBhcyBhbnlbXTsKICAgIGNvbnN0IGluc2VydCA9IHRoaXMuZGIucHJlcGFyZShgSU5TRVJUIElOVE8gc2VhcmNoX2luZGV4IChpdGVtX2lkLCBuYW1lLCBsb2dpY2FsX3BhdGgsIG5hbWVfbG93ZXIsIHBhdGhfbG93ZXIsIG5hbWVfdHJpZ3JhbXMsIHNpemUsIHVwZGF0ZWRfYXQpIFZBTFVFUyAoPywgPywgPywgPywgPywgPywgPywgPylgKTsKICAgIGNvbnN0IHR4ID0gdGhpcy5kYi50cmFuc2FjdGlvbigocm93czogYW55W10pID0+IHsKICAgICAgZm9yIChjb25zdCByIG9mIHJvd3MpIHsKICAgICAgICBpbnNlcnQucnVuKHIuaWQsIHIubmFtZSwgci5sb2dpY2FsX3BhdGgsIHIubmFtZS50b0xvd2VyQ2FzZSgpLCByLmxvZ2ljYWxfcGF0aC50b0xvd2VyQ2FzZSgpLCB0cmlncmFtcyhyLm5hbWUudG9Mb3dlckNhc2UoKSksIHIuc2l6ZSwgci51cGRhdGVkX2F0KTsKICAgICAgfQogICAgfSk7CiAgICB0eChhbGwpOwogIH0KCiAgaW5kZXhJdGVtKGl0ZW06IENsdXN0ZXJJdGVtKTogdm9pZCB7CiAgICB0aGlzLmRiCiAgICAgIC5wcmVwYXJlKGBJTlNFUlQgT1IgUkVQTEFDRSBJTlRPIHNlYXJjaF9pbmRleCAoaXRlbV9pZCwgbmFtZSwgbG9naWNhbF9wYXRoLCBuYW1lX2xvd2VyLCBwYXRoX2xvd2VyLCBuYW1lX3RyaWdyYW1zLCBzaXplLCB1cGRhdGVkX2F0KSBWQUxVRVMgKD8sID8sID8sID8sID8sID8sID8sID8pYCkKICAgICAgLnJ1bihpdGVtLmlkLCBpdGVtLm5hbWUsIGl0ZW0ubG9naWNhbFBhdGgsIGl0ZW0ubmFtZS50b0xvd2VyQ2FzZSgpLCBpdGVtLmxvZ2ljYWxQYXRoLnRvTG93ZXJDYXNlKCksIHRyaWdyYW1zKGl0ZW0ubmFtZS50b0xvd2VyQ2FzZSgpKSwgaXRlbS5zaXplLCBpdGVtLnVwZGF0ZWRBdCk7CiAgfQoKICByZW1vdmVJdGVtKGl0ZW1JZDogc3RyaW5nKTogdm9pZCB7CiAgICB0aGlzLmRiLnByZXBhcmUoYERFTEVURSBGUk9NIHNlYXJjaF9pbmRleCBXSEVSRSBpdGVtX2lkID0gP2ApLnJ1bihpdGVtSWQpOwogIH0KCiAgcXVlcnkoaW5wdXQ6IHN0cmluZywgbGltaXQgPSAxMDApOiBTZWFyY2hSZXN1bHRbXSB7CiAgICBjb25zdCBxID0gaW5wdXQudHJpbSgpLnRvTG93ZXJDYXNlKCk7CiAgICBpZiAoIXEpIHJldHVybiBbXTsKICAgIGNvbnN0IHRyaWdyYW1zUSA9IHRyaWdyYW1zKHEpOwogICAgLy8gMSkgbWF0Y2ggZXhhdG8KICAgIGNvbnN0IGV4YWN0ID0gdGhpcy5kYgogICAgICAucHJlcGFyZShgU0VMRUNUIGl0ZW1faWQsIG5hbWUsIGxvZ2ljYWxfcGF0aCwgc2l6ZSwgMS4wIGFzIHNjb3JlIEZST00gc2VhcmNoX2luZGV4IFdIRVJFIG5hbWVfbG93ZXIgTElLRSA/IE9SIHBhdGhfbG93ZXIgTElLRSA/IE9SREVSIEJZIHNpemUgREVTQyBMSU1JVCA/YCkKICAgICAgLmFsbChgJSR7cX0lYCwgYCUke3F9JWAsIGxpbWl0KSBhcyBhbnlbXTsKICAgIC8vIDIpIHRyaWdyYW1hIOKAlCBwYXJhIGZ1enp5CiAgICBsZXQgdHJpTWF0Y2hlczogYW55W10gPSBbXTsKICAgIGlmICh0cmlncmFtc1EubGVuZ3RoID4gMCkgewogICAgICAvLyBwb250dWEgcGVsYSBpbnRlcnNlY8Onw6NvIGRlIHRyaWdyYW1hcwogICAgICBjb25zdCB0cmlTdG10ID0gdGhpcy5kYi5wcmVwYXJlKGBTRUxFQ1QgaXRlbV9pZCwgbmFtZSwgbG9naWNhbF9wYXRoLCBzaXplLCBuYW1lX3RyaWdyYW1zIEZST00gc2VhcmNoX2luZGV4IExJTUlUIDEwMDBgKTsKICAgICAgY29uc3QgY2FuZGlkYXRlcyA9IHRyaVN0bXQuYWxsKCkgYXMgYW55W107CiAgICAgIHRyaU1hdGNoZXMgPSBjYW5kaWRhdGVzCiAgICAgICAgLm1hcCgoYykgPT4gewogICAgICAgICAgY29uc3QgdCA9IG5ldyBTZXQoKGMubmFtZV90cmlncmFtcyBhcyBzdHJpbmcpLnNwbGl0KCd8JykuZmlsdGVyKEJvb2xlYW4pKTsKICAgICAgICAgIGxldCBzY29yZSA9IDA7CiAgICAgICAgICBmb3IgKGNvbnN0IHRnIG9mIHRyaWdyYW1zUSkgaWYgKHQuaGFzKHRnKSkgc2NvcmUrKzsKICAgICAgICAgIHJldHVybiB7IGl0ZW1faWQ6IGMuaXRlbV9pZCwgbmFtZTogYy5uYW1lLCBsb2dpY2FsX3BhdGg6IGMubG9naWNhbF9wYXRoLCBzaXplOiBjLnNpemUsIHNjb3JlOiBzY29yZSAvIHRyaWdyYW1zUS5sZW5ndGggfTsKICAgICAgICB9KQogICAgICAgIC5maWx0ZXIoKGMpID0+IGMuc2NvcmUgPiAwLjMpCiAgICAgICAgLnNvcnQoKGEsIGIpID0+IGIuc2NvcmUgLSBhLnNjb3JlKQogICAgICAgIC5zbGljZSgwLCBsaW1pdCk7CiAgICB9CiAgICBjb25zdCBtYXAgPSBuZXcgTWFwPHN0cmluZywgU2VhcmNoUmVzdWx0PigpOwogICAgY29uc3QgYnVpbGQgPSAocm93OiBhbnksIHNjb3JlOiBudW1iZXIsIHR5cGU6ICduYW1lJyB8ICdwYXRoJyB8ICdjb250ZW50Jyk6IFNlYXJjaFJlc3VsdCA9PiB7CiAgICAgIGNvbnN0IGl0ZW0gPSB0aGlzLmNsdXN0ZXIuZ2V0KHJvdy5pdGVtX2lkKTsKICAgICAgcmV0dXJuIHsgaXRlbSwgbWF0Y2hUeXBlOiB0eXBlLCBzY29yZSB9OwogICAgfTsKICAgIGZvciAoY29uc3QgciBvZiBleGFjdCkgbWFwLnNldChyLml0ZW1faWQsIGJ1aWxkKHIsIHIuc2NvcmUsICduYW1lJykpOwogICAgZm9yIChjb25zdCByIG9mIHRyaU1hdGNoZXMpIGlmICghbWFwLmhhcyhyLml0ZW1faWQpKSBtYXAuc2V0KHIuaXRlbV9pZCwgYnVpbGQociwgci5zY29yZSwgJ25hbWUnKSk7CiAgICByZXR1cm4gQXJyYXkuZnJvbShtYXAudmFsdWVzKCkpLnNsaWNlKDAsIGxpbWl0KTsKICB9Cn0KCmZ1bmN0aW9uIHRyaWdyYW1zKHM6IHN0cmluZyk6IHN0cmluZyB7CiAgY29uc3QgcGFkZGVkID0gYCAgJHtzfSAgYDsKICBjb25zdCBzZXQgPSBuZXcgU2V0PHN0cmluZz4oKTsKICBsZXQgbTogUmVnRXhwRXhlY0FycmF5IHwgbnVsbDsKICBjb25zdCByZSA9IG5ldyBSZWdFeHAoVFJJR1JBTV9SRS5zb3VyY2UsICdnJyk7CiAgd2hpbGUgKChtID0gcmUuZXhlYyhwYWRkZWQudG9Mb3dlckNhc2UoKSkpKSB7CiAgICBpZiAobVsxXSkgc2V0LmFkZChtWzFdKTsKICB9CiAgcmV0dXJuIEFycmF5LmZyb20oc2V0KS5qb2luKCd8Jyk7Cn0K
+/**
+ * Motor de busca instantânea.
+ *
+ * - Indexa nome + caminho lógico em uma tabela search_index
+ * - Usa trigrama de caracteres para fuzzy matching
+ * - Combina com LIKE para buscas literais
+ * - Atualiza incrementalmente à medida que o cluster muda
+ */
+import type { DB } from '@main/db';
+import type { ClusterRepository } from '@main/db/repositories';
+import type { ClusterItem, SearchResult } from '@shared/types';
+
+const TRIGRAM_RE = /(?=([\s\S]{1,3}))/g;
+
+export class SearchEngine {
+  constructor(private db: DB, private cluster: ClusterRepository) {}
+
+  rebuild(): void {
+    this.db.exec(`DELETE FROM search_index`);
+    const all = this.db.prepare(`SELECT id, name, logical_path, size, updated_at FROM cluster_items WHERE deleted_at IS NULL`).all() as any[];
+    const insert = this.db.prepare(`INSERT INTO search_index (item_id, name, logical_path, name_lower, path_lower, name_trigrams, size, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`);
+    const tx = this.db.transaction((rows: any[]) => {
+      for (const r of rows) {
+        insert.run(r.id, r.name, r.logical_path, r.name.toLowerCase(), r.logical_path.toLowerCase(), trigrams(r.name.toLowerCase()), r.size, r.updated_at);
+      }
+    });
+    tx(all);
+  }
+
+  indexItem(item: ClusterItem): void {
+    this.db
+      .prepare(`INSERT OR REPLACE INTO search_index (item_id, name, logical_path, name_lower, path_lower, name_trigrams, size, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`)
+      .run(item.id, item.name, item.logicalPath, item.name.toLowerCase(), item.logicalPath.toLowerCase(), trigrams(item.name.toLowerCase()), item.size, item.updatedAt);
+  }
+
+  removeItem(itemId: string): void {
+    this.db.prepare(`DELETE FROM search_index WHERE item_id = ?`).run(itemId);
+  }
+
+  query(input: string, limit = 100): SearchResult[] {
+    const q = input.trim().toLowerCase();
+    if (!q) return [];
+    const trigramsQ = trigrams(q);
+    // 1) match exato
+    const exact = this.db
+      .prepare(`SELECT item_id, name, logical_path, size, 1.0 as score FROM search_index WHERE name_lower LIKE ? OR path_lower LIKE ? ORDER BY size DESC LIMIT ?`)
+      .all(`%${q}%`, `%${q}%`, limit) as any[];
+    // 2) trigrama — para fuzzy
+    let triMatches: any[] = [];
+    if (trigramsQ.length > 0) {
+      // pontua pela intersecção de trigramas
+      const triStmt = this.db.prepare(`SELECT item_id, name, logical_path, size, name_trigrams FROM search_index LIMIT 1000`);
+      const candidates = triStmt.all() as any[];
+      triMatches = candidates
+        .map((c) => {
+          const t = new Set((c.name_trigrams as string).split('|').filter(Boolean));
+          let score = 0;
+          for (const tg of trigramsQ) if (t.has(tg)) score++;
+          return { item_id: c.item_id, name: c.name, logical_path: c.logical_path, size: c.size, score: score / trigramsQ.length };
+        })
+        .filter((c) => c.score > 0.3)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, limit);
+    }
+    const map = new Map<string, SearchResult>();
+    const build = (row: any, score: number, type: 'name' | 'path' | 'content'): SearchResult => {
+      const item = this.cluster.get(row.item_id);
+      return { item, matchType: type, score };
+    };
+    for (const r of exact) map.set(r.item_id, build(r, r.score, 'name'));
+    for (const r of triMatches) if (!map.has(r.item_id)) map.set(r.item_id, build(r, r.score, 'name'));
+    return Array.from(map.values()).slice(0, limit);
+  }
+}
+
+function trigrams(s: string): string {
+  const padded = `  ${s}  `;
+  const set = new Set<string>();
+  let m: RegExpExecArray | null;
+  const re = new RegExp(TRIGRAM_RE.source, 'g');
+  while ((m = re.exec(padded.toLowerCase()))) {
+    if (m[1]) set.add(m[1]);
+  }
+  return Array.from(set).join('|');
+}
