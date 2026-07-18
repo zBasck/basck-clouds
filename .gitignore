@@ -1,1 +1,30 @@
-IyBMb2dzCmxvZ3MKKi5sb2cKbnBtLWRlYnVnLmxvZyoKCiMgUnVudGltZSAvIGRpc3QKbm9kZV9tb2R1bGVzCmRpc3QKcmVsZWFzZQpvdXQKLkRTX1N0b3JlCgojIEVkaXRvcgoudnNjb2RlCi5pZGVhCiouc3VvCioubnR2cyoKKi5uanNwcm9qCiouc2xuCiouc3c/CgojIEVudgouZW52Ci5lbnYubG9jYWwKCiMgQnVpbGQgY2FjaGVzCi5jYWNoZQoucGFyY2VsLWNhY2hlCi50dXJibwoqLnRzYnVpbGRpbmZvCg==
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime / dist
+node_modules
+dist
+release
+out
+.DS_Store
+
+# Editor
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Env
+.env
+.env.local
+
+# Build caches
+.cache
+.parcel-cache
+.turbo
+*.tsbuildinfo
