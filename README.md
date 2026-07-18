@@ -1,1 +1,155 @@
-IyBCYXNjayBDbG91ZHMKCj4gVW5pZmlxdWUgdG9kYXMgYXMgc3VhcyBjb250YXMgZGUgYXJtYXplbmFtZW50byBlbSBudXZlbSBlbSB1bSDDum5pY28gZHJpdmUgdmlydHVhbCBjcmlwdG9ncmFmYWRvIGRlIHBvbnRhIGEgcG9udGEuCgpCYXNjayBDbG91ZHMgw6kgdW0gYXBsaWNhdGl2byBkZXNrdG9wIHBhcmEgV2luZG93cyBxdWUgY29uZWN0YSBtw7psdGlwbGFzIGNvbnRhcyBkZSBzZXJ2acOnb3MgZGUgbnV2ZW0gKEdvb2dsZSBEcml2ZSwgT25lRHJpdmUsIERyb3Bib3gsIE1FR0EsIEJveCwgcENsb3VkLCBTMywgV2ViREFWLCBTRlRQIGUgbXVpdG9zIG91dHJvcykgZSBhcyB0cmF0YSBjb21vIHVtIMO6bmljbyBkaXNjbyB2aXJ0dWFsIGdpZ2FudGUuIFZvY8OqIHNvbWEgYSBjYXBhY2lkYWRlIGRlIHRvZGFzIGFzIGNvbnRhcywgZGlzdHJpYnVpIGFycXVpdm9zIGF1dG9tYXRpY2FtZW50ZSBlbnRyZSBlbGFzLCBmYXogYmFja3VwIGNyaXB0b2dyYWZhZG8sIHNpbmNyb25pemEgcGFzdGFzIGxvY2FpcyBlIGJ1c2NhIGVtIHR1ZG8gZGUgdW1hIHZleiDigJQgc2VtIHByZWNpc2FyIGFicmlyIGFwbGljYXRpdm8gb3Ugc2l0ZSBkZSBjYWRhIHByb3ZlZG9yLgoKLS0tCgojIyDinKggRnVuY2lvbmFsaWRhZGVzCgotICoqQ2x1c3RlciBkZSBudXZlbnMqKiDigJQgQ3JpZSB1bSBjbHVzdGVyIGUgY29uZWN0ZSBtYWlzIGRlIDIwIHByb3ZlZG9yZXMgZGlmZXJlbnRlcywgaW5jbHVpbmRvIG3Dumx0aXBsYXMgY29udGFzIGRvIG1lc21vIHNlcnZpw6dvLiBPIGVzcGHDp28gdG90YWwgw6kgYSBzb21hIGRvIGFybWF6ZW5hbWVudG8gZGUgY2FkYSBjb250YS4KLSAqKkdlcmVuY2lhbWVudG8gdW5pZmljYWRvKiog4oCUIE5hdmVndWUsIG9yZ2FuaXplIGUgYWJyYSBhcnF1aXZvcyBkZSB0b2RhcyBhcyBudXZlbnMgY29uZWN0YWRhcyBlbSB1bWEgw7puaWNhIGludGVyZmFjZS4KLSAqKkJhY2t1cCBhdXRvbcOhdGljbyBlIGNyaXB0b2dyYWZhZG8qKiDigJQgQ29uZmlndXJlIHJvdGluYXMgZW0gaW50ZXJ2YWxvcyBwcm9ncmFtYWRvczsgb3MgYXJxdWl2b3Mgc8OjbyBjcmlwdG9ncmFmYWRvcyBsb2NhbG1lbnRlIGNvbSBBRVMtMjU2LUdDTSBhbnRlcyBkbyBlbnZpby4KLSAqKlNpbmNyb25pemHDp8OjbyBiaWRpcmVjaW9uYWwqKiDigJQgTWFudGVuaGEgcGFzdGFzIGxvY2FpcyBlbSBzaW5jcm9uaWEgY29tIG8gY2x1c3RlciAobW9kbyBhdXRvbcOhdGljbyBvdSBtYW51YWwpLgotICoqQnVzY2EgaW5zdGFudMOibmVhKiog4oCUIEJhcnJhIGRlIHBlc3F1aXNhIGNlbnRyYWwgcXVlIHZhc2N1bGhhIHRvZGFzIGFzIG51dmVucyBjb25lY3RhZGFzLCBjb20gw61uZGljZSBsb2NhbCBkZSBtZXRhZGFkb3MuCi0gKipEaXN0cmlidWnDp8OjbyBpbnRlbGlnZW50ZSoqIOKAlCBBbGdvcml0bW8gZGUgYmFsYW5jZWFtZW50byBxdWUgZXNjb2xoZSBhIG1lbGhvciBjb250YSBwYXJhIGNhZGEgYXJxdWl2byBjb20gYmFzZSBlbSBlc3Bhw6dvIGxpdnJlLCBzYcO6ZGUgZGEgY29udGEgZSBhZmluaWRhZGUuCi0gKipDb2ZyZSBzZWd1cm8qKiDigJQgQ3JlZGVuY2lhaXMgYXJtYXplbmFkYXMgbm8gKipXaW5kb3dzIENyZWRlbnRpYWwgTWFuYWdlcioqIHZpYSBga2V5dGFyYDsgY2hhdmUgbWVzdHJhIHByb3RlZ2lkYSBjb20gQXJnb24yaWQuCi0gKipJbnRlcmZhY2UgbW9kZXJuYSoqIOKAlCBVSSBlbSBSZWFjdCArIFZpdGUsIGRlc2lnbiBsaW1wbywgw61jb25lcyBwb3IgcHJvdmVkb3IgZSBiYXJyYSBkZSBzdGF0dXMgY29tIG8gdG90YWwgY29tYmluYWRvIGRvIGNsdXN0ZXIuCgotLS0KCiMjIPCfp6kgUHJvdmVkb3JlcyBzdXBvcnRhZG9zICgyMCspCgpHb29nbGUgRHJpdmUsIE9uZURyaXZlLCBEcm9wYm94LCBNRUdBLCBCb3gsIHBDbG91ZCwgWWFuZGV4IERpc2ssIGlDbG91ZCBEcml2ZSwgTWVkaWFGaXJlLCBLb29mciwgSm90dGFjbG91ZCwgRmlsZW4sIEludGVybnh0LCBBbWF6b24gUzMsIENsb3VkZmxhcmUgUjIsIEJhY2tibGF6ZSBCMiwgV2FzYWJpLCBNaW5JTyAocXVhbHF1ZXIgUzMtY29tcGF0w612ZWwpLCBXZWJEQVYsIFNGVFAsIEZUUCBlIHNpc3RlbWEgZGUgYXJxdWl2b3MgbG9jYWwuCgpBIGxpc3RhIMOpIGV4dGVuc8OtdmVsIOKAlCBub3ZvcyBhZGFwdGFkb3JlcyBwb2RlbSBzZXIgYWRpY2lvbmFkb3MgaW1wbGVtZW50YW5kbyBhIGludGVyZmFjZSBgQ2xvdWRQcm92aWRlcmAuCgotLS0KCiMjIPCflJAgU2VndXJhbsOnYQoKLSBDcmlwdG9ncmFmaWEgKipBRVMtMjU2LUdDTSoqIGNvbSBjaGF2ZSBkZXJpdmFkYSB2aWEgKipBcmdvbjJpZCoqLgotIERhZG9zIHPDo28gY2lmcmFkb3MgKiphbnRlcyoqIGRlIHNhw61yZW0gZGEgbcOhcXVpbmEgKEUyRUUpLgotIFRva2VucyBPQXV0aCBlIGNyZWRlbmNpYWlzIHPDo28gbWFudGlkb3Mgbm8gKipXaW5kb3dzIENyZWRlbnRpYWwgTWFuYWdlcioqLgotIE5lbmh1bSBhcnF1aXZvIHBsYWludGV4dCB0b2NhIG8gZGlzY28gZG8gcHJvdmVkb3IgZGUgZGVzdGluby4KCi0tLQoKIyMg8J+Pl++4jyBBcnF1aXRldHVyYQoKYGBgCuKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkArilIIgICAgICAgICAgICAgICAgICAgIEVsZWN0cm9uIE1haW4gUHJvY2VzcyAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAg4pSCCuKUgiAg4pSCICBDbHVzdGVyICAgIOKUgiAg4pSCICAgU3luYyAgICAgICDilIIgIOKUgiAgQmFja3VwICAgICAgICAgIOKUgiAg4pSCCuKUgiAg4pSCICBFbmdpbmUgICAgIOKUgiAg4pSCICAgRW5naW5lICAgICDilIIgIOKUgiAgU2NoZWR1bGVyICAgICAgIOKUgiAg4pSCCuKUgiAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSs4pSA4pSA4pSA4pSA4pSA4pSA4pSYICDilJTilIDilIDilIDilIDilIDilIDilKzilIDilIDilIDilIDilIDilIDilIDilJggIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAg4pSCCuKUgiAgICAgICAgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUtOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICAgICAgICAgICDilIIK4pSCICAgICAgICAgICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pa84pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICDilIIK4pSCICDilIIgICAgICAgICAgICAgIFByb3ZpZGVyIEFkYXB0ZXJzICgyMCspICAgICAgICAgICAgICAgICAg4pSCICDilIIK4pSCICDilIIgIEdvb2dsZSDigKIgT25lRHJpdmUg4oCiIERyb3Bib3gg4oCiIE1FR0Eg4oCiIFMzIOKAoiBXZWJEQVYgLi4uIOKUgiAg4pSCCuKUgiAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYIOKUggrilIIgICAgICAgICDilIIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICDilIzilIDilIDilIDilIDilIDilIDilrzilIDilIDilIDilIDilIDilIDilIDilIDilJAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICDilIIK4pSCICDilIIgQ3J5cHRvIFNlcnZpY2XilIIgIOKUgiAgU1FMaXRlIChkYikgIOKUgiAg4pSCICBLZXljaGFpbiAgICAg4pSCICDilIIK4pSCICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJggIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICDilIIK4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCiAgICAgICAgICAgICAgICAgICAgICAgICAg4payCiAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCIElQQyAoY29udGV4dEJyaWRnZSkKICAgICAgICAgICAgICAgICAgICAgICAgICDilrwK4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCuKUgiAgICAgICAgICAgICAgICAgIFJlYWN0IFJlbmRlcmVyIChWaXRlKSAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICBEYXNoYm9hcmQg4oCiIEFycXVpdm9zIOKAoiBCdXNjYXMg4oCiIEJhY2t1cHMg4oCiIFN5bmMg4oCiIENvbnRhcyAgICDilIIK4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCmBgYAoKLS0tCgojIyDwn5ug77iPIFN0YWNrCgotICoqRWxlY3Ryb24gMzIqKiDigJQgcnVudGltZSBkZXNrdG9wCi0gKipSZWFjdCAxOCArIFZpdGUgKyBUeXBlU2NyaXB0Kiog4oCUIGludGVyZmFjZQotICoqYmV0dGVyLXNxbGl0ZTMqKiDigJQgYmFuY28gbG9jYWwgKG1ldGFkYWRvcywgw61uZGljZXMsIGZpbGEgZGUgb3BlcmHDp8O1ZXMpCi0gKipub2RlLWNyb24qKiDigJQgYWdlbmRhbWVudG8gZGUgYmFja3VwcwotICoqY2hva2lkYXIqKiDigJQgb2JzZXJ2YcOnw6NvIGRlIHBhc3RhcyBwYXJhIHNpbmNyb25pemHDp8OjbwotICoqQXJnb24yIC8gQUVTLTI1Ni1HQ00qKiDigJQgY3JpcHRvZ3JhZmlhCi0gKiprZXl0YXIqKiDigJQgYXJtYXplbmFtZW50byBzZWd1cm8gZGUgY3JlZGVuY2lhaXMKCi0tLQoKIyMg8J+agCBDb21lw6dhbmRvCgojIyMgUHLDqS1yZXF1aXNpdG9zCgotICoqTm9kZS5qcyAyMCsqKgotICoqbnBtIDEwKyoqCi0gKipXaW5kb3dzIDEwLzExKiogKGJ1aWxkIGFsdm8pCgojIyMgSW5zdGFsYcOnw6NvCgpgYGBiYXNoCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vekJhc2NrL2Jhc2NrLWNsb3Vkcy5naXQKY2QgYmFzY2stY2xvdWRzCm5wbSBpbnN0YWxsCmBgYAoKIyMjIERlc2Vudm9sdmltZW50bwoKYGBgYmFzaApucG0gcnVuIGRldgpgYGAKCkVzc2UgY29tYW5kbyBpbmljaWEgbyBWaXRlIHBhcmEgbyByZW5kZXJlciBlIG8gRWxlY3Ryb24gcGFyYSBvIG1haW4gcHJvY2VzcyBjb20gaG90LXJlbG9hZC4KCiMjIyBCdWlsZCBkZSBwcm9kdcOnw6NvCgpgYGBiYXNoCm5wbSBydW4gYnVpbGQgICAgICAgICAjIGNvbXBpbGEgbWFpbiBlIHJlbmRlcmVyCm5wbSBydW4gcGFja2FnZSAgICAgICAjIGdlcmEgbyBpbnN0YWxhZG9yIE5TSVMgZSBwb3J0YWJsZSBubyBkaXJldMOzcmlvIHJlbGVhc2UvCmBgYAoKLS0tCgojIyDwn5OBIEVzdHJ1dHVyYQoKYGBgCmJhc2NrLWNsb3Vkcy8K4pSc4pSA4pSAIHNyYy8K4pSCICAg4pSc4pSA4pSAIG1haW4vICAgICAgICAgICAgICAgICAjIFByb2Nlc3NvIHByaW5jaXBhbCBkbyBFbGVjdHJvbgrilIIgICDilIIgICDilJzilIDilIAgbWFpbi50cyAgICAgICAgICAgIyBCb290c3RyYXAK4pSCICAg4pSCICAg4pSc4pSA4pSAIGNsdXN0ZXIvICAgICAgICAgICMgTW90b3IgZG8gY2x1c3RlciwgZGlzdHJpYnV0b3IsIGFjY291bnRzCuKUgiAgIOKUgiAgIOKUnOKUgOKUgCBwcm92aWRlcnMvICAgICAgICAjIDIwKyBhZGFwdGFkb3JlcyBkZSBwcm92ZWRvcgrilIIgICDilIIgICDilJzilIDilIAgc2VydmljZXMvICAgICAgICAgIyBjcnlwdG8sIGtleWNoYWluLCB2YXVsdArilIIgICDilIIgICDilJzilIDilIAgc3luYy8gICAgICAgICAgICAgIyBTaW5jcm9uaXphw6fDo28gZGUgcGFzdGFzCuKUgiAgIOKUgiAgIOKUnOKUgOKUgCBiYWNrdXAvICAgICAgICAgICAjIEFnZW5kYWRvciBkZSBiYWNrdXBzCuKUgiAgIOKUgiAgIOKUnOKUgOKUgCBzZWFyY2gvICAgICAgICAgICAjIE1vdG9yIGRlIGJ1c2NhCuKUgiAgIOKUgiAgIOKUlOKUgOKUgCBkYi8gICAgICAgICAgICAgICAjIFNRTGl0ZSArIHJlcG9zaXTDs3Jpb3MK4pSCICAg4pSc4pSA4pSAIHByZWxvYWQvICAgICAgICAgICAgICAjIEJyaWRnZSBJUEMgKGNvbnRleHRCcmlkZ2UpCuKUgiAgIOKUnOKUgOKUgCByZW5kZXJlci8gICAgICAgICAgICAgIyBSZWFjdCArIFZpdGUK4pSCICAg4pSCICAg4pSc4pSA4pSAIHBhZ2VzLyAgICAgICAgICAgICMgRGFzaGJvYXJkLCBGaWxlcywgQmFja3VwcywgU3luYywgLi4uCuKUgiAgIOKUgiAgIOKUnOKUgOKUgCBjb21wb25lbnRzLyAgICAgICAjIFNpZGViYXIsIFRvcGJhciwgQWRkQWNjb3VudE1vZGFsLCAuLi4K4pSCICAg4pSCICAg4pSU4pSA4pSAIHN0eWxlcy8gICAgICAgICAgICMgQ1NTIGdsb2JhbArilIIgICDilJTilIDilIAgc2hhcmVkLyAgICAgICAgICAgICAgICMgVGlwb3MgZSBjb25zdGFudGVzIGNvbXBhcnRpbGhhZG9zCuKUnOKUgOKUgCAuZ2l0aHViL3dvcmtmbG93cy8gICAgICAgICMgQ0k6IGxpbnQsIGJ1aWxkLCByZWxlYXNlCuKUnOKUgOKUgCBzY3JpcHRzLyAgICAgICAgICAgICAgICAgICMgdXRpbGl0w6FyaW9zCuKUnOKUgOKUgCBidWlsZC8gICAgICAgICAgICAgICAgICAgICMgw61jb25lcyBlIHJlY3Vyc29zIGRvIGVsZWN0cm9uLWJ1aWxkZXIK4pSU4pSA4pSAIHBhY2thZ2UuanNvbgpgYGAKCi0tLQoKIyMg8J+knSBDb250cmlidWluZG8KCjEuIEZhw6dhIHVtIGZvcmsKMi4gQ3JpZSBzdWEgYnJhbmNoOiBgZ2l0IGNoZWNrb3V0IC1iIGZlYXR1cmUvbWluaGEtZmVhdHVyZWAKMy4gQ29tbWl0OiBgZ2l0IGNvbW1pdCAtbSAiZmVhdDogbWluaGEgY29udHJpYnVpw6fDo28iYAo0LiBQdXNoOiBgZ2l0IHB1c2ggb3JpZ2luIGZlYXR1cmUvbWluaGEtZmVhdHVyZWAKNS4gQWJyYSB1bSBQdWxsIFJlcXVlc3QKCi0tLQoKIyMg8J+TnCBMaWNlbsOnYQoKTUlUIMKpIDIwMjYgekJhc2NrCg==
+# Basck Clouds
+
+> Unifique todas as suas contas de armazenamento em nuvem em um único drive virtual criptografado de ponta a ponta.
+
+Basck Clouds é um aplicativo desktop para Windows que conecta múltiplas contas de serviços de nuvem (Google Drive, OneDrive, Dropbox, MEGA, Box, pCloud, S3, WebDAV, SFTP e muitos outros) e as trata como um único disco virtual gigante. Você soma a capacidade de todas as contas, distribui arquivos automaticamente entre elas, faz backup criptografado, sincroniza pastas locais e busca em tudo de uma vez — sem precisar abrir aplicativo ou site de cada provedor.
+
+---
+
+## ✨ Funcionalidades
+
+- **Cluster de nuvens** — Crie um cluster e conecte mais de 20 provedores diferentes, incluindo múltiplas contas do mesmo serviço. O espaço total é a soma do armazenamento de cada conta.
+- **Gerenciamento unificado** — Navegue, organize e abra arquivos de todas as nuvens conectadas em uma única interface.
+- **Backup automático e criptografado** — Configure rotinas em intervalos programados; os arquivos são criptografados localmente com AES-256-GCM antes do envio.
+- **Sincronização bidirecional** — Mantenha pastas locais em sincronia com o cluster (modo automático ou manual).
+- **Busca instantânea** — Barra de pesquisa central que vasculha todas as nuvens conectadas, com índice local de metadados.
+- **Distribuição inteligente** — Algoritmo de balanceamento que escolhe a melhor conta para cada arquivo com base em espaço livre, saúde da conta e afinidade.
+- **Cofre seguro** — Credenciais armazenadas no **Windows Credential Manager** via `keytar`; chave mestra protegida com Argon2id.
+- **Interface moderna** — UI em React + Vite, design limpo, ícones por provedor e barra de status com o total combinado do cluster.
+
+---
+
+## 🧩 Provedores suportados (20+)
+
+Google Drive, OneDrive, Dropbox, MEGA, Box, pCloud, Yandex Disk, iCloud Drive, MediaFire, Koofr, Jottacloud, Filen, Internxt, Amazon S3, Cloudflare R2, Backblaze B2, Wasabi, MinIO (qualquer S3-compatível), WebDAV, SFTP, FTP e sistema de arquivos local.
+
+A lista é extensível — novos adaptadores podem ser adicionados implementando a interface `CloudProvider`.
+
+---
+
+## 🔐 Segurança
+
+- Criptografia **AES-256-GCM** com chave derivada via **Argon2id**.
+- Dados são cifrados **antes** de saírem da máquina (E2EE).
+- Tokens OAuth e credenciais são mantidos no **Windows Credential Manager**.
+- Nenhum arquivo plaintext toca o disco do provedor de destino.
+
+---
+
+## 🏗️ Arquitetura
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Electron Main Process                    │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────────┐  │
+│  │  Cluster    │  │   Sync       │  │  Backup          │  │
+│  │  Engine     │  │   Engine     │  │  Scheduler       │  │
+│  └──────┬──────┘  └──────┬───────┘  └────────┬─────────┘  │
+│         └────────┬───────┴───────────────────┘             │
+│                  │                                          │
+│  ┌───────────────▼──────────────────────────────────────┐  │
+│  │              Provider Adapters (20+)                  │  │
+│  │  Google • OneDrive • Dropbox • MEGA • S3 • WebDAV ... │  │
+│  └───────────────────────────────────────────────────────┘ │
+│         │                                                   │
+│  ┌──────▼────────┐  ┌───────────────┐  ┌───────────────┐  │
+│  │ Crypto Service│  │  SQLite (db)  │  │  Keychain     │  │
+│  └───────────────┘  └───────────────┘  └───────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+                          ▲
+                          │ IPC (contextBridge)
+                          ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  React Renderer (Vite)                      │
+│  Dashboard • Arquivos • Buscas • Backups • Sync • Contas    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛠️ Stack
+
+- **Electron 32** — runtime desktop
+- **React 18 + Vite + TypeScript** — interface
+- **better-sqlite3** — banco local (metadados, índices, fila de operações)
+- **node-cron** — agendamento de backups
+- **chokidar** — observação de pastas para sincronização
+- **Argon2 / AES-256-GCM** — criptografia
+- **keytar** — armazenamento seguro de credenciais
+
+---
+
+## 🚀 Começando
+
+### Pré-requisitos
+
+- **Node.js 20+**
+- **npm 10+**
+- **Windows 10/11** (build alvo)
+
+### Instalação
+
+```bash
+git clone https://github.com/zBasck/basck-clouds.git
+cd basck-clouds
+npm install
+```
+
+### Desenvolvimento
+
+```bash
+npm run dev
+```
+
+Esse comando inicia o Vite para o renderer e o Electron para o main process com hot-reload.
+
+### Build de produção
+
+```bash
+npm run build         # compila main e renderer
+npm run package       # gera o instalador NSIS e portable no diretório release/
+```
+
+---
+
+## 📁 Estrutura
+
+```
+basck-clouds/
+├── src/
+│   ├── main/                 # Processo principal do Electron
+│   │   ├── main.ts           # Bootstrap
+│   │   ├── cluster/          # Motor do cluster, distributor, accounts
+│   │   ├── providers/        # 20+ adaptadores de provedor
+│   │   ├── services/         # crypto, keychain, vault
+│   │   ├── sync/             # Sincronização de pastas
+│   │   ├── backup/           # Agendador de backups
+│   │   ├── search/           # Motor de busca
+│   │   └── db/               # SQLite + repositórios
+│   ├── preload/              # Bridge IPC (contextBridge)
+│   ├── renderer/             # React + Vite
+│   │   ├── pages/            # Dashboard, Files, Backups, Sync, ...
+│   │   ├── components/       # Sidebar, Topbar, AddAccountModal, ...
+│   │   └── styles/           # CSS global
+│   └── shared/               # Tipos e constantes compartilhados
+├── .github/workflows/        # CI: lint, build, release
+├── scripts/                  # utilitários
+├── build/                    # ícones e recursos do electron-builder
+└── package.json
+```
+
+---
+
+## 🤝 Contribuindo
+
+1. Faça um fork
+2. Crie sua branch: `git checkout -b feature/minha-feature`
+3. Commit: `git commit -m "feat: minha contribuição"`
+4. Push: `git push origin feature/minha-feature`
+5. Abra um Pull Request
+
+---
+
+## 📜 Licença
+
+MIT © 2026 zBasck
