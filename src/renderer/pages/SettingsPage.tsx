@@ -1,1 +1,72 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgYXBpIH0gZnJvbSAnLi4vYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBTZXR0aW5nc1BhZ2UoKSB7CiAgY29uc3QgW3NldHRpbmdzLCBzZXRTZXR0aW5nc10gPSB1c2VTdGF0ZTxhbnk+KG51bGwpOwoKICB1c2VFZmZlY3QoKCkgPT4gewogICAgYXBpLnNldHRpbmdzLmdldCgpLnRoZW4oc2V0U2V0dGluZ3MpOwogIH0sIFtdKTsKCiAgaWYgKCFzZXR0aW5ncykgcmV0dXJuIDxwPkNhcnJlZ2FuZG/igKY8L3A+OwoKICBmdW5jdGlvbiB1cGRhdGUocGF0Y2g6IGFueSkgewogICAgY29uc3QgbmV4dCA9IHsgLi4uc2V0dGluZ3MsIC4uLnBhdGNoIH07CiAgICBzZXRTZXR0aW5ncyhuZXh0KTsKICAgIGFwaS5zZXR0aW5ncy51cGRhdGUobmV4dCk7CiAgfQoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9InBhZ2UiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0icGFnZS1oZWFkZXIiPjxoMj5BanVzdGVzPC9oMj48L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9ImNhcmQiPgogICAgICAgIDxoMz5BcGFyw6puY2lhPC9oMz4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm93Ij4KICAgICAgICAgIDxsYWJlbCBzdHlsZT17eyB3aWR0aDogMTYwIH19PlRlbWE8L2xhYmVsPgogICAgICAgICAgPHNlbGVjdCB2YWx1ZT17c2V0dGluZ3MudGhlbWV9IG9uQ2hhbmdlPXsoZSkgPT4gdXBkYXRlKHsgdGhlbWU6IGUudGFyZ2V0LnZhbHVlIH0pfT4KICAgICAgICAgICAgPG9wdGlvbiB2YWx1ZT0iZGFyayI+RXNjdXJvPC9vcHRpb24+CiAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9ImxpZ2h0Ij5DbGFybzwvb3B0aW9uPgogICAgICAgICAgICA8b3B0aW9uIHZhbHVlPSJzeXN0ZW0iPlNlZ3VpciBzaXN0ZW1hPC9vcHRpb24+CiAgICAgICAgICA8L3NlbGVjdD4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm93Ij4KICAgICAgICAgIDxsYWJlbCBzdHlsZT17eyB3aWR0aDogMTYwIH19PklkaW9tYTwvbGFiZWw+CiAgICAgICAgICA8c2VsZWN0IHZhbHVlPXtzZXR0aW5ncy5sYW5ndWFnZX0gb25DaGFuZ2U9eyhlKSA9PiB1cGRhdGUoeyBsYW5ndWFnZTogZS50YXJnZXQudmFsdWUgfSl9PgogICAgICAgICAgICA8b3B0aW9uIHZhbHVlPSJwdC1CUiI+UG9ydHVndcOqcyAoQnJhc2lsKTwvb3B0aW9uPgogICAgICAgICAgICA8b3B0aW9uIHZhbHVlPSJlbi1VUyI+RW5nbGlzaCAoVVMpPC9vcHRpb24+CiAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9ImVzLUVTIj5Fc3Bhw7FvbDwvb3B0aW9uPgogICAgICAgICAgPC9zZWxlY3Q+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgoKICAgICAgPGRpdiBjbGFzc05hbWU9ImNhcmQiPgogICAgICAgIDxoMz5Db21wb3J0YW1lbnRvPC9oMz4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm93Ij48bGFiZWwgc3R5bGU9e3sgd2lkdGg6IDIyMCB9fT5JbmljaWFyIGNvbSBvIFdpbmRvd3M8L2xhYmVsPjxpbnB1dCB0eXBlPSJjaGVja2JveCIgY2hlY2tlZD17c2V0dGluZ3MuYXV0b1N0YXJ0fSBvbkNoYW5nZT17KGUpID0+IHVwZGF0ZSh7IGF1dG9TdGFydDogZS50YXJnZXQuY2hlY2tlZCB9KX0gLz48L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icm93Ij48bGFiZWwgc3R5bGU9e3sgd2lkdGg6IDIyMCB9fT5NaW5pbWl6YXIgcGFyYSBhIGJhbmRlamE8L2xhYmVsPjxpbnB1dCB0eXBlPSJjaGVja2JveCIgY2hlY2tlZD17c2V0dGluZ3MubWluaW1pemVUb1RyYXl9IG9uQ2hhbmdlPXsoZSkgPT4gdXBkYXRlKHsgbWluaW1pemVUb1RyYXk6IGUudGFyZ2V0LmNoZWNrZWQgfSl9IC8+PC9kaXY+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdyI+PGxhYmVsIHN0eWxlPXt7IHdpZHRoOiAyMjAgfX0+Tm90aWZpY2HDp8O1ZXMgZG8gc2lzdGVtYTwvbGFiZWw+PGlucHV0IHR5cGU9ImNoZWNrYm94IiBjaGVja2VkPXtzZXR0aW5ncy5ub3RpZmljYXRpb25zfSBvbkNoYW5nZT17KGUpID0+IHVwZGF0ZSh7IG5vdGlmaWNhdGlvbnM6IGUudGFyZ2V0LmNoZWNrZWQgfSl9IC8+PC9kaXY+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdyI+PGxhYmVsIHN0eWxlPXt7IHdpZHRoOiAyMjAgfX0+VGVsZW1ldHJpYSBhbsO0bmltYTwvbGFiZWw+PGlucHV0IHR5cGU9ImNoZWNrYm94IiBjaGVja2VkPXtzZXR0aW5ncy50ZWxlbWV0cnl9IG9uQ2hhbmdlPXsoZSkgPT4gdXBkYXRlKHsgdGVsZW1ldHJ5OiBlLnRhcmdldC5jaGVja2VkIH0pfSAvPjwvZGl2PgogICAgICA8L2Rpdj4KCiAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXJkIj4KICAgICAgICA8aDM+Q2x1c3RlciBlIGNyaXB0b2dyYWZpYTwvaDM+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InJvdyI+CiAgICAgICAgICA8bGFiZWwgc3R5bGU9e3sgd2lkdGg6IDIyMCB9fT5DcmlwdG9ncmFmYXIgdG9kb3Mgb3MgdXBsb2FkczwvbGFiZWw+CiAgICAgICAgICA8aW5wdXQgdHlwZT0iY2hlY2tib3giIGNoZWNrZWQ9e3NldHRpbmdzLmRlZmF1bHRFbmNyeXB0aW9ufSBvbkNoYW5nZT17KGUpID0+IHVwZGF0ZSh7IGRlZmF1bHRFbmNyeXB0aW9uOiBlLnRhcmdldC5jaGVja2VkIH0pfSAvPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJyb3ciPgogICAgICAgICAgPGxhYmVsIHN0eWxlPXt7IHdpZHRoOiAyMjAgfX0+VGFtYW5obyBkbyBjaHVuayAoTUIpPC9sYWJlbD4KICAgICAgICAgIDxpbnB1dCB0eXBlPSJudW1iZXIiIHZhbHVlPXtzZXR0aW5ncy5kZWZhdWx0Q2h1bmtTaXplIC8gKDEwMjQgKiAxMDI0KX0gb25DaGFuZ2U9eyhlKSA9PiB1cGRhdGUoeyBkZWZhdWx0Q2h1bmtTaXplOiBOdW1iZXIoZS50YXJnZXQudmFsdWUpICogMTAyNCAqIDEwMjQgfSl9IC8+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPHAgc3R5bGU9e3sgY29sb3I6ICd2YXIoLS10ZXh0LWRpbSknLCBmb250U2l6ZTogMTIsIG1hcmdpblRvcDogOCB9fT4KICAgICAgICAgIE9zIGNodW5rcyBzw6NvIGNpZnJhZG9zIGxvY2FsbWVudGUgY29tIEFFUy0yNTYtR0NNIGFudGVzIGRlIHF1YWxxdWVyIHVwbG9hZC4gTmVuaHVtIGJ5dGUgc2FpIGRvIHNldSBkaXNwb3NpdGl2byBzZW0gY3JpcHRvZ3JhZmlhLgogICAgICAgIDwvcD4KICAgICAgPC9kaXY+CgogICAgICA8ZGl2IGNsYXNzTmFtZT0iY2FyZCI+CiAgICAgICAgPGgzPlNvYnJlPC9oMz4KICAgICAgICA8cD5CYXNjayBDbG91ZHMgMS4wLjAgwrcgPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL3pCYXNjay9iYXNjay1jbG91ZHMiIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vcmVmZXJyZXIiPmdpdGh1Yi5jb20vekJhc2NrL2Jhc2NrLWNsb3VkczwvYT48L3A+CiAgICAgICAgPHAgc3R5bGU9e3sgY29sb3I6ICd2YXIoLS10ZXh0LWRpbSknLCBmb250U2l6ZTogMTIgfX0+Q3JpcHRvZ3JhZmlhIEFFUy0yNTYtR0NNLCBQQktERjIgY29tIDI1MGsgaXRlcmHDp8O1ZXMgU0hBLTUxMiwgZGVyaXZhw6fDtWVzIGxvY2FpcyBkZSBjaGF2ZSBwb3IgYXJxdWl2by48L3A+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQo=
+import { useEffect, useState } from 'react';
+import { api } from '../api';
+
+export function SettingsPage() {
+  const [settings, setSettings] = useState<any>(null);
+
+  useEffect(() => {
+    api.settings.get().then(setSettings);
+  }, []);
+
+  if (!settings) return <p>Carregando…</p>;
+
+  function update(patch: any) {
+    const next = { ...settings, ...patch };
+    setSettings(next);
+    api.settings.update(next);
+  }
+
+  return (
+    <div className="page">
+      <div className="page-header"><h2>Ajustes</h2></div>
+      <div className="card">
+        <h3>Aparência</h3>
+        <div className="row">
+          <label style={{ width: 160 }}>Tema</label>
+          <select value={settings.theme} onChange={(e) => update({ theme: e.target.value })}>
+            <option value="dark">Escuro</option>
+            <option value="light">Claro</option>
+            <option value="system">Seguir sistema</option>
+          </select>
+        </div>
+        <div className="row">
+          <label style={{ width: 160 }}>Idioma</label>
+          <select value={settings.language} onChange={(e) => update({ language: e.target.value })}>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="en-US">English (US)</option>
+            <option value="es-ES">Español</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="card">
+        <h3>Comportamento</h3>
+        <div className="row"><label style={{ width: 220 }}>Iniciar com o Windows</label><input type="checkbox" checked={settings.autoStart} onChange={(e) => update({ autoStart: e.target.checked })} /></div>
+        <div className="row"><label style={{ width: 220 }}>Minimizar para a bandeja</label><input type="checkbox" checked={settings.minimizeToTray} onChange={(e) => update({ minimizeToTray: e.target.checked })} /></div>
+        <div className="row"><label style={{ width: 220 }}>Notificações do sistema</label><input type="checkbox" checked={settings.notifications} onChange={(e) => update({ notifications: e.target.checked })} /></div>
+        <div className="row"><label style={{ width: 220 }}>Telemetria anônima</label><input type="checkbox" checked={settings.telemetry} onChange={(e) => update({ telemetry: e.target.checked })} /></div>
+      </div>
+
+      <div className="card">
+        <h3>Cluster e criptografia</h3>
+        <div className="row">
+          <label style={{ width: 220 }}>Criptografar todos os uploads</label>
+          <input type="checkbox" checked={settings.defaultEncryption} onChange={(e) => update({ defaultEncryption: e.target.checked })} />
+        </div>
+        <div className="row">
+          <label style={{ width: 220 }}>Tamanho do chunk (MB)</label>
+          <input type="number" value={settings.defaultChunkSize / (1024 * 1024)} onChange={(e) => update({ defaultChunkSize: Number(e.target.value) * 1024 * 1024 })} />
+        </div>
+        <p style={{ color: 'var(--text-dim)', fontSize: 12, marginTop: 8 }}>
+          Os chunks são cifrados localmente com AES-256-GCM antes de qualquer upload. Nenhum byte sai do seu dispositivo sem criptografia.
+        </p>
+      </div>
+
+      <div className="card">
+        <h3>Sobre</h3>
+        <p>Basck Clouds 1.0.0 · <a href="https://github.com/zBasck/basck-clouds" target="_blank" rel="noreferrer">github.com/zBasck/basck-clouds</a></p>
+        <p style={{ color: 'var(--text-dim)', fontSize: 12 }}>Criptografia AES-256-GCM, PBKDF2 com 250k iterações SHA-512, derivações locais de chave por arquivo.</p>
+      </div>
+    </div>
+  );
+}

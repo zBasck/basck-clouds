@@ -1,1 +1,59 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgYXBpIH0gZnJvbSAnLi4vYXBpJzsKaW1wb3J0IHsgZm9ybWF0Qnl0ZXMsIHVzZURlYm91bmNlZCB9IGZyb20gJy4uL3V0aWxzJzsKCmV4cG9ydCBmdW5jdGlvbiBTZWFyY2hQYWdlKCkgewogIGNvbnN0IFtxLCBzZXRRXSA9IHVzZVN0YXRlKCcnKTsKICBjb25zdCBkZWJvdW5jZWQgPSB1c2VEZWJvdW5jZWQocSwgMjAwKTsKICBjb25zdCBbcmVzdWx0cywgc2V0UmVzdWx0c10gPSB1c2VTdGF0ZTxhbnlbXT4oW10pOwogIGNvbnN0IFtidXN5LCBzZXRCdXN5XSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGlmICghZGVib3VuY2VkKSB7IHNldFJlc3VsdHMoW10pOyByZXR1cm47IH0KICAgIHNldEJ1c3kodHJ1ZSk7CiAgICBhcGkuc2VhcmNoLnF1ZXJ5KGRlYm91bmNlZCkudGhlbigocikgPT4gc2V0UmVzdWx0cyhyIGFzIGFueSkpLmZpbmFsbHkoKCkgPT4gc2V0QnVzeShmYWxzZSkpOwogIH0sIFtkZWJvdW5jZWRdKTsKCiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJwYWdlIj4KICAgICAgPGRpdiBjbGFzc05hbWU9InBhZ2UtaGVhZGVyIj4KICAgICAgICA8aDI+QnVzY2EgaW5zdGFudMOibmVhPC9oMj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JvdyIgLz4KICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9e2FzeW5jICgpID0+IHsgYXdhaXQgYXBpLnNlYXJjaC5yZWJ1aWxkKCk7IGFsZXJ0KCfDjW5kaWNlIHJlY29uc3RydcOtZG8nKTsgfX0+UmVjb25zdHJ1aXIgw61uZGljZTwvYnV0dG9uPgogICAgICA8L2Rpdj4KICAgICAgPGlucHV0CiAgICAgICAgYXV0b0ZvY3VzCiAgICAgICAgcGxhY2Vob2xkZXI9IkRpZ2l0ZSBwYXJhIGJ1c2NhciBlbSB0b2RvcyBvcyBhcnF1aXZvcyBkbyBjbHVzdGVy4oCmIgogICAgICAgIHZhbHVlPXtxfQogICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0UShlLnRhcmdldC52YWx1ZSl9CiAgICAgICAgc3R5bGU9e3sgZm9udFNpemU6IDE2LCBwYWRkaW5nOiAxNCB9fQogICAgICAvPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iY2FyZCIgc3R5bGU9e3sgbWFyZ2luVG9wOiA4IH19PgogICAgICAgIHtidXN5ID8gPHA+QnVzY2FuZG/igKY8L3A+IDogKAogICAgICAgICAgcmVzdWx0cy5sZW5ndGggPT09IDAgPyA8cCBzdHlsZT17eyBjb2xvcjogJ3ZhcigtLXRleHQtZGltKScgfX0+e3EgPyAnTmVuaHVtIHJlc3VsdGFkby4nIDogJ0EgYnVzY2Egw6kgZnV6enkgZSB1c2EgdHJpZ3JhbWFzIOKAlCBmdW5jaW9uYSBtZXNtbyBjb20gZXJyb3MgZGUgZGlnaXRhw6fDo28uJ308L3A+IDogKAogICAgICAgICAgICA8dGFibGUgc3R5bGU9e3sgd2lkdGg6ICcxMDAlJyB9fT4KICAgICAgICAgICAgICA8dGhlYWQ+CiAgICAgICAgICAgICAgICA8dHIgc3R5bGU9e3sgdGV4dEFsaWduOiAnbGVmdCcsIGNvbG9yOiAndmFyKC0tdGV4dC1tdXRlZCknIH19PgogICAgICAgICAgICAgICAgICA8dGg+Tm9tZTwvdGg+CiAgICAgICAgICAgICAgICAgIDx0aD5DYW1pbmhvPC90aD4KICAgICAgICAgICAgICAgICAgPHRoPlRhbWFuaG88L3RoPgogICAgICAgICAgICAgICAgICA8dGg+U2NvcmU8L3RoPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICA8L3RoZWFkPgogICAgICAgICAgICAgIDx0Ym9keT4KICAgICAgICAgICAgICAgIHtyZXN1bHRzLm1hcCgocikgPT4gKAogICAgICAgICAgICAgICAgICA8dHIga2V5PXtyLml0ZW0uaWR9PgogICAgICAgICAgICAgICAgICAgIDx0ZD57ci5pdGVtLm5hbWV9PC90ZD4KICAgICAgICAgICAgICAgICAgICA8dGQgc3R5bGU9e3sgY29sb3I6ICd2YXIoLS10ZXh0LWRpbSknIH19PntyLml0ZW0ubG9naWNhbFBhdGh9PC90ZD4KICAgICAgICAgICAgICAgICAgICA8dGQ+e2Zvcm1hdEJ5dGVzKHIuaXRlbS5zaXplKX08L3RkPgogICAgICAgICAgICAgICAgICAgIDx0ZD57KHIuc2NvcmUgKiAxMDApLnRvRml4ZWQoMCl9JTwvdGQ+CiAgICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgICA8L3Rib2R5PgogICAgICAgICAgICA8L3RhYmxlPgogICAgICAgICAgKQogICAgICAgICl9CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQo=
+import { useEffect, useState } from 'react';
+import { api } from '../api';
+import { formatBytes, useDebounced } from '../utils';
+
+export function SearchPage() {
+  const [q, setQ] = useState('');
+  const debounced = useDebounced(q, 200);
+  const [results, setResults] = useState<any[]>([]);
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    if (!debounced) { setResults([]); return; }
+    setBusy(true);
+    api.search.query(debounced).then((r) => setResults(r as any)).finally(() => setBusy(false));
+  }, [debounced]);
+
+  return (
+    <div className="page">
+      <div className="page-header">
+        <h2>Busca instantânea</h2>
+        <div className="grow" />
+        <button onClick={async () => { await api.search.rebuild(); alert('Índice reconstruído'); }}>Reconstruir índice</button>
+      </div>
+      <input
+        autoFocus
+        placeholder="Digite para buscar em todos os arquivos do cluster…"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        style={{ fontSize: 16, padding: 14 }}
+      />
+      <div className="card" style={{ marginTop: 8 }}>
+        {busy ? <p>Buscando…</p> : (
+          results.length === 0 ? <p style={{ color: 'var(--text-dim)' }}>{q ? 'Nenhum resultado.' : 'A busca é fuzzy e usa trigramas — funciona mesmo com erros de digitação.'}</p> : (
+            <table style={{ width: '100%' }}>
+              <thead>
+                <tr style={{ textAlign: 'left', color: 'var(--text-muted)' }}>
+                  <th>Nome</th>
+                  <th>Caminho</th>
+                  <th>Tamanho</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {results.map((r) => (
+                  <tr key={r.item.id}>
+                    <td>{r.item.name}</td>
+                    <td style={{ color: 'var(--text-dim)' }}>{r.item.logicalPath}</td>
+                    <td>{formatBytes(r.item.size)}</td>
+                    <td>{(r.score * 100).toFixed(0)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )
+        )}
+      </div>
+    </div>
+  );
+}

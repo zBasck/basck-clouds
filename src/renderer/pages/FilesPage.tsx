@@ -1,1 +1,136 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgYXBpIH0gZnJvbSAnLi4vYXBpJzsKaW1wb3J0IHsgZm9ybWF0Qnl0ZXMgfSBmcm9tICcuLi91dGlscyc7CgpleHBvcnQgZnVuY3Rpb24gRmlsZXNQYWdlKCkgewogIGNvbnN0IFtwYXRoLCBzZXRQYXRoXSA9IHVzZVN0YXRlKCcvJyk7CiAgY29uc3QgW2l0ZW1zLCBzZXRJdGVtc10gPSB1c2VTdGF0ZTxhbnlbXT4oW10pOwogIGNvbnN0IFtidXN5LCBzZXRCdXN5XSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbc2VsZWN0ZWQsIHNldFNlbGVjdGVkXSA9IHVzZVN0YXRlPFNldDxzdHJpbmc+PihuZXcgU2V0KCkpOwoKICB1c2VFZmZlY3QoKCkgPT4geyByZWZyZXNoKCk7IH0sIFtwYXRoXSk7CgogIGFzeW5jIGZ1bmN0aW9uIHJlZnJlc2goKSB7CiAgICBzZXRCdXN5KHRydWUpOwogICAgdHJ5IHsgc2V0SXRlbXMoYXdhaXQgYXBpLmNsdXN0ZXIubGlzdChwYXRoKSk7IH0gZmluYWxseSB7IHNldEJ1c3koZmFsc2UpOyB9CiAgfQoKICBhc3luYyBmdW5jdGlvbiB1cGxvYWQoKSB7CiAgICBjb25zdCBmaWxlcyA9IGF3YWl0IGFwaS5zeXN0ZW0uZGlhbG9nKCdvcGVuJyk7CiAgICBpZiAoIWZpbGVzIHx8IGZpbGVzLmxlbmd0aCA9PT0gMCkgcmV0dXJuOwogICAgZm9yIChjb25zdCBmIG9mIGZpbGVzKSB7CiAgICAgIGF3YWl0IGFwaS5jbHVzdGVyLnVwbG9hZChmLCB7IGxvZ2ljYWxQYXRoOiBwYXRoLCBlbmNyeXB0OiB0cnVlLCBkaXN0cmlidXRlOiB0cnVlIH0pOwogICAgfQogICAgcmVmcmVzaCgpOwogIH0KCiAgYXN5bmMgZnVuY3Rpb24gbmV3Rm9sZGVyKCkgewogICAgY29uc3QgbmFtZSA9IHByb21wdCgnTm9tZSBkYSBub3ZhIHBhc3RhOicpOwogICAgaWYgKCFuYW1lKSByZXR1cm47CiAgICBjb25zdCBuZXdQYXRoID0gcGF0aCA9PT0gJy8nID8gYC8ke25hbWV9YCA6IGAke3BhdGh9LyR7bmFtZX1gOwogICAgYXdhaXQgYXBpLmNsdXN0ZXIubWtkaXIobmV3UGF0aCk7CiAgICByZWZyZXNoKCk7CiAgfQoKICBhc3luYyBmdW5jdGlvbiBkb3dubG9hZChpdGVtOiBhbnkpIHsKICAgIGlmIChpdGVtLmlzRGlyKSByZXR1cm47CiAgICBjb25zdCBkZXN0ID0gYXdhaXQgYXBpLnN5c3RlbS5kaWFsb2coJ3NhdmUnLCB7IGRlZmF1bHRQYXRoOiBpdGVtLm5hbWUgfSk7CiAgICBpZiAoIWRlc3QpIHJldHVybjsKICAgIGF3YWl0IGFwaS5jbHVzdGVyLmRvd25sb2FkKGl0ZW0uaWQsIGRlc3QpOwogICAgYWxlcnQoJ0Rvd25sb2FkIGNvbmNsdcOtZG8nKTsKICB9CgogIGFzeW5jIGZ1bmN0aW9uIHJlbW92ZShpdGVtOiBhbnkpIHsKICAgIGlmICghY29uZmlybShgRXhjbHVpciAke2l0ZW0ubmFtZX0gZG8gY2x1c3Rlcj8gKE9zIGNodW5rcyBuYXMgbnV2ZW5zIHBlcm1hbmVjZW0gYXTDqSBjb21wYWN0YcOnw6NvIG1hbnVhbC4pYCkpIHJldHVybjsKICAgIGF3YWl0IGFwaS5jbHVzdGVyLmRlbGV0ZShpdGVtLmlkKTsKICAgIHJlZnJlc2goKTsKICB9CgogIGZ1bmN0aW9uIHRvZ2dsZShpZDogc3RyaW5nKSB7CiAgICBjb25zdCBzID0gbmV3IFNldChzZWxlY3RlZCk7CiAgICBzLmhhcyhpZCkgPyBzLmRlbGV0ZShpZCkgOiBzLmFkZChpZCk7CiAgICBzZXRTZWxlY3RlZChzKTsKICB9CgogIGZ1bmN0aW9uIGJyZWFkY3J1bWJzKCkgewogICAgY29uc3QgcGFydHMgPSBwYXRoLnNwbGl0KCcvJykuZmlsdGVyKEJvb2xlYW4pOwogICAgY29uc3Qgb3V0ID0gW3sgbmFtZTogJ0NsdXN0ZXInLCBwYXRoOiAnLycgfV07CiAgICBsZXQgYWNjID0gJyc7CiAgICBmb3IgKGNvbnN0IHAgb2YgcGFydHMpIHsgYWNjICs9ICcvJyArIHA7IG91dC5wdXNoKHsgbmFtZTogcCwgcGF0aDogYWNjIH0pOyB9CiAgICByZXR1cm4gb3V0OwogIH0KCiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJwYWdlIj4KICAgICAgPGRpdiBjbGFzc05hbWU9InBhZ2UtaGVhZGVyIj4KICAgICAgICA8aDI+RXhwbG9yYWRvcjwvaDI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImJyZWFkY3J1bWIiPgogICAgICAgICAge2JyZWFkY3J1bWJzKCkubWFwKChiLCBpKSA9PiAoCiAgICAgICAgICAgIDxzcGFuIGtleT17Yi5wYXRofT4KICAgICAgICAgICAgICA8YSBvbkNsaWNrPXsoKSA9PiBzZXRQYXRoKGIucGF0aCl9IHN0eWxlPXt7IGN1cnNvcjogJ3BvaW50ZXInIH19PntiLm5hbWV9PC9hPgogICAgICAgICAgICAgIHtpIDwgYnJlYWRjcnVtYnMoKS5sZW5ndGggLSAxICYmICcgLyAnfQogICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICApKX0KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JvdyIgLz4KICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9e3JlZnJlc2h9PntidXN5ID8gPHNwYW4gY2xhc3NOYW1lPSJzcGlubmVyIiAvPiA6ICdBdHVhbGl6YXInfTwvYnV0dG9uPgogICAgICAgIDxidXR0b24gb25DbGljaz17bmV3Rm9sZGVyfT7wn5OBIE5vdmEgcGFzdGE8L2J1dHRvbj4KICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT0icHJpbWFyeSIgb25DbGljaz17dXBsb2FkfT7ihpEgRW52aWFyIGFycXVpdm88L2J1dHRvbj4KICAgICAgPC9kaXY+CgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZXhwbG9yZXIiPgogICAgICAgIDx0YWJsZT4KICAgICAgICAgIDx0aGVhZD4KICAgICAgICAgICAgPHRyPgogICAgICAgICAgICAgIDx0aCBzdHlsZT17eyB3aWR0aDogMzYgfX0+PC90aD4KICAgICAgICAgICAgICA8dGg+Tm9tZTwvdGg+CiAgICAgICAgICAgICAgPHRoIHN0eWxlPXt7IHdpZHRoOiAxMjAgfX0+VGFtYW5obzwvdGg+CiAgICAgICAgICAgICAgPHRoIHN0eWxlPXt7IHdpZHRoOiAxNDAgfX0+TW9kaWZpY2FkbzwvdGg+CiAgICAgICAgICAgICAgPHRoIHN0eWxlPXt7IHdpZHRoOiAxMjAgfX0+Q3JpcHRvZ3JhZmlhPC90aD4KICAgICAgICAgICAgICA8dGggc3R5bGU9e3sgd2lkdGg6IDE2MCB9fT5Bw6fDtWVzPC90aD4KICAgICAgICAgICAgPC90cj4KICAgICAgICAgIDwvdGhlYWQ+CiAgICAgICAgICA8dGJvZHk+CiAgICAgICAgICAgIHtpdGVtcy5sZW5ndGggPT09IDAgJiYgKAogICAgICAgICAgICAgIDx0cj48dGQgY29sU3Bhbj17Nn0+PGRpdiBjbGFzc05hbWU9ImVtcHR5Ij48aDM+UGFzdGEgdmF6aWE8L2gzPjxwPkVudmllIGFycXVpdm9zIHBhcmEgY29tZcOnYXIuPC9wPjwvZGl2PjwvdGQ+PC90cj4KICAgICAgICAgICAgKX0KICAgICAgICAgICAge2l0ZW1zLm1hcCgoaXRlbSkgPT4gKAogICAgICAgICAgICAgIDx0ciBrZXk9e2l0ZW0uaWR9IGNsYXNzTmFtZT17c2VsZWN0ZWQuaGFzKGl0ZW0uaWQpID8gJ3NlbGVjdGVkJyA6ICcnfSBvbkNsaWNrPXsoZSkgPT4gewogICAgICAgICAgICAgICAgaWYgKChlLnRhcmdldCBhcyBIVE1MRWxlbWVudCkudGFnTmFtZSA9PT0gJ0EnIHx8IChlLnRhcmdldCBhcyBIVE1MRWxlbWVudCkudGFnTmFtZSA9PT0gJ0JVVFRPTicpIHJldHVybjsKICAgICAgICAgICAgICAgIGlmIChpdGVtLmlzRGlyKSBzZXRQYXRoKGl0ZW0ubG9naWNhbFBhdGgpOwogICAgICAgICAgICAgICAgZWxzZSB0b2dnbGUoaXRlbS5pZCk7CiAgICAgICAgICAgICAgfX0+CiAgICAgICAgICAgICAgICA8dGQ+CiAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJjaGVja2JveCIgY2hlY2tlZD17c2VsZWN0ZWQuaGFzKGl0ZW0uaWQpfSBvbkNoYW5nZT17KCkgPT4gdG9nZ2xlKGl0ZW0uaWQpfSAvPgogICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgIDx0ZD4KICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZpbGUtbmFtZSI+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJmaWxlLWljb24iPntpdGVtLmlzRGlyID8gJ/Cfk4EnIDogaWNvbkZvcihpdGVtLm1pbWVUeXBlKX08L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4+e2l0ZW0ubmFtZX08L3NwYW4+CiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9InNpemUiPntpdGVtLmlzRGlyID8gJ+KAlCcgOiBmb3JtYXRCeXRlcyhpdGVtLnNpemUpfTwvdGQ+CiAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPSJzaXplIj57bmV3IERhdGUoaXRlbS51cGRhdGVkQXQpLnRvTG9jYWxlU3RyaW5nKCdwdC1CUicpfTwvdGQ+CiAgICAgICAgICAgICAgICA8dGQ+PHNwYW4gY2xhc3NOYW1lPSJ0YWcgZW5jcnlwdGVkIj5BRVMtMjU2LUdDTTwvc3Bhbj48L3RkPgogICAgICAgICAgICAgICAgPHRkPgogICAgICAgICAgICAgICAgICB7IWl0ZW0uaXNEaXIgJiYgPGJ1dHRvbiBvbkNsaWNrPXsoKSA9PiBkb3dubG9hZChpdGVtKX0+4oaTIEJhaXhhcjwvYnV0dG9uPn0KICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9ImRhbmdlciIgb25DbGljaz17KCkgPT4gcmVtb3ZlKGl0ZW0pfT5FeGNsdWlyPC9idXR0b24+CiAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgICkpfQogICAgICAgICAgPC90Ym9keT4KICAgICAgICA8L3RhYmxlPgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICk7Cn0KCmZ1bmN0aW9uIGljb25Gb3IobWltZTogc3RyaW5nKTogc3RyaW5nIHsKICBpZiAobWltZS5zdGFydHNXaXRoKCdpbWFnZS8nKSkgcmV0dXJuICfwn5a877iPJzsKICBpZiAobWltZS5zdGFydHNXaXRoKCd2aWRlby8nKSkgcmV0dXJuICfwn46sJzsKICBpZiAobWltZS5zdGFydHNXaXRoKCdhdWRpby8nKSkgcmV0dXJuICfwn461JzsKICBpZiAobWltZS5pbmNsdWRlcygncGRmJykpIHJldHVybiAn8J+TlSc7CiAgaWYgKG1pbWUuaW5jbHVkZXMoJ3ppcCcpIHx8IG1pbWUuaW5jbHVkZXMoJ3RhcicpKSByZXR1cm4gJ/Cfl5zvuI8nOwogIGlmIChtaW1lLmluY2x1ZGVzKCd0ZXh0JykpIHJldHVybiAn8J+ThCc7CiAgcmV0dXJuICfwn5OEJzsKfQo=
+import { useEffect, useState } from 'react';
+import { api } from '../api';
+import { formatBytes } from '../utils';
+
+export function FilesPage() {
+  const [path, setPath] = useState('/');
+  const [items, setItems] = useState<any[]>([]);
+  const [busy, setBusy] = useState(false);
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+
+  useEffect(() => { refresh(); }, [path]);
+
+  async function refresh() {
+    setBusy(true);
+    try { setItems(await api.cluster.list(path)); } finally { setBusy(false); }
+  }
+
+  async function upload() {
+    const files = await api.system.dialog('open');
+    if (!files || files.length === 0) return;
+    for (const f of files) {
+      await api.cluster.upload(f, { logicalPath: path, encrypt: true, distribute: true });
+    }
+    refresh();
+  }
+
+  async function newFolder() {
+    const name = prompt('Nome da nova pasta:');
+    if (!name) return;
+    const newPath = path === '/' ? `/${name}` : `${path}/${name}`;
+    await api.cluster.mkdir(newPath);
+    refresh();
+  }
+
+  async function download(item: any) {
+    if (item.isDir) return;
+    const dest = await api.system.dialog('save', { defaultPath: item.name });
+    if (!dest) return;
+    await api.cluster.download(item.id, dest);
+    alert('Download concluído');
+  }
+
+  async function remove(item: any) {
+    if (!confirm(`Excluir ${item.name} do cluster? (Os chunks nas nuvens permanecem até compactação manual.)`)) return;
+    await api.cluster.delete(item.id);
+    refresh();
+  }
+
+  function toggle(id: string) {
+    const s = new Set(selected);
+    s.has(id) ? s.delete(id) : s.add(id);
+    setSelected(s);
+  }
+
+  function breadcrumbs() {
+    const parts = path.split('/').filter(Boolean);
+    const out = [{ name: 'Cluster', path: '/' }];
+    let acc = '';
+    for (const p of parts) { acc += '/' + p; out.push({ name: p, path: acc }); }
+    return out;
+  }
+
+  return (
+    <div className="page">
+      <div className="page-header">
+        <h2>Explorador</h2>
+        <div className="breadcrumb">
+          {breadcrumbs().map((b, i) => (
+            <span key={b.path}>
+              <a onClick={() => setPath(b.path)} style={{ cursor: 'pointer' }}>{b.name}</a>
+              {i < breadcrumbs().length - 1 && ' / '}
+            </span>
+          ))}
+        </div>
+        <div className="grow" />
+        <button onClick={refresh}>{busy ? <span className="spinner" /> : 'Atualizar'}</button>
+        <button onClick={newFolder}>📁 Nova pasta</button>
+        <button className="primary" onClick={upload}>↑ Enviar arquivo</button>
+      </div>
+
+      <div className="explorer">
+        <table>
+          <thead>
+            <tr>
+              <th style={{ width: 36 }}></th>
+              <th>Nome</th>
+              <th style={{ width: 120 }}>Tamanho</th>
+              <th style={{ width: 140 }}>Modificado</th>
+              <th style={{ width: 120 }}>Criptografia</th>
+              <th style={{ width: 160 }}>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.length === 0 && (
+              <tr><td colSpan={6}><div className="empty"><h3>Pasta vazia</h3><p>Envie arquivos para começar.</p></div></td></tr>
+            )}
+            {items.map((item) => (
+              <tr key={item.id} className={selected.has(item.id) ? 'selected' : ''} onClick={(e) => {
+                if ((e.target as HTMLElement).tagName === 'A' || (e.target as HTMLElement).tagName === 'BUTTON') return;
+                if (item.isDir) setPath(item.logicalPath);
+                else toggle(item.id);
+              }}>
+                <td>
+                  <input type="checkbox" checked={selected.has(item.id)} onChange={() => toggle(item.id)} />
+                </td>
+                <td>
+                  <div className="file-name">
+                    <span className="file-icon">{item.isDir ? '📁' : iconFor(item.mimeType)}</span>
+                    <span>{item.name}</span>
+                  </div>
+                </td>
+                <td className="size">{item.isDir ? '—' : formatBytes(item.size)}</td>
+                <td className="size">{new Date(item.updatedAt).toLocaleString('pt-BR')}</td>
+                <td><span className="tag encrypted">AES-256-GCM</span></td>
+                <td>
+                  {!item.isDir && <button onClick={() => download(item)}>↓ Baixar</button>}
+                  <button className="danger" onClick={() => remove(item)}>Excluir</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function iconFor(mime: string): string {
+  if (mime.startsWith('image/')) return '🖼️';
+  if (mime.startsWith('video/')) return '🎬';
+  if (mime.startsWith('audio/')) return '🎵';
+  if (mime.includes('pdf')) return '📕';
+  if (mime.includes('zip') || mime.includes('tar')) return '🗜️';
+  if (mime.includes('text')) return '📄';
+  return '📄';
+}

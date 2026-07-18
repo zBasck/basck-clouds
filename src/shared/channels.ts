@@ -1,1 +1,59 @@
-LyoqCiAqIENhbmFpcyBJUEMgY29tcGFydGlsaGFkb3MgZW50cmUgbWFpbiBlIHJlbmRlcmVyLgogKiBNYW50w6ltIHVtIMO6bmljbyBwb250byBkZSB2ZXJkYWRlIHBhcmEgZXZpdGFyIHN0cmluZ3MgZHVwbGljYWRhcy4KICovCmV4cG9ydCBjb25zdCBJcGNDaGFubmVscyA9IHsKICAvLyBhY2NvdW50cwogIEFDQ09VTlRTX0xJU1Q6ICdhY2NvdW50czpsaXN0JywKICBBQ0NPVU5UU19BREQ6ICdhY2NvdW50czphZGQnLAogIEFDQ09VTlRTX1JFTU9WRTogJ2FjY291bnRzOnJlbW92ZScsCiAgQUNDT1VOVFNfUkVOQU1FOiAnYWNjb3VudHM6cmVuYW1lJywKICBBQ0NPVU5UU19URVNUOiAnYWNjb3VudHM6dGVzdCcsCiAgQUNDT1VOVFNfUkVGUkVTSF9RVU9UQTogJ2FjY291bnRzOnJlZnJlc2gtcXVvdGEnLAogIEFDQ09VTlRTX1VQREFURV9QUkVGRVJFTkNFUzogJ2FjY291bnRzOnVwZGF0ZS1wcmVmZXJlbmNlcycsCiAgLy8gdmF1bHQKICBWQVVMVF9VTkxPQ0s6ICd2YXVsdDp1bmxvY2snLAogIFZBVUxUX0xPQ0s6ICd2YXVsdDpsb2NrJywKICBWQVVMVF9TVEFUVVM6ICd2YXVsdDpzdGF0dXMnLAogIFZBVUxUX1NFVF9QQVNTV09SRDogJ3ZhdWx0OnNldC1wYXNzd29yZCcsCiAgLy8gY2x1c3RlcgogIENMVVNURVJfTElTVDogJ2NsdXN0ZXI6bGlzdCcsCiAgQ0xVU1RFUl9SRUFEOiAnY2x1c3RlcjpyZWFkJywKICBDTFVTVEVSX1VQTE9BRDogJ2NsdXN0ZXI6dXBsb2FkJywKICBDTFVTVEVSX0RPV05MT0FEOiAnY2x1c3Rlcjpkb3dubG9hZCcsCiAgQ0xVU1RFUl9ERUxFVEU6ICdjbHVzdGVyOmRlbGV0ZScsCiAgQ0xVU1RFUl9NS0RJUjogJ2NsdXN0ZXI6bWtkaXInLAogIENMVVNURVJfUkVOQU1FOiAnY2x1c3RlcjpyZW5hbWUnLAogIENMVVNURVJfTU9WRTogJ2NsdXN0ZXI6bW92ZScsCiAgQ0xVU1RFUl9TVEFUUzogJ2NsdXN0ZXI6c3RhdHMnLAogIC8vIHNlYXJjaAogIFNFQVJDSF9RVUVSWTogJ3NlYXJjaDpxdWVyeScsCiAgU0VBUkNIX0lOREVYX1JFQlVJTEQ6ICdzZWFyY2g6aW5kZXgtcmVidWlsZCcsCiAgLy8gc3luYwogIFNZTkNfTElTVDogJ3N5bmM6bGlzdCcsCiAgU1lOQ19BREQ6ICdzeW5jOmFkZCcsCiAgU1lOQ19SRU1PVkU6ICdzeW5jOnJlbW92ZScsCiAgU1lOQ19SVU46ICdzeW5jOnJ1bicsCiAgU1lOQ19UT0dHTEU6ICdzeW5jOnRvZ2dsZScsCiAgLy8gYmFja3VwCiAgQkFDS1VQX0xJU1Q6ICdiYWNrdXA6bGlzdCcsCiAgQkFDS1VQX0FERDogJ2JhY2t1cDphZGQnLAogIEJBQ0tVUF9SRU1PVkU6ICdiYWNrdXA6cmVtb3ZlJywKICBCQUNLVVBfUlVOOiAnYmFja3VwOnJ1bicsCiAgQkFDS1VQX1RPR0dMRTogJ2JhY2t1cDp0b2dnbGUnLAogIC8vIHNldHRpbmdzCiAgU0VUVElOR1NfR0VUOiAnc2V0dGluZ3M6Z2V0JywKICBTRVRUSU5HU19VUERBVEU6ICdzZXR0aW5nczp1cGRhdGUnLAogIC8vIHN5c3RlbQogIFNZU1RFTV9QUk9WSURFUlM6ICdzeXN0ZW06cHJvdmlkZXJzJywKICBTWVNURU1fQUNUSVZJVFk6ICdzeXN0ZW06YWN0aXZpdHknLAogIFNZU1RFTV9PUEVOX1BBVEg6ICdzeXN0ZW06b3Blbi1wYXRoJywKICBTWVNURU1fRElBTE9HOiAnc3lzdGVtOmRpYWxvZycsCiAgLy8gZXZlbnRzCiAgRVZUX1BST0dSRVNTOiAnZXZlbnQ6cHJvZ3Jlc3MnLAogIEVWVF9BQ1RJVklUWTogJ2V2ZW50OmFjdGl2aXR5JywKICBFVlRfQUNDT1VOVF9TVEFUVVM6ICdldmVudDphY2NvdW50LXN0YXR1cycsCiAgRVZUX1FVT1RBOiAnZXZlbnQ6cXVvdGEnLAp9IGFzIGNvbnN0OwoKZXhwb3J0IHR5cGUgSXBjQ2hhbm5lbCA9ICh0eXBlb2YgSXBjQ2hhbm5lbHMpW2tleW9mIHR5cGVvZiBJcGNDaGFubmVsc107Cg==
+/**
+ * Canais IPC compartilhados entre main e renderer.
+ * Mantém um único ponto de verdade para evitar strings duplicadas.
+ */
+export const IpcChannels = {
+  // accounts
+  ACCOUNTS_LIST: 'accounts:list',
+  ACCOUNTS_ADD: 'accounts:add',
+  ACCOUNTS_REMOVE: 'accounts:remove',
+  ACCOUNTS_RENAME: 'accounts:rename',
+  ACCOUNTS_TEST: 'accounts:test',
+  ACCOUNTS_REFRESH_QUOTA: 'accounts:refresh-quota',
+  ACCOUNTS_UPDATE_PREFERENCES: 'accounts:update-preferences',
+  // vault
+  VAULT_UNLOCK: 'vault:unlock',
+  VAULT_LOCK: 'vault:lock',
+  VAULT_STATUS: 'vault:status',
+  VAULT_SET_PASSWORD: 'vault:set-password',
+  // cluster
+  CLUSTER_LIST: 'cluster:list',
+  CLUSTER_READ: 'cluster:read',
+  CLUSTER_UPLOAD: 'cluster:upload',
+  CLUSTER_DOWNLOAD: 'cluster:download',
+  CLUSTER_DELETE: 'cluster:delete',
+  CLUSTER_MKDIR: 'cluster:mkdir',
+  CLUSTER_RENAME: 'cluster:rename',
+  CLUSTER_MOVE: 'cluster:move',
+  CLUSTER_STATS: 'cluster:stats',
+  // search
+  SEARCH_QUERY: 'search:query',
+  SEARCH_INDEX_REBUILD: 'search:index-rebuild',
+  // sync
+  SYNC_LIST: 'sync:list',
+  SYNC_ADD: 'sync:add',
+  SYNC_REMOVE: 'sync:remove',
+  SYNC_RUN: 'sync:run',
+  SYNC_TOGGLE: 'sync:toggle',
+  // backup
+  BACKUP_LIST: 'backup:list',
+  BACKUP_ADD: 'backup:add',
+  BACKUP_REMOVE: 'backup:remove',
+  BACKUP_RUN: 'backup:run',
+  BACKUP_TOGGLE: 'backup:toggle',
+  // settings
+  SETTINGS_GET: 'settings:get',
+  SETTINGS_UPDATE: 'settings:update',
+  // system
+  SYSTEM_PROVIDERS: 'system:providers',
+  SYSTEM_ACTIVITY: 'system:activity',
+  SYSTEM_OPEN_PATH: 'system:open-path',
+  SYSTEM_DIALOG: 'system:dialog',
+  // events
+  EVT_PROGRESS: 'event:progress',
+  EVT_ACTIVITY: 'event:activity',
+  EVT_ACCOUNT_STATUS: 'event:account-status',
+  EVT_QUOTA: 'event:quota',
+} as const;
+
+export type IpcChannel = (typeof IpcChannels)[keyof typeof IpcChannels];

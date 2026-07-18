@@ -1,1 +1,31 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgYXBpIH0gZnJvbSAnLi4vYXBpJzsKCmV4cG9ydCBmdW5jdGlvbiBBY3Rpdml0eVBhZ2UoKSB7CiAgY29uc3QgW2l0ZW1zLCBzZXRJdGVtc10gPSB1c2VTdGF0ZTxhbnlbXT4oW10pOwogIHVzZUVmZmVjdCgoKSA9PiB7IGFwaS5zeXN0ZW0uYWN0aXZpdHkoMjAwKS50aGVuKHNldEl0ZW1zKTsgfSwgW10pOwoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9InBhZ2UiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0icGFnZS1oZWFkZXIiPgogICAgICAgIDxoMj5BdGl2aWRhZGU8L2gyPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJncm93IiAvPgogICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gYXBpLnN5c3RlbS5hY3Rpdml0eSgyMDApLnRoZW4oc2V0SXRlbXMpfT5BdHVhbGl6YXI8L2J1dHRvbj4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXJkIj4KICAgICAgICB7aXRlbXMubGVuZ3RoID09PSAwID8gPHAgc3R5bGU9e3sgY29sb3I6ICd2YXIoLS10ZXh0LWRpbSknIH19Pk5lbmh1bWEgYXRpdmlkYWRlIHJlZ2lzdHJhZGEuPC9wPiA6ICgKICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJhY3Rpdml0eS1saXN0Ij4KICAgICAgICAgICAge2l0ZW1zLm1hcCgoYSkgPT4gKAogICAgICAgICAgICAgIDxkaXYga2V5PXthLmlkfSBjbGFzc05hbWU9ImFjdGl2aXR5LWl0ZW0iPgogICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0cyI+e25ldyBEYXRlKGEudHMpLnRvTG9jYWxlU3RyaW5nKCdwdC1CUicpfTwvc3Bhbj4KICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT17YGx2bCAke2EubGV2ZWx9YH0+e2EubGV2ZWx9PC9zcGFuPgogICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0YWciPnthLmNhdGVnb3J5fTwvc3Bhbj4KICAgICAgICAgICAgICAgIDxzcGFuIHN0eWxlPXt7IGZsZXg6IDEgfX0+e2EubWVzc2FnZX08L3NwYW4+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICkpfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgKX0KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICApOwp9Cg==
+import { useEffect, useState } from 'react';
+import { api } from '../api';
+
+export function ActivityPage() {
+  const [items, setItems] = useState<any[]>([]);
+  useEffect(() => { api.system.activity(200).then(setItems); }, []);
+
+  return (
+    <div className="page">
+      <div className="page-header">
+        <h2>Atividade</h2>
+        <div className="grow" />
+        <button onClick={() => api.system.activity(200).then(setItems)}>Atualizar</button>
+      </div>
+      <div className="card">
+        {items.length === 0 ? <p style={{ color: 'var(--text-dim)' }}>Nenhuma atividade registrada.</p> : (
+          <div className="activity-list">
+            {items.map((a) => (
+              <div key={a.id} className="activity-item">
+                <span className="ts">{new Date(a.ts).toLocaleString('pt-BR')}</span>
+                <span className={`lvl ${a.level}`}>{a.level}</span>
+                <span className="tag">{a.category}</span>
+                <span style={{ flex: 1 }}>{a.message}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

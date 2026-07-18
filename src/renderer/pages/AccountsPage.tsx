@@ -1,1 +1,78 @@
-aW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgYXBpIH0gZnJvbSAnLi4vYXBpJzsKaW1wb3J0IHsgQWRkQWNjb3VudE1vZGFsIH0gZnJvbSAnLi4vY29tcG9uZW50cy9BZGRBY2NvdW50TW9kYWwnOwppbXBvcnQgeyBQUk9WSURFUl9SRUdJU1RSWSB9IGZyb20gJy4uLy4uLy4uL3NyYy9tYWluL3Byb3ZpZGVycy9yZWdpc3RyeSc7CgpleHBvcnQgZnVuY3Rpb24gQWNjb3VudHNQYWdlKCkgewogIGNvbnN0IFthY2NvdW50cywgc2V0QWNjb3VudHNdID0gdXNlU3RhdGU8YW55W10+KFtdKTsKICBjb25zdCBbYWRkT3Blbiwgc2V0QWRkT3Blbl0gPSB1c2VTdGF0ZShmYWxzZSk7CiAgY29uc3QgW3JlZnJlc2hLZXksIHNldFJlZnJlc2hLZXldID0gdXNlU3RhdGUoMCk7CgogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBhcGkuYWNjb3VudHMubGlzdCgpLnRoZW4oc2V0QWNjb3VudHMpOwogIH0sIFtyZWZyZXNoS2V5XSk7CgogIGZ1bmN0aW9uIHJlZnJlc2goKSB7IHNldFJlZnJlc2hLZXkoKGspID0+IGsgKyAxKTsgfQoKICBhc3luYyBmdW5jdGlvbiByZW1vdmUoaWQ6IHN0cmluZykgewogICAgaWYgKCFjb25maXJtKCdSZW1vdmVyIGVzdGEgY29udGEgZG8gY2x1c3Rlcj8gT3MgYXJxdWl2b3MgasOhIGVudmlhZG9zIGNvbnRpbnVhcsOjbyBuYXMgbnV2ZW5zIG9yaWdpbmFpcy4nKSkgcmV0dXJuOwogICAgYXdhaXQgYXBpLmFjY291bnRzLnJlbW92ZShpZCk7CiAgICByZWZyZXNoKCk7CiAgfQoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9InBhZ2UiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0icGFnZS1oZWFkZXIiPgogICAgICAgIDxoMj5Db250YXMgY29uZWN0YWRhczwvaDI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9Imdyb3ciIC8+CiAgICAgICAgPGJ1dHRvbiBvbkNsaWNrPXtyZWZyZXNofT5BdHVhbGl6YXI8L2J1dHRvbj4KICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT0icHJpbWFyeSIgb25DbGljaz17KCkgPT4gc2V0QWRkT3Blbih0cnVlKX0+KyBBZGljaW9uYXIgY29udGE8L2J1dHRvbj4KICAgICAgPC9kaXY+CgogICAgICB7YWNjb3VudHMubGVuZ3RoID09PSAwID8gKAogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjYXJkIGVtcHR5Ij4KICAgICAgICAgIDxoMz5Wb2PDqiBhaW5kYSBuw6NvIGNvbmVjdG91IG5lbmh1bWEgY29udGE8L2gzPgogICAgICAgICAgPHA+Q29uZWN0ZSBtw7psdGlwbG9zIEdvb2dsZSBEcml2ZXMsIE9uZURyaXZlLCBEcm9wYm94LCBNRUdBLCBTMywgV2ViREFWLCBTRlRQIGUgbXVpdG8gbWFpcy48L3A+CiAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT0icHJpbWFyeSIgb25DbGljaz17KCkgPT4gc2V0QWRkT3Blbih0cnVlKX0+Q29uZWN0YXIgcHJpbWVpcmEgY29udGE8L2J1dHRvbj4KICAgICAgICA8L2Rpdj4KICAgICAgKSA6ICgKICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCI+CiAgICAgICAgICB7YWNjb3VudHMubWFwKChhKSA9PiB7CiAgICAgICAgICAgIGNvbnN0IHByb3ZpZGVyID0gUFJPVklERVJfUkVHSVNUUllbYS5wcm92aWRlcklkIGFzIGtleW9mIHR5cGVvZiBQUk9WSURFUl9SRUdJU1RSWV07CiAgICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAgICAgPGRpdiBrZXk9e2EuaWR9IGNsYXNzTmFtZT0iYWNjb3VudC1jYXJkIj4KICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT17YHN0YXR1cyAke2Euc3RhdHVzfWB9PnthLnN0YXR1c308L3NwYW4+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iaGVhZGVyIj4KICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9Imljb24iIHN0eWxlPXt7IGJhY2tncm91bmQ6IHByb3ZpZGVyPy5icmFuZENvbG9yID8/ICcjNDQ0JyB9fT57cHJvdmlkZXI/Lmljb24gPz8gJ+KYge+4jyd9PC9kaXY+CiAgICAgICAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImxhYmVsIj57YS5sYWJlbH08L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHJvdmlkZXIiPntwcm92aWRlcj8ubmFtZSA/PyBhLnByb3ZpZGVySWR9e2EuZW1haWwgPyBgIMK3ICR7YS5lbWFpbH1gIDogJyd9PC9kaXY+CiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGZvbnRTaXplOiAxMiwgY29sb3I6ICd2YXIoLS10ZXh0LWRpbSknIH19PgogICAgICAgICAgICAgICAgICBSZXNlcnZhOiB7Zm9ybWF0Qnl0ZXMoYS5wcmVmZXJlbmNlcz8ucmVzZXJ2ZWRCeXRlcyA/PyAwKX0gwrcgUGVzbzoge2EucHJlZmVyZW5jZXM/LndlaWdodCA/PyA1fQogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYWN0aW9ucyI+CiAgICAgICAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gYXBpLmFjY291bnRzLnRlc3QoYS5pZCkudGhlbigocikgPT4gYWxlcnQociA/ICdDb250YSBPSycgOiAnRmFsaGEgbm8gdGVzdGUnKSl9PlRlc3RhcjwvYnV0dG9uPgogICAgICAgICAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9eygpID0+IGFwaS5hY2NvdW50cy5yZWZyZXNoUXVvdGEoYS5pZCkudGhlbigoKSA9PiByZWZyZXNoKCkpfT5RdW90YTwvYnV0dG9uPgogICAgICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT0iZGFuZ2VyIiBvbkNsaWNrPXsoKSA9PiByZW1vdmUoYS5pZCl9PlJlbW92ZXI8L2J1dHRvbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICApOwogICAgICAgICAgfSl9CiAgICAgICAgPC9kaXY+CiAgICAgICl9CgogICAgICB7YWRkT3BlbiAmJiA8QWRkQWNjb3VudE1vZGFsIG9uQ2xvc2U9eygpID0+IHNldEFkZE9wZW4oZmFsc2UpfSBvbkFkZGVkPXtyZWZyZXNofSAvPn0KICAgIDwvZGl2PgogICk7Cn0KCmZ1bmN0aW9uIGZvcm1hdEJ5dGVzKGI6IG51bWJlcikgewogIGlmICghTnVtYmVyLmlzRmluaXRlKGIpKSByZXR1cm4gJ+KInic7CiAgaWYgKGIgPCAxMDI0KSByZXR1cm4gYCR7Yn0gQmA7CiAgY29uc3QgdSA9IFsnS0InLCAnTUInLCAnR0InLCAnVEInXTsKICBsZXQgdiA9IGIgLyAxMDI0LCBpID0gMDsKICB3aGlsZSAodiA+PSAxMDI0ICYmIGkgPCB1Lmxlbmd0aCAtIDEpIHsgdiAvPSAxMDI0OyBpKys7IH0KICByZXR1cm4gYCR7di50b0ZpeGVkKDEpfSAke3VbaV19YDsKfQo=
+import { useEffect, useState } from 'react';
+import { api } from '../api';
+import { AddAccountModal } from '../components/AddAccountModal';
+import { PROVIDER_REGISTRY } from '../../../src/main/providers/registry';
+
+export function AccountsPage() {
+  const [accounts, setAccounts] = useState<any[]>([]);
+  const [addOpen, setAddOpen] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  useEffect(() => {
+    api.accounts.list().then(setAccounts);
+  }, [refreshKey]);
+
+  function refresh() { setRefreshKey((k) => k + 1); }
+
+  async function remove(id: string) {
+    if (!confirm('Remover esta conta do cluster? Os arquivos já enviados continuarão nas nuvens originais.')) return;
+    await api.accounts.remove(id);
+    refresh();
+  }
+
+  return (
+    <div className="page">
+      <div className="page-header">
+        <h2>Contas conectadas</h2>
+        <div className="grow" />
+        <button onClick={refresh}>Atualizar</button>
+        <button className="primary" onClick={() => setAddOpen(true)}>+ Adicionar conta</button>
+      </div>
+
+      {accounts.length === 0 ? (
+        <div className="card empty">
+          <h3>Você ainda não conectou nenhuma conta</h3>
+          <p>Conecte múltiplos Google Drives, OneDrive, Dropbox, MEGA, S3, WebDAV, SFTP e muito mais.</p>
+          <button className="primary" onClick={() => setAddOpen(true)}>Conectar primeira conta</button>
+        </div>
+      ) : (
+        <div className="grid">
+          {accounts.map((a) => {
+            const provider = PROVIDER_REGISTRY[a.providerId as keyof typeof PROVIDER_REGISTRY];
+            return (
+              <div key={a.id} className="account-card">
+                <span className={`status ${a.status}`}>{a.status}</span>
+                <div className="header">
+                  <div className="icon" style={{ background: provider?.brandColor ?? '#444' }}>{provider?.icon ?? '☁️'}</div>
+                  <div>
+                    <div className="label">{a.label}</div>
+                    <div className="provider">{provider?.name ?? a.providerId}{a.email ? ` · ${a.email}` : ''}</div>
+                  </div>
+                </div>
+                <div style={{ fontSize: 12, color: 'var(--text-dim)' }}>
+                  Reserva: {formatBytes(a.preferences?.reservedBytes ?? 0)} · Peso: {a.preferences?.weight ?? 5}
+                </div>
+                <div className="actions">
+                  <button onClick={() => api.accounts.test(a.id).then((r) => alert(r ? 'Conta OK' : 'Falha no teste'))}>Testar</button>
+                  <button onClick={() => api.accounts.refreshQuota(a.id).then(() => refresh())}>Quota</button>
+                  <button className="danger" onClick={() => remove(a.id)}>Remover</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {addOpen && <AddAccountModal onClose={() => setAddOpen(false)} onAdded={refresh} />}
+    </div>
+  );
+}
+
+function formatBytes(b: number) {
+  if (!Number.isFinite(b)) return '∞';
+  if (b < 1024) return `${b} B`;
+  const u = ['KB', 'MB', 'GB', 'TB'];
+  let v = b / 1024, i = 0;
+  while (v >= 1024 && i < u.length - 1) { v /= 1024; i++; }
+  return `${v.toFixed(1)} ${u[i]}`;
+}
