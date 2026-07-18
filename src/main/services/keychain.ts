@@ -1,1 +1,64 @@
-LyoqCiAqIENvZnJlIGRlIGNyZWRlbmNpYWlzOiBwZXJzaXN0ZSBjcmVkZW5jaWFpcyBjcmlwdG9ncmFmYWRhcwogKiBlbSBkYXRhRGlyL2NyZWRlbnRpYWxzLmVuYyB1c2FuZG8gbyBDcnlwdG9TZXJ2aWNlLgogKgogKiBNZXNtbyBxdWUgbyBkaXNjbyBzZWphIGNvbXByb21ldGlkbywgc2VtIGEgc2VuaGEgbWVzdHJhCiAqIG5hZGEgcG9kZSBzZXIgZGVjaWZyYWRvLgogKi8KaW1wb3J0IHsgcHJvbWlzZXMgYXMgZnMsIGV4aXN0c1N5bmMsIHJlYWRGaWxlU3luYywgd3JpdGVGaWxlU3luYyB9IGZyb20gJ25vZGU6ZnMnOwppbXBvcnQgcGF0aCBmcm9tICdub2RlOnBhdGgnOwppbXBvcnQgeyBDcnlwdG9TZXJ2aWNlIH0gZnJvbSAnLi9jcnlwdG8nOwppbXBvcnQgdHlwZSB7IEVuY3J5cHRlZEF1dGhCbG9iIH0gZnJvbSAnQHNoYXJlZC90eXBlcyc7CgpleHBvcnQgaW50ZXJmYWNlIFN0b3JlZENyZWRlbnRpYWwgewogIGFjY291bnRJZDogc3RyaW5nOwogIHByb3ZpZGVySWQ6IHN0cmluZzsKICBibG9iOiBFbmNyeXB0ZWRBdXRoQmxvYjsKICBjcmVhdGVkQXQ6IG51bWJlcjsKICB1cGRhdGVkQXQ6IG51bWJlcjsKfQoKZXhwb3J0IGNsYXNzIENyZWRlbnRpYWxTdG9yZSB7CiAgcHJpdmF0ZSBmaWxlOiBzdHJpbmc7CiAgcHJpdmF0ZSByZWNvcmRzID0gbmV3IE1hcDxzdHJpbmcsIFN0b3JlZENyZWRlbnRpYWw+KCk7CgogIGNvbnN0cnVjdG9yKHByaXZhdGUgY3J5cHRvOiBDcnlwdG9TZXJ2aWNlLCBkYXRhRGlyOiBzdHJpbmcpIHsKICAgIHRoaXMuZmlsZSA9IHBhdGguam9pbihkYXRhRGlyLCAnY3JlZGVudGlhbHMuZW5jJyk7CiAgfQoKICBsb2FkKCk6IHZvaWQgewogICAgaWYgKCFleGlzdHNTeW5jKHRoaXMuZmlsZSkpIHJldHVybjsKICAgIGNvbnN0IHJhdyA9IHJlYWRGaWxlU3luYyh0aGlzLmZpbGUsICd1dGY4Jyk7CiAgICBjb25zdCBlbmMgPSBKU09OLnBhcnNlKHJhdykgYXMgRW5jcnlwdGVkQXV0aEJsb2I7CiAgICBjb25zdCBwbGFpbiA9IHRoaXMuY3J5cHRvLmRlY3J5cHRXaXRoTWFzdGVyKGVuYykudG9TdHJpbmcoJ3V0ZjgnKTsKICAgIGNvbnN0IGxpc3QgPSBKU09OLnBhcnNlKHBsYWluKSBhcyBTdG9yZWRDcmVkZW50aWFsW107CiAgICB0aGlzLnJlY29yZHMuY2xlYXIoKTsKICAgIGxpc3QuZm9yRWFjaCgocikgPT4gdGhpcy5yZWNvcmRzLnNldChyLmFjY291bnRJZCwgcikpOwogIH0KCiAgc2F2ZSgpOiB2b2lkIHsKICAgIGNvbnN0IGxpc3QgPSBBcnJheS5mcm9tKHRoaXMucmVjb3Jkcy52YWx1ZXMoKSk7CiAgICBjb25zdCBwbGFpbiA9IEJ1ZmZlci5mcm9tKEpTT04uc3RyaW5naWZ5KGxpc3QpLCAndXRmOCcpOwogICAgY29uc3QgZW5jID0gdGhpcy5jcnlwdG8uZW5jcnlwdFdpdGhNYXN0ZXIocGxhaW4pOwogICAgd3JpdGVGaWxlU3luYyh0aGlzLmZpbGUsIEpTT04uc3RyaW5naWZ5KGVuYywgbnVsbCwgMiksIHsgbW9kZTogMG82MDAgfSk7CiAgfQoKICBwdXQocmVjb3JkOiBTdG9yZWRDcmVkZW50aWFsKTogdm9pZCB7CiAgICByZWNvcmQudXBkYXRlZEF0ID0gRGF0ZS5ub3coKTsKICAgIHRoaXMucmVjb3Jkcy5zZXQocmVjb3JkLmFjY291bnRJZCwgcmVjb3JkKTsKICAgIHRoaXMuc2F2ZSgpOwogIH0KCiAgZ2V0KGFjY291bnRJZDogc3RyaW5nKTogU3RvcmVkQ3JlZGVudGlhbCB8IHVuZGVmaW5lZCB7CiAgICByZXR1cm4gdGhpcy5yZWNvcmRzLmdldChhY2NvdW50SWQpOwogIH0KCiAgZGVsZXRlKGFjY291bnRJZDogc3RyaW5nKTogdm9pZCB7CiAgICB0aGlzLnJlY29yZHMuZGVsZXRlKGFjY291bnRJZCk7CiAgICB0aGlzLnNhdmUoKTsKICB9CgogIGxpc3QoKTogU3RvcmVkQ3JlZGVudGlhbFtdIHsKICAgIHJldHVybiBBcnJheS5mcm9tKHRoaXMucmVjb3Jkcy52YWx1ZXMoKSk7CiAgfQp9Cg==
+/**
+ * Cofre de credenciais: persiste credenciais criptografadas
+ * em dataDir/credentials.enc usando o CryptoService.
+ *
+ * Mesmo que o disco seja comprometido, sem a senha mestra
+ * nada pode ser decifrado.
+ */
+import { promises as fs, existsSync, readFileSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import { CryptoService } from './crypto';
+import type { EncryptedAuthBlob } from '@shared/types';
+
+export interface StoredCredential {
+  accountId: string;
+  providerId: string;
+  blob: EncryptedAuthBlob;
+  createdAt: number;
+  updatedAt: number;
+}
+
+export class CredentialStore {
+  private file: string;
+  private records = new Map<string, StoredCredential>();
+
+  constructor(private crypto: CryptoService, dataDir: string) {
+    this.file = path.join(dataDir, 'credentials.enc');
+  }
+
+  load(): void {
+    if (!existsSync(this.file)) return;
+    const raw = readFileSync(this.file, 'utf8');
+    const enc = JSON.parse(raw) as EncryptedAuthBlob;
+    const plain = this.crypto.decryptWithMaster(enc).toString('utf8');
+    const list = JSON.parse(plain) as StoredCredential[];
+    this.records.clear();
+    list.forEach((r) => this.records.set(r.accountId, r));
+  }
+
+  save(): void {
+    const list = Array.from(this.records.values());
+    const plain = Buffer.from(JSON.stringify(list), 'utf8');
+    const enc = this.crypto.encryptWithMaster(plain);
+    writeFileSync(this.file, JSON.stringify(enc, null, 2), { mode: 0o600 });
+  }
+
+  put(record: StoredCredential): void {
+    record.updatedAt = Date.now();
+    this.records.set(record.accountId, record);
+    this.save();
+  }
+
+  get(accountId: string): StoredCredential | undefined {
+    return this.records.get(accountId);
+  }
+
+  delete(accountId: string): void {
+    this.records.delete(accountId);
+    this.save();
+  }
+
+  list(): StoredCredential[] {
+    return Array.from(this.records.values());
+  }
+}
