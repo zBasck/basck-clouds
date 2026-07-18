@@ -1,7 +1,7 @@
 {
   "name": "basck-clouds",
   "productName": "Basck Clouds",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basck Clouds — unifica múltiplas contas de armazenamento em nuvem em um único drive virtual criptografado de ponta a ponta.",
   "main": "dist/main/main.js",
   "author": {
@@ -24,14 +24,12 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "better-sqlite3": "^11.3.0",
     "chokidar": "^4.0.1",
     "node-cron": "^3.0.3",
     "node-fetch": "^2.7.0",
     "tar": "^7.4.3"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.5.0",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^18.3.3",
@@ -39,7 +37,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
-    "electron": "^32.0.1",
+    "electron": "^33.0.0",
     "electron-builder": "^25.0.5",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
