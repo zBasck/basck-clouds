@@ -1,1 +1,203 @@
-LyoqCiAqIENsdXN0ZXIgRW5naW5lIOKAlCBjb3Jhw6fDo28gZG8gQmFzY2sgQ2xvdWRzLgogKgogKiBSZWNlYmUgYXJxdWl2b3MgbG9jYWlzLCBkaXZpZGUgZW0gY2h1bmtzLCBjcmlwdG9ncmFmYSBjYWRhIGNodW5rCiAqIChBRVMtMjU2LUdDTSkgY29tIGNoYXZlIMO6bmljYSBwb3IgYXJxdWl2bywgZGlzdHJpYnVpIGVudHJlIGFzCiAqIGNvbnRhcyBjb25lY3RhZGFzIHJlc3BlaXRhbmRvIGEgZXN0cmF0w6lnaWEgZGUgcGxhY2VtZW50LCBlIG1hbnTDqW0KICogbyDDrW5kaWNlIGRlIG1ldGFkYWRvcyAoY2x1c3Rlcl9pdGVtcykgcXVlIGEgVUkgY29uc3VsdGEuCiAqCiAqIFBhcmEgZG93bmxvYWQsIGxvY2FsaXphIHRvZG9zIG9zIGNodW5rcywgYmFpeGEgZGUgcXVhbHF1ZXIgY29udGEKICogZGlzcG9uw612ZWwsIGRlY2lmcmEgZSByZWFncnVwYS4gVG9sZXJhIGluZGlzcG9uaWJpbGlkYWRlIGRlIHVtYQogKiBjb250YSBkZXNkZSBxdWUgYWluZGEgaGFqYSBjw7NwaWFzIHN1ZmljaWVudGVzLgogKi8KaW1wb3J0IHsgY3JlYXRlUmVhZFN0cmVhbSwgY3JlYXRlV3JpdGVTdHJlYW0gfSBmcm9tICdub2RlOmZzJzsKaW1wb3J0IHsgcHJvbWlzZXMgYXMgZnMgfSBmcm9tICdub2RlOmZzJzsKaW1wb3J0IHsgYmFzZW5hbWUsIGpvaW4gfSBmcm9tICdub2RlOnBhdGgnOwppbXBvcnQgeyBwaXBlbGluZSB9IGZyb20gJ25vZGU6c3RyZWFtL3Byb21pc2VzJzsKaW1wb3J0IHsgUmVhZGFibGUgfSBmcm9tICdub2RlOnN0cmVhbSc7CmltcG9ydCB7IGNyZWF0ZUhhc2ggfSBmcm9tICdub2RlOmNyeXB0byc7CmltcG9ydCB7IERpc3RyaWJ1dG9yIH0gZnJvbSAnLi9kaXN0cmlidXRvcic7CmltcG9ydCB7IGdldFByb3ZpZGVyIH0gZnJvbSAnQG1haW4vcHJvdmlkZXJzL2ZhY3RvcnknOwppbXBvcnQgdHlwZSB7IENsb3VkQWNjb3VudCwgQ2x1c3Rlckl0ZW0sIENsb3VkUXVvdGEgfSBmcm9tICdAc2hhcmVkL3R5cGVzJzsKaW1wb3J0IHR5cGUgeyBDbHVzdGVyUmVwb3NpdG9yeSwgQWNjb3VudFJlcG9zaXRvcnksIFF1b3RhUmVwb3NpdG9yeSwgQWN0aXZpdHlSZXBvc2l0b3J5IH0gZnJvbSAnQG1haW4vZGIvcmVwb3NpdG9yaWVzJzsKaW1wb3J0IHsgam9pbkxvZ2ljYWwsIG5vcm1hbGl6ZUxvZ2ljYWxQYXRoLCBwYXJlbnRPZiwgcmFuZG9tSWQsIHNob3J0SGFzaCB9IGZyb20gJ0BtYWluL3NlcnZpY2VzL2lkJzsKaW1wb3J0IHR5cGUgeyBDcnlwdG9TZXJ2aWNlIH0gZnJvbSAnQG1haW4vc2VydmljZXMvY3J5cHRvJzsKCmV4cG9ydCBpbnRlcmZhY2UgVXBsb2FkT3B0aW9ucyB7CiAgbG9naWNhbFBhdGg6IHN0cmluZzsKICBlbmNyeXB0OiBib29sZWFuOwogIGRpc3RyaWJ1dGU6IGJvb2xlYW47CiAgb25Qcm9ncmVzcz86IChwaGFzZTogJ3JlYWRpbmcnIHwgJ2VuY3J5cHRpbmcnIHwgJ3VwbG9hZGluZycgfCAnZmluYWxpemluZycsIHBjdDogbnVtYmVyKSA9PiB2b2lkOwp9CgpleHBvcnQgaW50ZXJmYWNlIERvd25sb2FkT3B0aW9ucyB7CiAgZGVzdGluYXRpb246IHN0cmluZzsKICBvblByb2dyZXNzPzogKHBoYXNlOiAnZmV0Y2hpbmcnIHwgJ2RlY3J5cHRpbmcnIHwgJ3dyaXRpbmcnLCBwY3Q6IG51bWJlcikgPT4gdm9pZDsKfQoKY29uc3QgREVGQVVMVF9DSFVOS19TSVpFID0gOCAqIDEwMjQgKiAxMDI0OyAvLyA4IE1CCgpleHBvcnQgY2xhc3MgQ2x1c3RlckVuZ2luZSB7CiAgY29uc3RydWN0b3IoCiAgICBwcml2YXRlIGFjY291bnRzOiBBY2NvdW50UmVwb3NpdG9yeSwKICAgIHByaXZhdGUgY2x1c3RlcjogQ2x1c3RlclJlcG9zaXRvcnksCiAgICBwcml2YXRlIHF1b3RhczogUXVvdGFSZXBvc2l0b3J5LAogICAgcHJpdmF0ZSBhY3Rpdml0eTogQWN0aXZpdHlSZXBvc2l0b3J5LAogICAgcHJpdmF0ZSBjcnlwdG86IENyeXB0b1NlcnZpY2UsCiAgICBwcml2YXRlIHNldHRpbmdzOiB7IGRlZmF1bHRDaHVua1NpemU6IG51bWJlcjsgZGVmYXVsdEVuY3J5cHRpb246IGJvb2xlYW4gfSwKICApIHt9CgogIGFzeW5jIHVwbG9hZEZpbGUobG9jYWxQYXRoOiBzdHJpbmcsIG9wdHM6IFVwbG9hZE9wdGlvbnMpOiBQcm9taXNlPENsdXN0ZXJJdGVtPiB7CiAgICBpZiAoIXRoaXMuY3J5cHRvLmlzVW5sb2NrZWQoKSkgdGhyb3cgbmV3IEVycm9yKCdDb2ZyZSBibG9xdWVhZG8uIERlc2Jsb3F1ZWllIGFudGVzIGRlIGVudmlhciBhcnF1aXZvcy4nKTsKICAgIGNvbnN0IGFjY291bnRzID0gdGhpcy5hY2NvdW50cy5saXN0KCk7CiAgICBpZiAoYWNjb3VudHMubGVuZ3RoID09PSAwKSB0aHJvdyBuZXcgRXJyb3IoJ0NvbmVjdGUgcGVsbyBtZW5vcyB1bWEgY29udGEgZGUgbnV2ZW0uJyk7CiAgICBjb25zdCBzdGF0ID0gYXdhaXQgZnMuc3RhdChsb2NhbFBhdGgpOwogICAgaWYgKHN0YXQuaXNEaXJlY3RvcnkoKSkgdGhyb3cgbmV3IEVycm9yKCdVc2UgdXBsb2FkRm9sZGVyIHBhcmEgZGlyZXTDs3Jpb3MuJyk7CgogICAgY29uc3QgbG9naWNhbCA9IG5vcm1hbGl6ZUxvZ2ljYWxQYXRoKGpvaW5Mb2dpY2FsKG9wdHMubG9naWNhbFBhdGgsIGJhc2VuYW1lKGxvY2FsUGF0aCkpKTsKICAgIGNvbnN0IGl0ZW1JZCA9IHJhbmRvbUlkKDE2KTsKICAgIGNvbnN0IGZpbGVLZXkgPSB0aGlzLmNyeXB0by5nZW5lcmF0ZUZpbGVLZXkoKS5wbGFpbjsgLy8gMzIgYnl0ZXMKICAgIGNvbnN0IGNodW5rU2l6ZSA9IHRoaXMuc2V0dGluZ3MuZGVmYXVsdENodW5rU2l6ZTsKICAgIGNvbnN0IGJhc2VOYW1lID0gYGJhc2NrLyR7aXRlbUlkfWA7CgogICAgb3B0cy5vblByb2dyZXNzPy4oJ3JlYWRpbmcnLCAwKTsKICAgIGNvbnN0IGZpbGVIYXNoID0gY3JlYXRlSGFzaCgnc2hhMjU2Jyk7CiAgICBjb25zdCBzdHJlYW0gPSBjcmVhdGVSZWFkU3RyZWFtKGxvY2FsUGF0aCwgeyBoaWdoV2F0ZXJNYXJrOiBjaHVua1NpemUgfSk7CiAgICBjb25zdCBjaHVua3M6IEFycmF5PHsgaWQ6IHN0cmluZzsgb2Zmc2V0OiBudW1iZXI7IHNpemU6IG51bWJlcjsgcGxhY2VtZW50czogYW55W10gfT4gPSBbXTsKICAgIGxldCBvZmZzZXQgPSAwOwogICAgbGV0IGNodW5rSW5kZXggPSAwOwogICAgY29uc3QgZGlzdHJpYnV0b3IgPSBuZXcgRGlzdHJpYnV0b3IoYWNjb3VudHMsIHRoaXMucXVvdGFNYXAoKSk7CgogICAgZm9yIGF3YWl0IChjb25zdCByYXcgb2Ygc3RyZWFtKSB7CiAgICAgIGNvbnN0IGJ1ZiA9IHJhdyBhcyBCdWZmZXI7CiAgICAgIGZpbGVIYXNoLnVwZGF0ZShidWYpOwogICAgICBjb25zdCB7IGNpcGhlcnRleHQsIGl2LCB0YWcgfSA9IHRoaXMuY3J5cHRvLmVuY3J5cHRDaHVuayhidWYsIGZpbGVLZXkpOwogICAgICBjb25zdCBjaHVua0lkID0gYCR7aXRlbUlkfS0ke2NodW5rSW5kZXgudG9TdHJpbmcoKS5wYWRTdGFydCg2LCAnMCcpfWA7CiAgICAgIGNvbnN0IGZ1bGxIYXNoID0gY3JlYXRlSGFzaCgnc2hhMjU2JykudXBkYXRlKGNpcGhlcnRleHQpLmRpZ2VzdCgnaGV4Jyk7CiAgICAgIGNvbnN0IHJlbW90ZUJhc2UgPSBgJHtiYXNlTmFtZX0vJHtjaHVua0luZGV4LnRvU3RyaW5nKCkucGFkU3RhcnQoNiwgJzAnKX1gOwogICAgICBjb25zdCBkZWNpc2lvbiA9IGRpc3RyaWJ1dG9yLmJ1aWxkUGxhY2VtZW50cyhjaHVua0lkLCBjaXBoZXJ0ZXh0Lmxlbmd0aCwgcmVtb3RlQmFzZSk7CiAgICAgIC8vIGVmZXRpdmEgbyB1cGxvYWQgZW0gcGFyYWxlbG8KICAgICAgYXdhaXQgUHJvbWlzZS5hbGwoCiAgICAgICAgZGVjaXNpb24ucGxhY2VtZW50cy5tYXAoYXN5bmMgKHApID0+IHsKICAgICAgICAgIGNvbnN0IGFjYyA9IGFjY291bnRzLmZpbmQoKGEpID0+IGEuaWQgPT09IHAuYWNjb3VudElkKSE7CiAgICAgICAgICBjb25zdCBwcm92aWRlciA9IGdldFByb3ZpZGVyKGFjYy5wcm92aWRlcklkKTsKICAgICAgICAgIGF3YWl0IHByb3ZpZGVyLnVwbG9hZCgKICAgICAgICAgICAgYWNjLAogICAgICAgICAgICBwLnJlbW90ZVBhdGgsCiAgICAgICAgICAgIGNpcGhlcnRleHQsCiAgICAgICAgICAgIHsgbWltZVR5cGU6ICdhcHBsaWNhdGlvbi9vY3RldC1zdHJlYW0nLCBwcm9ncmVzczogKHMsIHQpID0+IG9wdHMub25Qcm9ncmVzcz8uKCd1cGxvYWRpbmcnLCBNYXRoLm1pbig5OSwgKHMgLyB0KSAqIDEwMCkpIH0sCiAgICAgICAgICApOwogICAgICAgIH0pLAogICAgICApOwogICAgICAvLyBQZXJzaXN0aW1vcyBvIGNodW5rIGNvbSBpdit0YWcgY29uY2F0ZW5hZG9zIG5vIHJlZ2lzdHJvIGRlIHBsYWNlbWVudC4KICAgICAgY2h1bmtzLnB1c2goewogICAgICAgIGlkOiBjaHVua0lkLAogICAgICAgIG9mZnNldCwKICAgICAgICBzaXplOiBjaXBoZXJ0ZXh0Lmxlbmd0aCwKICAgICAgICBwbGFjZW1lbnRzOiBkZWNpc2lvbi5wbGFjZW1lbnRzLm1hcCgocCkgPT4gKHsKICAgICAgICAgIGFjY291bnRJZDogcC5hY2NvdW50SWQsCiAgICAgICAgICByZW1vdGVQYXRoOiBwLnJlbW90ZVBhdGgsCiAgICAgICAgICBpdjogaXYudG9TdHJpbmcoJ2Jhc2U2NCcpLAogICAgICAgICAgdGFnOiB0YWcudG9TdHJpbmcoJ2Jhc2U2NCcpLAogICAgICAgICAgZnVsbEhhc2gsCiAgICAgICAgfSkpLAogICAgICB9KTsKICAgICAgb2Zmc2V0ICs9IGJ1Zi5sZW5ndGg7CiAgICAgIGNodW5rSW5kZXgrKzsKICAgICAgb3B0cy5vblByb2dyZXNzPy4oJ2VuY3J5cHRpbmcnLCBNYXRoLm1pbig5OSwgKG9mZnNldCAvIHN0YXQuc2l6ZSkgKiAxMDApKTsKICAgIH0KICAgIG9wdHMub25Qcm9ncmVzcz8uKCdmaW5hbGl6aW5nJywgMTAwKTsKCiAgICBjb25zdCBpdGVtOiBDbHVzdGVySXRlbSA9IHsKICAgICAgaWQ6IGl0ZW1JZCwKICAgICAgbG9naWNhbFBhdGg6IGxvZ2ljYWwsCiAgICAgIG5hbWU6IGJhc2VuYW1lKGxvZ2ljYWwpLAogICAgICBzaXplOiBzdGF0LnNpemUsCiAgICAgIG1pbWVUeXBlOiB0aGlzLmd1ZXNzTWltZShiYXNlbmFtZShsb2NhbFBhdGgpKSwKICAgICAgaXNEaXI6IGZhbHNlLAogICAgICBjcmVhdGVkQXQ6IERhdGUubm93KCksCiAgICAgIHVwZGF0ZWRBdDogRGF0ZS5ub3coKSwKICAgICAgY29udGVudEhhc2g6IGZpbGVIYXNoLmRpZ2VzdCgnaGV4JyksCiAgICAgIGNodW5rcywKICAgICAgZW5jcnlwdGlvbjogeyBhbGdvcml0aG06ICdhZXMtMjU2LWdjbScsIHBlckNodW5rS2V5OiBmYWxzZSwgbWFzdGVyS2V5SWQ6ICdjbHVzdGVyJyB9LAogICAgICBvcmlnaW5BY2NvdW50SWQ6IGNodW5rc1swXT8ucGxhY2VtZW50c1swXT8uYWNjb3VudElkLAogICAgfTsKICAgIHRoaXMuY2x1c3Rlci51cHNlcnQoaXRlbSk7CiAgICB0aGlzLmFjdGl2aXR5LmxvZyh7IHRzOiBEYXRlLm5vdygpLCBsZXZlbDogJ2luZm8nLCBjYXRlZ29yeTogJ3VwbG9hZCcsIG1lc3NhZ2U6IGBBcnF1aXZvIGVudmlhZG86ICR7bG9naWNhbH1gLCBkZXRhaWw6IHsgc2l6ZTogc3RhdC5zaXplLCBjaHVua3M6IGNodW5rcy5sZW5ndGggfSB9KTsKICAgIHJldHVybiBpdGVtOwogIH0KCiAgYXN5bmMgZG93bmxvYWRJdGVtKGl0ZW1JZDogc3RyaW5nLCBvcHRzOiBEb3dubG9hZE9wdGlvbnMpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IGl0ZW0gPSB0aGlzLmNsdXN0ZXIuZ2V0KGl0ZW1JZCk7CiAgICBpZiAoIWl0ZW0pIHRocm93IG5ldyBFcnJvcignSXRlbSBuw6NvIGVuY29udHJhZG8gbm8gY2x1c3Rlci4nKTsKICAgIGlmIChpdGVtLmlzRGlyKSB0aHJvdyBuZXcgRXJyb3IoJ0l0ZW0gw6kgdW1hIHBhc3RhOyBiYWl4ZSBhcnF1aXZvIHBvciBhcnF1aXZvLicpOwogICAgYXdhaXQgZnMubWtkaXIob3B0cy5kZXN0aW5hdGlvbiwgeyByZWN1cnNpdmU6IHRydWUgfSk7CiAgICBjb25zdCBvdXQgPSBjcmVhdGVXcml0ZVN0cmVhbShqb2luKG9wdHMuZGVzdGluYXRpb24sIGl0ZW0ubmFtZSkpOwogICAgbGV0IHdyaXR0ZW4gPSAwOwogICAgZm9yIChjb25zdCBjaCBvZiBpdGVtLmNodW5rcykgewogICAgICBjb25zdCBwbGFjZW1lbnQgPSBhd2FpdCB0aGlzLmZldGNoQ2h1bmtXaXRoRmFsbGJhY2soY2gpOwogICAgICBjb25zdCBpdiA9IEJ1ZmZlci5mcm9tKHBsYWNlbWVudC5pdiwgJ2Jhc2U2NCcpOwogICAgICBjb25zdCB0YWcgPSBCdWZmZXIuZnJvbShwbGFjZW1lbnQudGFnLCAnYmFzZTY0Jyk7CiAgICAgIGNvbnN0IHBsYWluID0gdGhpcy5jcnlwdG8uZGVjcnlwdENodW5rKHBsYWNlbWVudC5jaXBoZXJ0ZXh0LCB0aGlzLmRlcml2ZUZpbGVLZXkoaXRlbS5pZCksIGl2LCB0YWcpOwogICAgICBvdXQud3JpdGUocGxhaW4pOwogICAgICB3cml0dGVuICs9IHBsYWluLmxlbmd0aDsKICAgICAgb3B0cy5vblByb2dyZXNzPy4oJ3dyaXRpbmcnLCAod3JpdHRlbiAvIGl0ZW0uc2l6ZSkgKiAxMDApOwogICAgfQogICAgYXdhaXQgbmV3IFByb21pc2U8dm9pZD4oKHJlcywgcmVqKSA9PiBvdXQuZW5kKChlcnI6IGFueSkgPT4gKGVyciA/IHJlaihlcnIpIDogcmVzKCkpKSk7CiAgfQoKICBwcml2YXRlIGFzeW5jIGZldGNoQ2h1bmtXaXRoRmFsbGJhY2soY2h1bms6IGFueSk6IFByb21pc2U8eyBjaXBoZXJ0ZXh0OiBCdWZmZXI7IGl2OiBzdHJpbmc7IHRhZzogc3RyaW5nIH0+IHsKICAgIGxldCBsYXN0RXJyOiB1bmtub3duID0gbnVsbDsKICAgIGZvciAoY29uc3QgcGxhY2VtZW50IG9mIGNodW5rLnBsYWNlbWVudHMpIHsKICAgICAgdHJ5IHsKICAgICAgICBjb25zdCBhY2MgPSB0aGlzLmFjY291bnRzLmdldChwbGFjZW1lbnQuYWNjb3VudElkKTsKICAgICAgICBpZiAoIWFjYykgY29udGludWU7CiAgICAgICAgY29uc3QgcHJvdmlkZXIgPSBnZXRQcm92aWRlcihhY2MucHJvdmlkZXJJZCk7CiAgICAgICAgaWYgKHByb3ZpZGVyLnJlYWRSYW5nZSkgewogICAgICAgICAgY29uc3QgYnVmID0gYXdhaXQgcHJvdmlkZXIucmVhZFJhbmdlKGFjYywgcGxhY2VtZW50LnJlbW90ZVBhdGgsIDAsIDEwMCAqIDEwMjQgKiAxMDI0KTsKICAgICAgICAgIHJldHVybiB7IGNpcGhlcnRleHQ6IGJ1ZiwgaXY6IHBsYWNlbWVudC5pdiwgdGFnOiBwbGFjZW1lbnQudGFnIH07CiAgICAgICAgfSBlbHNlIHsKICAgICAgICAgIC8vIGZhbGxiYWNrOiBkb3dubG9hZCBmdWxsIGNodW5rIHRvIHRlbXAKICAgICAgICAgIGNvbnN0IHRtcCA9IGpvaW4ocmVxdWlyZSgnbm9kZTpvcycpLnRtcGRpcigpLCBgYmFzY2stJHtyYW5kb21JZCg4KX0uYmluYCk7CiAgICAgICAgICBhd2FpdCBwcm92aWRlci5kb3dubG9hZChhY2MsIHBsYWNlbWVudC5yZW1vdGVQYXRoLCB0bXApOwogICAgICAgICAgY29uc3QgYnVmID0gYXdhaXQgZnMucmVhZEZpbGUodG1wKTsKICAgICAgICAgIGF3YWl0IGZzLnVubGluayh0bXApLmNhdGNoKCgpID0+IHVuZGVmaW5lZCk7CiAgICAgICAgICByZXR1cm4geyBjaXBoZXJ0ZXh0OiBidWYsIGl2OiBwbGFjZW1lbnQuaXYsIHRhZzogcGxhY2VtZW50LnRhZyB9OwogICAgICAgIH0KICAgICAgfSBjYXRjaCAoZXJyKSB7CiAgICAgICAgbGFzdEVyciA9IGVycjsKICAgICAgfQogICAgfQogICAgdGhyb3cgbmV3IEVycm9yKGBOw6NvIGZvaSBwb3Nzw612ZWwgYmFpeGFyIGNodW5rICR7Y2h1bmsuaWR9OiAke1N0cmluZyhsYXN0RXJyKX1gKTsKICB9CgogIHByaXZhdGUgZGVyaXZlRmlsZUtleShpdGVtSWQ6IHN0cmluZyk6IEJ1ZmZlciB7CiAgICAvLyBQYXJhIHNpbXBsaWZpY2FyLCBvIGZpbGVLZXkgw6kgZ2VyYWRvIG5vIHVwbG9hZCBlIGd1YXJkYWRvIGp1bnRvOwogICAgLy8gYXF1aSBkZXJpdmFtb3MgZGV0ZXJtaW5pc3RpY2FtZW50ZSBhIHBhcnRpciBkbyBpdGVtSWQgKyBtYXN0ZXJLZXkuCiAgICByZXR1cm4gY3JlYXRlSGFzaCgnc2hhMjU2JykKICAgICAgLnVwZGF0ZShpdGVtSWQpCiAgICAgIC51cGRhdGUodGhpcy5jcnlwdG9NYXN0ZXIoKSkKICAgICAgLmRpZ2VzdCgpOwogIH0KCiAgcHJpdmF0ZSBjcnlwdG9NYXN0ZXIoKTogQnVmZmVyIHsKICAgIC8vIEFjZXNzYSBhIG1hc3RlciBrZXkgcG9yIHJlZmxlY3Rpb24gc2ltcGxlcwogICAgcmV0dXJuICh0aGlzLmNyeXB0byBhcyBhbnkpLm1hc3RlcktleSBhcyBCdWZmZXI7CiAgfQoKICBwcml2YXRlIHF1b3RhTWFwKCk6IE1hcDxzdHJpbmcsIENsb3VkUXVvdGE+IHsKICAgIGNvbnN0IG1hcCA9IG5ldyBNYXA8c3RyaW5nLCBDbG91ZFF1b3RhPigpOwogICAgZm9yIChjb25zdCBxIG9mIHRoaXMucXVvdGFzLmFsbCgpKSBtYXAuc2V0KHEuYWNjb3VudElkLCBxKTsKICAgIHJldHVybiBtYXA7CiAgfQoKICBwcml2YXRlIGd1ZXNzTWltZShuYW1lOiBzdHJpbmcpOiBzdHJpbmcgewogICAgY29uc3QgZXh0ID0gbmFtZS5zcGxpdCgnLicpLnBvcCgpPy50b0xvd2VyQ2FzZSgpID8/ICcnOwogICAgY29uc3QgbWFwOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0gewogICAgICB0eHQ6ICd0ZXh0L3BsYWluJywgbWQ6ICd0ZXh0L21hcmtkb3duJywgcGRmOiAnYXBwbGljYXRpb24vcGRmJywKICAgICAgcG5nOiAnaW1hZ2UvcG5nJywganBnOiAnaW1hZ2UvanBlZycsIGpwZWc6ICdpbWFnZS9qcGVnJywgZ2lmOiAnaW1hZ2UvZ2lmJywgd2VicDogJ2ltYWdlL3dlYnAnLAogICAgICBtcDQ6ICd2aWRlby9tcDQnLCBtcDM6ICdhdWRpby9tcGVnJywgemlwOiAnYXBwbGljYXRpb24vemlwJywganNvbjogJ2FwcGxpY2F0aW9uL2pzb24nLAogICAgfTsKICAgIHJldHVybiBtYXBbZXh0XSA/PyAnYXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtJzsKICB9Cn0K
+/**
+ * Cluster Engine — coração do Basck Clouds.
+ *
+ * Recebe arquivos locais, divide em chunks, criptografa cada chunk
+ * (AES-256-GCM) com chave única por arquivo, distribui entre as
+ * contas conectadas respeitando a estratégia de placement, e mantém
+ * o índice de metadados (cluster_items) que a UI consulta.
+ *
+ * Para download, localiza todos os chunks, baixa de qualquer conta
+ * disponível, decifra e reagrupa. Tolera indisponibilidade de uma
+ * conta desde que ainda haja cópias suficientes.
+ */
+import { createReadStream, createWriteStream } from 'node:fs';
+import { promises as fs } from 'node:fs';
+import { basename, join } from 'node:path';
+import { pipeline } from 'node:stream/promises';
+import { Readable } from 'node:stream';
+import { createHash } from 'node:crypto';
+import { Distributor } from './distributor';
+import { getProvider } from '@main/providers/factory';
+import type { CloudAccount, ClusterItem, CloudQuota } from '@shared/types';
+import type { ClusterRepository, AccountRepository, QuotaRepository, ActivityRepository } from '@main/db/repositories';
+import { joinLogical, normalizeLogicalPath, parentOf, randomId, shortHash } from '@main/services/id';
+import type { CryptoService } from '@main/services/crypto';
+
+export interface UploadOptions {
+  logicalPath: string;
+  encrypt: boolean;
+  distribute: boolean;
+  onProgress?: (phase: 'reading' | 'encrypting' | 'uploading' | 'finalizing', pct: number) => void;
+}
+
+export interface DownloadOptions {
+  destination: string;
+  onProgress?: (phase: 'fetching' | 'decrypting' | 'writing', pct: number) => void;
+}
+
+const DEFAULT_CHUNK_SIZE = 8 * 1024 * 1024; // 8 MB
+
+export class ClusterEngine {
+  constructor(
+    private accounts: AccountRepository,
+    private cluster: ClusterRepository,
+    private quotas: QuotaRepository,
+    private activity: ActivityRepository,
+    private crypto: CryptoService,
+    private settings: { defaultChunkSize: number; defaultEncryption: boolean },
+  ) {}
+
+  async uploadFile(localPath: string, opts: UploadOptions): Promise<ClusterItem> {
+    if (!this.crypto.isUnlocked()) throw new Error('Cofre bloqueado. Desbloqueie antes de enviar arquivos.');
+    const accounts = this.accounts.list();
+    if (accounts.length === 0) throw new Error('Conecte pelo menos uma conta de nuvem.');
+    const stat = await fs.stat(localPath);
+    if (stat.isDirectory()) throw new Error('Use uploadFolder para diretórios.');
+
+    const logical = normalizeLogicalPath(joinLogical(opts.logicalPath, basename(localPath)));
+    const itemId = randomId(16);
+    const fileKey = this.crypto.generateFileKey().plain; // 32 bytes
+    const chunkSize = this.settings.defaultChunkSize;
+    const baseName = `basck/${itemId}`;
+
+    opts.onProgress?.('reading', 0);
+    const fileHash = createHash('sha256');
+    const stream = createReadStream(localPath, { highWaterMark: chunkSize });
+    const chunks: Array<{ id: string; offset: number; size: number; placements: any[] }> = [];
+    let offset = 0;
+    let chunkIndex = 0;
+    const distributor = new Distributor(accounts, this.quotaMap());
+
+    for await (const raw of stream) {
+      const buf = raw as Buffer;
+      fileHash.update(buf);
+      const { ciphertext, iv, tag } = this.crypto.encryptChunk(buf, fileKey);
+      const chunkId = `${itemId}-${chunkIndex.toString().padStart(6, '0')}`;
+      const fullHash = createHash('sha256').update(ciphertext).digest('hex');
+      const remoteBase = `${baseName}/${chunkIndex.toString().padStart(6, '0')}`;
+      const decision = distributor.buildPlacements(chunkId, ciphertext.length, remoteBase);
+      // efetiva o upload em paralelo
+      await Promise.all(
+        decision.placements.map(async (p) => {
+          const acc = accounts.find((a) => a.id === p.accountId)!;
+          const provider = getProvider(acc.providerId);
+          await provider.upload(
+            acc,
+            p.remotePath,
+            ciphertext,
+            { mimeType: 'application/octet-stream', progress: (s, t) => opts.onProgress?.('uploading', Math.min(99, (s / t) * 100)) },
+          );
+        }),
+      );
+      // Persistimos o chunk com iv+tag concatenados no registro de placement.
+      chunks.push({
+        id: chunkId,
+        offset,
+        size: ciphertext.length,
+        placements: decision.placements.map((p) => ({
+          accountId: p.accountId,
+          remotePath: p.remotePath,
+          iv: iv.toString('base64'),
+          tag: tag.toString('base64'),
+          fullHash,
+        })),
+      });
+      offset += buf.length;
+      chunkIndex++;
+      opts.onProgress?.('encrypting', Math.min(99, (offset / stat.size) * 100));
+    }
+    opts.onProgress?.('finalizing', 100);
+
+    const item: ClusterItem = {
+      id: itemId,
+      logicalPath: logical,
+      name: basename(logical),
+      size: stat.size,
+      mimeType: this.guessMime(basename(localPath)),
+      isDir: false,
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      contentHash: fileHash.digest('hex'),
+      chunks,
+      encryption: { algorithm: 'aes-256-gcm', perChunkKey: false, masterKeyId: 'cluster' },
+      originAccountId: chunks[0]?.placements[0]?.accountId,
+    };
+    this.cluster.upsert(item);
+    this.activity.log({ ts: Date.now(), level: 'info', category: 'upload', message: `Arquivo enviado: ${logical}`, detail: { size: stat.size, chunks: chunks.length } });
+    return item;
+  }
+
+  async downloadItem(itemId: string, opts: DownloadOptions): Promise<void> {
+    const item = this.cluster.get(itemId);
+    if (!item) throw new Error('Item não encontrado no cluster.');
+    if (item.isDir) throw new Error('Item é uma pasta; baixe arquivo por arquivo.');
+    await fs.mkdir(opts.destination, { recursive: true });
+    const out = createWriteStream(join(opts.destination, item.name));
+    let written = 0;
+    for (const ch of item.chunks) {
+      const placement = await this.fetchChunkWithFallback(ch);
+      const iv = Buffer.from(placement.iv, 'base64');
+      const tag = Buffer.from(placement.tag, 'base64');
+      const plain = this.crypto.decryptChunk(placement.ciphertext, this.deriveFileKey(item.id), iv, tag);
+      out.write(plain);
+      written += plain.length;
+      opts.onProgress?.('writing', (written / item.size) * 100);
+    }
+    await new Promise<void>((res, rej) => out.end((err: any) => (err ? rej(err) : res())));
+  }
+
+  private async fetchChunkWithFallback(chunk: any): Promise<{ ciphertext: Buffer; iv: string; tag: string }> {
+    let lastErr: unknown = null;
+    for (const placement of chunk.placements) {
+      try {
+        const acc = this.accounts.get(placement.accountId);
+        if (!acc) continue;
+        const provider = getProvider(acc.providerId);
+        if (provider.readRange) {
+          const buf = await provider.readRange(acc, placement.remotePath, 0, 100 * 1024 * 1024);
+          return { ciphertext: buf, iv: placement.iv, tag: placement.tag };
+        } else {
+          // fallback: download full chunk to temp
+          const tmp = join(require('node:os').tmpdir(), `basck-${randomId(8)}.bin`);
+          await provider.download(acc, placement.remotePath, tmp);
+          const buf = await fs.readFile(tmp);
+          await fs.unlink(tmp).catch(() => undefined);
+          return { ciphertext: buf, iv: placement.iv, tag: placement.tag };
+        }
+      } catch (err) {
+        lastErr = err;
+      }
+    }
+    throw new Error(`Não foi possível baixar chunk ${chunk.id}: ${String(lastErr)}`);
+  }
+
+  private deriveFileKey(itemId: string): Buffer {
+    // Para simplificar, o fileKey é gerado no upload e guardado junto;
+    // aqui derivamos deterministicamente a partir do itemId + masterKey.
+    return createHash('sha256')
+      .update(itemId)
+      .update(this.cryptoMaster())
+      .digest();
+  }
+
+  private cryptoMaster(): Buffer {
+    // Acessa a master key por reflection simples
+    return (this.crypto as any).masterKey as Buffer;
+  }
+
+  private quotaMap(): Map<string, CloudQuota> {
+    const map = new Map<string, CloudQuota>();
+    for (const q of this.quotas.all()) map.set(q.accountId, q);
+    return map;
+  }
+
+  private guessMime(name: string): string {
+    const ext = name.split('.').pop()?.toLowerCase() ?? '';
+    const map: Record<string, string> = {
+      txt: 'text/plain', md: 'text/markdown', pdf: 'application/pdf',
+      png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', gif: 'image/gif', webp: 'image/webp',
+      mp4: 'video/mp4', mp3: 'audio/mpeg', zip: 'application/zip', json: 'application/json',
+    };
+    return map[ext] ?? 'application/octet-stream';
+  }
+}
