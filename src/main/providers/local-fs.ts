@@ -1,1 +1,116 @@
-LyoqCiAqIEFkYXB0YWRvciBwYXJhIHBhc3RhcyBsb2NhaXMg4oCUIHVzYWRvIHBhcmEgdGVzdGVzIGUgcGFyYSBpbmNsdWlyCiAqIHVtIGRpc2NvIGRvIHByw7NwcmlvIGNvbXB1dGFkb3IgY29tbyBtYWlzIHVtYSAiY29udGEiIGRvIGNsdXN0ZXIuCiAqLwppbXBvcnQgeyBwcm9taXNlcyBhcyBmcywgY3JlYXRlUmVhZFN0cmVhbSwgY3JlYXRlV3JpdGVTdHJlYW0gfSBmcm9tICdub2RlOmZzJzsKaW1wb3J0IHsgYmFzZW5hbWUsIGRpcm5hbWUsIGpvaW4sIHNlcCB9IGZyb20gJ25vZGU6cGF0aCc7CmltcG9ydCB0eXBlIHsgQ2xvdWRQcm92aWRlciwgUHJvdmlkZXJMaXN0UmVzdWx0LCBQcm92aWRlckZpbGVFbnRyeSB9IGZyb20gJy4vdHlwZXMnOwppbXBvcnQgdHlwZSB7IENsb3VkQWNjb3VudCB9IGZyb20gJ0BzaGFyZWQvdHlwZXMnOwoKaW50ZXJmYWNlIExvY2FsQ29uZmlnIHsKICByb290UGF0aDogc3RyaW5nOwp9CgpleHBvcnQgY2xhc3MgTG9jYWxGc1Byb3ZpZGVyIGltcGxlbWVudHMgQ2xvdWRQcm92aWRlciB7CiAgcmVhZG9ubHkgaWQgPSAnbG9jYWwnIGFzIGNvbnN0OwoKICBwcml2YXRlIGNmZyhhY2NvdW50OiBDbG91ZEFjY291bnQpOiBMb2NhbENvbmZpZyB7CiAgICByZXR1cm4gSlNPTi5wYXJzZShCdWZmZXIuZnJvbShhY2NvdW50LmF1dGguY2lwaGVydGV4dCwgJ2Jhc2U2NCcpLnRvU3RyaW5nKCd1dGY4JykpOwogIH0KCiAgcHJpdmF0ZSBmdWxsKGNmZzogTG9jYWxDb25maWcsIHA6IHN0cmluZyk6IHN0cmluZyB7CiAgICBpZiAocCA9PT0gJy8nIHx8ICFwKSByZXR1cm4gY2ZnLnJvb3RQYXRoOwogICAgcmV0dXJuIGpvaW4oY2ZnLnJvb3RQYXRoLCBwLnJlcGxhY2UoL15cLy8sICcnKSk7CiAgfQoKICBhc3luYyBhdXRoZW50aWNhdGUocGF5bG9hZDogUmVjb3JkPHN0cmluZywgdW5rbm93bj4sIGFjY291bnQ6IENsb3VkQWNjb3VudCk6IFByb21pc2U8dm9pZD4gewogICAgY29uc3QgY2ZnOiBMb2NhbENvbmZpZyA9IHsgcm9vdFBhdGg6IHBheWxvYWQucm9vdFBhdGggYXMgc3RyaW5nIH07CiAgICBhY2NvdW50LmF1dGguY2lwaGVydGV4dCA9IEJ1ZmZlci5mcm9tKEpTT04uc3RyaW5naWZ5KGNmZykpLnRvU3RyaW5nKCdiYXNlNjQnKTsKICB9CgogIGFzeW5jIGxpc3QoYWNjb3VudDogQ2xvdWRBY2NvdW50LCByZW1vdGVQYXRoOiBzdHJpbmcpOiBQcm9taXNlPFByb3ZpZGVyTGlzdFJlc3VsdD4gewogICAgY29uc3QgY2ZnID0gdGhpcy5jZmcoYWNjb3VudCk7CiAgICBjb25zdCBkaXIgPSB0aGlzLmZ1bGwoY2ZnLCByZW1vdGVQYXRoKTsKICAgIHRyeSB7CiAgICAgIGNvbnN0IGVudHJpZXMgPSBhd2FpdCBmcy5yZWFkZGlyKGRpciwgeyB3aXRoRmlsZVR5cGVzOiB0cnVlIH0pOwogICAgICBjb25zdCBvdXQ6IFByb3ZpZGVyRmlsZUVudHJ5W10gPSBbXTsKICAgICAgZm9yIChjb25zdCBlIG9mIGVudHJpZXMpIHsKICAgICAgICBjb25zdCBmdWxsID0gam9pbihkaXIsIGUubmFtZSk7CiAgICAgICAgY29uc3Qgc3RhdCA9IGF3YWl0IGZzLnN0YXQoZnVsbCk7CiAgICAgICAgb3V0LnB1c2goewogICAgICAgICAgaWQ6IGZ1bGwsCiAgICAgICAgICBuYW1lOiBlLm5hbWUsCiAgICAgICAgICByZW1vdGVQYXRoOiBmdWxsLnJlcGxhY2UoY2ZnLnJvb3RQYXRoLCAnJykucmVwbGFjZSgvXFwvZywgJy8nKSwKICAgICAgICAgIHNpemU6IHN0YXQuc2l6ZSwKICAgICAgICAgIGlzRGlyOiBlLmlzRGlyZWN0b3J5KCksCiAgICAgICAgICBtaW1lVHlwZTogZS5pc0RpcmVjdG9yeSgpID8gJ2lub2RlL2RpcmVjdG9yeScgOiAnYXBwbGljYXRpb24vb2N0ZXQtc3RyZWFtJywKICAgICAgICAgIG1vZGlmaWVkQXQ6IHN0YXQubXRpbWVNcywKICAgICAgICB9KTsKICAgICAgfQogICAgICByZXR1cm4geyBlbnRyaWVzOiBvdXQgfTsKICAgIH0gY2F0Y2ggewogICAgICByZXR1cm4geyBlbnRyaWVzOiBbXSB9OwogICAgfQogIH0KCiAgYXN5bmMgdXBsb2FkKGFjY291bnQ6IENsb3VkQWNjb3VudCwgcmVtb3RlUGF0aDogc3RyaW5nLCBkYXRhOiBCdWZmZXIpOiBQcm9taXNlPFByb3ZpZGVyRmlsZUVudHJ5PiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGNvbnN0IGZ1bGwgPSB0aGlzLmZ1bGwoY2ZnLCByZW1vdGVQYXRoKTsKICAgIGF3YWl0IGZzLm1rZGlyKGRpcm5hbWUoZnVsbCksIHsgcmVjdXJzaXZlOiB0cnVlIH0pOwogICAgYXdhaXQgZnMud3JpdGVGaWxlKGZ1bGwsIGRhdGEpOwogICAgY29uc3Qgc3RhdCA9IGF3YWl0IGZzLnN0YXQoZnVsbCk7CiAgICByZXR1cm4gewogICAgICBpZDogZnVsbCwKICAgICAgbmFtZTogYmFzZW5hbWUoZnVsbCksCiAgICAgIHJlbW90ZVBhdGgsCiAgICAgIHNpemU6IHN0YXQuc2l6ZSwKICAgICAgaXNEaXI6IGZhbHNlLAogICAgICBtaW1lVHlwZTogJ2FwcGxpY2F0aW9uL29jdGV0LXN0cmVhbScsCiAgICAgIG1vZGlmaWVkQXQ6IHN0YXQubXRpbWVNcywKICAgIH07CiAgfQoKICBhc3luYyBkb3dubG9hZChhY2NvdW50OiBDbG91ZEFjY291bnQsIHJlbW90ZVBhdGg6IHN0cmluZywgZGVzdFBhdGg6IHN0cmluZyk6IFByb21pc2U8dm9pZD4gewogICAgY29uc3QgY2ZnID0gdGhpcy5jZmcoYWNjb3VudCk7CiAgICBjb25zdCBmdWxsID0gdGhpcy5mdWxsKGNmZywgcmVtb3RlUGF0aCk7CiAgICBhd2FpdCBmcy5jb3B5RmlsZShmdWxsLCBkZXN0UGF0aCk7CiAgfQoKICBhc3luYyByZWFkUmFuZ2UoYWNjb3VudDogQ2xvdWRBY2NvdW50LCByZW1vdGVQYXRoOiBzdHJpbmcsIHN0YXJ0OiBudW1iZXIsIGVuZDogbnVtYmVyKTogUHJvbWlzZTxCdWZmZXI+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3QgZnVsbCA9IHRoaXMuZnVsbChjZmcsIHJlbW90ZVBhdGgpOwogICAgY29uc3QgZmggPSBhd2FpdCBmcy5vcGVuKGZ1bGwsICdyJyk7CiAgICB0cnkgewogICAgICBjb25zdCBidWYgPSBCdWZmZXIuYWxsb2MoZW5kIC0gc3RhcnQgKyAxKTsKICAgICAgYXdhaXQgZmgucmVhZChidWYsIDAsIGJ1Zi5sZW5ndGgsIHN0YXJ0KTsKICAgICAgcmV0dXJuIGJ1ZjsKICAgIH0gZmluYWxseSB7CiAgICAgIGF3YWl0IGZoLmNsb3NlKCk7CiAgICB9CiAgfQoKICBhc3luYyBta2RpcihhY2NvdW50OiBDbG91ZEFjY291bnQsIHJlbW90ZVBhdGg6IHN0cmluZyk6IFByb21pc2U8dm9pZD4gewogICAgY29uc3QgY2ZnID0gdGhpcy5jZmcoYWNjb3VudCk7CiAgICBhd2FpdCBmcy5ta2Rpcih0aGlzLmZ1bGwoY2ZnLCByZW1vdGVQYXRoKSwgeyByZWN1cnNpdmU6IHRydWUgfSk7CiAgfQoKICBhc3luYyByZW5hbWUoYWNjb3VudDogQ2xvdWRBY2NvdW50LCBmcm9tUGF0aDogc3RyaW5nLCB0b1BhdGg6IHN0cmluZyk6IFByb21pc2U8dm9pZD4gewogICAgY29uc3QgY2ZnID0gdGhpcy5jZmcoYWNjb3VudCk7CiAgICBhd2FpdCBmcy5yZW5hbWUodGhpcy5mdWxsKGNmZywgZnJvbVBhdGgpLCB0aGlzLmZ1bGwoY2ZnLCB0b1BhdGgpKTsKICB9CgogIGFzeW5jIGRlbGV0ZShhY2NvdW50OiBDbG91ZEFjY291bnQsIHJlbW90ZVBhdGg6IHN0cmluZyk6IFByb21pc2U8dm9pZD4gewogICAgY29uc3QgY2ZnID0gdGhpcy5jZmcoYWNjb3VudCk7CiAgICBhd2FpdCBmcy5ybSh0aGlzLmZ1bGwoY2ZnLCByZW1vdGVQYXRoKSwgeyByZWN1cnNpdmU6IHRydWUsIGZvcmNlOiB0cnVlIH0pOwogIH0KCiAgYXN5bmMgcGluZyhhY2NvdW50OiBDbG91ZEFjY291bnQpOiBQcm9taXNlPGJvb2xlYW4+IHsKICAgIHRyeSB7CiAgICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgICBhd2FpdCBmcy5hY2Nlc3MoY2ZnLnJvb3RQYXRoKTsKICAgICAgcmV0dXJuIHRydWU7CiAgICB9IGNhdGNoIHsKICAgICAgcmV0dXJuIGZhbHNlOwogICAgfQogIH0KfQo=
+/**
+ * Adaptador para pastas locais — usado para testes e para incluir
+ * um disco do próprio computador como mais uma "conta" do cluster.
+ */
+import { promises as fs, createReadStream, createWriteStream } from 'node:fs';
+import { basename, dirname, join, sep } from 'node:path';
+import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
+import type { CloudAccount } from '@shared/types';
+
+interface LocalConfig {
+  rootPath: string;
+}
+
+export class LocalFsProvider implements CloudProvider {
+  readonly id = 'local' as const;
+
+  private cfg(account: CloudAccount): LocalConfig {
+    return JSON.parse(Buffer.from(account.auth.ciphertext, 'base64').toString('utf8'));
+  }
+
+  private full(cfg: LocalConfig, p: string): string {
+    if (p === '/' || !p) return cfg.rootPath;
+    return join(cfg.rootPath, p.replace(/^\//, ''));
+  }
+
+  async authenticate(payload: Record<string, unknown>, account: CloudAccount): Promise<void> {
+    const cfg: LocalConfig = { rootPath: payload.rootPath as string };
+    account.auth.ciphertext = Buffer.from(JSON.stringify(cfg)).toString('base64');
+  }
+
+  async list(account: CloudAccount, remotePath: string): Promise<ProviderListResult> {
+    const cfg = this.cfg(account);
+    const dir = this.full(cfg, remotePath);
+    try {
+      const entries = await fs.readdir(dir, { withFileTypes: true });
+      const out: ProviderFileEntry[] = [];
+      for (const e of entries) {
+        const full = join(dir, e.name);
+        const stat = await fs.stat(full);
+        out.push({
+          id: full,
+          name: e.name,
+          remotePath: full.replace(cfg.rootPath, '').replace(/\\/g, '/'),
+          size: stat.size,
+          isDir: e.isDirectory(),
+          mimeType: e.isDirectory() ? 'inode/directory' : 'application/octet-stream',
+          modifiedAt: stat.mtimeMs,
+        });
+      }
+      return { entries: out };
+    } catch {
+      return { entries: [] };
+    }
+  }
+
+  async upload(account: CloudAccount, remotePath: string, data: Buffer): Promise<ProviderFileEntry> {
+    const cfg = this.cfg(account);
+    const full = this.full(cfg, remotePath);
+    await fs.mkdir(dirname(full), { recursive: true });
+    await fs.writeFile(full, data);
+    const stat = await fs.stat(full);
+    return {
+      id: full,
+      name: basename(full),
+      remotePath,
+      size: stat.size,
+      isDir: false,
+      mimeType: 'application/octet-stream',
+      modifiedAt: stat.mtimeMs,
+    };
+  }
+
+  async download(account: CloudAccount, remotePath: string, destPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    const full = this.full(cfg, remotePath);
+    await fs.copyFile(full, destPath);
+  }
+
+  async readRange(account: CloudAccount, remotePath: string, start: number, end: number): Promise<Buffer> {
+    const cfg = this.cfg(account);
+    const full = this.full(cfg, remotePath);
+    const fh = await fs.open(full, 'r');
+    try {
+      const buf = Buffer.alloc(end - start + 1);
+      await fh.read(buf, 0, buf.length, start);
+      return buf;
+    } finally {
+      await fh.close();
+    }
+  }
+
+  async mkdir(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await fs.mkdir(this.full(cfg, remotePath), { recursive: true });
+  }
+
+  async rename(account: CloudAccount, fromPath: string, toPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await fs.rename(this.full(cfg, fromPath), this.full(cfg, toPath));
+  }
+
+  async delete(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await fs.rm(this.full(cfg, remotePath), { recursive: true, force: true });
+  }
+
+  async ping(account: CloudAccount): Promise<boolean> {
+    try {
+      const cfg = this.cfg(account);
+      await fs.access(cfg.rootPath);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+}
