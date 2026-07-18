@@ -1,0 +1,290 @@
+/**
+ * Basck Clouds — main process do Electron.
+ * Orquestra: janelas, IPC, ciclo de vida do cofre, serviços principais.
+ */
+import { app, BrowserWindow, ipcMain, shell, Tray, Menu, dialog, nativeImage } from 'electron';
+import path from 'node:path';
+import fs from 'node:fs';
+import { IpcChannels } from '../shared/channels';
+import { openDatabase } from './db';
+import {
+  AccountRepository,
+  ClusterRepository,
+  BackupRepository,
+  SyncRepository,
+  SettingsRepository,
+  ActivityRepository,
+  QuotaRepository,
+} from './db/repositories';
+import { VaultService } from './services/vault';
+import { CryptoService } from './services/crypto';
+import { CredentialStore } from './services/keychain';
+import { AccountService } from './cluster/account-service';
+import { ClusterEngine } from './cluster/cluster-engine';
+import { BackupScheduler } from './backup/scheduler';
+import { FolderSyncer } from './sync/syncer';
+import { SearchEngine } from './search/search-engine';
+import { ALL_PROVIDERS, PROVIDER_REGISTRY } from './providers/registry';
+import { getProvider } from './providers/factory';
+import type { AppSettings } from '@shared/types';
+
+const isDev = process.env.NODE_ENV === 'development';
+let mainWindow: BrowserWindow | null = null;
+let tray: Tray | null = null;
+
+const dataDir = path.join(app.getPath('userData'), 'BasckClouds');
+fs.mkdirSync(dataDir, { recursive: true });
+
+const db = openDatabase(dataDir);
+const accounts = new AccountRepository(db);
+const cluster = new ClusterRepository(db);
+const backups = new BackupRepository(db);
+const sync = new SyncRepository(db);
+const settingsRepo = new SettingsRepository(db);
+const activity = new ActivityRepository(db);
+const quotas = new QuotaRepository(db);
+
+const vault = new VaultService(dataDir);
+const credentials = new CredentialStore(vault.crypto_(), dataDir);
+const accountService = new AccountService(accounts, quotas, credentials, vault.crypto_(), activity);
+const clusterEngine = new ClusterEngine(accounts, cluster, quotas, activity, vault.crypto_(), {
+  defaultChunkSize: 8 * 1024 * 1024,
+  defaultEncryption: true,
+});
+const backupScheduler = new BackupScheduler(backups, clusterEngine, activity);
+const syncer = new FolderSyncer(sync, clusterEngine, cluster, accounts, activity);
+const search = new SearchEngine(db, cluster);
+
+async function bootstrap() {
+  await vault.init();
+  if (vault.exists() && vault.isUnlocked()) {
+    credentials.load();
+  }
+  createWindow();
+  createTray();
+  backupScheduler.refresh();
+  syncer.refresh();
+}
+
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 1280,
+    height: 820,
+    minWidth: 1024,
+    minHeight: 700,
+    backgroundColor: '#0c0f17',
+    title: 'Basck Clouds',
+    icon: nativeImage.createFromPath(path.join(__dirname, '..', '..', 'build', 'icon.png')),
+    webPreferences: {
+      preload: path.join(__dirname, '..', 'preload', 'preload.js'),
+      contextIsolation: true,
+      sandbox: false,
+      nodeIntegration: false,
+    },
+  });
+  if (isDev) {
+    mainWindow.loadURL('http://localhost:5173');
+    mainWindow.webContents.openDevTools({ mode: 'detach' });
+  } else {
+    mainWindow.loadFile(path.join(__dirname, '..', 'renderer', 'index.html'));
+  }
+  mainWindow.on('close', (e) => {
+    if (!app.isQuitting) {
+      e.preventDefault();
+      mainWindow?.hide();
+    }
+  });
+  mainWindow.on('closed', () => (mainWindow = null));
+}
+
+function createTray() {
+  try {
+    tray = new Tray(nativeImage.createFromPath(path.join(__dirname, '..', '..', 'build', 'icon.png')));
+    const menu = Menu.buildFromTemplate([
+      { label: 'Abrir Basck Clouds', click: () => mainWindow?.show() },
+      { label: 'Bloquear cofre', click: () => vault.lock() },
+      { type: 'separator' },
+      { label: 'Sair', click: () => { app.isQuitting = true; app.quit(); } },
+    ]);
+    tray.setToolTip('Basck Clouds');
+    tray.setContextMenu(menu);
+    tray.on('double-click', () => mainWindow?.show());
+  } catch {
+    // ícone opcional
+  }
+}
+
+app.on('second-instance', () => mainWindow?.show());
+app.on('window-all-closed', (e: Electron.Event) => {
+  // mantém vivo no tray
+  if (process.platform !== 'darwin') e.preventDefault();
+});
+
+app.whenReady().then(bootstrap).catch((err) => {
+  console.error('Falha ao iniciar Basck Clouds', err);
+});
+
+// ----------------- IPC HANDLERS -----------------
+
+function handle<T>(channel: string, fn: (...args: any[]) => Promise<T> | T) {
+  ipcMain.handle(channel, async (_evt, ...args) => {
+    try { return { ok: true, data: await fn(...args) }; }
+    catch (err: any) { return { ok: false, error: String(err?.message ?? err) }; }
+  });
+}
+
+handle(IpcChannels.VAULT_STATUS, () => ({ exists: vault.exists(), unlocked: vault.isUnlocked() }));
+handle(IpcChannels.VAULT_CREATE ?? IpcChannels.VAULT_SET_PASSWORD, async (password: string, hint?: string) => {
+  await vault.create(password, hint);
+});
+handle(IpcChannels.VAULT_UNLOCK, (password: string) => { vault.unlock(password); credentials.load(); });
+handle(IpcChannels.VAULT_LOCK, () => { vault.lock(); });
+
+handle(IpcChannels.SYSTEM_PROVIDERS, () => ALL_PROVIDERS);
+
+handle(IpcChannels.ACCOUNTS_LIST, () => accountService.list().map((a) => ({ ...a, auth: undefined })));
+handle(IpcChannels.ACCOUNTS_ADD, async (input: any) => {
+  const acc = await accountService.addAccount(input);
+  return { ...acc, auth: undefined };
+});
+handle(IpcChannels.ACCOUNTS_REMOVE, (id: string) => accountService.remove(id));
+handle(IpcChannels.ACCOUNTS_RENAME, (id: string, label: string) => {
+  const acc = accounts.get(id);
+  if (!acc) throw new Error('Conta não encontrada');
+  accounts.upsert({ ...acc, label, updatedAt: Date.now() });
+});
+handle(IpcChannels.ACCOUNTS_TEST, async (id: string) => accountService.test(id));
+handle(IpcChannels.ACCOUNTS_REFRESH_QUOTA, async (id: string) => accountService.refreshQuota(id));
+handle(IpcChannels.ACCOUNTS_UPDATE_PREFERENCES, (id: string, prefs: any) => {
+  const acc = accounts.get(id);
+  if (!acc) throw new Error('Conta não encontrada');
+  accounts.upsert({ ...acc, preferences: prefs, updatedAt: Date.now() });
+});
+
+handle(IpcChannels.CLUSTER_LIST, (parent: string) => cluster.list(parent || '/'));
+handle(IpcChannels.CLUSTER_READ, (id: string) => cluster.get(id));
+handle(IpcChannels.CLUSTER_UPLOAD, async (localPath: string, opts: any) => {
+  return clusterEngine.uploadFile(localPath, opts);
+});
+handle(IpcChannels.CLUSTER_DOWNLOAD, async (id: string, dest: string) => {
+  return clusterEngine.downloadItem(id, { destination: dest });
+});
+handle(IpcChannels.CLUSTER_MKDIR, (logicalPath: string) => {
+  const id = require('./services/id').randomId(12);
+  cluster.upsert({
+    id,
+    logicalPath: logicalPath.startsWith('/') ? logicalPath : '/' + logicalPath,
+    name: logicalPath.split('/').filter(Boolean).pop() ?? 'Nova pasta',
+    size: 0,
+    mimeType: 'inode/directory',
+    isDir: true,
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+    contentHash: '',
+    chunks: [],
+    encryption: { algorithm: 'aes-256-gcm', perChunkKey: false, masterKeyId: 'cluster' },
+  });
+});
+handle(IpcChannels.CLUSTER_RENAME, (id: string, newName: string) => {
+  const item = cluster.get(id);
+  if (!item) throw new Error('Item não encontrado');
+  const parent = item.logicalPath.includes('/') ? item.logicalPath.slice(0, item.logicalPath.lastIndexOf('/')) || '/' : '/';
+  const newPath = parent === '/' ? `/${newName}` : `${parent}/${newName}`;
+  cluster.upsert({ ...item, name: newName, logicalPath: newPath, updatedAt: Date.now() });
+});
+handle(IpcChannels.CLUSTER_DELETE, (id: string) => {
+  const item = cluster.get(id);
+  if (!item) return;
+  cluster.softDelete(item.logicalPath);
+  search.removeItem(item.id);
+});
+handle(IpcChannels.CLUSTER_MOVE, (id: string, newParent: string) => {
+  const item = cluster.get(id);
+  if (!item) throw new Error('Item não encontrado');
+  const newPath = newParent === '/' ? `/${item.name}` : `${newParent}/${item.name}`;
+  cluster.upsert({ ...item, logicalPath: newPath, updatedAt: Date.now() });
+});
+handle(IpcChannels.CLUSTER_STATS, () => {
+  const all = accounts.list();
+  const qs = quotas.all();
+  const total = qs.reduce((acc, q) => acc + (q.total === Number.POSITIVE_INFINITY ? 0 : q.total), 0);
+  const used = qs.reduce((acc, q) => acc + q.used, 0);
+  return {
+    totalBytes: total,
+    usedBytes: used,
+    freeBytes: Math.max(0, total - used),
+    fileCount: 0,
+    folderCount: 0,
+    accountCount: all.length,
+    providerCount: new Set(all.map((a) => a.providerId)).size,
+    lastUpdatedAt: Date.now(),
+  };
+});
+
+handle(IpcChannels.SEARCH_QUERY, (q: string) => search.query(q));
+handle(IpcChannels.SEARCH_INDEX_REBUILD, () => { search.rebuild(); return true; });
+
+handle(IpcChannels.SYNC_LIST, () => sync.list());
+handle(IpcChannels.SYNC_ADD, (pair: any) => {
+  sync.upsert({ ...pair, id: pair.id || require('./services/id').randomId(12), createdAt: Date.now() });
+  syncer.refresh();
+});
+handle(IpcChannels.SYNC_REMOVE, (id: string) => { sync.upsert(sync.get(id) ? { ...sync.get(id)!, enabled: false } : ({} as any)); require('better-sqlite3'); });
+handle(IpcChannels.SYNC_RUN, async (id: string) => {
+  const pair = sync.get(id);
+  if (!pair) throw new Error('Par de sync não encontrado');
+  return syncer.runOnce(pair);
+});
+handle(IpcChannels.SYNC_TOGGLE, (id: string, enabled: boolean) => {
+  const pair = sync.get(id);
+  if (!pair) throw new Error('Par não encontrado');
+  sync.upsert({ ...pair, enabled });
+  syncer.refresh();
+});
+
+handle(IpcChannels.BACKUP_LIST, () => backups.list());
+handle(IpcChannels.BACKUP_ADD, (job: any) => {
+  backups.upsert({ ...job, id: job.id || require('./services/id').randomId(12), createdAt: Date.now() });
+  backupScheduler.refresh();
+});
+handle(IpcChannels.BACKUP_REMOVE, (id: string) => { backups.delete(id); backupScheduler.refresh(); });
+handle(IpcChannels.BACKUP_RUN, async (id: string) => {
+  const job = backups.get(id);
+  if (!job) throw new Error('Job não encontrado');
+  await backupScheduler.runJob(job);
+  return job;
+});
+handle(IpcChannels.BACKUP_TOGGLE, (id: string, enabled: boolean) => {
+  const job = backups.get(id);
+  if (!job) throw new Error('Job não encontrado');
+  backups.upsert({ ...job, enabled });
+  backupScheduler.refresh();
+});
+
+handle(IpcChannels.SETTINGS_GET, () => settingsRepo.get<AppSettings>({
+  theme: 'dark',
+  autoStart: false,
+  minimizeToTray: true,
+  defaultEncryption: true,
+  defaultChunkSize: 8 * 1024 * 1024,
+  notifications: true,
+  telemetry: false,
+  language: 'pt-BR',
+}));
+handle(IpcChannels.SETTINGS_UPDATE, (next: AppSettings) => settingsRepo.set(next));
+
+handle(IpcChannels.SYSTEM_ACTIVITY, (limit?: number) => activity.list(limit));
+handle(IpcChannels.SYSTEM_OPEN_PATH, async (p: string) => { await shell.openPath(p); });
+handle(IpcChannels.SYSTEM_DIALOG, async (type: 'open' | 'save', opts?: any) => {
+  if (type === 'open') {
+    const r = await dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'], ...opts });
+    return r.filePaths;
+  }
+  const r = await dialog.showSaveDialog(opts ?? {});
+  return r.filePath;
+});
+
+app.on('before-quit', () => {
+  vault.lock();
+  (app as any).isQuitting = true;
+});
