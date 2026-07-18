@@ -1,1 +1,161 @@
-LyoqCiAqIEFkYXB0YWRvciBXZWJEQVYgKFJGQyA0OTE4KS4KICogU2VydmUgcGFyYSBOZXh0Y2xvdWQsIG93bkNsb3VkLCBTZWFmaWxlLCBCb3ggdmlhIFdlYkRBViwKICogU3lub2xvZ3ksIGUgcXVhbHF1ZXIgc2Vydmlkb3IgY29tcGF0w612ZWwuCiAqLwppbXBvcnQgeyBiYXNlbmFtZSB9IGZyb20gJ25vZGU6cGF0aCc7CmltcG9ydCB7IGh0dHBSZXF1ZXN0QXV0byB9IGZyb20gJy4vaHR0cC1jbGllbnQnOwppbXBvcnQgdHlwZSB7IENsb3VkUHJvdmlkZXIsIFByb3ZpZGVyTGlzdFJlc3VsdCwgUHJvdmlkZXJGaWxlRW50cnkgfSBmcm9tICcuL3R5cGVzJzsKaW1wb3J0IHR5cGUgeyBDbG91ZEFjY291bnQsIENsb3VkUXVvdGEgfSBmcm9tICdAc2hhcmVkL3R5cGVzJzsKCmludGVyZmFjZSBXZWJEYXZDb25maWcgewogIHVybDogc3RyaW5nOwogIHVzZXJuYW1lOiBzdHJpbmc7CiAgcGFzc3dvcmQ6IHN0cmluZzsKfQoKZXhwb3J0IGNsYXNzIFdlYkRhdlByb3ZpZGVyIGltcGxlbWVudHMgQ2xvdWRQcm92aWRlciB7CiAgcmVhZG9ubHkgaWQgPSAnd2ViZGF2JyBhcyBjb25zdDsKCiAgcHJpdmF0ZSBjZmcoYWNjb3VudDogQ2xvdWRBY2NvdW50KTogV2ViRGF2Q29uZmlnIHsKICAgIHJldHVybiBKU09OLnBhcnNlKEJ1ZmZlci5mcm9tKGFjY291bnQuYXV0aC5jaXBoZXJ0ZXh0LCAnYmFzZTY0JykudG9TdHJpbmcoJ3V0ZjgnKSk7CiAgfQoKICBwcml2YXRlIGF1dGgoY2ZnOiBXZWJEYXZDb25maWcpOiBzdHJpbmcgewogICAgcmV0dXJuICdCYXNpYyAnICsgQnVmZmVyLmZyb20oYCR7Y2ZnLnVzZXJuYW1lfToke2NmZy5wYXNzd29yZH1gKS50b1N0cmluZygnYmFzZTY0Jyk7CiAgfQoKICBwcml2YXRlIG5vcm1hbGl6ZShjZmc6IFdlYkRhdkNvbmZpZywgcGF0aDogc3RyaW5nKTogc3RyaW5nIHsKICAgIGlmIChwYXRoLnN0YXJ0c1dpdGgoJ2h0dHAnKSkgcmV0dXJuIHBhdGg7CiAgICBjb25zdCByb290ID0gY2ZnLnVybC5yZXBsYWNlKC9cLyQvLCAnJyk7CiAgICBjb25zdCBjbGVhbiA9IHBhdGgucmVwbGFjZSgvXlwvLywgJycpOwogICAgcmV0dXJuIGAke3Jvb3R9LyR7Y2xlYW59YDsKICB9CgogIGFzeW5jIGF1dGhlbnRpY2F0ZShwYXlsb2FkOiBSZWNvcmQ8c3RyaW5nLCB1bmtub3duPiwgYWNjb3VudDogQ2xvdWRBY2NvdW50KTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCBjZmc6IFdlYkRhdkNvbmZpZyA9IHsKICAgICAgdXJsOiBwYXlsb2FkLnVybCBhcyBzdHJpbmcsCiAgICAgIHVzZXJuYW1lOiBwYXlsb2FkLnVzZXJuYW1lIGFzIHN0cmluZywKICAgICAgcGFzc3dvcmQ6IHBheWxvYWQucGFzc3dvcmQgYXMgc3RyaW5nLAogICAgfTsKICAgIGFjY291bnQuYXV0aC5jaXBoZXJ0ZXh0ID0gQnVmZmVyLmZyb20oSlNPTi5zdHJpbmdpZnkoY2ZnKSkudG9TdHJpbmcoJ2Jhc2U2NCcpOwogIH0KCiAgYXN5bmMgbGlzdChhY2NvdW50OiBDbG91ZEFjY291bnQsIHJlbW90ZVBhdGg6IHN0cmluZyk6IFByb21pc2U8UHJvdmlkZXJMaXN0UmVzdWx0PiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGNvbnN0IHVybCA9IHRoaXMubm9ybWFsaXplKGNmZywgcmVtb3RlUGF0aCk7CiAgICBjb25zdCByZXMgPSBhd2FpdCBodHRwUmVxdWVzdEF1dG8odXJsLCB7CiAgICAgIG1ldGhvZDogJ1BST1BGSU5EJywKICAgICAgaGVhZGVyczogewogICAgICAgIEF1dGhvcml6YXRpb246IHRoaXMuYXV0aChjZmcpLAogICAgICAgIERlcHRoOiAnMScsCiAgICAgICAgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi94bWwnLAogICAgICB9LAogICAgICBib2R5OiBgPD94bWwgdmVyc2lvbj0iMS4wIj8+PGQ6cHJvcGZpbmQgeG1sbnM6ZD0iREFWOiI+PGQ6cHJvcD48ZDpkaXNwbGF5bmFtZS8+PGQ6cmVzb3VyY2V0eXBlLz48ZDpnZXRjb250ZW50bGVuZ3RoLz48ZDpnZXRsYXN0bW9kaWZpZWQvPjwvZDpwcm9wPjwvZDpwcm9wZmluZD5gLAogICAgfSk7CiAgICBjb25zdCBib2R5ID0gcmVzLmJvZHkudG9TdHJpbmcoJ3V0ZjgnKTsKICAgIGNvbnN0IGVudHJpZXM6IFByb3ZpZGVyRmlsZUVudHJ5W10gPSBbXTsKICAgIGNvbnN0IHJlID0gLzxyZXNwb25zZT4oW1xzXFNdKj8pPFwvcmVzcG9uc2U+L2c7CiAgICBsZXQgbTogUmVnRXhwRXhlY0FycmF5IHwgbnVsbDsKICAgIHdoaWxlICgobSA9IHJlLmV4ZWMoYm9keSkpKSB7CiAgICAgIGNvbnN0IGJsb2NrID0gbVsxXTsKICAgICAgY29uc3QgaHJlZiA9IGJsb2NrLm1hdGNoKC88aHJlZj4oLio/KTxcL2hyZWY+Lyk/LlsxXSA/PyAnJzsKICAgICAgY29uc3QgaXNDb2xsZWN0aW9uID0gLzxyZXNvdXJjZXR5cGU+XHMqPGNvbGxlY3Rpb25ccypcLz4vLnRlc3QoYmxvY2spOwogICAgICBjb25zdCBzaXplID0gTnVtYmVyKGJsb2NrLm1hdGNoKC88Z2V0Y29udGVudGxlbmd0aD4oLio/KTxcL2dldGNvbnRlbnRsZW5ndGg+Lyk/LlsxXSA/PyAwKTsKICAgICAgY29uc3QgbW9kaWZpZWQgPSBibG9jay5tYXRjaCgvPGdldGxhc3Rtb2RpZmllZD4oLio/KTxcL2dldGxhc3Rtb2RpZmllZD4vKT8uWzFdID8/ICcnOwogICAgICBjb25zdCBkZWNvZGVkID0gZGVjb2RlVVJJQ29tcG9uZW50KGhyZWYpOwogICAgICBpZiAoZGVjb2RlZCA9PT0gdXJsIHx8IGRlY29kZWQgPT09IHVybCArICcvJykgY29udGludWU7CiAgICAgIGVudHJpZXMucHVzaCh7CiAgICAgICAgaWQ6IGRlY29kZWQsCiAgICAgICAgbmFtZTogYmFzZW5hbWUoZGVjb2RlZCksCiAgICAgICAgcmVtb3RlUGF0aDogZGVjb2RlZC5yZXBsYWNlKGNmZy51cmwsICcnKSwKICAgICAgICBzaXplLAogICAgICAgIGlzRGlyOiBpc0NvbGxlY3Rpb24sCiAgICAgICAgbWltZVR5cGU6IGlzQ29sbGVjdGlvbiA/ICdpbm9kZS9kaXJlY3RvcnknIDogJ2FwcGxpY2F0aW9uL29jdGV0LXN0cmVhbScsCiAgICAgICAgbW9kaWZpZWRBdDogRGF0ZS5wYXJzZShtb2RpZmllZCksCiAgICAgIH0pOwogICAgfQogICAgcmV0dXJuIHsgZW50cmllcyB9OwogIH0KCiAgYXN5bmMgdXBsb2FkKAogICAgYWNjb3VudDogQ2xvdWRBY2NvdW50LAogICAgcmVtb3RlUGF0aDogc3RyaW5nLAogICAgZGF0YTogQnVmZmVyLAogICAgb3B0aW9ucz86IHsgbWltZVR5cGU/OiBzdHJpbmc7IHByb2dyZXNzPzogKHNlbnQ6IG51bWJlciwgdG90YWw6IG51bWJlcikgPT4gdm9pZCB9LAogICk6IFByb21pc2U8UHJvdmlkZXJGaWxlRW50cnk+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgY29uc3QgdXJsID0gdGhpcy5ub3JtYWxpemUoY2ZnLCByZW1vdGVQYXRoKTsKICAgIGF3YWl0IGh0dHBSZXF1ZXN0QXV0byh1cmwsIHsKICAgICAgbWV0aG9kOiAnUFVUJywKICAgICAgaGVhZGVyczogeyBBdXRob3JpemF0aW9uOiB0aGlzLmF1dGgoY2ZnKSwgJ0NvbnRlbnQtVHlwZSc6IG9wdGlvbnM/Lm1pbWVUeXBlID8/ICdhcHBsaWNhdGlvbi9vY3RldC1zdHJlYW0nIH0sCiAgICAgIGJvZHk6IGRhdGEsCiAgICAgIG9uUHJvZ3Jlc3M6IG9wdGlvbnM/LnByb2dyZXNzLAogICAgfSk7CiAgICByZXR1cm4gewogICAgICBpZDogdXJsLAogICAgICBuYW1lOiBiYXNlbmFtZShyZW1vdGVQYXRoKSwKICAgICAgcmVtb3RlUGF0aCwKICAgICAgc2l6ZTogZGF0YS5sZW5ndGgsCiAgICAgIGlzRGlyOiBmYWxzZSwKICAgICAgbWltZVR5cGU6IG9wdGlvbnM/Lm1pbWVUeXBlID8/ICdhcHBsaWNhdGlvbi9vY3RldC1zdHJlYW0nLAogICAgICBtb2RpZmllZEF0OiBEYXRlLm5vdygpLAogICAgfTsKICB9CgogIGFzeW5jIGRvd25sb2FkKGFjY291bnQ6IENsb3VkQWNjb3VudCwgcmVtb3RlUGF0aDogc3RyaW5nLCBkZXN0UGF0aDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGNvbnN0IHJlcyA9IGF3YWl0IGh0dHBSZXF1ZXN0QXV0byh0aGlzLm5vcm1hbGl6ZShjZmcsIHJlbW90ZVBhdGgpLCB7CiAgICAgIG1ldGhvZDogJ0dFVCcsCiAgICAgIGhlYWRlcnM6IHsgQXV0aG9yaXphdGlvbjogdGhpcy5hdXRoKGNmZykgfSwKICAgIH0pOwogICAgYXdhaXQgaW1wb3J0KCdub2RlOmZzL3Byb21pc2VzJykudGhlbigoZnMpID0+IGZzLndyaXRlRmlsZShkZXN0UGF0aCwgcmVzLmJvZHkpKTsKICB9CgogIGFzeW5jIHJlYWRSYW5nZShhY2NvdW50OiBDbG91ZEFjY291bnQsIHJlbW90ZVBhdGg6IHN0cmluZywgc3RhcnQ6IG51bWJlciwgZW5kOiBudW1iZXIpOiBQcm9taXNlPEJ1ZmZlcj4gewogICAgY29uc3QgY2ZnID0gdGhpcy5jZmcoYWNjb3VudCk7CiAgICBjb25zdCByZXMgPSBhd2FpdCBodHRwUmVxdWVzdEF1dG8odGhpcy5ub3JtYWxpemUoY2ZnLCByZW1vdGVQYXRoKSwgewogICAgICBtZXRob2Q6ICdHRVQnLAogICAgICBoZWFkZXJzOiB7IEF1dGhvcml6YXRpb246IHRoaXMuYXV0aChjZmcpLCBSYW5nZTogYGJ5dGVzPSR7c3RhcnR9LSR7ZW5kfWAgfSwKICAgIH0pOwogICAgcmV0dXJuIHJlcy5ib2R5OwogIH0KCiAgYXN5bmMgbWtkaXIoYWNjb3VudDogQ2xvdWRBY2NvdW50LCByZW1vdGVQYXRoOiBzdHJpbmcpOiBQcm9taXNlPHZvaWQ+IHsKICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgYXdhaXQgaHR0cFJlcXVlc3RBdXRvKHRoaXMubm9ybWFsaXplKGNmZywgcmVtb3RlUGF0aCksIHsKICAgICAgbWV0aG9kOiAnTUtDT0wnLAogICAgICBoZWFkZXJzOiB7IEF1dGhvcml6YXRpb246IHRoaXMuYXV0aChjZmcpIH0sCiAgICB9KTsKICB9CgogIGFzeW5jIHJlbmFtZShhY2NvdW50OiBDbG91ZEFjY291bnQsIGZyb21QYXRoOiBzdHJpbmcsIHRvUGF0aDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGF3YWl0IGh0dHBSZXF1ZXN0QXV0byh0aGlzLm5vcm1hbGl6ZShjZmcsIGZyb21QYXRoKSwgewogICAgICBtZXRob2Q6ICdNT1ZFJywKICAgICAgaGVhZGVyczogeyBBdXRob3JpemF0aW9uOiB0aGlzLmF1dGgoY2ZnKSwgRGVzdGluYXRpb246IHRoaXMubm9ybWFsaXplKGNmZywgdG9QYXRoKSwgT3ZlcndyaXRlOiAnVCcgfSwKICAgIH0pOwogIH0KCiAgYXN5bmMgZGVsZXRlKGFjY291bnQ6IENsb3VkQWNjb3VudCwgcmVtb3RlUGF0aDogc3RyaW5nKTogUHJvbWlzZTx2b2lkPiB7CiAgICBjb25zdCBjZmcgPSB0aGlzLmNmZyhhY2NvdW50KTsKICAgIGF3YWl0IGh0dHBSZXF1ZXN0QXV0byh0aGlzLm5vcm1hbGl6ZShjZmcsIHJlbW90ZVBhdGgpLCB7CiAgICAgIG1ldGhvZDogJ0RFTEVURScsCiAgICAgIGhlYWRlcnM6IHsgQXV0aG9yaXphdGlvbjogdGhpcy5hdXRoKGNmZykgfSwKICAgIH0pOwogIH0KCiAgYXN5bmMgcGluZyhhY2NvdW50OiBDbG91ZEFjY291bnQpOiBQcm9taXNlPGJvb2xlYW4+IHsKICAgIHRyeSB7CiAgICAgIGNvbnN0IGNmZyA9IHRoaXMuY2ZnKGFjY291bnQpOwogICAgICBjb25zdCByZXMgPSBhd2FpdCBodHRwUmVxdWVzdEF1dG8oY2ZnLnVybCwgewogICAgICAgIG1ldGhvZDogJ1BST1BGSU5EJywKICAgICAgICBoZWFkZXJzOiB7IEF1dGhvcml6YXRpb246IHRoaXMuYXV0aChjZmcpLCBEZXB0aDogJzAnIH0sCiAgICAgICAgYm9keTogJzw/eG1sIHZlcnNpb249IjEuMCI/PjxkOnByb3BmaW5kIHhtbG5zOmQ9IkRBVjoiPjxkOnByb3A+PGQ6cmVzb3VyY2V0eXBlLz48L2Q6cHJvcD48L2Q6cHJvcGZpbmQ+JywKICAgICAgfSk7CiAgICAgIHJldHVybiByZXMuc3RhdHVzIDwgNDAwOwogICAgfSBjYXRjaCB7CiAgICAgIHJldHVybiBmYWxzZTsKICAgIH0KICB9Cn0K
+/**
+ * Adaptador WebDAV (RFC 4918).
+ * Serve para Nextcloud, ownCloud, Seafile, Box via WebDAV,
+ * Synology, e qualquer servidor compatível.
+ */
+import { basename } from 'node:path';
+import { httpRequestAuto } from './http-client';
+import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
+import type { CloudAccount, CloudQuota } from '@shared/types';
+
+interface WebDavConfig {
+  url: string;
+  username: string;
+  password: string;
+}
+
+export class WebDavProvider implements CloudProvider {
+  readonly id = 'webdav' as const;
+
+  private cfg(account: CloudAccount): WebDavConfig {
+    return JSON.parse(Buffer.from(account.auth.ciphertext, 'base64').toString('utf8'));
+  }
+
+  private auth(cfg: WebDavConfig): string {
+    return 'Basic ' + Buffer.from(`${cfg.username}:${cfg.password}`).toString('base64');
+  }
+
+  private normalize(cfg: WebDavConfig, path: string): string {
+    if (path.startsWith('http')) return path;
+    const root = cfg.url.replace(/\/$/, '');
+    const clean = path.replace(/^\//, '');
+    return `${root}/${clean}`;
+  }
+
+  async authenticate(payload: Record<string, unknown>, account: CloudAccount): Promise<void> {
+    const cfg: WebDavConfig = {
+      url: payload.url as string,
+      username: payload.username as string,
+      password: payload.password as string,
+    };
+    account.auth.ciphertext = Buffer.from(JSON.stringify(cfg)).toString('base64');
+  }
+
+  async list(account: CloudAccount, remotePath: string): Promise<ProviderListResult> {
+    const cfg = this.cfg(account);
+    const url = this.normalize(cfg, remotePath);
+    const res = await httpRequestAuto(url, {
+      method: 'PROPFIND',
+      headers: {
+        Authorization: this.auth(cfg),
+        Depth: '1',
+        'Content-Type': 'application/xml',
+      },
+      body: `<?xml version="1.0"?><d:propfind xmlns:d="DAV:"><d:prop><d:displayname/><d:resourcetype/><d:getcontentlength/><d:getlastmodified/></d:prop></d:propfind>`,
+    });
+    const body = res.body.toString('utf8');
+    const entries: ProviderFileEntry[] = [];
+    const re = /<response>([\s\S]*?)<\/response>/g;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(body))) {
+      const block = m[1];
+      const href = block.match(/<href>(.*?)<\/href>/)?.[1] ?? '';
+      const isCollection = /<resourcetype>\s*<collection\s*\/>/.test(block);
+      const size = Number(block.match(/<getcontentlength>(.*?)<\/getcontentlength>/)?.[1] ?? 0);
+      const modified = block.match(/<getlastmodified>(.*?)<\/getlastmodified>/)?.[1] ?? '';
+      const decoded = decodeURIComponent(href);
+      if (decoded === url || decoded === url + '/') continue;
+      entries.push({
+        id: decoded,
+        name: basename(decoded),
+        remotePath: decoded.replace(cfg.url, ''),
+        size,
+        isDir: isCollection,
+        mimeType: isCollection ? 'inode/directory' : 'application/octet-stream',
+        modifiedAt: Date.parse(modified),
+      });
+    }
+    return { entries };
+  }
+
+  async upload(
+    account: CloudAccount,
+    remotePath: string,
+    data: Buffer,
+    options?: { mimeType?: string; progress?: (sent: number, total: number) => void },
+  ): Promise<ProviderFileEntry> {
+    const cfg = this.cfg(account);
+    const url = this.normalize(cfg, remotePath);
+    await httpRequestAuto(url, {
+      method: 'PUT',
+      headers: { Authorization: this.auth(cfg), 'Content-Type': options?.mimeType ?? 'application/octet-stream' },
+      body: data,
+      onProgress: options?.progress,
+    });
+    return {
+      id: url,
+      name: basename(remotePath),
+      remotePath,
+      size: data.length,
+      isDir: false,
+      mimeType: options?.mimeType ?? 'application/octet-stream',
+      modifiedAt: Date.now(),
+    };
+  }
+
+  async download(account: CloudAccount, remotePath: string, destPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    const res = await httpRequestAuto(this.normalize(cfg, remotePath), {
+      method: 'GET',
+      headers: { Authorization: this.auth(cfg) },
+    });
+    await import('node:fs/promises').then((fs) => fs.writeFile(destPath, res.body));
+  }
+
+  async readRange(account: CloudAccount, remotePath: string, start: number, end: number): Promise<Buffer> {
+    const cfg = this.cfg(account);
+    const res = await httpRequestAuto(this.normalize(cfg, remotePath), {
+      method: 'GET',
+      headers: { Authorization: this.auth(cfg), Range: `bytes=${start}-${end}` },
+    });
+    return res.body;
+  }
+
+  async mkdir(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await httpRequestAuto(this.normalize(cfg, remotePath), {
+      method: 'MKCOL',
+      headers: { Authorization: this.auth(cfg) },
+    });
+  }
+
+  async rename(account: CloudAccount, fromPath: string, toPath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await httpRequestAuto(this.normalize(cfg, fromPath), {
+      method: 'MOVE',
+      headers: { Authorization: this.auth(cfg), Destination: this.normalize(cfg, toPath), Overwrite: 'T' },
+    });
+  }
+
+  async delete(account: CloudAccount, remotePath: string): Promise<void> {
+    const cfg = this.cfg(account);
+    await httpRequestAuto(this.normalize(cfg, remotePath), {
+      method: 'DELETE',
+      headers: { Authorization: this.auth(cfg) },
+    });
+  }
+
+  async ping(account: CloudAccount): Promise<boolean> {
+    try {
+      const cfg = this.cfg(account);
+      const res = await httpRequestAuto(cfg.url, {
+        method: 'PROPFIND',
+        headers: { Authorization: this.auth(cfg), Depth: '0' },
+        body: '<?xml version="1.0"?><d:propfind xmlns:d="DAV:"><d:prop><d:resourcetype/></d:prop></d:propfind>',
+      });
+      return res.status < 400;
+    } catch {
+      return false;
+    }
+  }
+}
