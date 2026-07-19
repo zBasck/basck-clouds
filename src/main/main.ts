@@ -89,7 +89,7 @@ function createWindow() {
     mainWindow.loadFile(path.join(__dirname, '..', 'renderer', 'index.html'));
   }
   mainWindow.on('close', (e) => {
-    if (!app.isQuitting) {
+    if (!(app as any).isQuitting) {
       e.preventDefault();
       mainWindow?.hide();
     }
@@ -104,7 +104,7 @@ function createTray() {
       { label: 'Abrir Basck Clouds', click: () => mainWindow?.show() },
       { label: 'Bloquear cofre', click: () => vault.lock() },
       { type: 'separator' },
-      { label: 'Sair', click: () => { app.isQuitting = true; app.quit(); } },
+      { label: 'Sair', click: () => { (app as any).isQuitting = true; app.quit(); } },
     ]);
     tray.setToolTip('Basck Clouds');
     tray.setContextMenu(menu);
@@ -134,7 +134,7 @@ function handle<T>(channel: string, fn: (...args: any[]) => Promise<T> | T) {
 }
 
 handle(IpcChannels.VAULT_STATUS, () => ({ exists: vault.exists(), unlocked: vault.isUnlocked() }));
-handle(IpcChannels.VAULT_CREATE ?? IpcChannels.VAULT_SET_PASSWORD, async (password: string, hint?: string) => {
+handle(IpcChannels.VAULT_CREATE, async (password: string, hint?: string) => {
   await vault.create(password, hint);
 });
 handle(IpcChannels.VAULT_UNLOCK, (password: string) => { vault.unlock(password); credentials.load(); });
@@ -229,7 +229,7 @@ handle(IpcChannels.SYNC_ADD, (pair: any) => {
   sync.upsert({ ...pair, id: pair.id || require('./services/id').randomId(12), createdAt: Date.now() });
   syncer.refresh();
 });
-handle(IpcChannels.SYNC_REMOVE, (id: string) => { sync.upsert(sync.get(id) ? { ...sync.get(id)!, enabled: false } : ({} as any)); require('better-sqlite3'); });
+handle(IpcChannels.SYNC_REMOVE, (id: string) => { const p = sync.get(id); if (p) { sync.upsert({ ...p, enabled: false }); } });
 handle(IpcChannels.SYNC_RUN, async (id: string) => {
   const pair = sync.get(id);
   if (!pair) throw new Error('Par de sync não encontrado');
