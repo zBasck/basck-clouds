@@ -52,7 +52,7 @@ export class BackupScheduler {
           const entries: string[] = [];
           if (fastGlob) {
             const list = await fastGlob('**/*', { cwd: src, dot: false, onlyFiles: true });
-            entries.push(...list.map((p) => `${src}/${p}`));
+            entries.push(...list.map((p: string) => `${src}/${p}`));
           } else {
             // fallback mínimo: walk
             const { readdir } = await import('node:fs/promises');
