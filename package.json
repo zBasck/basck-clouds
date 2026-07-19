@@ -2,7 +2,7 @@
   "name": "basck-clouds",
   "productName": "Basck Clouds",
   "version": "1.0.1",
-  "description": "Basck Clouds — unifica múltiplas contas de armazenamento em nuvem em um único drive virtual criptografado de ponta a ponta.",
+  "description": "Basck Clouds \u2014 unifica m\u00faltiplas contas de armazenamento em nuvem em um \u00fanico drive virtual criptografado de ponta a ponta.",
   "main": "dist/main/main.js",
   "author": {
     "name": "zBasck",
@@ -24,7 +24,9 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "basic-ftp": "^5.0.5",
     "chokidar": "^4.0.1",
+    "fast-glob": "^3.3.2",
     "node-cron": "^3.0.3",
     "node-fetch": "^2.7.0",
     "tar": "^7.4.3"
@@ -49,7 +51,7 @@
   "build": {
     "appId": "com.zbasck.basckclouds",
     "productName": "Basck Clouds",
-    "copyright": "Copyright © 2026 zBasck",
+    "copyright": "Copyright \u00a9 2026 zBasck",
     "files": [
       "dist/**/*",
       "build/**/*",
@@ -61,8 +63,18 @@
     },
     "win": {
       "target": [
-        { "target": "nsis", "arch": ["x64"] },
-        { "target": "portable", "arch": ["x64"] }
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
       ],
       "artifactName": "${productName}-Setup-${version}.${ext}"
     },
