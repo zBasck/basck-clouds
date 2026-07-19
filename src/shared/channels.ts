@@ -12,6 +12,7 @@ export const IpcChannels = {
   ACCOUNTS_REFRESH_QUOTA: 'accounts:refresh-quota',
   ACCOUNTS_UPDATE_PREFERENCES: 'accounts:update-preferences',
   // vault
+  VAULT_CREATE: 'vault:create',
   VAULT_UNLOCK: 'vault:unlock',
   VAULT_LOCK: 'vault:lock',
   VAULT_STATUS: 'vault:status',
