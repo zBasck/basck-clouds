@@ -18,7 +18,7 @@ import { Readable } from 'node:stream';
 import { createHash } from 'node:crypto';
 import { Distributor } from './distributor';
 import { getProvider } from '@main/providers/factory';
-import type { CloudAccount, ClusterItem, CloudQuota } from '@shared/types';
+import type { CloudAccount, ClusterItem, CloudQuota, ChunkPlacement } from '@shared/types';
 import type { ClusterRepository, AccountRepository, QuotaRepository, ActivityRepository } from '@main/db/repositories';
 import { joinLogical, normalizeLogicalPath, parentOf, randomId, shortHash } from '@main/services/id';
 import type { CryptoService } from '@main/services/crypto';
@@ -77,31 +77,25 @@ export class ClusterEngine {
       const remoteBase = `${baseName}/${chunkIndex.toString().padStart(6, '0')}`;
       const decision = distributor.buildPlacements(chunkId, ciphertext.length, remoteBase);
       // efetiva o upload em paralelo
-      await Promise.all(
-        decision.placements.map(async (p) => {
-          const acc = accounts.find((a) => a.id === p.accountId)!;
-          const provider = getProvider(acc.providerId);
-          await provider.upload(
-            acc,
-            p.remotePath,
-            ciphertext,
-            { mimeType: 'application/octet-stream', progress: (s, t) => opts.onProgress?.('uploading', Math.min(99, (s / t) * 100)) },
-          );
-        }),
-      );
-      // Persistimos o chunk com iv+tag concatenados no registro de placement.
-      chunks.push({
-        id: chunkId,
-        offset,
-        size: ciphertext.length,
-        placements: decision.placements.map((p) => ({
+      for (const p of decision.placements) {
+        const acc = accounts.find((a) => a.id === p.accountId);
+        if (!acc) continue;
+        const provider = getProvider(acc.providerId);
+        await provider.upload(
+          acc,
+          p.remotePath,
+          ciphertext,
+          { mimeType: 'application/octet-stream', progress: (s, t) => opts.onProgress?.('uploading', Math.min(99, (s / t) * 100)) },
+        );
+        chunks.push({
+          chunkId,
           accountId: p.accountId,
           remotePath: p.remotePath,
-          iv: iv.toString('base64'),
-          tag: tag.toString('base64'),
-          fullHash,
-        })),
-      });
+          size: ciphertext.length,
+          offset,
+          uploadedAt: Date.now(),
+        } as ChunkPlacement);
+      }
       offset += buf.length;
       chunkIndex++;
       opts.onProgress?.('encrypting', Math.min(99, (offset / stat.size) * 100));
