@@ -5,6 +5,7 @@
  * Cada um implementa CloudProvider com chamadas específicas.
  */
 import { basename } from 'node:path';
+import { WebDavProvider } from './webdav';
 import { httpRequestAuto } from './http-client';
 import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
 import type { CloudAccount, CloudQuota, ProviderId } from '@shared/types';
@@ -101,7 +102,7 @@ class PCloudProvider implements CloudProvider {
     const t = await this.tok(account);
     const r = await httpRequestAuto(`https://api.pcloud.com/userinfo?auth=${t}`);
     const j = JSON.parse(r.body.toString('utf8'));
-    return { total: j.quota, used: j.usedquota, free: j.quota - j.usedquota, trashed: 0, providerId: 'pcloud', accountId: account.id, fetchedAt: Date.now() };
+    return { total: j.quota, used: j.usedquota, free: j.quota - j.usedquota, trashed: 0, providerId: 'pcloud' as ProviderId, accountId: account.id, fetchedAt: Date.now() };
   }
   async ping(account: CloudAccount) { try { await this.tok(account); return true; } catch { return false; } }
 }
@@ -179,7 +180,7 @@ class YandexProvider implements CloudProvider {
   async getQuota(account: CloudAccount) {
     const r = await httpRequestAuto('https://cloud-api.yandex.net/v1/disk/', { headers: this.headers(account) });
     const j = JSON.parse(r.body.toString('utf8'));
-    return { total: j.total_space, used: j.used_space, free: j.total_space - j.used_space, trashed: j.trash_size ?? 0, providerId: 'yandexdisk', accountId: account.id, fetchedAt: Date.now() };
+    return { total: j.total_space, used: j.used_space, free: j.total_space - j.used_space, trashed: j.trash_size ?? 0, providerId: 'yandexdisk' as ProviderId, accountId: account.id, fetchedAt: Date.now() };
   }
   async ping(account: CloudAccount) { try { await httpRequestAuto('https://cloud-api.yandex.net/v1/disk/', { headers: this.headers(account) }); return true; } catch { return false; } }
 }
