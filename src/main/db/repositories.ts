@@ -6,6 +6,7 @@
  */
 import type { DB, StatementSync } from 'node:sqlite';
 import type {
+  ProviderId,
   CloudAccount,
   ClusterItem,
   BackupJob,
@@ -382,7 +383,7 @@ export class QuotaRepository {
        ON CONFLICT(account_id) DO UPDATE SET total=excluded.total, used=excluded.used, free=excluded.free, trashed=excluded.trashed, fetched_at=excluded.fetched_at`,
     );
     this.getStmt = db.prepare(`SELECT * FROM quota_cache WHERE account_id = ?`);
-    this.allStmt = db.prepare(`SELECT * FROM quota_cache`);
+    this.allStmt = db.prepare(`SELECT qc.*, a.provider_id as pid FROM quota_cache qc LEFT JOIN accounts a ON a.id = qc.account_id`);
   }
 
   set(quota: CloudQuota): void {
@@ -404,7 +405,7 @@ export class QuotaRepository {
       used: r.used,
       free: r.free,
       trashed: r.trashed,
-      providerId: 'unknown',
+      providerId: ((r as any).pid ?? (acc as any)?.provider_id ?? 'local') as ProviderId,
       fetchedAt: r.fetched_at,
     };
   }
@@ -415,7 +416,7 @@ export class QuotaRepository {
       used: r.used,
       free: r.free,
       trashed: r.trashed,
-      providerId: 'unknown',
+      providerId: ((r as any).pid ?? (acc as any)?.provider_id ?? 'local') as ProviderId,
       fetchedAt: r.fetched_at,
     }));
   }
