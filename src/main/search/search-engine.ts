@@ -115,12 +115,12 @@ export class SearchEngine {
         .slice(0, limit);
     }
     const map = new Map<string, SearchResult>();
-    const build = (row: any, score: number, type: 'name' | 'path' | 'content'): SearchResult => {
+    const build = (row: any, score: number, type: 'name' | 'content' | 'path'): SearchResult | null => {
       const item = this.cluster.get(row.item_id);
-      return { item, matchType: type, score };
+      return item ? { item, matchType: type, score } : null;
     };
-    for (const r of exact) map.set(r.item_id, build(r, r.score, 'name'));
-    for (const r of triMatches) if (!map.has(r.item_id)) map.set(r.item_id, build(r, r.score, 'name'));
+    for (const r of exact) { const m = build(r, r.score, 'name'); if (m) map.set(r.item_id, m); }
+    for (const r of triMatches) if (!map.has(r.item_id)) { const m = build(r, r.score, 'name'); if (m) map.set(r.item_id, m); }
     return Array.from(map.values()).slice(0, limit);
   }
 }
