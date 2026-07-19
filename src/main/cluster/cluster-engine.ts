@@ -94,6 +94,9 @@ export class ClusterEngine {
           size: ciphertext.length,
           offset,
           uploadedAt: Date.now(),
+          iv: iv.toString('base64'),
+          tag: tag.toString('base64'),
+          fullHash,
         } as ChunkPlacement);
       }
       offset += buf.length;
