@@ -115,10 +115,7 @@ function createTray() {
 }
 
 app.on('second-instance', () => mainWindow?.show());
-app.on('window-all-closed', (e: Electron.Event) => {
-  // mantém vivo no tray
-  if (process.platform !== 'darwin') e.preventDefault();
-});
+app.on('window-all-closed', () => { /* mantém vivo no tray */ });
 
 app.whenReady().then(bootstrap).catch((err) => {
   console.error('Falha ao iniciar Basck Clouds', err);
