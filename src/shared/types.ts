@@ -123,6 +123,10 @@ export interface ChunkPlacement {
   size: number;
   offset: number;
   uploadedAt: number;
+  // Metadados de criptografia do chunk (opcional, presente em todas as placements de um mesmo chunk).
+  iv?: string;     // base64
+  tag?: string;    // base64
+  fullHash?: string;
 }
 
 export interface ChunkEncryption {
