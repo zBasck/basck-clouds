@@ -63,7 +63,7 @@ export class ClusterEngine {
     opts.onProgress?.('reading', 0);
     const fileHash = createHash('sha256');
     const stream = createReadStream(localPath, { highWaterMark: chunkSize });
-    const chunks: Array<{ id: string; offset: number; size: number; placements: any[] }> = [];
+    const chunks: ChunkPlacement[] = [];
     let offset = 0;
     let chunkIndex = 0;
     const distributor = new Distributor(accounts, this.quotaMap());
@@ -120,7 +120,7 @@ export class ClusterEngine {
       contentHash: fileHash.digest('hex'),
       chunks,
       encryption: { algorithm: 'aes-256-gcm', perChunkKey: false, masterKeyId: 'cluster' },
-      originAccountId: chunks[0]?.placements[0]?.accountId,
+      originAccountId: chunks[0]?.accountId,
     };
     this.cluster.upsert(item);
     this.activity.log({ ts: Date.now(), level: 'info', category: 'upload', message: `Arquivo enviado: ${logical}`, detail: { size: stat.size, chunks: chunks.length } });
