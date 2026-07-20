@@ -107,21 +107,97 @@ export class MegaProvider implements CloudProvider {
 
   async authenticate(payload: Record<string, unknown>, account: CloudAccount): Promise<void> {
     const { email, password } = payload as { email: string; password: string };
-    const masterKey = await this.deriveKey(email, password);
-    const res = await this.apiCall(null, { a: 'us', user: email, uh: '' });
-    if (typeof res === 'number' && res < 0) throw new Error(`MEGA auth failed: ${res}`);
-    const csid = res;
-    const accountRes = await this.apiCall(null, { a: 'us', user: email, uh: csid });
-    if (typeof accountRes === 'number') throw new Error(`MEGA login failed: ${accountRes}`);
-    const session: MegaSession = {
-      email,
-      masterKey,
-      userHandle: accountRes.u,
-      sequence: 1,
-      shareKeys: new Map(),
-    };
+    if (!email || !password) throw new Error('MEGA exige e-mail e senha.');
+
+    // 1) Prepara a chave a partir da senha (AES-ECB com 65536 rounds).
+    const { key } = await this.prepareKey(password);
+    const kBytes = Buffer.from(this.a32ToString(key), 'binary');
+
+    // 2) Deriva o user-hash (uh): stringToA32(email), XOR com a chave,
+    //    encripta com AES-ECB e devolve os primeiros 16 bytes em base64url.
+    const emailA = this.stringToA32(email.toLowerCase());
+    const k = new Uint32Array(key);
+    for (let i = 0; i < emailA.length; i += 4) k[0] ^= emailA[i] ?? 0;
+    const cipher = createCipheriv('aes-256-ecb', kBytes, null);
+    cipher.setAutoPadding(false);
+    const emailHash = Buffer.concat([
+      cipher.update(Buffer.from(this.a32ToString(k))),
+      cipher.final(),
+    ]).subarray(0, 16);
+
+    // O MEGA espera o hash em base64 URL-safe.
+    const uh = this.base64UrlEncode(emailHash);
+
+    // 3) Pede o challenge (sid) — endpoint sc preserva retrocompatibilidade.
+    const sidRes = await this.apiCall(null, { a: 'us', user: email, uh });
+    if (typeof sidRes === 'number' && sidRes < 0) {
+      throw new Error(this.megaError(sidRes));
+    }
+    // Em algumas versões do MEGA a resposta já vem com o objeto completo
+    // (u/s/k). Detectamos pelo tipo para suportar os dois fluxos.
+    let session: MegaSession;
+    if (typeof sidRes === 'object' && sidRes && 'u' in sidRes) {
+      // Login direto: MEGA já devolveu {u, s, k}.
+      const masterKey = this.decryptMasterKey(sidRes.k, k);
+      session = {
+        email,
+        masterKey,
+        userHandle: sidRes.u,
+        sequence: 1,
+        shareKeys: new Map(),
+      };
+    } else {
+      // Fluxo em duas etapas: primeiro sid, depois login com o sid.
+      const sid = sidRes as string;
+      const loginRes = await this.apiCall(null, { a: 'us', user: email, uh, sid });
+      if (typeof loginRes === 'number' && loginRes < 0) {
+        throw new Error(this.megaError(loginRes));
+      }
+      if (typeof loginRes !== 'object' || !loginRes) {
+        throw new Error('MEGA login: resposta inesperada do servidor.');
+      }
+      const masterKey = this.decryptMasterKey(loginRes.k, k);
+      session = {
+        email,
+        masterKey,
+        userHandle: loginRes.u,
+        sequence: 1,
+        shareKeys: new Map(),
+      };
+    }
     this.sessions.set(account.id, session);
-    account.auth.ciphertext = Buffer.from(JSON.stringify({ email, passwordHint: '***' })).toString('base64');
+    account.auth.ciphertext = Buffer.from(JSON.stringify({ email })).toString('base64');
+  }
+
+  /**
+   * Decifra a master key retornada pelo MEGA (em base64 url-safe) usando
+   * a chave derivada de senha+email. O layout interno é uma sequência de
+   * palavras de 32 bits (a32) criptografada em blocos AES-ECB.
+   */
+  private decryptMasterKey(encryptedB64: string, key: Uint32Array): Buffer {
+    const encrypted = this.base64UrlDecode(encryptedB64);
+    const decipher = createDecipheriv('aes-256-ecb', Buffer.from(this.a32ToString(key), 'binary'), null);
+    decipher.setAutoPadding(false);
+    const plain = Buffer.concat([decipher.update(encrypted), decipher.final()]);
+    // A master key em si são os primeiros 16 bytes (4 words de 32 bits).
+    return plain.subarray(0, 16);
+  }
+
+  /**
+   * Traduz os códigos de erro do MEGA para mensagens em português.
+   * (https://mega.nz/developers — apêndice de erros)
+   */
+  private megaError(code: number): string {
+    const map: Record<number, string> = {
+      [-9]: 'API key inválida (erro interno).',
+      [-16]: 'MEGA bloqueou o login: muitas tentativas. Aguarde alguns minutos.',
+      [-11]: 'E-mail ou senha incorretos.',
+      [-12]: 'Conta bloqueada. Verifique seu e-mail para ativar.',
+      [-13]: 'Sessão suspensa. Acesse sua conta pelo navegador.',
+      [-14]: 'Sessão expirada — faça login novamente.',
+      [-15]: 'Link de confirmação ainda não processado.',
+    };
+    return map[code] ?? `MEGA erro ${code}`;
   }
 
   private async getSession(account: CloudAccount): Promise<MegaSession> {
