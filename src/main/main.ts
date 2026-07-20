@@ -144,8 +144,8 @@ app.whenReady().then(bootstrap).catch((err) => {
 
 function handle<T>(channel: string, fn: (...args: any[]) => Promise<T> | T) {
   ipcMain.handle(channel, async (_evt: IpcMainInvokeEvent, ...args: any[]) => {
-    try { return { ok: true, data: await fn(...args) }; }
-    catch (err: any) { return { ok: false, error: String(err?.message ?? err) }; }
+    try { return await fn(...args);; }
+    catch (err: any) { throw new Error(String(err?.message ?? err));; }
   });
 }
 
