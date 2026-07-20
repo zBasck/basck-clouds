@@ -106,9 +106,16 @@ export class BoxProvider implements CloudProvider {
   async upload(
     account: CloudAccount,
     remotePath: string,
-    data: Buffer,
+    data: Buffer | NodeJS.ReadableStream,
     options?: { mimeType?: string; progress?: (sent: number, total: number) => void },
   ): Promise<ProviderFileEntry> {
+    // FormData aceita Stream também, mas preferimos converter para Buffer
+    // para que `new Blob([data])` funcione com tipos estritos.
+    if (!Buffer.isBuffer(data)) {
+      const chunks: Buffer[] = [];
+      for await (const c of data) chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c));
+      data = Buffer.concat(chunks);
+    }
     const cfg = await this.getCfg(account);
     const fresh = await this.ensureFresh(cfg, account);
     const folder = remotePath.includes('/') ? remotePath.slice(0, remotePath.lastIndexOf('/')) : '0';
