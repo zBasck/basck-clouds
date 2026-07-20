@@ -4,7 +4,8 @@
  * de named params (`@x`), e `StatementSync` (preparado uma vez no
  * construtor) para reduzir overhead de parsing em cada chamada).
  */
-import type { DB, StatementSync } from 'node:sqlite';
+import type { DatabaseSync, StatementSync } from 'node:sqlite';
+type DB = DatabaseSync;
 import type {
   ProviderId,
   CloudAccount,
@@ -405,7 +406,7 @@ export class QuotaRepository {
       used: r.used,
       free: r.free,
       trashed: r.trashed,
-      providerId: ((r as any).pid ?? (acc as any)?.provider_id ?? 'local') as ProviderId,
+      providerId: ((r as any).pid ?? 'local') as ProviderId,
       fetchedAt: r.fetched_at,
     };
   }
@@ -416,7 +417,7 @@ export class QuotaRepository {
       used: r.used,
       free: r.free,
       trashed: r.trashed,
-      providerId: ((r as any).pid ?? (acc as any)?.provider_id ?? 'local') as ProviderId,
+      providerId: ((r as any).pid ?? 'local') as ProviderId,
       fetchedAt: r.fetched_at,
     }));
   }
