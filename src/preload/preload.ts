@@ -13,7 +13,7 @@ const invoke = <T = any>(channel: string, ...args: any[]): Promise<T> =>
 const context = {
   vault: {
     status: () => invoke(IpcChannels.VAULT_STATUS),
-    create: (password: string, hint?: string) => invoke(IpcChannels.VAULT_SET_PASSWORD, password, hint),
+    create: (password: string, hint?: string) => invoke(IpcChannels.VAULT_CREATE, password, hint),
     unlock: (password: string) => invoke(IpcChannels.VAULT_UNLOCK, password),
     lock: () => invoke(IpcChannels.VAULT_LOCK),
   },
