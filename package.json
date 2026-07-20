@@ -2,7 +2,7 @@
   "name": "basck-clouds",
   "productName": "Basck Clouds",
   "version": "1.0.2",
-  "description": "Basck Clouds \u2014 unifica m\u00faltiplas contas de armazenamento em nuvem em um \u00fanico drive virtual criptografado de ponta a ponta.",
+  "description": "Basck Clouds — unifica múltiplas contas de armazenamento em nuvem em um único drive virtual criptografado de ponta a ponta.",
   "main": "dist/main/main.js",
   "author": {
     "name": "zBasck",
@@ -13,10 +13,10 @@
   "private": false,
   "scripts": {
     "dev": "concurrently -k \"npm:dev:main\" \"npm:dev:renderer\"",
-    "dev:main": "tsc -p tsconfig.main.json && cross-env NODE_ENV=development electron .",
+    "dev:main": "tsc -p tsconfig.main.json && tsc-alias -p tsconfig.main.json && cross-env NODE_ENV=development electron .",
     "dev:renderer": "vite",
     "build:renderer": "vite build",
-    "build:main": "tsc -p tsconfig.main.json",
+    "build:main": "tsc -p tsconfig.main.json && tsc-alias -p tsconfig.main.json",
     "build": "npm run build:renderer && npm run build:main",
     "package": "npm run build && electron-builder --win --x64",
     "lint": "eslint . --ext .ts,.tsx",
@@ -46,12 +46,13 @@
     "react-dom": "^18.3.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.2",
-    "vitest": "^2.0.5"
+    "vitest": "^2.0.5",
+    "tsc-alias": "^1.8.10"
   },
   "build": {
     "appId": "com.zbasck.basckclouds",
     "productName": "Basck Clouds",
-    "copyright": "Copyright \u00a9 2026 zBasck",
+    "copyright": "Copyright © 2026 zBasck",
     "files": [
       "dist/**/*",
       "build/**/*",
@@ -88,4 +89,3 @@
     }
   }
 }
-
