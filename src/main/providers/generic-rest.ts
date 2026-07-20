@@ -500,7 +500,6 @@ class FtpProvider implements CloudProvider {
   }
   async readRange(account: CloudAccount, remotePath: string, start: number, end: number): Promise<Buffer> {
     const c = await this.conn(this.cfg(account));
-    const tmp = dest => dest;
     try { const { Writable } = await import('node:stream'); const chunks: Buffer[] = []; const ws = new Writable({ write(c, _e, cb) { chunks.push(c); cb(); } }); await c.downloadToStream(ws, remotePath, start); return Buffer.concat(chunks).subarray(0, end - start + 1); } finally { c.close(); }
   }
   async mkdir(account: CloudAccount, remotePath: string) {
@@ -519,20 +518,20 @@ class FtpProvider implements CloudProvider {
 }
 
 class NextcloudProvider extends WebDavProvider {
-  override readonly id = 'nextcloud' as const;
+  override readonly id: string = 'nextcloud';
   // herda o comportamento do WebDAV com mesma superfície
 }
 
 class OwncloudProvider extends WebDavProvider {
-  override readonly id = 'owncloud' as const;
+  override readonly id: string = 'owncloud';
 }
 
 class SeafileProvider extends WebDavProvider {
-  override readonly id = 'seafile' as const;
+  override readonly id: string = 'seafile';
 }
 
 class SynologyProvider extends WebDavProvider {
-  override readonly id = 'synology' as const;
+  override readonly id: string = 'synology';
 }
 
 export const GENERIC_PROVIDERS: Record<string, CloudProvider> = {
