@@ -6,6 +6,7 @@
  * Azure Blob (via credenciais S3-emulating), e MinIO.
  */
 import { createHash, createHmac } from 'node:crypto';
+import { Readable } from 'node:stream';
 import { basename } from 'node:path';
 import { httpRequestAuto } from './http-client';
 import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
@@ -45,6 +46,15 @@ function hash(data: string | Buffer): string {
 
 function hexHash(buf: Buffer): string {
   return createHash('sha256').update(buf).digest('hex');
+}
+
+async function toBuffer(data: Buffer | NodeJS.ReadableStream): Promise<Buffer> {
+  if (Buffer.isBuffer(data)) return data;
+  const chunks: Buffer[] = [];
+  for await (const chunk of data) {
+    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk as Uint8Array | string));
+  }
+  return Buffer.concat(chunks);
 }
 
 export class S3CompatibleProvider implements CloudProvider {
@@ -166,17 +176,21 @@ export class S3CompatibleProvider implements CloudProvider {
   ): Promise<ProviderFileEntry> {
     const cfg = this.cfg(account);
     const key = remotePath.replace(/^\//, '');
-    const bodyHash = hexHash(data);
-    const headers: Record<string, string> = { 'content-type': options?.mimeType ?? 'application/octet-stream', 'content-length': String(data.length) };
+    const buf = await toBuffer(data);
+    const bodyHash = hexHash(buf);
+    const headers: Record<string, string> = {
+      'content-type': options?.mimeType ?? 'application/octet-stream',
+      'content-length': String(buf.length),
+    };
     const path = cfg.forcePathStyle ? `/${encodeURIComponent(key)}` : `/${encodeURIComponent(key)}`;
     this.sign(cfg, 'PUT', path, '', headers, bodyHash);
     const url = `${this.host(cfg)}/${encodeURIComponent(key)}`;
-    await httpRequestAuto(url, { method: 'PUT', headers, body: data, onProgress: options?.progress });
+    await httpRequestAuto(url, { method: 'PUT', headers, body: buf, onProgress: options?.progress });
     return {
       id: key,
       name: basename(remotePath),
       remotePath,
-      size: data.length,
+      size: buf.length,
       isDir: false,
       mimeType: options?.mimeType ?? 'application/octet-stream',
       modifiedAt: Date.now(),
