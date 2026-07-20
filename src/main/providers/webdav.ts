@@ -15,7 +15,7 @@ interface WebDavConfig {
 }
 
 export class WebDavProvider implements CloudProvider {
-  readonly id = 'webdav' as const;
+  readonly id: string = 'webdav';
 
   private cfg(account: CloudAccount): WebDavConfig {
     return JSON.parse(Buffer.from(account.auth.ciphertext, 'base64').toString('utf8'));
