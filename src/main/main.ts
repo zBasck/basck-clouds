@@ -171,6 +171,7 @@ handle(IpcChannels.CLUSTER_MKDIR, (logicalPath: string) => {
   cluster.upsert({
     id,
     logicalPath: logicalPath.startsWith('/') ? logicalPath : '/' + logicalPath,
+    parentPath: '',
     name: logicalPath.split('/').filter(Boolean).pop() ?? 'Nova pasta',
     size: 0,
     mimeType: 'inode/directory',
@@ -180,6 +181,7 @@ handle(IpcChannels.CLUSTER_MKDIR, (logicalPath: string) => {
     contentHash: '',
     chunks: [],
     encryption: { algorithm: 'aes-256-gcm', perChunkKey: false, masterKeyId: 'cluster' },
+    version: 1,
   });
 });
 handle(IpcChannels.CLUSTER_RENAME, (id: string, newName: string) => {
@@ -258,7 +260,7 @@ handle(IpcChannels.BACKUP_TOGGLE, (id: string, enabled: boolean) => {
   backupScheduler.refresh();
 });
 
-handle(IpcChannels.SETTINGS_GET, () => settingsRepo.get<AppSettings>({
+handle(IpcChannels.SETTINGS_GET, () => settingsRepo.get<AppSettings>('main', {
   theme: 'dark',
   autoStart: false,
   minimizeToTray: true,
@@ -268,7 +270,7 @@ handle(IpcChannels.SETTINGS_GET, () => settingsRepo.get<AppSettings>({
   telemetry: false,
   language: 'pt-BR',
 }));
-handle(IpcChannels.SETTINGS_UPDATE, (next: AppSettings) => settingsRepo.set(next));
+handle(IpcChannels.SETTINGS_UPDATE, (next: AppSettings) => settingsRepo.set('main', next));
 
 handle(IpcChannels.SYSTEM_ACTIVITY, (limit?: number) => activity.list(limit));
 handle(IpcChannels.SYSTEM_OPEN_PATH, async (p: string) => { await shell.openPath(p); });
