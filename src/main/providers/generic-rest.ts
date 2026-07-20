@@ -6,6 +6,7 @@
  */
 import { basename } from 'node:path';
 import { WebDavProvider } from './webdav';
+import type { ProviderId } from '@shared/types';
 import { httpRequestAuto } from './http-client';
 import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
 import type { CloudAccount, CloudQuota, ProviderId } from '@shared/types';
