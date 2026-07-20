@@ -53,11 +53,31 @@ export class LocalFsProvider implements CloudProvider {
     }
   }
 
-  async upload(account: CloudAccount, remotePath: string, data: Buffer): Promise<ProviderFileEntry> {
+  async upload(
+    account: CloudAccount,
+    remotePath: string,
+    data: Buffer | NodeJS.ReadableStream,
+    options?: { mimeType?: string; progress?: (sent: number, total: number) => void },
+  ): Promise<ProviderFileEntry> {
     const cfg = this.cfg(account);
     const full = this.full(cfg, remotePath);
     await fs.mkdir(dirname(full), { recursive: true });
-    await fs.writeFile(full, data);
+    if (Buffer.isBuffer(data)) {
+      await fs.writeFile(full, data);
+      options?.progress?.(data.length, data.length);
+    } else {
+      // pipeline lida com backpressure e progresso de bytes transmitidos.
+      const { pipeline } = await import('node:stream/promises');
+      let written = 0;
+      const tracker = new (await import('node:stream')).Transform({
+        transform(chunk: Buffer, _enc, cb) {
+          written += chunk.length;
+          options?.progress?.(written, -1);
+          cb(null, chunk);
+        },
+      });
+      await pipeline(data, tracker, createWriteStream(full));
+    }
     const stat = await fs.stat(full);
     return {
       id: full,
@@ -65,7 +85,7 @@ export class LocalFsProvider implements CloudProvider {
       remotePath,
       size: stat.size,
       isDir: false,
-      mimeType: 'application/octet-stream',
+      mimeType: options?.mimeType ?? 'application/octet-stream',
       modifiedAt: stat.mtimeMs,
     };
   }
