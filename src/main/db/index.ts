@@ -3,22 +3,21 @@
  * Persiste: contas, itens do cluster, placements de chunks,
  * jobs de backup, pares de sync, índice de busca, configurações.
  *
- * Usa `better-sqlite3` v11 (síncrono, rápido, com prebuilt binário
- * para Node 20+/Electron 30+ em Windows x64). Não exige compilação
- * nativa na máquina do usuário.
+ * Usa `node:sqlite` (módulo nativo do Node 22+, embutido no Electron 34+).
+ * Zero dependência nativa — sem compilação, sem Visual Studio Build Tools.
  */
-import Database from 'better-sqlite3';
-import type { Database as DBType } from 'better-sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
 import fs from 'node:fs';
 
-export type DB = DBType;
+export type DB = DatabaseSync;
 
 export function openDatabase(dataDir: string): DB {
   fs.mkdirSync(dataDir, { recursive: true });
-  const db = new Database(path.join(dataDir, 'basck.db'));
-  db.pragma('journal_mode = WAL');
-  db.pragma('foreign_keys = ON');
+  const db = new DatabaseSync(path.join(dataDir, 'basck.db'));
+  // PRAGMA deve ser executado como SQL; node:sqlite não tem método .pragma()
+  db.exec('PRAGMA journal_mode = WAL');
+  db.exec('PRAGMA foreign_keys = ON');
   migrate(db);
   return db;
 }
