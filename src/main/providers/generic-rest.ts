@@ -4,6 +4,16 @@
  *
  * Cada um implementa CloudProvider com chamadas específicas.
  */
+
+function bufferize(data: Buffer | NodeJS.ReadableStream): Promise<Buffer> {
+  if (Buffer.isBuffer(data)) return Promise.resolve(data);
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = [];
+    data.on('data', (c) => chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c)));
+    data.on('end', () => resolve(Buffer.concat(chunks)));
+    data.on('error', reject);
+  });
+}
 import { basename } from 'node:path';
 import { WebDavProvider } from './webdav';
 import type { ProviderId } from '@shared/types';
@@ -66,7 +76,8 @@ class PCloudProvider implements CloudProvider {
       })),
     };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     const t = await this.tok(account);
     const url = `https://api.pcloud.com/uploadfile?path=${encodeURIComponent(remotePath)}&auth=${t}&filename=${encodeURIComponent(basename(remotePath))}`;
     const form = new FormData();
@@ -135,7 +146,8 @@ class YandexProvider implements CloudProvider {
       })),
     };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     const link = await httpRequestAuto('https://cloud-api.yandex.net/v1/disk/resources/upload?path=' + encodeURIComponent(remotePath) + '&overwrite=true', {
       method: 'GET',
       headers: this.headers(account),
@@ -208,7 +220,8 @@ class KoofrProvider implements CloudProvider {
     const j = JSON.parse(r.body.toString('utf8'));
     return { entries: (j.files ?? []).map((e: any) => ({ id: e.id, name: e.name, remotePath: e.path, size: e.size, isDir: e.type === 'dir', mimeType: e.mimeType ?? 'application/octet-stream', modifiedAt: e.modified })) };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     await httpRequestAuto('https://app.koofr.net/api/v2.1/content?path=' + encodeURIComponent(remotePath), {
       method: 'PUT', body: data, headers: { ...this.h(account), 'Content-Type': 'application/octet-stream' },
     });
@@ -260,7 +273,8 @@ class JottaProvider implements CloudProvider {
     const j = JSON.parse(r.body.toString('utf8'));
     return { entries: (j.files ?? []).map((e: any) => ({ id: e.path, name: e.name, remotePath: e.path, size: e.size ?? 0, isDir: e.is_folder, mimeType: e.mime_type ?? 'application/octet-stream', modifiedAt: Date.parse(e.updated) })) };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     await httpRequestAuto('https://api.jottacloud.com/files/v1/upload?path=' + encodeURIComponent(remotePath), { method: 'POST', body: data, headers: { ...this.h(account), 'Content-Type': 'application/octet-stream' } });
     return { id: remotePath, name: basename(remotePath), remotePath, size: data.length, isDir: false, mimeType: 'application/octet-stream', modifiedAt: Date.now() };
   }
@@ -302,7 +316,8 @@ class FilenProvider implements CloudProvider {
     const j = JSON.parse(r.body.toString('utf8'));
     return { entries: (j.data?.items ?? []).map((e: any) => ({ id: e.uuid, name: e.name, remotePath: e.path ?? e.name, size: e.size ?? 0, isDir: e.type === 'folder', mimeType: 'application/octet-stream', modifiedAt: e.lastModified })) };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     await httpRequestAuto('https://api.filen.io/v1/upload', { method: 'POST', headers: { ...this.h(account), 'Content-Type': 'application/octet-stream' }, body: data });
     return { id: remotePath, name: basename(remotePath), remotePath, size: data.length, isDir: false, mimeType: 'application/octet-stream', modifiedAt: Date.now() };
   }
@@ -343,7 +358,8 @@ class InternxtProvider implements CloudProvider {
     const j = JSON.parse(r.body.toString('utf8'));
     return { entries: (j.files ?? []).map((e: any) => ({ id: e.fileId, name: e.name, remotePath: e.path, size: e.size, isDir: e.type === 'folder', mimeType: e.mimeType ?? 'application/octet-stream', modifiedAt: Date.parse(e.modified) })) };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     await httpRequestAuto('https://api.internxt.com/v1/storage/upload', { method: 'POST', headers: { ...this.h(account), 'Content-Type': 'application/octet-stream' }, body: data });
     return { id: remotePath, name: basename(remotePath), remotePath, size: data.length, isDir: false, mimeType: 'application/octet-stream', modifiedAt: Date.now() };
   }
@@ -388,7 +404,8 @@ class MediaFireProvider implements CloudProvider {
       ...(r.folder_content?.files ?? []).map((f: any) => ({ id: f.quickkey, name: f.filename, remotePath: f.quickkey, size: Number(f.size), isDir: false, mimeType: 'application/octet-stream', modifiedAt: Date.parse(f.created) })),
     ] };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     const r = await this.call(account, 'upload/simple', { folder_key: remotePath === '/' ? 'myfiles' : remotePath, filename: basename(remotePath) });
     const fd = new FormData();
     fd.append('file', new Blob([data]), basename(remotePath));
@@ -438,7 +455,8 @@ class ICloudProvider implements CloudProvider {
     const j = JSON.parse(r.body.toString('utf8'));
     return { entries: (j.items ?? []).map((e: any) => ({ id: e.etag, name: e.name ?? e.docwsid, remotePath: e.docwsid, size: e.size ?? 0, isDir: e.type === 'FOLDER', mimeType: 'application/octet-stream', modifiedAt: e.lastModified })) };
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     // iCloud Drive upload: PUT com headers próprios
     const c = getUP(account) as any;
     await httpRequestAuto('https://p31-drivews.icloud.com/v1/file/upload', { method: 'POST', headers: { 'Content-Type': 'multipart/form-data', 'X-APPLE-WEBAUTH-VALIDATE': String(c.dsid) }, body: data });
@@ -490,7 +508,8 @@ class FtpProvider implements CloudProvider {
       return { entries: items.map((e: any) => ({ id: remotePath + '/' + e.name, name: e.name, remotePath: remotePath + '/' + e.name, size: e.size, isDir: e.isDirectory, mimeType: e.isDirectory ? 'inode/directory' : 'application/octet-stream', modifiedAt: e.modifiedAt?.getTime?.() ?? 0 })) };
     } finally { c.close(); }
   }
-  async upload(account: CloudAccount, remotePath: string, data: Buffer) {
+  async upload(account: CloudAccount, remotePath: string, data: Buffer | NodeJS.ReadableStream, options?: { mimeType?: string; progress?: (sent: number, total: number) => void }) {
+    if (!Buffer.isBuffer(data)) data = await bufferize(data);
     const c = await this.conn(this.cfg(account));
     try { const { Readable } = await import('node:stream'); await c.uploadFrom(Readable.from(data), remotePath); } finally { c.close(); }
     return { id: remotePath, name: basename(remotePath), remotePath, size: data.length, isDir: false, mimeType: 'application/octet-stream', modifiedAt: Date.now() };
