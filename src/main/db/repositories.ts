@@ -139,7 +139,7 @@ export class BackupRepository {
     this.upsertStmt.run(
       job.id, job.name, JSON.stringify(job.sourcePaths), job.targetPath,
       job.schedule, job.enabled ? 1 : 0, job.encrypt ? 1 : 0,
-      job.distribute ? 1 : 0, job.retention,
+      job.distribute ? 1 : 0, JSON.stringify(job.retention),
       job.lastRunAt ?? null, job.lastRunStatus ?? null,
       job.nextRunAt ?? null, job.createdAt,
     );
@@ -153,7 +153,7 @@ export class BackupRepository {
   private row = (r: any): BackupJob => ({
     id: r.id, name: r.name, sourcePaths: JSON.parse(r.source_paths), targetPath: r.target_path,
     schedule: r.schedule, enabled: !!r.enabled, encrypt: !!r.encrypt, distribute: !!r.distribute,
-    retention: r.retention, lastRunAt: r.last_run_at ?? undefined, lastRunStatus: r.last_run_status ?? undefined,
+    retention: typeof r.retention === 'string' ? JSON.parse(r.retention) : r.retention, lastRunAt: r.last_run_at ?? undefined, lastRunStatus: r.last_run_status ?? undefined,
     nextRunAt: r.next_run_at ?? undefined, createdAt: r.created_at,
   });
 }
