@@ -158,7 +158,7 @@ handle(IpcChannels.ACCOUNTS_UPDATE_PREFERENCES, (id: string, prefs: any) => {
   accounts.upsert({ ...acc, preferences: prefs, updatedAt: Date.now() });
 });
 
-handle(IpcChannels.CLUSTER_LIST, (parent: string = '/') => cluster.list(parent));
+handle(IpcChannels.CLUSTER_LIST, () => cluster.list());
 handle(IpcChannels.CLUSTER_READ, (id: string) => cluster.get(id));
 handle(IpcChannels.CLUSTER_UPLOAD, async (localPath: string, opts: any) => {
   return clusterEngine.uploadFile(localPath, opts);
