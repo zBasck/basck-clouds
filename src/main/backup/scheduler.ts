@@ -42,7 +42,7 @@ export class BackupScheduler {
         if (!stat) continue;
         if (stat.isFile()) {
           await this.cluster.uploadFile(src, {
-            logicalPath: job.targetLogicalPath,
+            logicalPath: job.targetPath,
             encrypt: job.encrypt,
             distribute: job.distribute,
           });
@@ -68,7 +68,7 @@ export class BackupScheduler {
           for (const file of entries) {
             try {
               await this.cluster.uploadFile(file, {
-                logicalPath: job.targetLogicalPath,
+                logicalPath: job.targetPath,
                 encrypt: job.encrypt,
                 distribute: job.distribute,
               });
