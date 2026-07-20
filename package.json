@@ -2,7 +2,7 @@
   "name": "basck-clouds",
   "productName": "Basck Clouds",
   "version": "1.0.1",
-  "description": "Basck Clouds \u2014 unifica m\u00faltiplas contas de armazenamento em nuvem em um \u00fanico drive virtual criptografado de ponta a ponta.",
+  "description": "Basck Clouds — unifica múltiplas contas de armazenamento em nuvem em um único drive virtual criptografado de ponta a ponta.",
   "main": "dist/main/main.js",
   "author": {
     "name": "zBasck",
@@ -32,14 +32,14 @@
     "tar": "^7.4.3"
   },
   "devDependencies": {
-    "@types/node": "^22.5.0",
+    "@types/node": "^22.10.0",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
-    "electron": "^33.0.0",
+    "electron": "^34.0.0",
     "electron-builder": "^25.0.5",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
@@ -51,7 +51,7 @@
   "build": {
     "appId": "com.zbasck.basckclouds",
     "productName": "Basck Clouds",
-    "copyright": "Copyright \u00a9 2026 zBasck",
+    "copyright": "Copyright © 2026 zBasck",
     "files": [
       "dist/**/*",
       "build/**/*",
