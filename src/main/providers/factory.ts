@@ -5,6 +5,7 @@ import { GoogleDriveProvider } from './google-drive';
 import { OneDriveProvider } from './onedrive';
 import { DropboxProvider } from './dropbox';
 import { MegaProvider } from './mega';
+import { TeraBoxProvider } from './terabox';
 import { BoxProvider } from './box';
 import { WebDavProvider } from './webdav';
 import { SftpProvider } from './sftp';
@@ -24,6 +25,8 @@ export function getProvider(id: ProviderId): CloudProvider {
       return new DropboxProvider();
     case 'mega':
       return new MegaProvider();
+    case 'terabox':
+      return new TeraBoxProvider();
     case 'box':
       return new BoxProvider();
     case 'webdav':
