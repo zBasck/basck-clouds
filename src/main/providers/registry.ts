@@ -297,6 +297,30 @@ export const PROVIDER_REGISTRY: Record<ProviderId, ProviderDescriptor> = {
     documentationUrl: 'https://filen.io/developers',
     category: 'consumer',
   },
+  terabox: {
+    id: 'terabox',
+    name: 'TeraBox',
+    shortName: 'TeraBox',
+    brandColor: '#0E74FF',
+    icon: '🅣',
+    authKind: 'userpass',
+    capabilities: {
+      read: true,
+      write: true,
+      delete: true,
+      mkdir: true,
+      rename: true,
+      quota: true,
+      resumable: true,
+      streaming: true,
+      chunking: true,
+      // Plano grátis: 1.024 MB por arquivo (restrição real do serviço).
+      // Plano premium remove o limite.
+      maxFileSize: 1024 * 1024 * 1024,
+    },
+    documentationUrl: 'https://www.terabox.com/developers',
+    category: 'consumer',
+  },
   internxt: {
     id: 'internxt',
     name: 'Internxt',
