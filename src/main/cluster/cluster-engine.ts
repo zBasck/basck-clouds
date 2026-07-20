@@ -132,10 +132,10 @@ export class ClusterEngine {
     const out = createWriteStream(join(opts.destination, item.name));
     let written = 0;
     for (const ch of item.chunks) {
-      const placement = await this.fetchChunkWithFallback(ch);
-      const iv = Buffer.from(placement.iv, 'base64');
-      const tag = Buffer.from(placement.tag, 'base64');
-      const plain = this.crypto.decryptChunk(placement.ciphertext, this.deriveFileKey(item.id), iv, tag);
+      const ciphertext = await this.fetchChunkWithFallback(ch);
+      const iv = Buffer.from((ch as any).iv ?? '', 'base64');
+      const tag = Buffer.from((ch as any).tag ?? '', 'base64');
+      const plain = this.crypto.decryptChunk(ciphertext, this.deriveFileKey(item.id), iv, tag);
       out.write(plain);
       written += plain.length;
       opts.onProgress?.('writing', (written / item.size) * 100);
@@ -143,29 +143,30 @@ export class ClusterEngine {
     await new Promise<void>((res, rej) => out.end((err: any) => (err ? rej(err) : res())));
   }
 
-  private async fetchChunkWithFallback(chunk: any): Promise<{ ciphertext: Buffer; iv: string; tag: string }> {
+  private async fetchChunkWithFallback(chunk: any): Promise<Buffer> {
+    const placements: any[] = chunk.placements ?? [chunk];
     let lastErr: unknown = null;
-    for (const placement of chunk.placements) {
+    for (const placement of placements) {
       try {
         const acc = this.accounts.get(placement.accountId);
         if (!acc) continue;
         const provider = getProvider(acc.providerId);
         if (provider.readRange) {
           const buf = await provider.readRange(acc, placement.remotePath, 0, 100 * 1024 * 1024);
-          return { ciphertext: buf, iv: placement.iv, tag: placement.tag };
+          return buf;
         } else {
-          // fallback: download full chunk to temp
-          const tmp = join(require('node:os').tmpdir(), `basck-${randomId(8)}.bin`);
+          const os = await import('node:os');
+          const tmp = join(os.tmpdir(), `basck-${randomId(8)}.bin`);
           await provider.download(acc, placement.remotePath, tmp);
           const buf = await fs.readFile(tmp);
           await fs.unlink(tmp).catch(() => undefined);
-          return { ciphertext: buf, iv: placement.iv, tag: placement.tag };
+          return buf;
         }
       } catch (err) {
         lastErr = err;
       }
     }
-    throw new Error(`Não foi possível baixar chunk ${chunk.id}: ${String(lastErr)}`);
+    throw new Error(`Não foi possível baixar chunk ${chunk.chunkId ?? chunk.id ?? '?'}: ${String(lastErr)}`);
   }
 
   private deriveFileKey(itemId: string): Buffer {
