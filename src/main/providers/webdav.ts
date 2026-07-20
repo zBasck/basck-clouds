@@ -14,6 +14,15 @@ interface WebDavConfig {
   password: string;
 }
 
+async function toBuffer(data: Buffer | NodeJS.ReadableStream): Promise<Buffer> {
+  if (Buffer.isBuffer(data)) return data;
+  const chunks: Buffer[] = [];
+  for await (const chunk of data) {
+    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk as Uint8Array | string));
+  }
+  return Buffer.concat(chunks);
+}
+
 export class WebDavProvider implements CloudProvider {
   readonly id: ProviderId = 'webdav';
 
@@ -86,17 +95,18 @@ export class WebDavProvider implements CloudProvider {
   ): Promise<ProviderFileEntry> {
     const cfg = this.cfg(account);
     const url = this.normalize(cfg, remotePath);
+    const buf = await toBuffer(data);
     await httpRequestAuto(url, {
       method: 'PUT',
       headers: { Authorization: this.auth(cfg), 'Content-Type': options?.mimeType ?? 'application/octet-stream' },
-      body: data,
+      body: buf,
       onProgress: options?.progress,
     });
     return {
       id: url,
       name: basename(remotePath),
       remotePath,
-      size: data.length,
+      size: buf.length,
       isDir: false,
       mimeType: options?.mimeType ?? 'application/octet-stream',
       modifiedAt: Date.now(),
