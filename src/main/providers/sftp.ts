@@ -100,9 +100,17 @@ export class SftpProvider implements CloudProvider {
   async upload(
     account: CloudAccount,
     remotePath: string,
-    data: Buffer,
+    data: Buffer | NodeJS.ReadableStream,
     options?: { progress?: (sent: number, total: number) => void },
   ): Promise<ProviderFileEntry> {
+    // scp.stdin.write aceita Stream, mas para simplificar o tracking de
+    // progresso e tamanho, materializamos em Buffer quando o caller
+    // ainda não o fez.
+    if (!Buffer.isBuffer(data)) {
+      const chunks: Buffer[] = [];
+      for await (const c of data) chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c));
+      data = Buffer.concat(chunks);
+    }
     const cfg = this.cfg(account);
     const tmp = `${remotePath}.basck.tmp.${Date.now()}`;
     await this.runSsh(cfg, `cat > "${tmp}"`);
