@@ -22,7 +22,7 @@
  *     relança o erro para o engine de upload que tem retry com
  *     backoff exponencial.
  */
-import { createWriteStream, existsSync, mkdirSync, statSync } from 'node:fs';
+import { createWriteStream, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join, basename } from 'node:path';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
@@ -52,6 +52,12 @@ interface TeraBoxFileNode {
   server_mtime: number;
   server_ctime: number;
   md5?: string;
+}
+
+function asStringArray(value: unknown): string[] {
+  if (Array.isArray(value)) return value.map((v) => String(v));
+  if (typeof value === 'string') return [value];
+  return [];
 }
 
 export class TeraBoxProvider implements CloudProvider {
@@ -123,8 +129,9 @@ export class TeraBoxProvider implements CloudProvider {
       method: 'GET',
       headers: { 'User-Agent': 'BasckClouds/1.0' },
     });
-    const setCookie = tokenRes.headers['set-cookie'] ?? [];
-    const cookies = setCookie.map((c) => c.split(';')[0]).join('; ');
+    const initialCookies = asStringArray(tokenRes.headers['set-cookie'])
+      .map((c) => c.split(';')[0])
+      .join('; ');
     const tokenJson = JSON.parse(tokenRes.body.toString('utf8'));
     const csrfToken = tokenJson.csrf ?? tokenJson.token;
     if (!csrfToken) throw new Error('Não foi possível obter token CSRF do TeraBox.');
@@ -140,15 +147,15 @@ export class TeraBoxProvider implements CloudProvider {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Cookie': cookies,
+        'Cookie': initialCookies,
         'User-Agent': 'BasckClouds/1.0',
       },
       body: loginBody.toString(),
     });
-    const loginCookies = (loginRes.headers['set-cookie'] ?? [])
-      .map((c) => c.split(';')[0])
-      .concat(cookies.split('; ').filter(Boolean))
-      .join('; ');
+    const loginCookies = [
+      ...asStringArray(loginRes.headers['set-cookie']).map((c) => c.split(';')[0]),
+      ...initialCookies.split('; ').filter(Boolean),
+    ].join('; ');
     const loginJson = JSON.parse(loginRes.body.toString('utf8'));
     if (loginJson.errno && loginJson.errno !== 0) {
       throw new Error(`Falha no login TeraBox: ${loginJson.errmsg ?? 'credenciais inválidas'}`);
@@ -237,9 +244,7 @@ export class TeraBoxProvider implements CloudProvider {
 
     // 2) faz upload direto para o CDN
     const formBoundary = '----TeraBoxBasck' + Date.now();
-    const formBody = Buffer.concat([
-      Buffer.from(this.buildMultipart(formBoundary, pre.param, buf, filename, options?.mimeType ?? 'application/octet-stream')),
-    ]);
+    const formBody = this.buildMultipart(formBoundary, pre.param, buf, filename, options?.mimeType ?? 'application/octet-stream');
     const upRes = await httpRequestAuto(`https://${pre.host}/rest/2.0/pcs/file?method=upload`, {
       method: 'POST',
       headers: {
@@ -303,7 +308,9 @@ export class TeraBoxProvider implements CloudProvider {
     }
     const dir = dirname(destPath);
     if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-    const stream = res.body instanceof Buffer ? Readable.from(res.body) : (res.body as NodeJS.ReadableStream);
+    // httpRequestAuto devolve Buffer; criamos um Readable a partir dos bytes.
+    const bodyBuf = Buffer.isBuffer(res.body) ? res.body : Buffer.from(res.body as Uint8Array);
+    const stream = Readable.from(bodyBuf);
     await pipeline(stream, createWriteStream(destPath));
   }
 
@@ -387,7 +394,7 @@ export class TeraBoxProvider implements CloudProvider {
   private async streamToBuffer(stream: NodeJS.ReadableStream): Promise<Buffer> {
     const chunks: Buffer[] = [];
     for await (const c of stream) {
-      chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c));
+      chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c as Uint8Array | string));
     }
     return Buffer.concat(chunks);
   }
@@ -398,26 +405,20 @@ export class TeraBoxProvider implements CloudProvider {
     file: Buffer,
     filename: string,
     mime: string,
-  ): string[] {
-    const parts: string[] = [];
+  ): Buffer {
+    const headParts: string[] = [];
     for (const [name, value] of Object.entries(fields)) {
-      parts.push(`--${boundary}\r\n`);
-      parts.push(`Content-Disposition: form-data; name="${name}"\r\n\r\n`);
-      parts.push(`${value}\r\n`);
+      headParts.push(`--${boundary}\r\n`);
+      headParts.push(`Content-Disposition: form-data; name="${name}"\r\n\r\n`);
+      headParts.push(`${value}\r\n`);
     }
-    parts.push(`--${boundary}\r\n`);
-    parts.push(
+    headParts.push(`--${boundary}\r\n`);
+    headParts.push(
       `Content-Disposition: form-data; name="file"; filename="${filename}"\r\n` +
         `Content-Type: ${mime}\r\n\r\n`,
     );
-    const header = Buffer.from(parts.join(''), 'utf8');
-    const trailer = Buffer.from(`\r\n--${boundary}--\r\n`, 'utf8');
-    // Concatena header + file + trailer (file é um Buffer à parte, injetado fora)
-    return [header.toString('utf8'), trailer.toString('utf8')];
+    const head = Buffer.from(headParts.join(''), 'utf8');
+    const tail = Buffer.from(`\r\n--${boundary}--\r\n`, 'utf8');
+    return Buffer.concat([head, file, tail]);
   }
 }
-
-// Observação sobre a forma do upload:
-// `buildMultipart` devolve header e trailer como strings; quem chama
-// concatena header + Buffer (arquivo) + trailer. Isso evita manter
-// uma cópia extra do arquivo em memória em formato string.
