@@ -6,7 +6,7 @@
 import { basename } from 'node:path';
 import { httpRequestAuto } from './http-client';
 import type { CloudProvider, ProviderListResult, ProviderFileEntry } from './types';
-import type { CloudAccount, CloudQuota } from '@shared/types';
+import type { CloudAccount, CloudQuota, ProviderId } from '@shared/types';
 
 interface WebDavConfig {
   url: string;
@@ -15,7 +15,7 @@ interface WebDavConfig {
 }
 
 export class WebDavProvider implements CloudProvider {
-  readonly id: string = 'webdav';
+  readonly id: ProviderId = 'webdav';
 
   private cfg(account: CloudAccount): WebDavConfig {
     return JSON.parse(Buffer.from(account.auth.ciphertext, 'base64').toString('utf8'));
