@@ -161,7 +161,7 @@ export class S3CompatibleProvider implements CloudProvider {
   async upload(
     account: CloudAccount,
     remotePath: string,
-    data: Buffer,
+    data: Buffer | NodeJS.ReadableStream,
     options?: { mimeType?: string; progress?: (sent: number, total: number) => void },
   ): Promise<ProviderFileEntry> {
     const cfg = this.cfg(account);
