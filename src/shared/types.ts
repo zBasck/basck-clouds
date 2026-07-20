@@ -104,6 +104,7 @@ export interface CloudQuota {
 export interface ClusterItem {
   id: string; // hash do conteúdo
   logicalPath: string; // caminho dentro do cluster virtual
+  parentPath: string; // logicalPath do diretório pai (ou '' para raiz)
   name: string;
   size: number;
   mimeType: string;
@@ -114,6 +115,8 @@ export interface ClusterItem {
   chunks: ChunkPlacement[];
   encryption: ChunkEncryption;
   originAccountId?: string; // quando veio de um upload direto
+  deletedAt?: number; // soft-delete
+  version: number; // versão do item (incrementa a cada update)
 }
 
 export interface ChunkPlacement {
@@ -139,7 +142,7 @@ export interface BackupJob {
   id: string;
   name: string;
   sourcePaths: string[];
-  targetLogicalPath: string;
+  targetPath: string;
   schedule: string; // cron expression
   enabled: boolean;
   encrypt: boolean;
