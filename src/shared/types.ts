@@ -16,6 +16,7 @@ export type ProviderId =
   | 'jottacloud'
   | 'filen'
   | 'internxt'
+  | 'terabox'
   | 's3'
   | 'wasabi'
   | 'backblazeb2'
