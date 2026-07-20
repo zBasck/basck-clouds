@@ -1,7 +1,7 @@
 {
   "name": "basck-clouds",
   "productName": "Basck Clouds",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Basck Clouds — unifica múltiplas contas de armazenamento em nuvem em um único drive virtual criptografado de ponta a ponta.",
   "main": "dist/main/main.js",
   "author": {
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "basic-ftp": "^5.0.5",
+    "better-sqlite3": "^11.5.0",
     "chokidar": "^4.0.1",
     "fast-glob": "^3.3.2",
     "node-cron": "^3.0.3",
@@ -32,6 +33,7 @@
     "tar": "^7.4.3"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^22.10.0",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^18.3.3",
@@ -39,7 +41,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
-    "electron": "^34.0.0",
+    "electron": "^33.0.0",
     "electron-builder": "^25.0.5",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
@@ -63,18 +65,8 @@
     },
     "win": {
       "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ]
-        },
-        {
-          "target": "portable",
-          "arch": [
-            "x64"
-          ]
-        }
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
       ],
       "artifactName": "${productName}-Setup-${version}.${ext}"
     },
