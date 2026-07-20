@@ -132,7 +132,7 @@ function createTray() {
 }
 
 app.on('second-instance', () => mainWindow?.show());
-app.on('window-all-closed', (_e: IpcMainInvokeEvent) => {
+app.on('window-all-closed', () => {
   // mantém vivo no tray
 });
 
