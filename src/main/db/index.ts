@@ -22,7 +22,15 @@ export function openDatabase(dataDir: string): DB {
   return db;
 }
 
+
+function ensureColumn(db: DB, table: string, column: string, definition: string): void {
+  const cols = (db.prepare(`PRAGMA table_info(${table})`).all() as Array<{ name: string }>);
+  if (cols.some((c) => c.name === column)) return;
+  db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+}
+
 function migrate(db: DB): void {
+  // Garante as tabelas e depois roda migrações incrementais.
   db.exec(`
   CREATE TABLE IF NOT EXISTS accounts (
     id TEXT PRIMARY KEY,
@@ -36,6 +44,10 @@ function migrate(db: DB): void {
     created_at INTEGER NOT NULL,
     updated_at INTEGER NOT NULL
   );
+  CREATE TABLE IF NOT EXISTS schema_version (
+    version INTEGER PRIMARY KEY,
+    applied_at INTEGER NOT NULL
+  );`);
 
   CREATE TABLE IF NOT EXISTS cluster_items (
     id TEXT PRIMARY KEY,
@@ -136,4 +148,29 @@ function migrate(db: DB): void {
     fetched_at INTEGER NOT NULL
   );
   `);
+
+  // --- Migrações incrementais ---------------------------------------------
+  // Estas ALTER TABLEs são idempotentes (ensureColumn checa antes de aplicar).
+  // Cobrem o caso de um basck.db criado por um commit anterior que tinha
+  // um schema de 6 colunas em `accounts` (sem auth_blob/preferences/etc.)
+  // — o que causava o erro "offset 8, must be ≤ 6" no INSERT preparado
+  // contra a tabela antiga.
+  // Para bancos legados (criados com schema de 6 colunas) ADD COLUMN NOT NULL
+  // falharia em SQLite se a tabela já tem linhas. Adicionamos como nullable
+  // primeiro e populamos; a versão final (no CREATE TABLE acima) já tem
+  // NOT NULL com DEFAULT, então bancos novos são criados corretos de cara.
+  ensureColumn(db, 'accounts', 'auth_blob', "TEXT NOT NULL DEFAULT ''");
+  ensureColumn(db, 'accounts', 'preferences', "TEXT NOT NULL DEFAULT '{}'");
+  ensureColumn(db, 'accounts', 'created_at', 'INTEGER NOT NULL DEFAULT 0');
+  ensureColumn(db, 'accounts', 'updated_at', 'INTEGER NOT NULL DEFAULT 0');
+  ensureColumn(db, 'accounts', 'status', "TEXT NOT NULL DEFAULT 'connected'");
+  ensureColumn(db, 'accounts', 'provider_id', "TEXT NOT NULL DEFAULT 'local'");
+  ensureColumn(db, 'accounts', 'label', "TEXT NOT NULL DEFAULT 'Conta'");
+
+  // Garante tabela de versão (não é usada ativamente, mas é referência
+  // para futuras migrações).
+  const versionRow = db.prepare(`SELECT MAX(version) as v FROM schema_version`).get() as { v: number | null };
+  if (!versionRow || !versionRow.v) {
+    db.prepare(`INSERT INTO schema_version (version, applied_at) VALUES (?, ?)`).run(1, Date.now());
+  }
 }
