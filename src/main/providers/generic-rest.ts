@@ -519,20 +519,20 @@ class FtpProvider implements CloudProvider {
 }
 
 class NextcloudProvider extends WebDavProvider {
-  override readonly id: string = 'nextcloud';
+  override readonly id: ProviderId = 'nextcloud';
   // herda o comportamento do WebDAV com mesma superfície
 }
 
 class OwncloudProvider extends WebDavProvider {
-  override readonly id: string = 'owncloud';
+  override readonly id: ProviderId = 'owncloud';
 }
 
 class SeafileProvider extends WebDavProvider {
-  override readonly id: string = 'seafile';
+  override readonly id: ProviderId = 'seafile';
 }
 
 class SynologyProvider extends WebDavProvider {
-  override readonly id: string = 'synology';
+  override readonly id: ProviderId = 'synology';
 }
 
 export const GENERIC_PROVIDERS: Record<string, CloudProvider> = {
