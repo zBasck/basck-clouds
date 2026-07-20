@@ -5,72 +5,79 @@
  * - Combina com LIKE para buscas literais
  * - Atualiza incrementalmente à medida que o cluster muda
  *
- * Usa better-sqlite3 (síncrono, com `db.transaction()`).
+ * Usa `node:sqlite` (módulo nativo do Node 22+).
  */
-import type { Statement, Database as DB } from 'better-sqlite3';
+import type { StatementSync, DatabaseSync } from 'node:sqlite';
 import type { ClusterRepository } from '@main/db/repositories';
 import type { ClusterItem, SearchResult } from '@shared/types';
 
 const TRIGRAM_RE = /(?=([\s\S]{1,3}))/g;
 
 export class SearchEngine {
-  private insertStmt: Statement;
-  private deleteAllStmt: Statement;
-  private rebuildSelectStmt: Statement;
-  private upsertIndexStmt: Statement;
-  private removeStmt: Statement;
-  private exactStmt: Statement;
-  private triStmt: Statement;
-  private rebuildTxn: () => void;
+  private insertStmt: StatementSync;
+  private deleteAllStmt: StatementSync;
+  private rebuildSelectStmt: StatementSync;
+  private upsertIndexStmt: StatementSync;
+  private removeStmt: StatementSync;
+  private exactStmt: StatementSync;
+  private triStmt: StatementSync;
 
-  constructor(private db: DB, private cluster: ClusterRepository) {
+  constructor(private db: DatabaseSync, private cluster: ClusterRepository) {
     this.insertStmt = db.prepare(
-      `INSERT INTO search_index (item_id, name, logical_path, name_lower, path_lower, name_trigrams, size, updated_at) VALUES (@itemId, @name, @logicalPath, @nameLower, @pathLower, @nameTrigrams, @size, @updatedAt)`,
+      `INSERT INTO search_index (item_id, name, logical_path, name_lower, path_lower, name_trigrams, size, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
     );
     this.deleteAllStmt = db.prepare(`DELETE FROM search_index`);
     this.rebuildSelectStmt = db.prepare(
       `SELECT id, name, logical_path, size, updated_at FROM cluster_items WHERE deleted_at IS NULL`,
     );
     this.upsertIndexStmt = db.prepare(
-      `INSERT OR REPLACE INTO search_index (item_id, name, logical_path, name_lower, path_lower, name_trigrams, size, updated_at) VALUES (@itemId, @name, @logicalPath, @nameLower, @pathLower, @nameTrigrams, @size, @updatedAt)`,
+      `INSERT OR REPLACE INTO search_index (item_id, name, logical_path, name_lower, path_lower, name_trigrams, size, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
     );
-    this.removeStmt = db.prepare(`DELETE FROM search_index WHERE item_id = @itemId`);
+    this.removeStmt = db.prepare(`DELETE FROM search_index WHERE item_id = ?`);
     this.exactStmt = db.prepare(
-      `SELECT item_id, name, logical_path, size, 1.0 as score FROM search_index WHERE name_lower LIKE @q OR path_lower LIKE @q ORDER BY size DESC LIMIT @limit`,
+      `SELECT item_id, name, logical_path, size, 1.0 as score FROM search_index WHERE name_lower LIKE ? OR path_lower LIKE ? ORDER BY size DESC LIMIT ?`,
     );
     this.triStmt = db.prepare(
       `SELECT item_id, name, logical_path, size, name_trigrams FROM search_index LIMIT 1000`,
     );
-    this.rebuildTxn = db.transaction(() => {
+  }
+
+  rebuild(): void {
+    this.db.exec('BEGIN');
+    try {
       this.deleteAllStmt.run();
       const all = this.rebuildSelectStmt.all() as any[];
       for (const r of all) {
-        this.insertStmt.run({
-          itemId: r.id, name: r.name, logicalPath: r.logical_path,
-          nameLower: r.name.toLowerCase(), pathLower: r.logical_path.toLowerCase(),
-          nameTrigrams: trigrams(r.name.toLowerCase()),
-          size: r.size, updatedAt: r.updated_at,
-        });
+        this.insertStmt.run(
+          r.id, r.name, r.logical_path,
+          r.name.toLowerCase(), r.logical_path.toLowerCase(),
+          trigrams(r.name.toLowerCase()),
+          r.size, r.updated_at,
+        );
       }
-    });
+      this.db.exec('COMMIT');
+    } catch (e) {
+      this.db.exec('ROLLBACK');
+      throw e;
+    }
   }
 
-  rebuild(): void { this.rebuildTxn(); }
   indexItem(item: ClusterItem): void {
-    this.upsertIndexStmt.run({
-      itemId: item.id, name: item.name, logicalPath: item.logicalPath,
-      nameLower: item.name.toLowerCase(), pathLower: item.logicalPath.toLowerCase(),
-      nameTrigrams: trigrams(item.name.toLowerCase()),
-      size: item.size, updatedAt: item.updatedAt,
-    });
+    this.upsertIndexStmt.run(
+      item.id, item.name, item.logicalPath,
+      item.name.toLowerCase(), item.logicalPath.toLowerCase(),
+      trigrams(item.name.toLowerCase()),
+      item.size, item.updatedAt,
+    );
   }
-  removeItem(itemId: string): void { this.removeStmt.run({ itemId }); }
+
+  removeItem(itemId: string): void { this.removeStmt.run(itemId); }
 
   query(input: string, limit = 100): SearchResult[] {
     const q = input.trim().toLowerCase();
     if (!q) return [];
     const trigramsQ = trigrams(q).split("|").filter(Boolean);
-    const exact = this.exactStmt.all({ q: `%${q}%`, limit }) as any[];
+    const exact = this.exactStmt.all(`%${q}%`, `%${q}%`, limit) as any[];
     let triMatches: any[] = [];
     if (trigramsQ.length > 0) {
       const candidates = this.triStmt.all() as any[];
