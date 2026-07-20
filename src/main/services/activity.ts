@@ -21,6 +21,9 @@ export class ActivityService {
   }
 
   recent(limit: number): ActivityLogEntry[] {
-    return (this.activity as any).recent(limit);
+    // O repositório expõe o método como `list(limit)`. Encaminhamos
+    // para manter a superfície do serviço consistente com o que o
+    // handler IPC em main.ts espera (`activity.recent(limit)`).
+    return (this.activity as any).list(limit);
   }
 }
