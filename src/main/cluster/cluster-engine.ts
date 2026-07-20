@@ -118,6 +118,8 @@ export class ClusterEngine {
       chunks,
       encryption: { algorithm: 'aes-256-gcm', perChunkKey: false, masterKeyId: 'cluster' },
       originAccountId: chunks[0]?.accountId,
+      parentPath: '',
+      version: 1,
     };
     this.cluster.upsert(item);
     this.activity.log({ ts: Date.now(), level: 'info', category: 'upload', message: `Arquivo enviado: ${logical}`, detail: { size: stat.size, chunks: chunks.length } });
