@@ -104,7 +104,7 @@ export class AccountService {
     if (!provider.getQuota) return;
     try {
       const q = await provider.getQuota(acc);
-      this.quotas.set(q);
+      this.quotas.upsert(q);
       this.accounts.updateStatus(id, 'connected');
       return q;
     } catch (err) {
