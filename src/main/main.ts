@@ -1,299 +1,315 @@
 /**
- * Processo principal do Electron. Inicializa o banco SQLite, expõe os
- * handlers IPC consumidos pelo renderer e gerencia o ciclo de vida da
- * janela.
+ * Basck Clouds — main process do Electron.
+ * Orquestra: janelas, IPC, ciclo de vida do cofre, serviços principais.
  */
-import { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage, shell, dialog, IpcMainInvokeEvent } from 'electron';
+import { app, BrowserWindow, ipcMain, shell, Tray, Menu, dialog, nativeImage, type IpcMainInvokeEvent } from 'electron';
 import path from 'node:path';
-import { DatabaseSync } from 'node:sqlite';
+import fs from 'node:fs';
 import { IpcChannels } from '../shared/channels';
-import { ProviderId, CloudAccount, BackupJob, SyncPair, AppSettings, ClusterItem } from '../shared/types';
-import { AccountService } from './cluster/account-service';
-import { AccountRepository, BackupRepository, ClusterRepository, QuotaRepository, SettingsRepository, SyncRepository, ActivityRepository } from './db/repositories';
-import { Database } from './db';
-import { ClusterEngine } from './cluster/cluster-engine';
-import { Distributor } from './cluster/distributor';
-import { ALL_PROVIDERS, getProvider } from './providers';
-import { BackupScheduler } from './backup/scheduler';
-import { Syncer } from './sync/syncer';
-import { SearchEngine } from './search/search-engine';
+import { openDatabase } from './db';
+import {
+  AccountRepository,
+  ClusterRepository,
+  BackupRepository,
+  SyncRepository,
+  SettingsRepository,
+  ActivityRepository,
+  QuotaRepository,
+} from './db/repositories';
 import { VaultService } from './services/vault';
-import { CredentialStore } from './services/credentials';
+import { CredentialStore } from './services/keychain';
 import { ActivityService } from './services/activity';
+import { AccountService } from './cluster/account-service';
+import { ClusterEngine } from './cluster/cluster-engine';
+import { BackupScheduler } from './backup/scheduler';
+import { FolderSyncer } from './sync/syncer';
+import { SearchEngine } from './search/search-engine';
+import { PROVIDER_REGISTRY } from './providers/registry';
+import { randomId, parentOf } from './services/id';
+import type { AppSettings, ClusterItem, ProviderDescriptor } from '../shared/types';
 
-const dataDir = path.join(app.getPath('userData'));
-const db = new Database(path.join(dataDir, 'basck.db'));
-db.exec('PRAGMA journal_mode = WAL');
-db.exec('PRAGMA foreign_keys = ON');
+const isDev = process.env.NODE_ENV === 'development';
+let mainWindow: BrowserWindow | null = null;
+let tray: Tray | null = null;
+let isQuitting = false;
 
-const dbWrap = new Database(db);
-const accounts = new AccountRepository(dbWrap);
-const cluster = new ClusterRepository(dbWrap);
-const quotas = new QuotaRepository(dbWrap);
-const settingsRepo = new SettingsRepository(dbWrap);
-const sync = new SyncRepository(dbWrap);
-const backups = new BackupRepository(dbWrap);
-const activity = new ActivityRepository(dbWrap);
+const dataDir = path.join(app.getPath('userData'), 'BasckClouds');
+fs.mkdirSync(dataDir, { recursive: true });
+
+const db = openDatabase(dataDir);
+const accounts = new AccountRepository(db);
+const cluster = new ClusterRepository(db);
+const backups = new BackupRepository(db);
+const sync = new SyncRepository(db);
+const settingsRepo = new SettingsRepository(db);
+const activity = new ActivityRepository(db);
+const quotas = new QuotaRepository(db);
 
 const vault = new VaultService(dataDir);
 const credentials = new CredentialStore(vault.crypto_(), dataDir);
+const activitySvc = new ActivityService(activity);
 const accountService = new AccountService(accounts, quotas, credentials, vault.crypto_(), activity);
 const clusterEngine = new ClusterEngine(accounts, cluster, quotas, activity, vault.crypto_(), {
-  distributor: new Distributor(),
+  defaultChunkSize: 8 * 1024 * 1024,
+  defaultEncryption: true,
 });
+const backupScheduler = new BackupScheduler(backups, clusterEngine, activity);
+const syncer = new FolderSyncer(sync, clusterEngine, cluster, accounts, activity);
+const search = new SearchEngine(db, cluster);
 
-const search = new SearchEngine(cluster);
-const syncer = new Syncer(sync, cluster);
-const backupScheduler = new BackupScheduler(backups, accounts, cluster);
-
-let mainWindow: BrowserWindow | null = null;
-let tray: Tray | null = null;
+function defaultSettings(): AppSettings {
+  return {
+    theme: 'dark',
+    autoStart: false,
+    minimizeToTray: true,
+    defaultEncryption: true,
+    defaultChunkSize: 8 * 1024 * 1024,
+    notifications: true,
+    telemetry: false,
+    language: 'pt-BR',
+  };
+}
 
 async function bootstrap() {
   await vault.init();
   if (vault.exists() && vault.isUnlocked()) {
     credentials.load();
   }
-  activity.init();
-  await cluster.warmup();
-  search.rebuild();
+  activitySvc.init();
+  createWindow();
+  createTray();
   backupScheduler.refresh();
   syncer.refresh();
 }
 
-let isQuitting = false;
-const lockItem = { label: 'Bloquear cofre', click: () => vault.lock() };
-
-function createMainWindow() {
+function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 820,
     minWidth: 1024,
-    minHeight: 640,
-    backgroundColor: '#0f1115',
+    minHeight: 700,
+    backgroundColor: '#0c0f17',
+    title: 'Basck Clouds',
     show: false,
     webPreferences: {
-      preload: path.join(__dirname, '../preload/index.js'),
+      preload: path.join(__dirname, '..', 'preload', 'preload.js'),
       contextIsolation: true,
-      nodeIntegration: false,
       sandbox: false,
+      nodeIntegration: false,
     },
   });
-
-  const devUrl = process.env.VITE_DEV_SERVER_URL;
-  if (devUrl) {
-    mainWindow.loadURL(devUrl);
+  if (isDev) {
+    mainWindow.loadURL('http://localhost:5173');
+    mainWindow.webContents.openDevTools({ mode: 'detach' });
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'));
+    mainWindow.loadFile(path.join(__dirname, '..', 'renderer', 'index.html'));
   }
-
   mainWindow.once('ready-to-show', () => mainWindow?.show());
-
   mainWindow.on('close', (e) => {
     if (!isQuitting) {
       e.preventDefault();
       mainWindow?.hide();
     }
   });
-
-  mainWindow.on('closed', () => { mainWindow = null; });
+  mainWindow.on('closed', () => (mainWindow = null));
 }
 
 function createTray() {
-  const icon = nativeImage.createEmpty();
-  tray = new Tray(icon);
-  const menu = Menu.buildFromTemplate([
-    { label: 'Abrir Basck Clouds', click: () => mainWindow?.show() },
-    { type: 'separator' },
-    lockItem,
-    { type: 'separator' },
-    { label: 'Sair', click: () => { isQuitting = true; app.quit(); } },
-  ]);
-  tray.setToolTip('Basck Clouds');
-  tray.setContextMenu(menu);
-  tray.on('click', () => mainWindow?.show());
+  try {
+    tray = new Tray(nativeImage.createEmpty());
+    const menu = Menu.buildFromTemplate([
+      { label: 'Abrir Basck Clouds', click: () => mainWindow?.show() },
+      { label: 'Bloquear cofre', click: () => vault.lock() },
+      { type: 'separator' },
+      { label: 'Sair', click: () => { isQuitting = true; app.quit(); } },
+    ]);
+    tray.setToolTip('Basck Clouds');
+    tray.setContextMenu(menu);
+    tray.on('double-click', () => mainWindow?.show());
+  } catch {
+    // ícone opcional
+  }
 }
+
+app.on('second-instance', () => mainWindow?.show());
+app.on('window-all-closed', (_e: IpcMainInvokeEvent) => {
+  // mantém vivo no tray
+});
+
+app.whenReady().then(bootstrap).catch((err) => {
+  console.error('Falha ao iniciar Basck Clouds', err);
+});
+
+// ----------------- IPC HANDLERS -----------------
 
 function handle<T>(channel: string, fn: (...args: any[]) => Promise<T> | T) {
   ipcMain.handle(channel, async (_evt: IpcMainInvokeEvent, ...args: any[]) => {
-    try {
-      return await fn(...args);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err);
-      throw new Error(message);
-    }
+    try { return { ok: true, data: await fn(...args) }; }
+    catch (err: any) { return { ok: false, error: String(err?.message ?? err) }; }
   });
 }
 
-handle(IpcChannels.SYSTEM_PROVIDERS, () => ALL_PROVIDERS);
 handle(IpcChannels.VAULT_STATUS, () => ({ exists: vault.exists(), unlocked: vault.isUnlocked() }));
 handle(IpcChannels.VAULT_CREATE, async (password: string, hint?: string) => {
   await vault.create(password, hint);
-  credentials.load();
-  return { ok: true };
 });
-handle(IpcChannels.VAULT_UNLOCK, (password: string) => { vault.unlock(password); credentials.load(); return { ok: true }; });
-handle(IpcChannels.VAULT_LOCK, () => { vault.lock(); return { ok: true }; });
-handle(IpcChannels.VAULT_SET_PASSWORD, async (oldPassword: string, newPassword: string) => {
-  await vault.changePassword(oldPassword, newPassword);
-  credentials.load();
-  return { ok: true };
+handle(IpcChannels.VAULT_UNLOCK, (password: string) => { vault.unlock(password); credentials.load(); });
+handle(IpcChannels.VAULT_LOCK, () => { vault.lock(); });
+handle(IpcChannels.VAULT_SET_PASSWORD, async (oldPw: string, newPw: string) => {
+  await vault.changePassword(oldPw, newPw);
 });
 
-handle(IpcChannels.ACCOUNTS_LIST, () => accountService.list().map((a) => ({ ...a, auth: undefined })));
+handle(IpcChannels.SYSTEM_PROVIDERS, () => Object.values(PROVIDER_REGISTRY) as ProviderDescriptor[]);
+
+handle(IpcChannels.ACCOUNTS_LIST, () => accountService.list().map((a) => ({ ...a, auth: undefined as any })));
 handle(IpcChannels.ACCOUNTS_ADD, async (input: any) => {
-  return accountService.add(input as Omit<CloudAccount, 'id' | 'createdAt' | 'status'>);
+  const acc = await accountService.addAccount(input);
+  return { ...acc, auth: undefined as any };
 });
 handle(IpcChannels.ACCOUNTS_REMOVE, (id: string) => accountService.remove(id));
 handle(IpcChannels.ACCOUNTS_RENAME, (id: string, label: string) => {
-  accountService.rename(id, label);
-  return true;
+  const acc = accounts.get(id);
+  if (!acc) throw new Error('Conta não encontrada');
+  accounts.upsert({ ...acc, label, updatedAt: Date.now() });
 });
 handle(IpcChannels.ACCOUNTS_TEST, async (id: string) => accountService.test(id));
 handle(IpcChannels.ACCOUNTS_REFRESH_QUOTA, async (id: string) => accountService.refreshQuota(id));
 handle(IpcChannels.ACCOUNTS_UPDATE_PREFERENCES, (id: string, prefs: any) => {
-  accountService.updatePreferences(id, prefs);
-  return true;
+  const acc = accounts.get(id);
+  if (!acc) throw new Error('Conta não encontrada');
+  accounts.upsert({ ...acc, preferences: prefs, updatedAt: Date.now() });
 });
 
 handle(IpcChannels.CLUSTER_LIST, () => cluster.list());
 handle(IpcChannels.CLUSTER_READ, (id: string) => cluster.get(id));
 handle(IpcChannels.CLUSTER_UPLOAD, async (localPath: string, opts: any) => {
-  const target = await clusterEngine.putFromLocalFile(localPath, opts ?? {});
-  return target;
+  return clusterEngine.uploadFile(localPath, opts);
 });
 handle(IpcChannels.CLUSTER_DOWNLOAD, async (id: string, dest: string) => {
-  await clusterEngine.downloadToFile(id, dest);
-  return true;
+  return clusterEngine.downloadItem(id, { destination: dest });
 });
 handle(IpcChannels.CLUSTER_MKDIR, (logicalPath: string) => {
+  const normalized = logicalPath.startsWith('/') ? logicalPath : '/' + logicalPath;
+  const parent = parentOf(normalized);
   const item: ClusterItem = {
-    id: cryptoRandomId(),
-    parentPath: dirname(logicalPath),
-    name: basename(logicalPath || '/'),
-    logicalPath,
-    isDir: true,
+    id: randomId(12),
+    logicalPath: normalized,
+    parentPath: parent === '/' ? '' : parent,
+    name: normalized.split('/').filter(Boolean).pop() ?? 'Nova pasta',
     size: 0,
     mimeType: 'inode/directory',
+    isDir: true,
     createdAt: Date.now(),
     updatedAt: Date.now(),
-    version: 1,
     contentHash: '',
     chunks: [],
-    encryption: { masterKeyId: 'default' },
-    originAccountId: 'local',
+    encryption: { algorithm: 'aes-256-gcm', perChunkKey: false, masterKeyId: 'cluster' },
+    version: 1,
   };
   cluster.upsert(item);
   return item;
 });
 handle(IpcChannels.CLUSTER_RENAME, (id: string, newName: string) => {
-  cluster.rename(id, newName);
-  return true;
+  const item = cluster.get(id);
+  if (!item) throw new Error('Item não encontrado');
+  const parent = item.logicalPath.includes('/') ? item.logicalPath.slice(0, item.logicalPath.lastIndexOf('/')) || '/' : '/';
+  const newPath = parent === '/' ? `/${newName}` : `${parent}/${newName}`;
+  cluster.upsert({ ...item, name: newName, logicalPath: newPath, parentPath: parent === '/' ? '' : parent, updatedAt: Date.now(), version: item.version + 1 });
 });
 handle(IpcChannels.CLUSTER_DELETE, (id: string) => {
-  cluster.delete(id);
-  return true;
+  const item = cluster.get(id);
+  if (!item) return;
+  cluster.softDelete(item.logicalPath);
+  search.removeItem(item.id);
 });
 handle(IpcChannels.CLUSTER_MOVE, (id: string, newParent: string) => {
-  cluster.move(id, newParent);
-  return true;
+  const item = cluster.get(id);
+  if (!item) throw new Error('Item não encontrado');
+  const newPath = newParent === '/' ? `/${item.name}` : `${newParent}/${item.name}`;
+  cluster.upsert({ ...item, logicalPath: newPath, parentPath: newParent === '/' ? '' : newParent, updatedAt: Date.now(), version: item.version + 1 });
 });
-handle(IpcChannels.CLUSTER_STATS, () => cluster.stats());
+handle(IpcChannels.CLUSTER_STATS, () => {
+  const all = accounts.list();
+  const qs = quotas.all();
+  const total = qs.reduce((acc, q) => acc + (q.total === Number.POSITIVE_INFINITY ? 0 : q.total), 0);
+  const used = qs.reduce((acc, q) => acc + q.used, 0);
+  const items = cluster.list();
+  const files = items.filter((i) => !i.isDir);
+  return {
+    totalBytes: total,
+    usedBytes: used,
+    freeBytes: Math.max(0, total - used),
+    fileCount: files.length,
+    folderCount: items.length - files.length,
+    accountCount: all.length,
+    providerCount: new Set(all.map((a) => a.providerId)).size,
+    lastUpdatedAt: Date.now(),
+  };
+});
 
 handle(IpcChannels.SEARCH_QUERY, (q: string) => search.query(q));
 handle(IpcChannels.SEARCH_INDEX_REBUILD, () => { search.rebuild(); return true; });
 
 handle(IpcChannels.SYNC_LIST, () => sync.list());
-handle(IpcChannels.SYNC_ADD, (pair: Omit<SyncPair, 'id' | 'createdAt'>) => {
-  const saved = sync.upsert(pair as any);
+handle(IpcChannels.SYNC_ADD, (pair: any) => {
+  sync.upsert({ ...pair, id: pair.id || randomId(12), createdAt: Date.now() });
   syncer.refresh();
-  return saved;
 });
-handle(IpcChannels.SYNC_REMOVE, (id: string) => { const p = sync.get(id); if (p) { sync.upsert({ ...p, enabled: false }); } return true; });
+handle(IpcChannels.SYNC_REMOVE, (id: string) => {
+  const p = sync.get(id);
+  if (p) sync.upsert({ ...p, enabled: false });
+  syncer.refresh();
+});
 handle(IpcChannels.SYNC_RUN, async (id: string) => {
-  await syncer.runOnce(id);
-  return true;
+  const pair = sync.get(id);
+  if (!pair) throw new Error('Par de sync não encontrado');
+  return syncer.runOnce(pair);
 });
 handle(IpcChannels.SYNC_TOGGLE, (id: string, enabled: boolean) => {
-  const p = sync.get(id);
-  if (p) {
-    sync.upsert({ ...p, enabled });
-    syncer.refresh();
-  }
-  return true;
+  const pair = sync.get(id);
+  if (!pair) throw new Error('Par não encontrado');
+  sync.upsert({ ...pair, enabled });
+  syncer.refresh();
 });
 
 handle(IpcChannels.BACKUP_LIST, () => backups.list());
-handle(IpcChannels.BACKUP_ADD, (job: Omit<BackupJob, 'id' | 'createdAt'>) => {
-  const saved = backups.upsert(job as any);
+handle(IpcChannels.BACKUP_ADD, (job: any) => {
+  backups.upsert({ ...job, id: job.id || randomId(12), createdAt: Date.now() });
   backupScheduler.refresh();
-  return saved;
 });
-handle(IpcChannels.BACKUP_REMOVE, (id: string) => { backups.delete(id); backupScheduler.refresh(); return true; });
+handle(IpcChannels.BACKUP_REMOVE, (id: string) => { backups.delete(id); backupScheduler.refresh(); });
 handle(IpcChannels.BACKUP_RUN, async (id: string) => {
-  await backupScheduler.runOnce(id);
-  return true;
+  const job = backups.get(id);
+  if (!job) throw new Error('Job não encontrado');
+  await (backupScheduler as any).runJob(job);
+  return job;
 });
 handle(IpcChannels.BACKUP_TOGGLE, (id: string, enabled: boolean) => {
-  const p = backups.get(id);
-  if (p) {
-    backups.upsert({ ...p, enabled });
-    backupScheduler.refresh();
-  }
-  return true;
+  const job = backups.get(id);
+  if (!job) throw new Error('Job não encontrado');
+  backups.upsert({ ...job, enabled });
+  backupScheduler.refresh();
 });
 
-handle(IpcChannels.SETTINGS_GET, () => settingsRepo.get<AppSettings>('main', {
-  theme: 'dark',
-  autoStart: false,
-  minimizeToTray: true,
-  defaultEncryption: true,
-  defaultChunkSize: 8 * 1024 * 1024,
-  notifications: true,
-  telemetry: false,
-  language: 'pt-BR',
-} as AppSettings));
-handle(IpcChannels.SETTINGS_UPDATE, (next: AppSettings) => { settingsRepo.set('main', next); return true; });
+handle(IpcChannels.SETTINGS_GET, () =>
+  (settingsRepo as any).get('main', defaultSettings()),
+);
+handle(IpcChannels.SETTINGS_UPDATE, (next: AppSettings) => {
+  (settingsRepo as any).set('main', next);
+});
 
-handle(IpcChannels.SYSTEM_ACTIVITY, (limit?: number) => activity.list(limit));
-handle(IpcChannels.SYSTEM_OPEN_PATH, async (p: string) => { await shell.openPath(p); return true; });
+handle(IpcChannels.SYSTEM_ACTIVITY, (limit?: number) => (activity as any).recent(limit ?? 100));
+handle(IpcChannels.SYSTEM_OPEN_PATH, async (p: string) => { await shell.openPath(p); });
 handle(IpcChannels.SYSTEM_DIALOG, async (type: 'open' | 'save', opts?: any) => {
   if (type === 'open') {
     const r = await dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'], ...opts });
     return r.filePaths;
   }
   const r = await dialog.showSaveDialog(opts ?? {});
-  return r.filePath ?? null;
+  return r.filePath;
 });
-
-function dirname(p: string): string {
-  if (!p || p === '/') return '/';
-  const idx = p.lastIndexOf('/');
-  return idx <= 0 ? '/' : p.slice(0, idx);
-}
-
-function basename(p: string): string {
-  if (!p || p === '/') return '';
-  const parts = p.split('/').filter(Boolean);
-  return parts[parts.length - 1] ?? '';
-}
-
-function cryptoRandomId(): string {
-  return require('node:crypto').randomBytes(12).toString('hex');
-}
-
-app.whenReady().then(async () => {
-  await bootstrap();
-  createMainWindow();
-  createTray();
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createMainWindow();
-  });
-});
-
-app.on('window-all-closed', () => { /* mantém vivo no tray */ });
 
 app.on('before-quit', () => {
-  isQuitting = true;
   vault.lock();
+  isQuitting = true;
 });
