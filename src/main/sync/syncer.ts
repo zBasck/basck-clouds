@@ -52,7 +52,7 @@ export class FolderSyncer {
       }
     }
     if (pair.direction === 'download' || pair.direction === 'two-way') {
-      const items = this.clusterRepo.list(pair.logicalPath);
+      const items = this.clusterRepo.list().filter((it) => it.parentPath === pair.logicalPath || it.logicalPath.startsWith(pair.logicalPath === '/' ? '/' : pair.logicalPath + '/'));
       for (const item of items) {
         if (item.isDir) continue;
         try {
